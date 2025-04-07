@@ -1,11 +1,7 @@
-export const runtime = 'edge'; // حتماً باید همین باشه برای Cloudflare Pages
+export const runtime = 'edge';
 
-import dynamic from 'next/dynamic';
+import BlogPostWrapper from './BlogPostWrapper';
 
-const BlogPostContent = dynamic(() => import('./BlogPostContent'), {
-  ssr: false, // غیرفعال‌سازی SSR چون از Firebase در کلاینت استفاده می‌کنیم
-});
-
-export default function BlogPostWrapper() {
-  return <BlogPostContent />;
+export default function Page() {
+  return <BlogPostWrapper />;
 }
