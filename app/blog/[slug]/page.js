@@ -1,19 +1,9 @@
-'use client'; // ✅ اضافه می‌کنیم
+'use client';
 
-export const runtime = 'edge'; // ✅ برای Cloudflare Pages
+export const runtime = 'edge';
 
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
-
-// ✅ import به صورت dynamic و غیرفعال کردن SSR
-const BlogPostContent = dynamic(() => import('./BlogPostContent'), {
-  ssr: false,
-});
+import BlogPostContent from './BlogPostContent';
 
 export default function BlogPostWrapper() {
-  return (
-    <Suspense fallback={<div style={{ padding: '2rem' }}>در حال بارگذاری مقاله...</div>}>
-      <BlogPostContent />
-    </Suspense>
-  );
+  return <BlogPostContent />;
 }
