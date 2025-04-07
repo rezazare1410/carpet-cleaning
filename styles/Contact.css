@@ -1,0 +1,228 @@
+.contact-container {
+    direction: rtl;
+    padding: 2rem 1rem;
+    font-family: 'BKoodak', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.contact-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.contact-intro h2 {
+    font-size: 2rem;
+    color: #007B83;
+    margin-bottom: 0.5rem;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form-section,
+.contact-info-section,
+.contact-map-section {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-section h3,
+.contact-info-section h3,
+.contact-map-section h3 {
+    margin-bottom: 1rem;
+    color: #007B83;
+    font-size: 1.4rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #007B83;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.contact-form button:hover {
+    background-color: #005f66;
+}
+
+.contact-info-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+.contact-success-box {
+    background-color: #e6fff0;
+    border: 1px solid #00a884;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    color: #005f4b;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.contact-success-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-success-box p {
+    font-size: 1.1rem;
+}
+.contact-info-section,
+.contact-map-section {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info-section h3,
+.contact-map-section h3 {
+    margin-bottom: 1rem;
+    color: #007B83;
+    font-size: 1.4rem;
+}
+
+.contact-info-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+.contact-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+}
+
+.contact-form-section,
+.contact-info-section {
+    flex: 1 1 400px;
+}
+
+/* موبایل */
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+    }
+
+    .contact-info-section ul {
+        font-size: 1rem;
+    }
+
+    .contact-form-section,
+    .contact-info-section {
+        max-width: 100%;
+    }
+                           .map-direction-button-wrapper {
+                               margin-top: 1rem;
+                               text-align: center;
+                           }
+            
+                           .direction-button {
+                               display: inline-block;
+                               padding: 0.7rem 1.5rem;
+                               font-size: 1.1rem;
+                               background-color: #2e7d32;
+                               color: white;
+                               border-radius: 8px;
+                               text-decoration: none;
+                               font-weight: bold;
+                               transition: background-color 0.3s ease;
+                           }
+            
+                           .direction-button:hover {
+                               background-color: #388e3c;
+                           }
+}
+/* تبلت */
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+
+    .contact-form-section,
+    .contact-info-section {
+        max-width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .contact-intro h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-intro p {
+        font-size: 1rem;
+    }
+
+    .contact-info-section ul {
+        font-size: 1.05rem;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+}

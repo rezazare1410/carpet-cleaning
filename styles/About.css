@@ -1,0 +1,56 @@
+.about-container {
+    direction: rtl;
+    padding: 2rem 1rem;
+    font-family: 'BKoodak', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.about-section {
+    background-color: #fff;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    color: #007B83;
+    margin-bottom: 0.8rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #444;
+}
+
+/* نسخه تبلت */
+@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+    }
+}
+
+/* نسخه موبایل */
+@media (max-width: 480px) {
+    .about-section {
+        padding: 1rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-section p {
+        font-size: 0.95rem;
+    }
+}

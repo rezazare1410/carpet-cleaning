@@ -1,0 +1,78 @@
+.repair-page {
+    padding: 2rem;
+    direction: rtl;
+    background-color: #f9f9f9;
+    
+    
+}
+
+/* عنوان و توضیحات بالا */
+.repair-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-inline: auto;
+    
+}
+
+.repair-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1c2c38;
+    margin-bottom: 1rem;
+}
+
+.repair-header p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* گرید کارت‌ها */
+.repair-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* استایل کارت */
+.repair-card {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.repair-card:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* رسپانسیو */
+@media (max-width: 1024px) {
+    .repair-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .repair-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .repair-grid {
+        grid-template-columns: 1fr;
+    }
+}

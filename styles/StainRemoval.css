@@ -1,0 +1,87 @@
+.stain-page {
+    padding: 2rem;
+    background-color: #f8f8f8;
+    direction: rtl;
+}
+
+.stain-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.card-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.info-card {
+    background-color: white;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd;
+    text-align: right;
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.center-image img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+.order-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.order-button {
+    display: inline-block;
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #b71c1c;
+}
+
+@media (max-width: 992px) {
+    .stain-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center-image img {
+        max-width: 100%;
+    }
+}

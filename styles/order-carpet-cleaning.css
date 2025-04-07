@@ -1,0 +1,159 @@
+/* ====== ساختار کلی ====== */
+.order-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    direction: rtl;
+    font-family: inherit;
+}
+
+.order-title {
+    font-size: 1.8rem;
+    color: #007B83;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ====== فرم ====== */
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.order-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #333;
+}
+
+.order-form input,
+.order-form textarea {
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.order-form textarea {
+    resize: vertical;
+}
+
+/* ====== گروه چک‌باکس ====== */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: right;
+}
+
+.group-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.4rem;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+}
+
+.checkbox-group label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    font-weight: normal;
+    color: #444;
+    font-size: 1rem;
+    cursor: pointer;
+    direction: rtl;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #007B83;
+}
+
+/* ====== دکمه ارسال ====== */
+.order-form button {
+    background-color: #d90000;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-form button:hover {
+    background-color: #a50000;
+}
+
+/* ====== پیام موفقیت ====== */
+.success-message {
+    margin-top: 2rem;
+    background-color: #e7f9ec;
+    border: 1px solid #b2e0c5;
+    color: #2b7a4b;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.back-home-button {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #007B83;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.back-home-button:hover {
+    color: #004b50;
+}
+
+.order-success-container {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ====== ریسپانسیو موبایل ====== */
+@media (max-width: 768px) {
+    .order-container {
+        padding: 1rem;
+    }
+
+    .order-title {
+        font-size: 1.5rem;
+    }
+
+    .order-form input,
+    .order-form textarea {
+        font-size: 0.95rem;
+    }
+
+    .order-form button {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,107 @@
+/* ساختار کلی صفحه */
+.root-repair-page {
+    padding: 2rem;
+}
+
+/* ردیف اصلی شامل عکس و محتوا */
+.hero-root-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* 🔧 مهم‌ترین اصلاح برای حل مشکل تراز وسط */
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* بخش تصویر */
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+/* ستون راست شامل کارت‌ها و دکمه */
+.hero-right-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* اطمینان از شروع محتوا از بالا */
+}
+
+/* گرید کارت‌ها */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* استایل کارت‌ها */
+.info-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: right;
+    transition: 0.3s ease;
+    display: block;
+    /* 🔧 جلوگیری از وسط‌چینی محتوا */
+}
+
+.info-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1c2c38;
+    margin-bottom: 0.5rem;
+    text-align: right;
+}
+
+.info-card-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: right;
+}
+
+/* دکمه سفارش */
+.button-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.root-order-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.root-order-button:hover {
+    background-color: #cc0000;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 768px) {
+    .hero-root-section {
+        flex-direction: column;
+    }
+
+    .hero-right-content {
+        width: 100%;
+    }
+}

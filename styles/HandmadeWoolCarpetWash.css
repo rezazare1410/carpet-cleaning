@@ -1,0 +1,205 @@
+/* فونت اصلی پروژه */
+body {
+    font-family: 'BKoodak', sans-serif;
+}
+
+/* ==== HERO SECTION ==== */
+.hero-section {
+    background-image: url('/images/handmadewash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+}
+
+.hero-overlay h1 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+}
+
+.hero-overlay button {
+    background-color: #00b894;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-overlay button:hover {
+    background-color: #019874;
+}
+
+/* ==== WHY WASH SECTION ==== */
+.why-wash-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+}
+
+.why-wash-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.why-wash-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.feature p {
+    font-size: 1rem;
+    color: #666;
+}
+.hero-section button {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #2e7d32;
+    /* سبز تیره زیبا */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-section button:hover {
+    background-color: #388e3c;
+    transform: scale(1.03);
+}
+
+/* ==== WASH PROCESS SECTION ==== */
+.wash-process {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.wash-process h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 230px;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+
+    .features,
+    .process-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature,
+    .step {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+
+    .hero-overlay {
+        padding: 30px;
+    }
+}

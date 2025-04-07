@@ -1,0 +1,250 @@
+/* ======================== */
+/* HERO SECTION اختصاصی ابریشم */
+.hero-section-silk {
+    background-image: url('/images/hero-silk.jpg');
+    /* تصویر مخصوص فرش ابریشم */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay-silk {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+}
+
+.hero-overlay-silk h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.hero-overlay-silk p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hero-overlay-silk button {
+    background-color: #00c896;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-overlay-silk button:hover {
+    background-color: #009c76;
+}
+
+
+/* ======================== */
+/* بخش چرا شستشوی ابریشم مهم است */
+.why-wash-silk {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.why-wash-silk h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.why-wash-silk p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+    color: #333;
+}
+
+
+/* ======================== */
+/* ویژگی‌ها */
+.features-silk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-silk {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-silk:hover {
+    transform: translateY(-5px);
+}
+
+.feature-silk img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-silk h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.feature-silk p {
+    font-size: 14px;
+    color: #444;
+}
+
+
+/* ======================== */
+/* مراحل شستشو */
+.wash-process-silk {
+    padding: 60px 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.wash-process-silk h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.process-steps-silk {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 0 20px;
+    direction: rtl;
+}
+
+.silk-step {
+    flex: 1 1 calc((100% - 5 * 16px) / 6);
+    min-width: 0;
+    background-color: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.silk-step:hover {
+    transform: translateY(-5px);
+}
+
+.silk-step img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.silk-step h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.silk-step p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+.hero-overlay-silk button {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #2e7d32;
+    /* سبز تیره */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-overlay-silk button:hover {
+    background-color: #388e3c;
+    /* سبز روشن‌تر در حالت hover */
+    transform: scale(1.03);
+}
+
+/* ======================== */
+/* ریسپانسیو مخصوص ابریشم */
+/* برای تبلت و موبایل */
+@media (max-width: 1024px) {
+    .process-steps-silk {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        gap: 24px;
+    }
+
+    .silk-step {
+        flex: 1 1 45%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section-silk {
+        height: auto;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-overlay-silk {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .hero-overlay-silk h1 {
+        font-size: 20px;
+    }
+
+    .hero-overlay-silk p {
+        font-size: 14px;
+    }
+
+    .hero-overlay-silk button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .features-silk {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-silk {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .wash-process-silk {
+        padding: 40px 15px;
+    }
+
+    .process-steps-silk {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .silk-step {
+        width: 100%;
+        max-width: 320px;
+    }
+}

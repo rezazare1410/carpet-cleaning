@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    direction: rtl;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    height: 140px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "BKoodak", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #f7f7f7;
+}

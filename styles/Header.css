@@ -1,0 +1,347 @@
+@font-face {
+  font-family: 'BKoodak';
+  src: url('/fonts/BKoodak.ttf') format('truetype');
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  font-family: 'BKoodak', sans-serif;
+  direction: rtl;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar {
+  background: red;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* ========== نسخه دسکتاپ ========== */
+@media (min-width: 769px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  .logo {
+    order: 1;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    width: 120px;
+  }
+
+  .nav-menu {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-buttons {
+    order: 3;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.order-btn,
+.call-btn {
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: 2px solid red;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.order-btn {
+  background: red;
+  color: white;
+}
+
+.call-btn {
+  background: white;
+  color: red;
+}
+
+.order-btn:hover {
+  background: darkred;
+}
+
+.call-btn:hover {
+  background: red;
+  color: white;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.nav-menu li {
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-menu a:hover {
+  color: red;
+}
+
+.dropdown-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-icon {
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 240px;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.sub-dropdown,
+.refogh-dropdown {
+  position: relative;
+}
+
+.sub-dropdown-menu,
+.refogh-dropdown-menu {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  background: white;
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 6px 0;
+  z-index: 9999;
+}
+
+@media (min-width: 769px) {
+  .refogh-dropdown-menu {
+    top: -110px;
+  }
+}
+
+.sub-dropdown-icon,
+.refogh-dropdown-icon {
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.sub-dropdown-menu li,
+.refogh-dropdown-menu li {
+  padding: 8px 12px;
+}
+
+/* ========== نسخه موبایل ========== */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-container {
+    display: grid;
+    grid-template-areas: "menu logo buttons";
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 10px 16px;
+    grid-gap: 8px;
+  }
+
+  .mobile-menu-btn {
+    grid-area: menu;
+    justify-self: start;
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: red;
+    cursor: pointer;
+  }
+
+  .logo {
+    grid-area: logo;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-buttons {
+    grid-area: buttons;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: white;
+    padding: 16px;
+    border-top: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease;
+    z-index: 999;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu li,
+  .mobile-menu a,
+  .mobile-menu button {
+    display: block;
+    text-align: right;
+    font-size: 16px;
+    padding: 8px 0;
+    text-decoration: none;
+    color: black;
+    background: none;
+    border: none;
+    width: 100%;
+  }
+
+  .mobile-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+
+  .mobile-submenu {
+    padding-right: 12px;
+  }
+
+  .mobile-subsection {
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+  }
+
+  .mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: red;
+    margin-bottom: 10px;
+    cursor: pointer;
+    float: left;
+  }
+    .call-btn {
+      display: none;
+    }
+                .order-btn {
+                  background: red;
+                  color: white;
+                  font-family: 'BKoodak', sans-serif;
+                  font-size: 14px;
+                  font-weight: bold;
+                  padding: 8px 0;
+                  width: 140px;
+                  height: 40px;
+                  border: none;
+                  border-radius: 8px;
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin: 0 auto;
+                  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                  transition: background 0.3s ease;
+                }
+        
+                .order-btn:hover {
+                  background: darkred;
+                }
+/* Scrollable mobile menu */
+.mobile-menu.open {
+  max-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-menu {
+  max-height: 100vh;
+  /* ارتفاع محدود به اندازه صفحه */
+  overflow-y: auto;
+  /* فعال کردن اسکرول عمودی */
+  -webkit-overflow-scrolling: touch;
+  /* اسکرول نرم در موبایل */
+}
+.mobile-menu {
+  width: 70vw;
+}
+
+}

@@ -1,0 +1,87 @@
+.cards-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto 40px auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    direction: rtl;
+    font-family: 'BKoodak', sans-serif;
+}
+
+.card {
+    width: 270px;
+    background: white !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 420px;
+    max-height: 500px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* استایل عکس با next/image */
+.card-image {
+    width: 100%;
+    height: 180px;
+    position: relative;
+}
+
+.card-image img {
+    border-radius: 0;
+    object-fit: cover;
+}
+
+.card-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-align: right;
+}
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    background: red;
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 15px;
+    align-self: center;
+}
+
+.card a:hover {
+    background: darkred;
+}
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 1.8;
+    
+}

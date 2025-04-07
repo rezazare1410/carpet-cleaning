@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'BKoodak';
+    src: url('/fonts/BKoodak.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* تنظیم فونت برای کل پروژه */
+* {
+    font-family: 'BKoodak', Arial, sans-serif;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.big-number {
+    font-size: 20px;
+    /* اندازه بزرگ‌تر */
+    font-weight: bold;
+    /* ضخیم‌تر */
+    color: red;
+    /* رنگ قرمز (اختیاری) */
+}
+.page-content {
+    padding-top: 130px;
+    /* مقدار برابر با ارتفاع دقیق منو */
+}

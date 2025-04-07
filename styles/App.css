@@ -1,0 +1,30 @@
+/* تنظیمات کلی صفحه */
+body {
+    font-family: "Tahoma", sans-serif;
+    direction: rtl;
+    /* جهت راست‌به‌چپ */
+    text-align: right;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    padding-top: 120px;
+}
+main {
+    padding-top: 200px;
+    margin-top: 150px;
+}
+
+h1,
+h2,
+h3 {
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}

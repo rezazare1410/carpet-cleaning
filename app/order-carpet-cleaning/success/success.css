@@ -1,0 +1,29 @@
+.success-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+}
+
+.success-box {
+    background-color: #e0f8e9;
+    border: 1px solid #b4e1c1;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.success-box h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.success-box p {
+    font-size: 1.1rem;
+    color: #333;
+}

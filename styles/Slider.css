@@ -1,0 +1,154 @@
+.slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+/* متن زیر اسلایدر */
+.slider-text {
+    text-align: center;
+    margin-top: 50px;
+    padding: 25px;
+    font-family: 'BKoodak', sans-serif;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider-text h2 {
+    font-size: 28px;
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+.slider-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.slider-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* نقاط زیر اسلایدر */
+.slick-dots {
+    position: absolute !important;
+    bottom: -35px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    font-size: 14px;
+    width: 12px;
+    height: 12px;
+    background: gray;
+    border-radius: 50%;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+    background: red !important;
+}
+
+.slick-dots li button:before {
+    display: none !important;
+}
+
+/* فلش‌های چپ و راست */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none !important;
+}
+
+.custom-arrow:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* دکمه پخش/توقف */
+.pause-button {
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 2px solid gray;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pause-button:hover {
+    background: gray;
+    color: white;
+}
+
+/* فلش‌ها زمانی که منو بازه یا اسکرول شده باشه */
+.slider-container.slider-menu-open .custom-arrow,
+.slider-container.hide-arrows .custom-arrow,
+.slider-container.hide-arrows-mobile .custom-arrow,
+body.menu-open .slider-container .custom-arrow {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+/* نسخه موبایل فقط */
+@media (max-width: 768px) {
+    .slider-container.hide-arrows-mobile .custom-arrow {
+        display: none !important;
+    }
+        body.menu-open .slider-container .custom-arrow {
+            display: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+}

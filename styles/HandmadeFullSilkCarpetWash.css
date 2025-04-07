@@ -1,0 +1,270 @@
+.hero-section-full-silk {
+    background-image: url('/images/full-silk-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+}
+
+.hero-overlay-full-silk {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero-overlay-full-silk h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.hero-overlay-full-silk p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hero-overlay-full-silk button {
+    background-color: #007b9e;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-overlay-full-silk button:hover {
+    background-color: #005c78;
+}
+
+/* بخش چرا شستشو */
+.why-wash-full-silk {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.why-wash-full-silk h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.why-wash-full-silk p {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    font-size: 15px;
+    color: #333;
+}
+
+/* ویژگی‌ها */
+.features-full-silk {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-full-silk {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.feature-full-silk:hover {
+    transform: translateY(-5px);
+}
+
+.feature-full-silk img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-full-silk h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.feature-full-silk p {
+    font-size: 14px;
+    color: #444;
+}
+
+/* مراحل شستشو */
+.wash-process-full-silk {
+    padding: 60px 20px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.wash-process-full-silk h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+.process-steps-full-silk {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 0 20px;
+    direction: rtl;
+    overflow-x: auto;
+}
+
+.silk-step {
+    flex: 1 1 calc((100% - 5 * 16px) / 6);
+    min-width: 180px;
+    background-color: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.silk-step:hover {
+    transform: translateY(-5px);
+}
+
+.silk-step img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.silk-step h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.silk-step p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+}
+.hero-overlay-full-silk button {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #2e7d32;
+    /* سبز تیره */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-overlay-full-silk button:hover {
+    background-color: #388e3c;
+    /* سبز روشن‌تر در حالت hover */
+    transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+    .hero-overlay-full-silk {
+        padding: 30px;
+    }
+
+    .hero-overlay-full-silk h1 {
+        font-size: 24px;
+    }
+
+    .hero-overlay-full-silk p {
+        font-size: 15px;
+    }
+
+    .hero-overlay-full-silk button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .feature-full-silk {
+        max-width: 240px;
+    }
+
+    .silk-step {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section-full-silk {
+        height: 60vh;
+        padding: 0 15px;
+    }
+
+    .hero-overlay-full-silk {
+        padding: 20px;
+    }
+
+    .hero-overlay-full-silk h1 {
+        font-size: 20px;
+    }
+
+    .hero-overlay-full-silk p {
+        font-size: 14px;
+    }
+
+    .hero-overlay-full-silk button {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .features-full-silk {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wash-process-full-silk h2 {
+        font-size: 20px;
+    }
+
+        .process-steps-full-silk {
+            flex-wrap: wrap;
+            overflow-x: unset;
+            justify-content: center;
+        }
+
+    .silk-step {
+        flex: 0 0 auto;
+        width: 220px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-overlay-full-silk h1 {
+        font-size: 18px;
+    }
+
+    .hero-overlay-full-silk p {
+        font-size: 13px;
+    }
+
+    .hero-overlay-full-silk button {
+        font-size: 12px;
+    }
+
+    .feature-full-silk {
+        max-width: 100%;
+    }
+
+    .silk-step {
+        width: 90%;
+        max-width: 300px;
+    }
+}

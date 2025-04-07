@@ -1,0 +1,64 @@
+.repair-wrapper {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.repair-table {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 480px;
+    direction: rtl;
+}
+
+.repair-row {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.repair-cell {
+    flex: 1;
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.repair-cell.title {
+    background-color: #007B83;
+    color: white;
+    font-weight: bold;
+}
+
+.repair-cell.price {
+    color: #d10000;
+    font-weight: bold;
+}
+
+/* رسپانسیو برای موبایل و تبلت */
+@media (max-width: 768px) {
+    .repair-wrapper {
+        width: 90vw;
+    }
+
+    .repair-table {
+        width: 100%;
+    }
+
+    .repair-cell {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    .repair-row {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,168 @@
+.service-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1100px;
+    width: 90%;
+    direction: rtl;
+    font-family: 'BKoodak', sans-serif;
+}
+
+.service-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.service-info h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.service-info p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.service-list-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 8px 35px;
+    list-style: none;
+    padding: 0;
+    max-width: 750px;
+    text-align: center;
+}
+
+.service-list li {
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+    flex-wrap: wrap;
+}
+
+.order-button,
+.call-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    height: 60px;
+    min-width: 250px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.order-button {
+    background: red !important;
+    color: white !important;
+    border: 2px solid red;
+}
+
+.order-button:hover {
+    background: darkred !important;
+    color: white;
+}
+
+.call-button {
+    background: white;
+    color: red !important;
+    border: 2px solid red;
+    font-weight: bold;
+}
+
+.call-button:hover {
+    background: red;
+    color: white !important;
+}
+
+.call-button .phone-icon {
+    margin-left: 6px;
+    font-size: 17px;
+}
+
+.service-image-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.service-image-box img {
+    width: 48%;
+    max-width: 480px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+    .service-section {
+        padding: 20px;
+    }
+
+    .service-info h2 {
+        font-size: 22px;
+    }
+
+    .service-info p {
+        font-size: 15px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .order-button,
+    .call-button {
+        min-width: 90%;
+        font-size: 16px;
+        height: 50px;
+    }
+
+    .service-image-box {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .service-image-box img {
+        width: 100%;
+        height: auto;
+    }
+}

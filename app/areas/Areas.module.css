@@ -1,0 +1,76 @@
+.areasWrapper {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.imageBox img {
+    max-width: 450px;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+
+    /* برای وسط‌چین کردن محتوا */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+    min-height: 120px;
+    color: #1c2c38;
+    text-decoration: none;
+}
+
+.card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+.centerCard {
+    grid-column: 1 / -1;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .areasWrapper {
+        flex-direction: column;
+    }
+
+    .imageBox img {
+        max-width: 100%;
+    }
+
+    .cardsGrid {
+        max-width: 100%;
+    }
+}
