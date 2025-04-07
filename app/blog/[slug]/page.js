@@ -1,6 +1,4 @@
-'use client';
-
-export const runtime = 'edge';
+export const runtime = 'nodejs'; // چون از Firebase استفاده می‌کنی، باید تو Node.js اجرا بشه
 
 import BlogPostContent from './BlogPostContent';
 
