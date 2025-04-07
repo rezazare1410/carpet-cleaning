@@ -1,4 +1,4 @@
-'use client'; // چون این فایل باید حتماً کلاینت باشه
+'use client';
 
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
