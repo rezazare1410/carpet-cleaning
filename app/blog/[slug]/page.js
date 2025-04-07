@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import { format, register } from 'timeago.js';
 import fa from 'timeago.js/lib/lang/fa';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 
 import blogPosts from '@/data/blogPosts';
 import '../../../styles/blog-post.css';
@@ -126,7 +127,6 @@ export default function BlogPost() {
 
           <p>{comment.text}</p>
 
-          {/* دکمه نمایش فرم پاسخ */}
           <button
             className="send-reply"
             style={{ marginTop: '0.5rem' }}
@@ -140,7 +140,6 @@ export default function BlogPost() {
             پاسخ
           </button>
 
-          {/* فرم پاسخ فقط در صورت کلیک روی پاسخ */}
           {replyVisible[comment.id] && (
             <div className="reply-form" style={{ marginTop: '0.5rem' }}>
               <textarea
@@ -163,7 +162,6 @@ export default function BlogPost() {
             </div>
           )}
 
-          {/* حذف فقط برای ادمین */}
           {isAdmin && (
             <button
               className="delete-button"
@@ -217,7 +215,7 @@ export default function BlogPost() {
         </div>
       </div>
 
-      <a href="/blog" className="back-button">← بازگشت به وبلاگ</a>
+      <Link href="/blog" className="back-button">← بازگشت به وبلاگ</Link>
     </div>
   );
 }
