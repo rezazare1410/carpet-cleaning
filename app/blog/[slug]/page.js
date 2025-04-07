@@ -1,9 +1,9 @@
-'use client';
+export const runtime = 'edge';
 
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-const BlogPostContent = dynamic(() => import('./BlogPostContent.jsx'), {
+const BlogPostContent = dynamic(() => import('./BlogPostContent'), {
   ssr: false,
 });
 
