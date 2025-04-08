@@ -1,7 +1,6 @@
-export const runtime = 'edge'; // Cloudflare Pages فقط Edge رو می‌پذیره
-
-import BlogPostWrapper from './BlogPostWrapper';
+'use client';
+import BlogPostContent from './BlogPostContent';
 
 export default function Page() {
-  return <BlogPostWrapper />;
+  return <BlogPostContent />;
 }
