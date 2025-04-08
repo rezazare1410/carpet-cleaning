@@ -1,5 +1,7 @@
 'use client';
 
+console.log('✅ BlogPostWrapper rendered!');
+
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
