@@ -1,11 +1,7 @@
+// ⚠️ فقط در Edge Runtime، چون Cloudflare فقط همینو می‌پذیره
 export const runtime = 'edge';
 
-import dynamic from 'next/dynamic';
-
-// مستقیم BlogPostWrapper رو با ssr: false ایمپورت می‌کنیم
-const BlogPostWrapper = dynamic(() => import('./BlogPostWrapper'), {
-  ssr: false,
-});
+import BlogPostWrapper from './BlogPostWrapper';
 
 export default function Page() {
   return <BlogPostWrapper />;

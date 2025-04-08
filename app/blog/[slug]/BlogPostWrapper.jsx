@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
+// اینجا استفاده از ssr: false هیچ مشکلی نداره چون فایل کلاینتیه
 const BlogPostContent = dynamic(() => import('./BlogPostContent'), {
   ssr: false,
 });
