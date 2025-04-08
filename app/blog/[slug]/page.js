@@ -1,4 +1,5 @@
 'use client';
+export const runtime = 'edge';
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
@@ -20,7 +21,6 @@ import {
   doc
 } from 'firebase/firestore';
 
-export const runtime = 'edge';
 register('fa', fa);
 
 export default function BlogPostPage() {
