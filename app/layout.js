@@ -4,6 +4,9 @@ import Header from './_components/Header';
 import Footer from './_components/Footer';
 
 export const metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
   title: 'کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی',
   description:
     'قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌بری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.',
