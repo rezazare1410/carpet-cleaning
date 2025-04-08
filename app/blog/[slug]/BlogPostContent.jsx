@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 import blogPosts from '@/data/blogPosts';
 import '../../../styles/blog-post.css';
-
+import { db } from '@/lib/firebase';
 import {
   collection,
   addDoc,
@@ -17,7 +17,7 @@ import {
   orderBy,
   onSnapshot,
   deleteDoc,
-  doc,
+  doc
 } from 'firebase/firestore';
 
 register('fa', fa);
@@ -31,7 +31,6 @@ export default function BlogPostContent() {
   const [slug, setSlug] = useState(null);
   const [post, setPost] = useState(null);
   const [comments, setComments] = useState([]);
-  const [db, setDb] = useState(null); // ← lazy import
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [replyInputs, setReplyInputs] = useState({});
@@ -47,30 +46,23 @@ export default function BlogPostContent() {
   }, [params]);
 
   useEffect(() => {
-    // ✅ lazy-load firebase فقط در کلاینت
-    import('@/lib/firebase').then(({ db }) => {
-      setDb(db);
-    });
-  }, []);
-
-  useEffect(() => {
-    if (!slug || !db) return;
-
-    const q = query(collection(db, 'comments', slug, 'items'), orderBy('createdAt', 'asc'));
+    if (!slug) return;
+    const q = query(
+      collection(db, 'comments', slug, 'items'),
+      orderBy('createdAt', 'asc')
+    );
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const all = snapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data(),
+        ...doc.data()
       }));
       setComments(all);
     });
-
     return () => unsubscribe();
-  }, [slug, db]);
+  }, [slug]);
 
   const handleSubmit = async (e, parentId = null, overrideText = null) => {
     e.preventDefault();
-    if (!db) return;
 
     const usedName = isAdmin ? 'مدیر سایت' : parentId ? 'ناشناس' : name.trim();
     const usedText = overrideText || text.trim();
@@ -90,24 +82,22 @@ export default function BlogPostContent() {
       name: usedName,
       text: usedText,
       parentId,
-      createdAt: new Date(),
+      createdAt: new Date()
     });
 
     const emailParams = {
       name: usedName,
       message: usedText,
       time: new Date().toLocaleString('fa-IR'),
-      title: `نظر جدید برای مقاله: ${post?.title || 'بدون عنوان'}`,
+      title: `نظر جدید برای مقاله: ${post?.title || 'بدون عنوان'}`
     };
 
-    emailjs
-      .send(
-        'service_feefu0c',
-        'template_jzg3e4q',
-        emailParams,
-        'NxxmXtUdK3s_FWoJg'
-      )
-      .catch((error) => console.error('❌ خطا در ارسال ایمیل:', error));
+    emailjs.send(
+      'service_feefu0c',
+      'template_jzg3e4q',
+      emailParams,
+      'NxxmXtUdK3s_FWoJg'
+    ).catch((error) => console.error('❌ خطا در ارسال ایمیل:', error));
 
     setText('');
     setName('');
@@ -117,7 +107,6 @@ export default function BlogPostContent() {
   };
 
   const handleDelete = async (commentId) => {
-    if (!db) return;
     const ref = doc(db, 'comments', slug, 'items', commentId);
     await deleteDoc(ref);
   };
@@ -144,7 +133,7 @@ export default function BlogPostContent() {
             onClick={() =>
               setReplyVisible((prev) => ({
                 ...prev,
-                [comment.id]: !prev[comment.id],
+                [comment.id]: !prev[comment.id]
               }))
             }
           >
@@ -196,7 +185,10 @@ export default function BlogPostContent() {
       <h1 className="post-title">{post.title}</h1>
       <p className="post-date">📅 انتشار: {post.date}</p>
 
-      <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div
+        className="post-content"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
 
       <div className="comments-section">
         <h2>نظرات کاربران</h2>
@@ -223,9 +215,7 @@ export default function BlogPostContent() {
         </div>
       </div>
 
-      <Link href="/blog" className="back-button">
-        ← بازگشت به وبلاگ
-      </Link>
+      <Link href="/blog" className="back-button">← بازگشت به وبلاگ</Link>
     </div>
   );
 }
