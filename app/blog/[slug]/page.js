@@ -1,6 +1,7 @@
-'use client';
-import BlogPostContent from './BlogPostContent';
+export const runtime = 'edge';
+
+import BlogPostWrapper from './BlogPostWrapper';
 
 export default function Page() {
-  return <BlogPostContent />;
+  return <BlogPostWrapper />;
 }
