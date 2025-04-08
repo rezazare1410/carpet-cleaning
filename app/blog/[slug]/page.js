@@ -1,4 +1,4 @@
-export const runtime = 'edge'; // لازم برای Cloudflare Pages
+export const runtime = 'edge'; // Cloudflare Pages فقط Edge رو می‌پذیره
 
 import BlogPostWrapper from './BlogPostWrapper';
 
