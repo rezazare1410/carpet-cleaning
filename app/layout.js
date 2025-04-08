@@ -4,12 +4,12 @@ import Header from './_components/Header';
 import Footer from './_components/Footer';
 
 export const metadata = {
-  icons: {
-    icon: '/favicon.ico',
-  },
   title: 'کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی',
   description:
     'قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌بری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.',
+    icons: {
+    icon: '/favicon.ico',
+  },
   openGraph: {
     title: 'کارخانه قالیشویی زارع | خدمات تخصصی شستشوی فرش',
     description: 'شستشوی فرش، لکه‌بری، رفوگری و سرویس‌دهی سریع در سراسر تهران',
@@ -34,6 +34,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        {/* بقیه متاها یا تگ‌های دلخواه */}
+      </head>
       <body>
         <Header />
         {children}
