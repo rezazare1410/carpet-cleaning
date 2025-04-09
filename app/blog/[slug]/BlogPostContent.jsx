@@ -12,18 +12,21 @@ export default function BlogPostContent() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const slug = params?.slug;
+    const slug = Array.isArray(params?.slug) ? params.slug[0] : params?.slug;
     if (!slug) return;
 
     const fetchPost = async () => {
       try {
+        console.log('🟡 Slug:', slug);
         const ref = doc(db, 'blogPosts', slug);
         const snap = await getDoc(ref);
         if (snap.exists()) {
           setPost(snap.data());
+        } else {
+          console.warn('🔴 مقاله‌ای با این slug پیدا نشد:', slug);
         }
       } catch (err) {
-        console.error('خطا در دریافت مقاله:', err);
+        console.error('🔥 خطا در دریافت مقاله:', err);
       } finally {
         setLoading(false);
       }
@@ -33,14 +36,20 @@ export default function BlogPostContent() {
   }, [params]);
 
   if (loading) {
-  return (
-    <div className="post-container">
-      <p className="post-loading">در حال بارگذاری مقاله...</p>
-    </div>
-  );
-}
+    return (
+      <div className="post-container">
+        <p className="post-loading">در حال بارگذاری مقاله...</p>
+      </div>
+    );
+  }
 
-  if (!post) return <div className="blog-error">مقاله پیدا نشد.</div>;
+  if (!post) {
+    return (
+      <div className="blog-error">
+        مقاله پیدا نشد یا مشکلی در دریافت اطلاعات وجود دارد.
+      </div>
+    );
+  }
 
   return (
     <div className="post-container">
