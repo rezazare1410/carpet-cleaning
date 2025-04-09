@@ -1,8 +1,8 @@
 'use client';
 
-export const runtime = 'edge';
+import dynamic from 'next/dynamic';
 
-import BlogPostContent from './BlogPostContent';
+const BlogPostContent = dynamic(() => import('./BlogPostContent'), { ssr: false });
 
 export default function Page() {
   return <BlogPostContent />;
