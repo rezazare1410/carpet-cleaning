@@ -13,10 +13,11 @@ export default function CreatePostPage() {
     excerpt: '',
     content: '',
     category: '',
-    sortDate: null, // ✅ تاریخ میلادی برای مرتب‌سازی
+    sortDate: null,
   });
 
   const [generatedJSON, setGeneratedJSON] = useState('');
+  const [downloadUrl, setDownloadUrl] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,6 +33,10 @@ export default function CreatePostPage() {
 
     const json = JSON.stringify(output, null, 2);
     setGeneratedJSON(json);
+
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    setDownloadUrl(url);
   };
 
   return (
@@ -99,6 +104,15 @@ export default function CreatePostPage() {
         <>
           <h2>کد JSON آماده:</h2>
           <pre className="json-output">{generatedJSON}</pre>
+
+          {downloadUrl && (
+            <a
+              href={downloadUrl}
+              download={`${formData.slug || 'post'}.json`}
+            >
+              <button>📁 دانلود فایل JSON</button>
+            </a>
+          )}
         </>
       )}
     </div>

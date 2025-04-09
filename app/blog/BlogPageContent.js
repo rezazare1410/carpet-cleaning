@@ -1,82 +1,43 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
-import blogPosts from '@/data/blogPosts';
-import '@/styles/blog.css';
+import { useEffect, useState } from 'react';
+import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
 import moment from 'moment-jalaali';
+import '@/styles/blog.css';
 
 export default function BlogPageContent() {
-  const searchParams = useSearchParams();
-  const currentPage = parseInt(searchParams.get('page')) || 1;
-  const postsPerPage = 6;
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('همه');
-  const [sortOrder, setSortOrder] = useState('desc'); // پیش‌فرض: جدیدترین
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const postsRef = collection(db, 'blogPosts');
+        const q = query(postsRef, orderBy('sortDate', 'desc'), limit(12));
+        const snapshot = await getDocs(q);
+        const postsData = snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setPosts(postsData);
+      } catch (error) {
+        console.error('خطا در خواندن مقالات:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const categories = ['همه', ...new Set(blogPosts.map((p) => p.category))];
+    fetchPosts();
+  }, []);
 
-  const filteredPosts = blogPosts.filter((post) => {
-    const matchesCategory = selectedCategory === 'همه' || post.category === selectedCategory;
-    const matchesSearch =
-      post.title.includes(searchQuery) || post.excerpt.includes(searchQuery);
-    return matchesCategory && matchesSearch;
-  });
-
-  const sortedPosts = [...filteredPosts].sort((a, b) => {
-    const dateA = new Date(a.sortDate);
-    const dateB = new Date(b.sortDate);
-    return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
-  });
-
-  const totalPosts = sortedPosts.length;
-  const totalPages = Math.ceil(totalPosts / postsPerPage);
-
-  const start = (currentPage - 1) * postsPerPage;
-  const end = start + postsPerPage;
-  const currentPosts = sortedPosts.slice(start, end);
+  if (loading) return <div style={{ padding: '2rem' }}>در حال بارگذاری مقاله‌ها...</div>;
 
   return (
     <div className="blog-container">
       <h1 className="blog-title">مقالات تخصصی قالیشویی زارع</h1>
-
-      <input
-        type="text"
-        placeholder="جستجو در عنوان یا خلاصه..."
-        className="search-input"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-
-      <div className="filter-row">
-        <div className="category-filter">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={cat === selectedCategory ? 'active' : ''}
-              onClick={() => setSelectedCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="sort-select">
-          <label htmlFor="sort">مرتب‌سازی:</label>
-          <select
-            id="sort"
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value)}
-          >
-            <option value="desc">جدیدترین</option>
-            <option value="asc">قدیمی‌ترین</option>
-          </select>
-        </div>
-      </div>
-
       <div className="blog-grid">
-        {currentPosts.map((post) => (
+        {posts.map((post) => (
           <a href={`/blog/${post.slug}`} key={post.slug} className="blog-card-link">
             <div className="blog-card">
               <h2 className="post-title">{post.title}</h2>
@@ -87,20 +48,6 @@ export default function BlogPageContent() {
           </a>
         ))}
       </div>
-
-      {searchQuery === '' && selectedCategory === 'همه' && (
-        <div className="pagination">
-          {Array.from({ length: totalPages }, (_, i) => (
-            <a
-              key={i + 1}
-              href={`/blog?page=${i + 1}`}
-              className={currentPage === i + 1 ? 'active' : ''}
-            >
-              {i + 1}
-            </a>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

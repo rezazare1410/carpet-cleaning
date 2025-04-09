@@ -178,6 +178,7 @@
     cursor: pointer;
 }
 
+
 /* ریسپانسیو برای موبایل */
 @media (max-width: 768px) {
     .blog-grid {
