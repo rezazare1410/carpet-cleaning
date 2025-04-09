@@ -2,12 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '@/lib/firebase-config'; // یا مستقیم در همین فایل
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from '@/lib/firebase'; // 👈 فقط از فایل firebase.js استفاده می‌کنیم
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');

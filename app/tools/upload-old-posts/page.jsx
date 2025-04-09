@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import blogPosts from '@/data/converted_blogPosts';
+
 
 export default function UploadOldPostsPage() {
   const [status, setStatus] = useState('در حال آپلود...');
