@@ -10,6 +10,7 @@ export default function BlogPostContent() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [html, setHtml] = useState('');
 
   useEffect(() => {
     if (!slug) return;
@@ -19,7 +20,9 @@ export default function BlogPostContent() {
         const ref = doc(db, 'blogPosts', slug);
         const snap = await getDoc(ref);
         if (snap.exists()) {
-          setPost(snap.data());
+          const data = snap.data();
+          setPost(data);
+          setHtml(data.content); // رندر جداگانه
         } else {
           console.warn('🔴 سندی پیدا نشد:', slug);
         }
@@ -42,7 +45,8 @@ export default function BlogPostContent() {
       <p className="post-date">{post.date}</p>
       <div
         className="post-content"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: html }}
       />
     </div>
   );
