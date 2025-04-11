@@ -1,0 +1,29 @@
+.reply-button {
+    background-color: transparent;
+    border: 1px solid #aaa;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-left: 8px;
+}
+
+.reply-button:hover {
+    background-color: #eee;
+}
+
+.delete-btn {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}

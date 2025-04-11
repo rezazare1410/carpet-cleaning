@@ -1,0 +1,83 @@
+.comment-section {
+    margin-top: 40px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'BKoodak', sans-serif;
+}
+
+.comment-item {
+    border-right: 3px solid #ccc;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.comment-name {
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.comment-message {
+    margin: 5px 0 10px;
+    color: #333;
+    line-height: 1.8;
+}
+
+.reply-button {
+    background: none;
+    border: none;
+    color: #1976d2;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+.reply-button:hover {
+    text-decoration: underline;
+}
+
+.replies {
+    margin-top: 10px;
+}
+.delete-btn,
+.admin-auth-btn {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-top: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+.admin-button-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 6px;
+}
+
+.admin-auth-btn,
+.delete-btn,
+.logout-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #ffe5e5;
+    color: red;
+}
+
+.logout-btn {
+    background-color: #eee;
+    color: #333;
+}

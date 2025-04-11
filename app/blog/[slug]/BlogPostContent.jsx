@@ -3,9 +3,12 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import '@/styles/blog-post.css';
+import CommentForm from '@/components/comments/CommentForm';
+import CommentList from '@/components/comments/CommentList';
 
 export default function BlogPostContent() {
   const { slug } = useParams();
+  console.log('✅ Slug صفحه:', slug);
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -39,7 +42,14 @@ export default function BlogPostContent() {
         className="post-content"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+          />
+          <div className="back-to-blog">
+  <a href="/blog">← بازگشت به مقاله‌ها</a>
+</div>
+
+    
+    <CommentList postSlug={slug} />
     </div>
+    
   );
 }

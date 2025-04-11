@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // فقط خواندن مقاله‌ها
+    match /blogPosts/{document=**} {
+      allow read: if true;
+      allow write: if false; // هیچ‌کس نمی‌تونه مقاله بسازه یا حذف کنه
+    }
+
+    // دسترسی به کامنت‌ها
+    match /comments/{commentId} {
+      allow read: if true; // همه می‌تونن بخونن
+
+      // فقط ثبت کامنت مجاز باشه، نه ویرایش یا حذف توسط دیگران
+      allow create: if true;
+
+      // فقط مدیر بتونه حذف کنه
+      allow delete: if request.auth != null && request.auth.token.email == "reza.zare1410@gmail.com";
+    }
+  }
+}

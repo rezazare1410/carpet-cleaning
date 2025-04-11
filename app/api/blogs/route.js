@@ -1,21 +1,37 @@
 import { db } from '@/lib/firebase';
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  limit,
+  startAfter
+} from 'firebase/firestore';
 import { NextResponse } from 'next/server';
 
-export async function GET() {
+// تعداد مقاله در هر صفحه
+const PAGE_SIZE = 6;
+
+export async function GET(req) {
+  const url = new URL(req.url);
+  const page = parseInt(url.searchParams.get('page')) || 1;
+
   try {
     const postsRef = collection(db, 'blogPosts');
-    const q = query(postsRef, orderBy('sortDate', 'desc'), limit(12));
+    const q = query(postsRef, orderBy('sortDate', 'desc'));
     const snapshot = await getDocs(q);
 
-    const postsData = snapshot.docs.map((doc) => ({
-      ...doc.data(),
+    const allPosts = snapshot.docs.map((doc) => ({
       id: doc.id,
+      ...doc.data(),
     }));
 
-    return NextResponse.json(postsData);
+    const total = allPosts.length;
+    const start = (page - 1) * PAGE_SIZE;
+    const pagedPosts = allPosts.slice(start, start + PAGE_SIZE);
+
+    return NextResponse.json({ posts: pagedPosts, total });
   } catch (error) {
-    console.error('API Error:', error);
-    return NextResponse.json({ error: 'Failed to fetch posts' }, { status: 500 });
+    return NextResponse.json({ error: 'failed to fetch posts' }, { status: 500 });
   }
 }
