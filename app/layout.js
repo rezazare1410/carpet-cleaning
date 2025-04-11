@@ -2,12 +2,13 @@
 import './globals.css';
 import Header from './_components/Header';
 import Footer from './_components/Footer';
+import { Analytics } from '@vercel/analytics/react'; // ✅ اضافه کردن این خط
 
 export const metadata = {
   title: 'کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی',
   description:
     'قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌بری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.',
-    icons: {
+  icons: {
     icon: '/favicon.ico',
   },
   openGraph: {
@@ -36,12 +37,12 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        {/* بقیه متاها یا تگ‌های دلخواه */}
       </head>
       <body>
         <Header />
         {children}
         <Footer />
+        <Analytics /> {/* ✅ اضافه کردن این خط */}
       </body>
     </html>
   );
