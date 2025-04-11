@@ -27,3 +27,6 @@ body {
     padding-top: 130px;
     /* مقدار برابر با ارتفاع دقیق منو */
 }
+ul li::marker {
+    content: none;
+}
