@@ -41,7 +41,7 @@ export default function RootCarpetRepairPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/4.jpg" alt="دارکشی" />
+          <img src="/images/44.webp" alt="دارکشی" />
         </div>
       </div>
     </main>

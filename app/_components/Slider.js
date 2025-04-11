@@ -64,10 +64,6 @@ const SliderComponent = () => {
           قالیشویی به شما ارائه دهیم
         </p>
       </div>
-
-      <button className="pause-button" onClick={() => setAutoplay(!autoplay)}>
-        {autoplay ? "⏸️" : "▶️"}
-      </button>
     </div>
   );
 };

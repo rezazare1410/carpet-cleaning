@@ -76,26 +76,7 @@
     display: none !important;
 }
 
-/* فلش‌های چپ و راست */
-.custom-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    color: white;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    z-index: 1000;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none !important;
-}
+
 
 .custom-arrow:hover {
     background: rgba(0, 0, 0, 0.9);
@@ -109,21 +90,6 @@
     right: 20px;
 }
 
-/* دکمه پخش/توقف */
-.pause-button {
-    position: absolute;
-    bottom: -55px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    border: 2px solid gray;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
 
 .pause-button:hover {
     background: gray;
