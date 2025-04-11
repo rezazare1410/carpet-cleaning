@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import moment from 'moment-jalaali';
 import '@/styles/blog.css';
 
@@ -13,16 +11,11 @@ export default function BlogPageContent() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const postsRef = collection(db, 'blogPosts');
-        const q = query(postsRef, orderBy('sortDate', 'desc'), limit(12));
-        const snapshot = await getDocs(q);
-        const postsData = snapshot.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        setPosts(postsData);
+        const res = await fetch('/api/blogs');
+        const data = await res.json();
+        setPosts(data);
       } catch (error) {
-        console.error('خطا در خواندن مقالات:', error);
+        console.error('خطا در دریافت مقالات:', error);
       } finally {
         setLoading(false);
       }
