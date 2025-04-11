@@ -29,15 +29,34 @@ const ServiceHighlight = () => {
           سفارش قالیشویی آنلاین
         </Link>
         <a href="tel:02177169450" className="call-button">۰۲۱-۷۷۱۶۹۴۵۰</a>
-
       </div>
 
       {/* تصاویر خدمات */}
       <div className="service-image-box">
-        <Image src="/images/free-delivery.jpg" alt="قالیشویی حرفه‌ای" width={250} height={150} />
-        <Image src="/images/handmade-wash.jpg" alt="لکه‌بری تخصصی فرش" width={250} height={150} />
-        <Image src="/images/invoice.jpg" alt="صدور فاکتور رسمی" width={250} height={150} />
-        <Image src="/images/stain-removal.jpg" alt="فرش تمیز و آماده تحویل" width={250} height={150} />
+        <Image
+          src="/images/free-delivery.jpg"
+          alt="خدمات حمل و نقل رایگان با ماشین‌های مسقف"
+          width={250}
+          height={150}
+        />
+        <Image
+          src="/images/handmade-wash.jpg"
+          alt="شستشوی حرفه‌ای فرش دستبافت"
+          width={250}
+          height={150}
+        />
+        <Image
+          src="/images/invoice.jpg"
+          alt="ارائه فاکتور رسمی و معتبر"
+          width={250}
+          height={150}
+        />
+        <Image
+          src="/images/stain-removal.jpg"
+          alt="پاکسازی تخصصی لکه‌ها از سطح فرش"
+          width={250}
+          height={150}
+        />
       </div>
     </div>
   );
