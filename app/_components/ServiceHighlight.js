@@ -34,10 +34,10 @@ const ServiceHighlight = () => {
 
       {/* تصاویر خدمات */}
       <div className="service-image-box">
-        <Image src="/images/free-delivery.jpg" alt="قالیشویی حرفه‌ای" width={250} height={150} />
-        <Image src="/images/handmade-wash.jpg" alt="لکه‌بری تخصصی فرش" width={250} height={150} />
-        <Image src="/images/invoice.jpg" alt="صدور فاکتور رسمی" width={250} height={150} />
-        <Image src="/images/stain-removal.jpg" alt="فرش تمیز و آماده تحویل" width={250} height={150} />
+        <Image src="/images/free-delivery.webp" alt="قالیشویی حرفه‌ای" width={250} height={150} />
+        <Image src="/images/handmade-wash.webp" alt="لکه‌بری تخصصی فرش" width={250} height={150} />
+        <Image src="/images/invoice.webp" alt="صدور فاکتور رسمی" width={250} height={150} />
+        <Image src="/images/stain-removal.webp" alt="فرش تمیز و آماده تحویل" width={250} height={150} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,27 +18,48 @@ const SliderComponent = () => {
     slidesToScroll: 1,
     autoplay: autoplay,
     autoplaySpeed: 3000,
-    arrows: false, // ⛔️ فلش‌ها به طور کامل غیرفعال شدن
+    arrows: false,
   };
 
   return (
     <div className="slider-container">
       <Slider {...settings}>
         <div>
-          <Image src="/images/slider/image4.png" alt="اسلاید ۱" width={1000} height={400} />
+          <Image
+            src="/images/slider/image4.webp"
+            alt="اسلاید ۱"
+            width={1000}
+            height={400}
+            priority // ✅ برای بهبود LCP
+          />
         </div>
         <div>
-          <Image src="/images/slider/image2.png" alt="اسلاید ۲" width={1000} height={400} />
+          <Image
+            src="/images/slider/image2.webp"
+            alt="اسلاید ۲"
+            width={1000}
+            height={400}
+          />
         </div>
         <div>
-          <Image src="/images/slider/image55.png" alt="اسلاید ۳" width={1000} height={400} />
+          <Image
+            src="/images/slider/image55.webp"
+            alt="اسلاید ۳"
+            width={1000}
+            height={400}
+          />
         </div>
       </Slider>
 
       <div className="slider-text">
         <h2>کــــارخــــانــه قــالــیــشــویـــی زارع</h2>
         <p>مجــری کلـــیه خدمـــات شســــتشو و ترمیــــــم حرفـــه ای</p>
-        <p>در جهت تحقق اهداف بلندمدت قالیشویی زارع در ارائه خدمات نوین و تکمیلی، و با توجه به همراهی و استقبال شما شهروندان عزیز، تصمیم گرفتیم با راه‌اندازی قالیشویی زارع، خدمات باکیفیت و شایسته‌ای در حوزه قالیشویی به شما ارائه دهیم</p>
+        <p>
+          در جهت تحقق اهداف بلندمدت قالیشویی زارع در ارائه خدمات نوین و تکمیلی،
+          و با توجه به همراهی و استقبال شما شهروندان عزیز، تصمیم گرفتیم با
+          راه‌اندازی قالیشویی زارع، خدمات باکیفیت و شایسته‌ای در حوزه قالیشویی
+          به شما ارائه دهیم
+        </p>
       </div>
 
       <button className="pause-button" onClick={() => setAutoplay(!autoplay)}>
