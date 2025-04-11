@@ -40,7 +40,7 @@ export default function ContactPage() {
             <li>📍 تهران، خیابان پیروزی، خیابان ششم نیروی هوایی، بین فرعی 6.28 و 6.29، پلاک 93، دفتر قالیشویی زارع</li>
             <li>☎️ 021-77169450</li>
             <li>📱 09221105868</li>
-            <li><a href="mailto:info@zarecarpet.com">info@carpetzare.com</a></li>
+            <li><a href="mailto:info@zarecarpet.com">info@zarecarpet.com</a></li>
             <li>🕒 ساعات کاری: هر روز از ساعت ۸ صبح الی ۲۲ شب</li>
           </ul>
         </div>
