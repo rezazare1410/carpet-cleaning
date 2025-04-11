@@ -9,7 +9,7 @@ import { FaChevronDown, FaChevronLeft, FaBars, FaTimes } from "react-icons/fa";
 import dynamic from "next/dynamic";
 
 // لود تنبل برای جلوگیری از SSR در اسلایدر
-const SliderComponent = dynamic(() => import("./Slider"), { ssr: false });
+  const SliderComponent = dynamic(() => import("./Slider"), { ssr: false });
 
 const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false);

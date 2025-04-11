@@ -12,8 +12,13 @@ export default function BlogPostContent() {
   const [loading, setLoading] = useState(true);
   const [html, setHtml] = useState('');
 
+  console.log('🧩 BlogPostContent Render شد');
+  console.log('📎 Slug داخل فانکشن:', slug);
+
   useEffect(() => {
     if (!slug) return;
+
+    console.log('🔍 Slug دریافت‌شده:', slug);
 
     const fetchPost = async () => {
       try {
@@ -21,8 +26,9 @@ export default function BlogPostContent() {
         const snap = await getDoc(ref);
         if (snap.exists()) {
           const data = snap.data();
+          console.log('✅ مقاله پیدا شد:', data);
           setPost(data);
-          setHtml(data.content); // رندر جداگانه
+          setHtml(data.content);
         } else {
           console.warn('🔴 سندی پیدا نشد:', slug);
         }
