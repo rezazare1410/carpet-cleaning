@@ -24,29 +24,32 @@ const SliderComponent = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        <div>
+        <div className="slide-wrapper">
           <Image
             src="/images/slider/image4.webp"
             alt="اسلاید ۱"
-            width={1000}
-            height={400}
-            priority // ✅ برای بهبود LCP
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1200px"
+            style={{ objectFit: "cover", borderRadius: "10px" }}
           />
         </div>
-        <div>
+        <div className="slide-wrapper">
           <Image
             src="/images/slider/image2.webp"
             alt="اسلاید ۲"
-            width={1000}
-            height={400}
+            fill
+            sizes="(max-width: 768px) 100vw, 1200px"
+            style={{ objectFit: "cover", borderRadius: "10px" }}
           />
         </div>
-        <div>
+        <div className="slide-wrapper">
           <Image
             src="/images/slider/image55.webp"
             alt="اسلاید ۳"
-            width={1000}
-            height={400}
+            fill
+            sizes="(max-width: 768px) 100vw, 1200px"
+            style={{ objectFit: "cover", borderRadius: "10px" }}
           />
         </div>
       </Slider>
@@ -55,15 +58,15 @@ const SliderComponent = () => {
         <h2>کــــارخــــانــه قــالــیــشــویـــی زارع</h2>
         <p>مجــری کلـــیه خدمـــات شســــتشو و ترمیــــــم حرفـــه ای</p>
         <p>
-          در جهت تحقق اهداف بلندمدت قالیشویی زارع در ارائه خدمات نوین و تکمیلی،
-          و با توجه به همراهی و استقبال شما شهروندان عزیز، تصمیم گرفتیم با
-          راه‌اندازی قالیشویی زارع، خدمات باکیفیت و شایسته‌ای در حوزه قالیشویی
-          به شما ارائه دهیم
+          در جهت تحقق اهداف بلندمدت قالیشویی زارع در ارائه خدمات نوین و
+          تکمیلی، و با توجه به همراهی و استقبال شما شهروندان عزیز، تصمیم گرفتیم
+          با راه‌اندازی قالیشویی زارع، خدمات باکیفیت و شایسته‌ای در حوزه
+          قالیشویی به شما ارائه دهیم
         </p>
       </div>
 
       <button className="pause-button" onClick={() => setAutoplay(!autoplay)}>
-        {autoplay ? "⏸️ متوقف کن" : "▶️ پخش کن"}
+        {autoplay ? "⏸️" : "▶️"}
       </button>
     </div>
   );

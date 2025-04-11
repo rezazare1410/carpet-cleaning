@@ -140,6 +140,11 @@ body.menu-open .slider-container .custom-arrow {
     pointer-events: none !important;
     z-index: -1 !important;
 }
+.slide-wrapper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
 
 /* نسخه موبایل فقط */
 @media (max-width: 768px) {
