@@ -2,38 +2,24 @@
 
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import '@/styles/blog-post.css';
 
 export default function BlogPostContent() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [html, setHtml] = useState('');
-
-  console.log('🧩 BlogPostContent Render شد');
-  console.log('📎 Slug داخل فانکشن:', slug);
 
   useEffect(() => {
     if (!slug) return;
 
-    console.log('🔍 Slug دریافت‌شده:', slug);
-
     const fetchPost = async () => {
       try {
-        const ref = doc(db, 'blogPosts', slug);
-        const snap = await getDoc(ref);
-        if (snap.exists()) {
-          const data = snap.data();
-          console.log('✅ مقاله پیدا شد:', data);
-          setPost(data);
-          setHtml(data.content);
-        } else {
-          console.warn('🔴 سندی پیدا نشد:', slug);
-        }
+        const res = await fetch(`/api/blogs/${slug}`);
+        if (!res.ok) throw new Error('Post not found');
+        const data = await res.json();
+        setPost(data);
       } catch (err) {
-        console.error('🔥 خطا:', err);
+        console.error('🔥 خطا در دریافت مقاله:', err);
       } finally {
         setLoading(false);
       }
@@ -52,7 +38,7 @@ export default function BlogPostContent() {
       <div
         className="post-content"
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </div>
   );
