@@ -1,5 +1,12 @@
+import { db } from '@/lib/firebase';
+import { collection, getDocs } from 'firebase/firestore';
+
 export async function GET() {
-  const pages = [
+  const domain = "https://zarecarpet.com";
+  const today = new Date().toISOString().split("T")[0];
+
+  // صفحات ثابت سایت
+  const staticPages = [
     "", "about", "contact", "faq", "blog", "areas",
     "order-carpet-cleaning", "service-pricing",
     "handmade-wool-carpet-wash", "handmade-silk-carpet-wash",
@@ -10,20 +17,38 @@ export async function GET() {
     "darkeshi", "final-inspection"
   ];
 
-  const domain = "https://zarecarpet.com";
-  const today = new Date().toISOString().split("T")[0];
+  const staticUrls = staticPages.map((page) => {
+    const url = `${domain}${page ? `/${page}` : ''}`;
+    const priority = page === "" ? "1.0" : "0.8";
 
-  const urls = pages.map((page) => `
-    <url>
-      <loc>${domain}/${page}</loc>
-      <lastmod>${today}</lastmod>
-      <priority>${page === "" ? "1.0" : "0.8"}</priority>
-    </url>
-  `).join("");
+    return `
+      <url>
+        <loc>${url}</loc>
+        <lastmod>${today}</lastmod>
+        <priority>${priority}</priority>
+      </url>`;
+  });
+
+  // مقالات وبلاگ از Firestore
+  let blogUrls = [];
+  try {
+    const snapshot = await getDocs(collection(db, "blogPosts"));
+    blogUrls = snapshot.docs.map(doc => {
+      const slug = doc.id;
+      return `
+        <url>
+          <loc>${domain}/blog/${slug}</loc>
+          <lastmod>${today}</lastmod>
+          <priority>0.6</priority>
+        </url>`;
+    });
+  } catch (err) {
+    console.error("خطا در واکشی مقالات بلاگ برای sitemap:", err);
+  }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urls}
+    ${[...staticUrls, ...blogUrls].join('\n')}
   </urlset>`;
 
   return new Response(xml, {
