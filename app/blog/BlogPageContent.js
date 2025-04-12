@@ -81,7 +81,8 @@ export default function BlogPageContent() {
       {totalPages > 1 && (
         <div className="pagination">
           <button disabled={currentPage === 1} onClick={() => goToPage(currentPage - 1)}>
-            ← صفحه قبل
+            →
+ صفحه قبل
           </button>
 
           {renderPageButtons()}
