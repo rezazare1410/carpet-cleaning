@@ -39,6 +39,26 @@ export default function BlogPageContent() {
     router.push(`/blog?page=${page}`);
   };
 
+  const renderPageButtons = () => {
+    const pages = [];
+    const start = Math.max(1, currentPage - 1);
+    const end = Math.min(totalPages, currentPage + 1);
+
+    for (let i = start; i <= end; i++) {
+      pages.push(
+        <button
+          key={i}
+          onClick={() => goToPage(i)}
+          className={currentPage === i ? 'active-page' : ''}
+        >
+          {i}
+        </button>
+      );
+    }
+
+    return pages;
+  };
+
   if (loading) return <div style={{ padding: '2rem' }}>در حال بارگذاری مقاله‌ها...</div>;
 
   return (
@@ -58,21 +78,17 @@ export default function BlogPageContent() {
         ))}
       </div>
 
-      {/* دکمه‌های صفحه‌بندی */}
       {totalPages > 1 && (
         <div className="pagination">
           <button disabled={currentPage === 1} onClick={() => goToPage(currentPage - 1)}>
-→ صفحه قبل 
-</button>
+            ← صفحه قبل
+          </button>
 
-<span>
-  صفحه {currentPage} از {totalPages}
-</span>
+          {renderPageButtons()}
 
-<button disabled={currentPage === totalPages} onClick={() => goToPage(currentPage + 1)}>
-   صفحه بعد ←
-  </button>
-
+          <button disabled={currentPage === totalPages} onClick={() => goToPage(currentPage + 1)}>
+            صفحه بعد ← 
+          </button>
         </div>
       )}
     </div>

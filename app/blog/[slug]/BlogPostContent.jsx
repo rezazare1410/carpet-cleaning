@@ -3,8 +3,7 @@
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import '@/styles/blog-post.css';
-import CommentForm from '@/components/comments/CommentForm';
-import CommentList from '@/components/comments/CommentList';
+
 
 export default function BlogPostContent() {
   const { slug } = useParams();
@@ -48,7 +47,7 @@ export default function BlogPostContent() {
 </div>
 
     
-    <CommentList postSlug={slug} />
+    
     </div>
     
   );

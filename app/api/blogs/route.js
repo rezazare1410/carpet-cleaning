@@ -1,3 +1,10 @@
+
+export const dynamic = 'force-dynamic';
+
+
+
+// app/api/blogs/route.js
+
 import { db } from '@/lib/firebase';
 import {
   collection,
@@ -5,11 +12,9 @@ import {
   query,
   orderBy,
   limit,
-  startAfter
 } from 'firebase/firestore';
 import { NextResponse } from 'next/server';
 
-// تعداد مقاله در هر صفحه
 const PAGE_SIZE = 6;
 
 export async function GET(req) {
