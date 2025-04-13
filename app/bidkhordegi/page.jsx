@@ -1,49 +1,41 @@
-'use client';
-import '../../styles/bidkhordegi.css';
+import BidkhordegiPage from './BidkhordegiPage';
 
-const cardData = [
-  {
-    title: 'بیدخوردگی فرش یعنی چی؟',
-    text: 'بیدخوردگی یعنی آسیب دیدن فرش به‌دلیل تغذیه حشرات بید از الیاف طبیعی آن، مخصوصاً در فرش‌های دستباف پشمی یا ابریشمی.',
-  },
-  {
-    title: 'چطور می‌فهمیم فرش بید زده؟',
-    text: 'وجود سوراخ‌های ریز، نخ‌نما شدن بافت، خُرد شدن تار و پود، یا پیدا کردن پودر یا حشره مرده در اطراف فرش نشونه بیدخوردگیه.',
-  },
-  {
-    title: 'ترمیم بیدخوردگی چطور انجام می‌شه؟',
-    text: 'ابتدا بخش‌های آسیب‌دیده پاک‌سازی و ضدعفونی می‌شن، سپس با نخ‌های مشابه بافت، قسمت‌های خورده‌شده بازسازی و پر می‌شن.',
-  },
-  {
-    title: 'آیا فرش بیدزده دوباره مثل قبل می‌شه؟',
-    text: 'بله، اگر آسیب زیاد نباشه و کار به‌موقع انجام بشه، فرش کاملاً قابل ترمیمه و زیبایی و استحکامش برمی‌گرده.',
-  },
-];
+export const metadata = {
+  title: 'ترمیم بیدخوردگی فرش | قالیشویی زارع',
+  description: 'ترمیم تخصصی بیدخوردگی در فرش‌های دستبافت پشمی و ابریشمی با ضدعفونی، پاک‌سازی و بافت مجدد قسمت‌های آسیب‌دیده.',
+};
 
-export default function RootCarpetRepairPage() {
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "ترمیم بیدخوردگی فرش",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "قالیشویی زارع",
+    "image": "https://zarecarpet.com/icons/logo1.png",
+    "telephone": "+982177169450",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Tehran"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tehran",
+      "addressRegion": "Tehran",
+      "addressCountry": "IR"
+    }
+  },
+  "description": "رفع بیدخوردگی فرش با پاک‌سازی، ضدعفونی و بافت مجدد بخش‌های آسیب‌دیده. بازگرداندن استحکام و ظاهر فرش‌های دستباف آسیب‌دیده از بید."
+};
+
+export default function Bidkhordegi() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش ترمیم و رفع بیدخوردگی فرش</a>
-          </div>
-        </div>
-
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/bidkhordegi.jpg" alt="بیدخوردگی" />
-        </div>
-      </div>
-    </main>
+    <>
+      <BidkhordegiPage />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
   );
 }

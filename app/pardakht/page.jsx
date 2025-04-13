@@ -1,49 +1,41 @@
-'use client';
-import '../../styles/pardakht.css';
+import PardakhtPage from './PardakhtPage';
 
-const cardData = [
-  {
-    title: 'پرداخت فرش یعنی چی؟',
-    text: 'پرداخت فرش یعنی کوتاه کردن پرزهای فرش به‌صورت یکنواخت برای بهتر دیده شدن نقش و افزایش زیبایی و نظم ظاهری فرش.',
-  },
-  {
-    title: 'چرا پرداخت فرش انجام می‌شه؟',
-    text: 'بعد از بافت، پرزها بلند و نامنظم هستن؛ با پرداخت، سطح فرش صاف می‌شه و نقوش آن واضح‌تر و دقیق‌تر دیده می‌شن.',
-  },
-  {
-    title: 'پرداخت روی چه نوع فرش‌هایی انجام می‌شه؟',
-    text: 'پرداخت معمولاً روی فرش‌های دستباف تازه‌بافت یا فرش‌هایی که پس از ترمیم یا شستشو نیاز به یکنواخت‌سازی دارن، انجام می‌شه.',
-  },
-  {
-    title: 'پرداخت فرش چطور انجام می‌شه؟',
-    text: 'با استفاده از ماشین پرداخت یا قیچی مخصوص، استادکار پرزهای اضافی رو به دقت کوتاه می‌کنه تا سطحی صاف و منظم ایجاد بشه.',
-  },
-];
+export const metadata = {
+  title: 'پرداخت فرش | قالیشویی زارع',
+  description: 'خدمات پرداخت تخصصی برای فرش‌های دستبافت و تازه‌بافت. صاف کردن پرزها، وضوح بهتر نقش‌ها و افزایش جلوه بصری فرش.',
+};
 
-export default function RootCarpetRepairPage() {
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "پرداخت فرش",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "قالیشویی زارع",
+    "image": "https://zarecarpet.com/icons/logo1.png",
+    "telephone": "+982177169450",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Tehran"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tehran",
+      "addressRegion": "Tehran",
+      "addressCountry": "IR"
+    }
+  },
+  "description": "پرداخت فرش یعنی کوتاه کردن پرزهای نامنظم برای بهتر دیده شدن نقش و افزایش زیبایی. با قیچی مخصوص یا ماشین پرداخت توسط استادکار انجام می‌شود."
+};
+
+export default function Pardakht() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش پرداخت فرش</a>
-          </div>
-        </div>
-
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/pardakht.jpg" alt="پرداخت" />
-        </div>
-      </div>
-    </main>
+    <>
+      <PardakhtPage />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
   );
 }

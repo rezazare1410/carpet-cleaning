@@ -1,49 +1,41 @@
-'use client';
-import '../../styles/sabidegi.css';
+import SabidegiPage from './SabidegiPage';
 
-const cardData = [
-  {
-    title: 'سابیدگی فرش یعنی چی؟',
-    text: 'سابیدگی یعنی از بین رفتن تدریجی پرزهای فرش به‌دلیل رفت‌وآمد زیاد، استفاده طولانی یا تماس مداوم با مبلمان.',
-  },
-  {
-    title: 'سابیدگی چه اثری روی فرش داره؟',
-    text: 'باعث کم‌رنگ شدن طرح، نازک شدن بافت و در موارد شدید، از بین رفتن کامل نقشه یا سطح فرش می‌شه.',
-  },
-  {
-    title: 'ترمیم سابیدگی چطور انجام می‌شه؟',
-    text: 'ابتدا ناحیه‌ی سابیده‌شده پاک‌سازی می‌شه و سپس با نخ‌های همرنگ و بافت مشابه، قسمت آسیب‌دیده بازسازی یا پرزگیری مجدد می‌شه.',
-  },
-  {
-    title: 'آیا ترمیم سابیدگی فرش قابل تشخیصه؟',
-    text: 'اگر توسط استادکار حرفه‌ای انجام بشه، محل ترمیم به‌سختی قابل تشخیصه و فرش دوباره ظاهر زیبا و سالمی پیدا می‌کنه.',
-  },
-];
+export const metadata = {
+  title: 'ترمیم سابیدگی فرش | قالیشویی زارع',
+  description: 'بازسازی نواحی سابیده‌شده فرش‌های دستبافت با پرزگیری، بافت مجدد و استفاده از نخ‌های همرنگ. ترمیم حرفه‌ای با ظاهر یکنواخت.',
+};
 
-export default function RootCarpetRepairPage() {
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "ترمیم سابیدگی فرش",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "قالیشویی زارع",
+    "image": "https://zarecarpet.com/icons/logo1.png",
+    "telephone": "+982177169450",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Tehran"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tehran",
+      "addressRegion": "Tehran",
+      "addressCountry": "IR"
+    }
+  },
+  "description": "ترمیم حرفه‌ای سابیدگی فرش با پاک‌سازی ناحیه آسیب‌دیده و بازسازی با پرزهای هماهنگ. مناسب برای فرش‌های دستبافت و ماشینی با رفت‌وآمد بالا."
+};
+
+export default function Sabidegi() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش ترمیم و رفع سابیدگی فرش</a>
-          </div>
-        </div>
-
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/sabidegi.jpg" alt="سابیدگی" />
-        </div>
-      </div>
-    </main>
+    <>
+      <SabidegiPage />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
   );
 }

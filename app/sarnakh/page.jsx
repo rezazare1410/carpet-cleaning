@@ -1,49 +1,41 @@
-'use client';
-import '../../styles/sarnakh.css';
+import SarnakhPage from './SarnakhPage';
 
-const cardData = [
-  {
-    title: 'سرنخ فرش یعنی چی؟',
-    text: 'سرنخ به نخ‌هایی گفته می‌شه که از بافت اصلی فرش بیرون زده یا شل شده و نظم سطح فرش رو به‌هم زده.',
-  },
-  {
-    title: ' چرا سرنخ در فرش ایجاد می‌شه؟',
-    text: 'به‌دلیل شستشوی غیراصولی، سایش، کشیده شدن اشیا یا استفاده طولانی‌مدت، گره‌ها یا نخ‌ها ممکنه شل شده و بیرون بزنن.',
-  },
-  {
-    title: ' چطور سرنخ فرش رو ترمیم می‌کنن؟',
-    text: 'سرنخ‌ها به‌آرامی به بافت برمی‌گردن یا کوتاه می‌شن، و در صورت نیاز، ناحیه با نخ‌های همرنگ تقویت و فیکس می‌شه.',
-  },
-  {
-    title: 'آیا رفع سرنخ باعث زیبایی بیشتر فرش می‌شه؟',
-    text: 'بله، با اصلاح سرنخ، سطح فرش مرتب‌تر، صاف‌تر و نقش‌ها واضح‌تر دیده می‌شن و ظاهر فرش حرفه‌ای‌تر به نظر میاد.',
-  },
-];
+export const metadata = {
+  title: 'رفع سرنخ فرش | قالیشویی زارع',
+  description: 'ترمیم تخصصی سرنخ‌های بیرون‌زده در فرش‌های دستباف و ماشینی. بازگرداندن نظم سطح فرش با کوتاه کردن، فیکس یا تقویت نخ‌ها.',
+};
 
-export default function RootCarpetRepairPage() {
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "رفع سرنخ فرش",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "قالیشویی زارع",
+    "image": "https://zarecarpet.com/icons/logo1.png",
+    "telephone": "+982177169450",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Tehran"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tehran",
+      "addressRegion": "Tehran",
+      "addressCountry": "IR"
+    }
+  },
+  "description": "رفع سرنخ‌های بیرون‌زده از بافت فرش با تکنیک‌های فیکس، کوتاه کردن یا بازگشت به بافت اصلی. مناسب فرش‌هایی با ظاهر نامرتب یا آسیب‌دیده."
+};
+
+export default function Sarnakh() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش رفع سرنخ فرش</a>
-          </div>
-        </div>
-
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/sarnakh.jpg" alt="سرنخ" />
-        </div>
-      </div>
-    </main>
+    <>
+      <SarnakhPage />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
   );
 }

@@ -1,49 +1,41 @@
-'use client';
-import '../../styles/Darkeshi.css';
+import DarkeshiPage from './DarkeshiPage';
 
-const cardData = [
-  {
-    title: 'دارکشی فرش یعنی چی؟',
-    text: 'دارکشی یعنی صاف و متقارن کردن فرشی که به‌مرور زمان یا به‌دلیل بافت نامنظم، دچار کجی، پیچ‌خوردگی یا جمع‌شدگی شده.',
-  },
-  {
-    title: 'چرا فرش کج یا جمع می‌شه؟',
-    text: 'به‌خاطر شستشوی غیراصولی، نگهداری نامناسب، یا بافت غیر استاندارد، فرش ممکنه از حالت صاف و مستطیلی خارج بشه.',
-  },
-  {
-    title: 'دارکشی چطور انجام می‌شه؟',
-    text: 'فرش روی چهارچوب چوبی یا فلزی کشیده می‌شه و با استفاده از ابزار مخصوص، به‌آرامی و با دقت فرم اصلی بهش برگردونده می‌شه.',
-  },
-  {
-    title: 'آیا دارکشی باعث آسیب به فرش می‌شه؟',
-    text: 'نه، اگر توسط افراد متخصص انجام بشه، کاملاً ایمنه و حتی به عمر بیشتر و فرم صحیح فرش کمک می‌کنه.',
-  },
-];
+export const metadata = {
+  title: 'دارکشی فرش | قالیشویی زارع',
+  description: 'خدمات تخصصی دارکشی برای صاف و متقارن کردن فرش‌هایی که جمع یا کج شده‌اند. بازگرداندن فرم اصلی و افزایش عمر فرش.',
+};
 
-export default function RootCarpetRepairPage() {
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "دارکشی فرش",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "قالیشویی زارع",
+    "image": "https://zarecarpet.com/icons/logo1.png",
+    "telephone": "+982177169450",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Tehran"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tehran",
+      "addressRegion": "Tehran",
+      "addressCountry": "IR"
+    }
+  },
+  "description": "دارکشی فرش یعنی بازگرداندن فرم مستطیلی و صاف به فرش‌هایی که دچار کجی یا جمع‌شدگی شده‌اند. این کار با ابزارهای مخصوص و بدون آسیب انجام می‌شود."
+};
+
+export default function Darkeshi() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش دارکشی فرش</a>
-          </div>
-        </div>
-
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/44.webp" alt="دارکشی" />
-        </div>
-      </div>
-    </main>
+    <>
+      <DarkeshiPage />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
   );
 }

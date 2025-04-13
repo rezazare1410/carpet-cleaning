@@ -1,49 +1,41 @@
-'use client';
-import '../../styles/Shirazeh-doozi.css';
+import ShirazehDooziPage from './ShirazehDooziPage';
 
-const cardData = [
-  {
-    title: 'شیرازه‌دوزی فرش یعنی چی؟',
-    text: 'شیرازه‌دوزی یعنی محکم کردن و پیچیدن لبه‌های طولی فرش برای جلوگیری از باز شدن یا فرسوده شدن تارها.',
-  },
-  {
-    title: 'چرا شیرازه‌دوزی اهمیت داره؟',
-    text: 'اگر شیرازه‌ها آسیب ببینن، احتمال باز شدن بافت فرش و آسیب به ساختار اصلی اون وجود داره.',
-  },
-  {
-    title: 'چه زمانی باید شیرازه‌دوزی انجام بشه؟',
-    text: 'وقتی که لبه‌های فرش ساییده، باز شده یا شیرازه‌ها نخ‌نما و فرسوده شدن.',
-  },
-  {
-    title: 'آیا شیرازه‌دوزی ظاهر فرش رو هم بهتر می‌کنه؟',
-    text: 'بله، شیرازه‌دوزی باعث مرتب شدن کناره‌ها و زیبایی بیشتر و ظاهر منظم‌تر فرش می‌شه.',
-  },
-];
+export const metadata = {
+  title: 'شیرازه‌دوزی فرش | قالیشویی زارع',
+  description: 'شیرازه‌دوزی حرفه‌ای برای ترمیم و تقویت لبه‌های فرش دستبافت. جلوگیری از باز شدن بافت و افزایش عمر فرش شما با شیرازه‌دوزی اصولی.',
+};
 
-export default function RootCarpetRepairPage() {
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "شیرازه‌دوزی فرش",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "قالیشویی زارع",
+    "image": "https://zarecarpet.com/icons/logo1.png",
+    "telephone": "+982177169450",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Tehran"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tehran",
+      "addressRegion": "Tehran",
+      "addressCountry": "IR"
+    }
+  },
+  "description": "شیرازه‌دوزی برای محکم‌سازی و مرتب‌سازی لبه‌های فرش، جلوگیری از ساییدگی و باز شدن تار و پود فرش. مناسب برای فرش‌های دستبافت و ماشینی."
+};
+
+export default function ShirazehPage() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش شیرازه‌دوزی فرش</a>
-          </div>
-        </div>
-
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/Shirazeh.jpg" alt="شیرازه دوزی" />
-        </div>
-      </div>
-    </main>
+    <>
+      <ShirazehDooziPage />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+    </>
   );
 }
