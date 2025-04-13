@@ -1,5 +1,6 @@
 'use client';
 import '../../styles/carpet-cleaning-west-tehran.css';
+import Head from 'next/head';
 
 const cardData = [
   {
@@ -18,7 +19,7 @@ const cardData = [
     title: 'آیا قبل از شستشو فرش کارشناسی می‌شه؟',
     text: 'بله، قبل از شستشو، کارشناس ما فرش‌تون رو در محل بررسی می‌کنه تا نوع شستشو، لکه‌گیری یا ترمیم لازم رو مشخص کنه و با خیال راحت اقدام کنیم.',
   },
-   {
+  {
     title: 'با چه دستگاه‌هایی فرش شسته می‌شه؟',
     text: 'فرش‌ها با دستگاه‌های تمام‌اتوماتیک شسته می‌شن که ضدعفونی هم انجام می‌دن و بدون آسیب‌رسوندن به فرش، اون رو کاملاً تمیز می‌کنن.',
   },
@@ -30,28 +31,59 @@ const cardData = [
 
 export default function RootCarpetRepairPage() {
   return (
-    <main className="root-repair-page">
-      <div className="hero-root-section">
-        {/* اول کارت‌ها */}
-        <div className="hero-right-content">
-          <div className="cards-grid">
-            {cardData.map((card, index) => (
-              <div key={index} className="info-card">
-                <h3 className="info-card-title">{card.title}</h3>
-                <p className="info-card-text">{card.text}</p>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش قالیشویی غرب تهران</a>
-          </div>
-        </div>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "قالیشویی زارع",
+              "image": "https://zarecarpet.com/icons/logo1.png",
+              "url": "https://zarecarpet.com/carpet-cleaning-west-tehran",
+              "telephone": "+982177169450",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Tehran",
+                "addressRegion": "Tehran",
+                "addressCountry": "IR"
+              },
+              "areaServed": {
+                "@type": "Place",
+                "name": "Sadeghieh, Sattarkhan, Marzdaran, Punak, Janat Abad, Shahran, Gisha, Kashani, Sazman Barnameh, Aryashahr, Tarasht, Azadi, Ekbatan, Apadana, Tehran Sar, Chitgar, Vardavard, Shahr Ziba, Olympic Village, Ashrafi Esfahani Highway, Hakim Highway"
+              },
+              "description": "قالیشویی زارع با پوشش کامل در غرب تهران، در محله‌هایی مانند صادقیه، ستارخان، مرزداران، پونک، شهران، جنت‌آباد، تهرانسر، اکباتان، آزادی، گیشا و چیتگر، خدمات حرفه‌ای قالیشویی، لکه‌گیری و ریشه‌دوزی را با سرویس دهی سریع ارائه می‌دهد."
+            }
+            `
+          }}
+        />
+      </Head>
 
-        {/* بعد تصویر */}
-        <div className="hero-image">
-          <img src="/images/zareeast.jpg" alt="قالیشویی غرب تهران" />
+      <main className="root-repair-page">
+        <div className="hero-root-section">
+          {/* اول کارت‌ها */}
+          <div className="hero-right-content">
+            <div className="cards-grid">
+              {cardData.map((card, index) => (
+                <div key={index} className="info-card">
+                  <h3 className="info-card-title">{card.title}</h3>
+                  <p className="info-card-text">{card.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="button-container">
+              <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش قالیشویی غرب تهران</a>
+            </div>
+          </div>
+
+          {/* بعد تصویر */}
+          <div className="hero-image">
+            <img src="/images/zareeast.jpg" alt="قالیشویی غرب تهران" />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
