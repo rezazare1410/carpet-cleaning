@@ -70,7 +70,8 @@ export default function BlogPageContent() {
           <a href={`/blog/${post.slug}`} key={post.slug} className="blog-card-link">
             <div className="blog-card">
               <h2 className="post-title">{post.title}</h2>
-              <p className="post-excerpt">{post.excerpt}</p>
+              <div className="post-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+
               <p className="post-date">📅 انتشار: {post.date}</p>
               <span className="read-more">ادامه مطلب</span>
             </div>
