@@ -1,5 +1,11 @@
+// فایل سروری نهایی: app/faq/page.jsx (با اسکیما)
+
 import FAQPageContent from './FAQPageContent';
-import Head from 'next/head';
+import { Metadata } from 'next';
+
+export const metadata = {
+  title: 'سؤالات متداول قالیشویی زارع'
+};
 
 const schemaData = {
   "@context": "https://schema.org",
@@ -131,13 +137,10 @@ const schemaData = {
 export default function FAQPage() {
   return (
     <>
-      <Head>
-        <title>سؤالات متداول قالیشویی زارع</title>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <FAQPageContent />
     </>
   );
