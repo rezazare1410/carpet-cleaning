@@ -1,8 +1,7 @@
-// app/layout.js
 import './globals.css';
 import Header from './_components/Header';
 import Footer from './_components/Footer';
-import { Analytics } from '@vercel/analytics/react'; // ✅ اضافه کردن این خط
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی',
@@ -14,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: 'کارخانه قالیشویی زارع | خدمات تخصصی شستشوی فرش',
     description: 'شستشوی فرش، لکه‌بری، رفوگری و سرویس‌دهی سریع در سراسر تهران',
-    url: 'https://yourdomain.com',
+    url: 'https://zarecarpet.com',
     siteName: 'قالیشویی زارع',
     images: [
       {
@@ -33,16 +32,43 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "قالیشویی زارع",
+        "url": "https://zarecarpet.com",
+        "logo": "https://zarecarpet.com/icons/logo1.png",
+        "sameAs": ["https://instagram.com/zarecarpet"]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://zarecarpet.com",
+        "name": "قالیشویی زارع",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://zarecarpet.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="fa" dir="rtl">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       </head>
       <body>
         <Header />
         {children}
         <Footer />
-        <Analytics /> {/* ✅ اضافه کردن این خط */}
+        <Analytics />
       </body>
     </html>
   );
