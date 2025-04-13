@@ -35,7 +35,7 @@ const Footer = () => {
               <div className="contact-icon"><FaHeadset /></div>
               <div className="contact-info">
                 <span className="contact-title">واحد خدمات:</span>
-                <span className="contact-number">09221105868</span>
+                <span className="contact-number">09231105868</span>
               </div>
             </li>
             <li className="contact-item">
