@@ -41,7 +41,7 @@ export default function ShirazehDooziPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/Shirazeh.jpg" alt="شیرازه دوزی" />
+          <img src="/images/Shirazeh.webp" alt="شیرازه دوزی" />
         </div>
       </div>
     </main>

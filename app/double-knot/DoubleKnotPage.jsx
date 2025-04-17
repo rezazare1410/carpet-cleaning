@@ -42,7 +42,7 @@ export default function DoubleKnotPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/double-knot-repair.jpg" alt="دوگره فرش" />
+          <img src="/images/double-knot-repair.webp" alt="دوگره فرش" />
         </div>
       </div>
     </main>

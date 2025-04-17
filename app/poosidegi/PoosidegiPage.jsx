@@ -41,7 +41,7 @@ export default function PoosidegiPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/poosidegi.jpg" alt="پوسیدگی" />
+          <img src="/images/poosidegi.webp" alt="پوسیدگی" />
         </div>
       </div>
     </main>

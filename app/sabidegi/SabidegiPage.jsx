@@ -41,7 +41,7 @@ export default function SabidegiPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/sabidegi.jpg" alt="سابیدگی" />
+          <img src="/images/sabidegi.webp" alt="سابیدگی" />
         </div>
       </div>
     </main>

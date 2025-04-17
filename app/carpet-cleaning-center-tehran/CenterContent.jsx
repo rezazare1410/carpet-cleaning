@@ -51,7 +51,7 @@ export default function CenterContent() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/zareeast.jpg" alt="قالیشویی مرکز تهران" />
+          <img src="/images/zareeast.webp" alt="قالیشویی مرکز تهران" />
         </div>
       </div>
     </main>

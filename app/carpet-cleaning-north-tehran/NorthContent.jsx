@@ -49,7 +49,7 @@ export default function NorthContent() {
         </div>
 
         <div className="hero-image">
-          <img src="/images/zareeast.jpg" alt="قالیشویی شمال تهران" />
+          <img src="/images/zareeast.webp" alt="قالیشویی شمال تهران" />
         </div>
       </div>
     </main>

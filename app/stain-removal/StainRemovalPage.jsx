@@ -29,7 +29,7 @@ export default function StainRemovalPage() {
         </div>
 
         <div className="center-image">
-          <img src="/images/lakehgiri.jpg" alt="لکه‌گیری فرش با ابزار حرفه‌ای" />
+          <img src="/images/lakehgiri.webp" alt="لکه‌گیری فرش با ابزار حرفه‌ای" />
         </div>
 
         <div className="card-group right">

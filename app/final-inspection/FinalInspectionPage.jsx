@@ -38,7 +38,7 @@ export default function FinalInspectionPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/final-inspection.jpg" alt="کنترل نهایی فرش" />
+          <img src="/images/final-inspection.webp" alt="کنترل نهایی فرش" />
         </div>
       </div>
     </main>

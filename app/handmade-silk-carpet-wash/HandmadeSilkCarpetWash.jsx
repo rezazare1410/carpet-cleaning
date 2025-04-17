@@ -24,19 +24,19 @@ export default function HandmadeSilkCarpetWash() {
 
         <div className="features-silk">
           <div className="feature-silk">
-            <img src="/icons/silk-color.png" alt="حفظ درخشندگی" />
+            <img src="/icons/silk-color.webp" alt="حفظ درخشندگی" />
             <h3>حفظ درخشندگی ابریشم</h3>
             <p>شوینده‌های مناسب باعث باقی ماندن درخشندگی طبیعی الیاف می‌شوند.</p>
           </div>
 
           <div className="feature-silk">
-            <img src="/icons/silk-soft.png" alt="لطافت فرش" />
+            <img src="/icons/silk-soft.webp" alt="لطافت فرش" />
             <h3>حفظ لطافت ابریشم</h3>
             <p>شستشوی اصولی از خشک و شکننده شدن الیاف جلوگیری می‌کند.</p>
           </div>
 
           <div className="feature-silk">
-            <img src="/icons/silk-shape.png" alt="فرم فرش" />
+            <img src="/icons/silk-shape.webp" alt="فرم فرش" />
             <h3>جلوگیری از تغییر فرم</h3>
             <p>با کنترل رطوبت و فشار، از تاب‌خوردگی و چروک جلوگیری می‌شود.</p>
           </div>
@@ -49,37 +49,37 @@ export default function HandmadeSilkCarpetWash() {
         <div className="process-steps-silk">
 
           <div className="silk-step">
-            <img src="/icons/inspection1.png" alt="بررسی اولیه" />
+            <img src="/icons/inspection1.webp" alt="بررسی اولیه" />
             <h3>بررسی اولیه و تست رنگ</h3>
             <p>تشخیص حساسیت رنگ، بافت و آسیب‌دیدگی قبل از شستشو.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/pre-cleaning.png" alt="پاکسازی اولیه" />
+            <img src="/icons/pre-cleaning.webp" alt="پاکسازی اولیه" />
             <h3>پاکسازی سطحی</h3>
             <p>گردگیری نرم بدون آسیب به تار و پود ابریشم.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/silk-wash.png" alt="شستشوی ملایم" />
+            <img src="/icons/silk-wash.webp" alt="شستشوی ملایم" />
             <h3>شستشو با شوینده مخصوص</h3>
             <p>استفاده از شوینده‌ی ملایم مخصوص الیاف طبیعی ابریشم.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/dry.png" alt="خشک‌کردن" />
+            <img src="/icons/dry.webp" alt="خشک‌کردن" />
             <h3>خشک‌کردن با تهویه</h3>
             <p>خشک‌کردن با تهویه ملایم و بدون تاب خوردگی فرش.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/inspection-final.png" alt="کنترل نهایی" />
+            <img src="/icons/inspection-final.webp" alt="کنترل نهایی" />
             <h3>کنترل نهایی و اتو</h3>
             <p>بررسی کیفیت نهایی، تثبیت رنگ و اتوکشی سبک.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/delivery-silk.png" alt="تحویل فرش" />
+            <img src="/icons/delivery-silk.webp" alt="تحویل فرش" />
             <h3>تحویل فرش به مشتری</h3>
             <p>بسته‌بندی، اطمینان از سلامت، و تحویل نهایی به مشتری.</p>
           </div>

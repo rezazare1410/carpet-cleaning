@@ -49,7 +49,7 @@ export default function WestContent() {
         </div>
 
         <div className="hero-image">
-          <img src="/images/zareeast.jpg" alt="قالیشویی غرب تهران" />
+          <img src="/images/zareeast.webp" alt="قالیشویی غرب تهران" />
         </div>
       </div>
     </main>

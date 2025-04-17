@@ -59,6 +59,17 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        {/* ✅ preload فونت BKoodak */}
+        <link
+          rel="preload"
+          href="/fonts/BKoodak.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+
+        {/* ✅ اسکیمای ساختاری */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}

@@ -41,7 +41,7 @@ export default function SarnakhPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/sarnakh.jpg" alt="سرنخ" />
+          <img src="/images/sarnakh.webp" alt="سرنخ" />
         </div>
       </div>
     </main>

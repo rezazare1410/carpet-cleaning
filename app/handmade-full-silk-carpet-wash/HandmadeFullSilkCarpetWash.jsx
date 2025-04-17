@@ -27,19 +27,19 @@ const HandmadeFullSilkCarpetWash = () => {
 
         <div className="features-full-silk">
           <div className="feature-full-silk">
-            <img src="/icons/shine-protection11.png" alt="درخشندگی طبیعی" />
+            <img src="/icons/shine-protection11.webp" alt="درخشندگی طبیعی" />
             <h3>حفظ درخشندگی طبیعی ابریشم</h3>
             <p>با شوینده‌های اختصاصی، فرش همچنان براق و درخشان می‌ماند.</p>
           </div>
 
           <div className="feature-full-silk">
-            <img src="/icons/texture-safe11.png" alt="عدم آسیب به بافت" />
+            <img src="/icons/texture-safe11.webp" alt="عدم آسیب به بافت" />
             <h3>محافظت از بافت ظریف</h3>
             <p>فرآیند ملایم از ساییدگی یا پوسیدگی الیاف جلوگیری می‌کند.</p>
           </div>
 
           <div className="feature-full-silk">
-            <img src="/icons/form-stability11.png" alt="ثبات شکل فرش" />
+            <img src="/icons/form-stability11.webp" alt="ثبات شکل فرش" />
             <h3>ثبات شکل و ابعاد</h3>
             <p>با کنترل دقیق رطوبت، تاب‌خوردگی و جمع‌شدگی رخ نمی‌دهد.</p>
           </div>
@@ -52,37 +52,37 @@ const HandmadeFullSilkCarpetWash = () => {
         <div className="process-steps-full-silk">
 
           <div className="silk-step">
-            <img src="/icons/inspection11.png" alt="بررسی اولیه" />
+            <img src="/icons/inspection11.webp" alt="بررسی اولیه" />
             <h3>بررسی اولیه و تست رنگ</h3>
             <p>شناسایی حساسیت بافت، رنگ و آسیب‌های احتمالی قبل از شروع کار.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/dust-remove11.png" alt="گردگیری" />
+            <img src="/icons/dust-remove11.webp" alt="گردگیری" />
             <h3>گردگیری بسیار ملایم</h3>
             <p>با ابزارهای خاص، بدون هیچ ضربه یا فشاری.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/soft-wash11.png" alt="شستشوی بسیار ملایم" />
+            <img src="/icons/soft-wash11.webp" alt="شستشوی بسیار ملایم" />
             <h3>شستشوی بسیار ملایم</h3>
             <p>با شوینده‌های خنثی و دمای کنترل‌شده برای حفظ رنگ و لطافت.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/rinse11.png" alt="آبکشی اصولی" />
+            <img src="/icons/rinse11.webp" alt="آبکشی اصولی" />
             <h3>آبکشی اصولی</h3>
             <p>با کنترل فشار و دما برای جلوگیری از کدری یا چسبندگی.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/dry11.png" alt="خشک‌کردن با تهویه" />
+            <img src="/icons/dry11.webp" alt="خشک‌کردن با تهویه" />
             <h3>خشک‌کردن با تهویه کنترل‌شده</h3>
             <p>در فضای سربسته با تهویه مناسب برای حفظ فرم.</p>
           </div>
 
           <div className="silk-step">
-            <img src="/icons/final-check11.png" alt="کنترل نهایی" />
+            <img src="/icons/final-check11.webp" alt="کنترل نهایی" />
             <h3>کنترل نهایی و تحویل</h3>
             <p>بررسی کامل، بسته‌بندی و تحویل با تضمین کیفیت.</p>
           </div>

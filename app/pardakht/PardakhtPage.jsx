@@ -41,7 +41,7 @@ export default function PardakhtPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/pardakht.jpg" alt="پرداخت" />
+          <img src="/images/pardakht.webp" alt="پرداخت" />
         </div>
       </div>
     </main>

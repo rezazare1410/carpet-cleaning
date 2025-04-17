@@ -41,7 +41,7 @@ export default function CharmDooziPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/Shirazeh.jpg" alt="چرم دوزی" />
+          <img src="/images/Shirazeh.webp" alt="چرم دوزی" />
         </div>
       </div>
     </main>

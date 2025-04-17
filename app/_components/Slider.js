@@ -30,6 +30,8 @@ const SliderComponent = () => {
             alt="اسلاید ۱"
             fill
             priority
+            placeholder="blur"
+            blurDataURL="/images/slider/image4-blur.webp" // ← تصویر بسیار کوچک بلور‌شده
             sizes="(max-width: 768px) 100vw, 1200px"
             style={{ objectFit: "cover", borderRadius: "10px" }}
           />

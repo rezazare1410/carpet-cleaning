@@ -5,7 +5,7 @@ body {
 
 /* ==== HERO SECTION ==== */
 .hero-section {
-    background-image: url('/images/machine-carpet.jpg');
+    background-image: url('/images/machine-carpet.webp');
     /* عکس بنر فرش ماشینی */
     background-size: cover;
     background-position: center;
