@@ -49,9 +49,9 @@ export default function BlogPageContent() {
         <button
           key={i}
           onClick={() => goToPage(i)}
-          className={currentPage === i ? 'active-page' : ''}
+          className={`pagination-button ${currentPage === i ? 'active' : ''}`}
         >
-          {i}
+          {i.toLocaleString('fa')}
         </button>
       );
     }
@@ -71,7 +71,6 @@ export default function BlogPageContent() {
             <div className="blog-card">
               <h2 className="post-title">{post.title}</h2>
               <div className="post-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-
               <p className="post-date">📅 انتشار: {post.date}</p>
               <span className="read-more">ادامه مطلب</span>
             </div>
@@ -81,15 +80,22 @@ export default function BlogPageContent() {
 
       {totalPages > 1 && (
         <div className="pagination">
-          <button disabled={currentPage === 1} onClick={() => goToPage(currentPage - 1)}>
-            →
- صفحه قبل
+          <button
+            onClick={() => goToPage(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="pagination-button"
+          >
+            → صفحه قبل
           </button>
 
           {renderPageButtons()}
 
-          <button disabled={currentPage === totalPages} onClick={() => goToPage(currentPage + 1)}>
-            صفحه بعد ← 
+          <button
+            onClick={() => goToPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="pagination-button"
+          >
+            صفحه بعد ←
           </button>
         </div>
       )}

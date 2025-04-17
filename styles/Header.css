@@ -59,6 +59,11 @@
   }
 }
 
+.order-btn:focus-visible {
+  outline: 2px solid #fff;
+  background-color: #b71c1c;
+}
+
 .order-btn,
 .call-btn {
   border-radius: 25px;
