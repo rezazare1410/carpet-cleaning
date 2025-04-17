@@ -87,9 +87,7 @@
   background: red;
   color: white;
 }
-.order-btn:hover {
-  background: darkred;
-}
+
 
 .nav-menu ul {
   display: flex;
