@@ -41,7 +41,7 @@ export default function BidkhordegiPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/bidkhordegi.jpg" alt="بیدخوردگی" />
+          <img src="/images/bidkhordegi.webp" alt="بیدخوردگی" />
         </div>
       </div>
     </main>

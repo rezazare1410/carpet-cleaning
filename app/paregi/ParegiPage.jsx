@@ -41,7 +41,7 @@ export default function ParegiPage() {
 
         {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/paregi.jpg" alt="ترمیم پارگی فرش" />
+          <img src="/images/paregi.webp" alt="ترمیم پارگی فرش" />
         </div>
       </div>
     </main>

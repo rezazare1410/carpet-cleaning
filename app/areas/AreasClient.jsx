@@ -35,7 +35,7 @@ export default function AreasClient() {
   return (
     <div className={styles.areasWrapper}>
       <div className={styles.imageBox}>
-        <img src="/images/area.jpg" alt="سرویس دهی تهران" />
+        <img src="/images/area.webp" alt="سرویس دهی تهران" />
       </div>
 
       <div className={styles.cardsGrid}>
