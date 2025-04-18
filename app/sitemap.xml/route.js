@@ -25,6 +25,7 @@ export async function GET() {
       <url>
         <loc>${url}</loc>
         <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>${priority}</priority>
       </url>`;
   });
@@ -39,11 +40,12 @@ export async function GET() {
         <url>
           <loc>${domain}/blog/${slug}</loc>
           <lastmod>${today}</lastmod>
+          <changefreq>monthly</changefreq>
           <priority>0.6</priority>
         </url>`;
     });
   } catch (err) {
-    console.error("خطا در واکشی مقالات بلاگ برای sitemap:", err);
+    console.error("❌ خطا در واکشی مقالات بلاگ برای sitemap:", err);
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
