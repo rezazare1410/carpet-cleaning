@@ -13,15 +13,6 @@ import { NextResponse } from 'next/server';
 
 const PAGE_SIZE = 6;
 
-// تابع برای رندوم‌سازی آرایه
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
 export async function GET(req) {
   const url = new URL(req.url);
   const page = parseInt(url.searchParams.get('page')) || 1;
@@ -37,13 +28,10 @@ export async function GET(req) {
       ...doc.data(),
     }));
 
-    // حذف مقاله فعلی از لیست
+    // حذف مقاله فعلی از لیست (مثلاً برای "مطالب مرتبط")
     if (excludeSlug) {
       allPosts = allPosts.filter((post) => post.slug !== excludeSlug);
     }
-
-    // رندوم‌سازی لیست
-    allPosts = shuffle(allPosts);
 
     const total = allPosts.length;
     const start = (page - 1) * PAGE_SIZE;
