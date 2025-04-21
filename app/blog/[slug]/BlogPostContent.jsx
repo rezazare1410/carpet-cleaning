@@ -34,7 +34,7 @@ export default function BlogPostContent() {
 
     const fetchRelated = async () => {
       try {
-        const res = await fetch(`/api/blogs?page=1&excludeSlug=${slug}`);
+        const res = await fetch(`/api/related-posts?excludeSlug=${slug}`);
         const data = await res.json();
         setRelatedPosts(data.posts.slice(0, 3));
       } catch (err) {
