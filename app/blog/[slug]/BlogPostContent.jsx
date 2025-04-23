@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import '@/styles/blog-post.css';
 
 export default function BlogPostContent() {
@@ -49,32 +50,38 @@ export default function BlogPostContent() {
   if (!post) return <p className="blog-error">مقاله‌ای یافت نشد.</p>;
 
   return (
-    <div className="post-container">
-      <h1 className="post-title">{post.title}</h1>
-      <p className="post-date">{post.date}</p>
+    <>
+      <Head>
+        <link rel="canonical" href={`https://zarecarpet.com/blog/${slug}`} />
+      </Head>
 
-      <div
-        className="post-content"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <div className="post-container">
+        <h1 className="post-title">{post.title}</h1>
+        <p className="post-date">{post.date}</p>
 
-      <div className="back-to-blog">
-        <a href="/blog">← بازگشت به مقاله‌ها</a>
-      </div>
+        <div
+          className="post-content"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
 
-      {relatedPosts.length > 0 && (
-        <div className="related-posts">
-          <h3>مطالب مشابه</h3>
-          <ul>
-            {relatedPosts.map((item) => (
-              <li key={item.slug}>
-                <a href={`/blog/${item.slug}`}>{item.title}</a>
-              </li>
-            ))}
-          </ul>
+        <div className="back-to-blog">
+          <a href="/blog">← بازگشت به مقاله‌ها</a>
         </div>
-      )}
-    </div>
+
+        {relatedPosts.length > 0 && (
+          <div className="related-posts">
+            <h3>مطالب مشابه</h3>
+            <ul>
+              {relatedPosts.map((item) => (
+                <li key={item.slug}>
+                  <a href={`/blog/${item.slug}`}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
