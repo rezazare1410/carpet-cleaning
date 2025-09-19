@@ -48,8 +48,41 @@ export default function BlogPostContent() {
   if (loading) return <p className="post-loading">در حال بارگذاری...</p>;
   if (!post) return <p className="blog-error">مقاله‌ای یافت نشد.</p>;
 
+  // ✅ ساخت Article Schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt || post.content?.slice(0, 150),
+    "author": {
+      "@type": "Organization",
+      "name": "قالیشویی زارع"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "قالیشویی زارع",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zarecarpet.com/icons/logo1.png"
+      }
+    },
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://zarecarpet.com/blog/${slug}`
+    },
+    "image": post.image || "https://zarecarpet.com/images/cover.jpg"
+  };
+
   return (
     <div className="post-container">
+      {/* ✅ Article Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       <h1 className="post-title">{post.title}</h1>
       <p className="post-date">{post.date}</p>
 

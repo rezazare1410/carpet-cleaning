@@ -13,9 +13,15 @@ export async function GET(req, { params }) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 });
     }
 
-    return NextResponse.json({ id: snap.id, ...snap.data() });
+    const data = snap.data();
+
+    return NextResponse.json({
+      id: snap.id,
+      slug,
+      ...data,
+    });
   } catch (err) {
-    console.error('API Blog Post Error:', err);
+    console.error('❌ API Blog Post Error:', err);
     return NextResponse.json({ error: 'Error fetching post' }, { status: 500 });
   }
 }

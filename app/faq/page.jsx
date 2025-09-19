@@ -1,10 +1,12 @@
-// فایل سروری نهایی: app/faq/page.jsx (با اسکیما)
-
 import FAQPageContent from './FAQPageContent';
-import { Metadata } from 'next';
 
 export const metadata = {
-  title: 'سؤالات متداول قالیشویی زارع'
+  title: 'سؤالات متداول قالیشویی زارع',
+  description:
+    'پاسخ به رایج‌ترین سؤالات مشتریان درباره خدمات قالیشویی زارع؛ شامل زمان تحویل، روش‌های شستشو، ضمانت کیفیت، رفوگری و هزینه‌ها.',
+  alternates: {
+    canonical: '/faq',
+  },
 };
 
 const schemaData = {
