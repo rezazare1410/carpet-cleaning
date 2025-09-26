@@ -14,7 +14,8 @@ export async function GET() {
     "root-carpet-repair", "double-knot", "Shirazeh-doozi",
     "charm-doozi", "paregi", "pardakht", "poosidegi",
     "bidkhordegi", "sabidegi", "sarnakh", "stain-removal",
-    "darkeshi", "final-inspection" ,"carpet-cleaning-east-tehran" , "carpet-cleaning-west-tehran" , "carpet-cleaning-north-tehran" , "carpet-cleaning-south-tehran" , "carpet-cleaning-center-tehran"
+    "darkeshi", "final-inspection" ,"carpet-cleaning-east-tehran" , "carpet-cleaning-west-tehran" , "carpet-cleaning-north-tehran" , "carpet-cleaning-south-tehran" , "carpet-cleaning-center-tehran" ,
+    "repair-services"
   ];
 
   const staticUrls = staticPages.map((page) => {
