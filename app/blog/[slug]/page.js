@@ -10,12 +10,19 @@ import {
   query,
   where,
 } from "firebase/firestore";
+
 import { db } from "@/lib/firebase";
 import BlogPostContent from "./BlogPostContent";
 
-export const runtime = "nodejs";
-
 const FIRESTORE_TIMEOUT = 8000;
+
+function normalizeSlug(value = "") {
+  try {
+    return decodeURIComponent(value).normalize("NFC");
+  } catch {
+    return value.normalize("NFC");
+  }
+}
 
 function withTimeout(request) {
   let timeoutId;
@@ -40,10 +47,6 @@ function makeSerializable(value) {
     return value.toDate().toISOString();
   }
 
-  if (value instanceof Date) {
-    return value.toISOString();
-  }
-
   if (Array.isArray(value)) {
     return value.map(makeSerializable);
   }
@@ -58,22 +61,24 @@ function makeSerializable(value) {
 }
 
 async function fetchPost(slug) {
-  // ابتدا مقاله را با شناسه سند پیدا می‌کنیم.
-  const documentRef = doc(db, "blogPosts", slug);
+  const normalizedSlug = normalizeSlug(slug);
+
+  // ابتدا جست‌وجو با شناسهٔ سند Firestore
+  const documentRef = doc(db, "blogPosts", normalizedSlug);
   const documentSnapshot = await withTimeout(getDoc(documentRef));
 
   if (documentSnapshot.exists()) {
     return makeSerializable({
-      id: documentSnapshot.id,
-      slug: documentSnapshot.data().slug || slug,
       ...documentSnapshot.data(),
+      id: documentSnapshot.id,
+      slug: documentSnapshot.data().slug || normalizedSlug,
     });
   }
 
-  // اگر شناسه سند با آدرس برابر نبود، فیلد slug را جست‌وجو می‌کنیم.
+  // اگر شناسهٔ سند نبود، جست‌وجو با فیلد slug
   const postsQuery = query(
     collection(db, "blogPosts"),
-    where("slug", "==", slug),
+    where("slug", "==", normalizedSlug),
     limit(1),
   );
 
@@ -86,9 +91,9 @@ async function fetchPost(slug) {
   const matchedDocument = querySnapshot.docs[0];
 
   return makeSerializable({
-    id: matchedDocument.id,
-    slug,
     ...matchedDocument.data(),
+    id: matchedDocument.id,
+    slug: matchedDocument.data().slug || normalizedSlug,
   });
 }
 
@@ -141,7 +146,8 @@ function getIsoDate(value) {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = normalizeSlug(rawSlug);
 
   try {
     const post = await getPost(slug);
@@ -202,7 +208,9 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = normalizeSlug(rawSlug);
+
   const post = await getPost(slug);
 
   if (!post) {
