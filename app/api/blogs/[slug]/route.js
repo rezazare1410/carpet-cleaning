@@ -1,36 +1,66 @@
 import { db } from "@/lib/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  limit,
+  query,
+  where,
+} from "firebase/firestore";
 import { NextResponse } from "next/server";
 
 const FIRESTORE_TIMEOUT = 8000;
 
-function getDocWithTimeout(ref) {
-  return Promise.race([
-    getDoc(ref),
+function withTimeout(request) {
+  let timeoutId;
 
-    new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error("Firestore request timed out"));
-      }, FIRESTORE_TIMEOUT);
-    }),
-  ]);
+  const timeout = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => {
+      reject(new Error("Firestore request timed out"));
+    }, FIRESTORE_TIMEOUT);
+  });
+
+  return Promise.race([request, timeout]).finally(() => {
+    clearTimeout(timeoutId);
+  });
 }
 
 export async function GET(req, { params }) {
   const { slug } = await params;
 
   try {
-    const ref = doc(db, "blogPosts", slug);
-    const snap = await getDocWithTimeout(ref);
+    // ابتدا جست‌وجو با شناسه سند
+    const documentRef = doc(db, "blogPosts", slug);
+    const documentSnapshot = await withTimeout(getDoc(documentRef));
 
-    if (!snap.exists()) {
+    if (documentSnapshot.exists()) {
+      return NextResponse.json({
+        id: documentSnapshot.id,
+        slug: documentSnapshot.data().slug || slug,
+        ...documentSnapshot.data(),
+      });
+    }
+
+    // سپس جست‌وجو با فیلد slug
+    const postsQuery = query(
+      collection(db, "blogPosts"),
+      where("slug", "==", slug),
+      limit(1),
+    );
+
+    const querySnapshot = await withTimeout(getDocs(postsQuery));
+
+    if (querySnapshot.empty) {
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
+    const matchedDocument = querySnapshot.docs[0];
+
     return NextResponse.json({
-      id: snap.id,
+      id: matchedDocument.id,
       slug,
-      ...snap.data(),
+      ...matchedDocument.data(),
     });
   } catch (error) {
     console.error("API Blog Post Error:", error);

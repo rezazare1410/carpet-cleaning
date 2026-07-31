@@ -1,7 +1,15 @@
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
 import { notFound } from "next/navigation";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  limit,
+  query,
+  where,
+} from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import BlogPostContent from "./BlogPostContent";
 
@@ -9,16 +17,18 @@ export const runtime = "nodejs";
 
 const FIRESTORE_TIMEOUT = 8000;
 
-function getDocWithTimeout(ref) {
-  return Promise.race([
-    getDoc(ref),
+function withTimeout(request) {
+  let timeoutId;
 
-    new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error("Firestore request timed out"));
-      }, FIRESTORE_TIMEOUT);
-    }),
-  ]);
+  const timeout = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => {
+      reject(new Error("Firestore request timed out"));
+    }, FIRESTORE_TIMEOUT);
+  });
+
+  return Promise.race([request, timeout]).finally(() => {
+    clearTimeout(timeoutId);
+  });
 }
 
 function makeSerializable(value) {
@@ -48,17 +58,37 @@ function makeSerializable(value) {
 }
 
 async function fetchPost(slug) {
-  const ref = doc(db, "blogPosts", slug);
-  const snap = await getDocWithTimeout(ref);
+  // ابتدا مقاله را با شناسه سند پیدا می‌کنیم.
+  const documentRef = doc(db, "blogPosts", slug);
+  const documentSnapshot = await withTimeout(getDoc(documentRef));
 
-  if (!snap.exists()) {
+  if (documentSnapshot.exists()) {
+    return makeSerializable({
+      id: documentSnapshot.id,
+      slug: documentSnapshot.data().slug || slug,
+      ...documentSnapshot.data(),
+    });
+  }
+
+  // اگر شناسه سند با آدرس برابر نبود، فیلد slug را جست‌وجو می‌کنیم.
+  const postsQuery = query(
+    collection(db, "blogPosts"),
+    where("slug", "==", slug),
+    limit(1),
+  );
+
+  const querySnapshot = await withTimeout(getDocs(postsQuery));
+
+  if (querySnapshot.empty) {
     return null;
   }
 
+  const matchedDocument = querySnapshot.docs[0];
+
   return makeSerializable({
-    id: snap.id,
+    id: matchedDocument.id,
     slug,
-    ...snap.data(),
+    ...matchedDocument.data(),
   });
 }
 
@@ -97,7 +127,9 @@ function getImageUrl(image) {
 }
 
 function getIsoDate(value) {
-  if (!value) return undefined;
+  if (!value) {
+    return undefined;
+  }
 
   const timestamp = Date.parse(value);
 
@@ -126,7 +158,9 @@ export async function generateMetadata({ params }) {
 
     const description = getDescription(post);
     const image = getImageUrl(post.image);
-    const canonicalUrl = `https://zarecarpet.com/blog/${slug}`;
+    const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(
+      slug,
+    )}`;
 
     return {
       title: `${post.title} | قالیشویی زارع`,
@@ -161,7 +195,7 @@ export async function generateMetadata({ params }) {
       description:
         "مطالب تخصصی درباره شستشو، نگهداری و ترمیم فرش توسط قالیشویی زارع.",
       alternates: {
-        canonical: `https://zarecarpet.com/blog/${slug}`,
+        canonical: `https://zarecarpet.com/blog/${encodeURIComponent(slug)}`,
       },
     };
   }
@@ -176,10 +210,13 @@ export default async function Page({ params }) {
   }
 
   const publishedDate = getIsoDate(post.date || post.createdAt);
-
   const modifiedDate = getIsoDate(
     post.updatedAt || post.date || post.createdAt,
   );
+
+  const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(
+    slug,
+  )}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -202,7 +239,7 @@ export default async function Page({ params }) {
     dateModified: modifiedDate,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://zarecarpet.com/blog/${slug}`,
+      "@id": canonicalUrl,
     },
     image: getImageUrl(post.image),
   };
