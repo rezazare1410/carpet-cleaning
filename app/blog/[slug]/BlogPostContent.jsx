@@ -1,113 +1,79 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import '@/styles/blog-post.css';
 
-export default function BlogPostContent() {
-  const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
+export default function BlogPostContent({ post, slug }) {
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     if (!slug) return;
 
-    const fetchPost = async () => {
-      try {
-        const res = await fetch(`/api/blogs/${slug}`);
-        if (!res.ok) throw new Error('Post not found');
-        const data = await res.json();
-        setPost(data);
-      } catch (err) {
-        console.error('🔥 خطا در دریافت مقاله:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPost();
-  }, [slug]);
-
-  useEffect(() => {
-    if (!slug) return;
+    const controller = new AbortController();
 
     const fetchRelated = async () => {
       try {
-        const res = await fetch(`/api/related-posts?excludeSlug=${slug}`);
+        const res = await fetch(
+          `/api/related-posts?excludeSlug=${encodeURIComponent(slug)}`,
+          { signal: controller.signal }
+        );
+
+        if (!res.ok) {
+          throw new Error('Related posts request failed');
+        }
+
         const data = await res.json();
-        setRelatedPosts(data.posts.slice(0, 3));
-      } catch (err) {
-        console.error('🔥 خطا در دریافت مطالب مشابه:', err);
+
+        setRelatedPosts(
+          Array.isArray(data.posts) ? data.posts.slice(0, 3) : []
+        );
+      } catch (error) {
+        if (error.name !== 'AbortError') {
+          console.error('خطا در دریافت مطالب مشابه:', error);
+        }
       }
     };
 
     fetchRelated();
+
+    return () => controller.abort();
   }, [slug]);
 
-  if (loading) return <p className="post-loading">در حال بارگذاری...</p>;
-  if (!post) return <p className="blog-error">مقاله‌ای یافت نشد.</p>;
-
-  // ✅ ساخت Article Schema
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "description": post.excerpt || post.content?.slice(0, 150),
-    "author": {
-      "@type": "Organization",
-      "name": "قالیشویی زارع"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "قالیشویی زارع",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://zarecarpet.com/icons/logo1.png"
-      }
-    },
-    "datePublished": post.date,
-    "dateModified": post.date,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://zarecarpet.com/blog/${slug}`
-    },
-    "image": post.image || "https://zarecarpet.com/images/cover.jpg"
-  };
-
   return (
-    <div className="post-container">
-      {/* ✅ Article Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+    <main className="post-container">
+      <article>
+        <h1 className="post-title">{post.title}</h1>
 
-      <h1 className="post-title">{post.title}</h1>
-      <p className="post-date">{post.date}</p>
+        {post.date && <p className="post-date">{post.date}</p>}
 
-      <div
-        className="post-content"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{
+            __html: post.content || '',
+          }}
+        />
+      </article>
 
       <div className="back-to-blog">
-        <a href="/blog">← بازگشت به مقاله‌ها</a>
+        <Link href="/blog">← بازگشت به مقاله‌ها</Link>
       </div>
 
       {relatedPosts.length > 0 && (
-        <div className="related-posts">
-          <h3>مطالب مشابه</h3>
+        <section className="related-posts">
+          <h2>مطالب مشابه</h2>
+
           <ul>
             {relatedPosts.map((item) => (
               <li key={item.slug}>
-                <a href={`/blog/${item.slug}`}>{item.title}</a>
+                <Link href={`/blog/${item.slug}`}>
+                  {item.title}
+                </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </section>
       )}
-    </div>
+    </main>
   );
 }
