@@ -15,7 +15,7 @@
     "date-fns": "^4.1.0",
     "firebase": "^11.5.0",
     "moment-jalaali": "^0.10.4",
-    "next": "^15.2.5",
+    "next": "^15.5.21",
     "react": "^19.1.0",
     "react-datepicker": "^8.2.1",
     "react-dom": "^19.1.0",
@@ -28,7 +28,7 @@
     "@cloudflare/next-on-pages": "^1.13.12",
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.2.3"
+    "eslint-config-next": "^15.5.21"
   },
   "engines": {
     "node": ">=18.18.0"
