@@ -9,7 +9,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    /* 🔧 مهم‌ترین اصلاح برای حل مشکل تراز وسط */
     flex-direction: row;
     gap: 2rem;
 }
@@ -22,7 +21,7 @@
     object-fit: cover;
 }
 
-/* ستون راست شامل کارت‌ها و دکمه */
+/* ستون راست شامل عنوان، کارت‌ها و دکمه */
 .hero-right-content {
     flex: 1;
     min-width: 300px;
@@ -30,7 +29,16 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* اطمینان از شروع محتوا از بالا */
+}
+
+/* عنوان اصلی صفحه */
+.west-page-title {
+    margin: 0 0 1.5rem;
+    color: #1c2c38;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
 }
 
 /* گرید کارت‌ها */
@@ -43,14 +51,13 @@
 
 /* استایل کارت‌ها */
 .info-card {
+    display: block;
+    padding: 1rem;
     background-color: #f9f9f9;
     border: 1px solid #e0e0e0;
-    padding: 1rem;
     border-radius: 1rem;
     text-align: right;
     transition: 0.3s ease;
-    display: block;
-    /* 🔧 جلوگیری از وسط‌چینی محتوا */
 }
 
 .info-card:hover {
@@ -58,24 +65,24 @@
 }
 
 .info-card-title {
+    margin-bottom: 0.5rem;
+    color: #1c2c38;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #1c2c38;
-    margin-bottom: 0.5rem;
     text-align: right;
 }
 
 .info-card-text {
-    font-size: 0.95rem;
     color: #555;
+    font-size: 0.95rem;
     line-height: 1.6;
     text-align: right;
 }
 
 /* دکمه سفارش */
 .button-container {
-    text-align: center;
     margin-top: 1rem;
+    text-align: center;
 }
 
 .root-order-button {
@@ -97,11 +104,27 @@
 
 /* ریسپانسیو برای موبایل */
 @media (max-width: 768px) {
+    .root-repair-page {
+        padding: 1rem;
+    }
+
     .hero-root-section {
         flex-direction: column;
     }
 
     .hero-right-content {
         width: 100%;
+        min-width: 0;
+    }
+
+    .west-page-title {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        text-align: center;
     }
 }

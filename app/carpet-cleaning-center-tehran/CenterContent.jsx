@@ -1,6 +1,5 @@
-// ✅ فایل کلاینتی: app/carpet-cleaning-center-tehran/CenterContent.jsx
-
 'use client';
+
 import '../../styles/carpet-cleaning-center-tehran.css';
 
 const cardData = [
@@ -34,8 +33,9 @@ export default function CenterContent() {
   return (
     <main className="root-repair-page">
       <div className="hero-root-section">
-        {/* اول کارت‌ها */}
         <div className="hero-right-content">
+          <h1 className="center-page-title">قالیشویی مرکز تهران</h1>
+
           <div className="cards-grid">
             {cardData.map((card, index) => (
               <div key={index} className="info-card">
@@ -44,17 +44,21 @@ export default function CenterContent() {
               </div>
             ))}
           </div>
+
           <div className="button-container">
-            <a href="/order-carpet-cleaning" className="root-order-button">ثبت سفارش قالیشویی مرکز تهران</a>
+            <a href="/order-carpet-cleaning" className="root-order-button">
+              ثبت سفارش قالیشویی مرکز تهران
+            </a>
           </div>
         </div>
 
-        {/* بعد تصویر */}
         <div className="hero-image">
-          <img src="/images/zareeast.webp" alt="قالیشویی مرکز تهران" />
+          <img
+            src="/images/zareeast.webp"
+            alt="قالیشویی مرکز تهران"
+          />
         </div>
       </div>
     </main>
   );
 }
-    

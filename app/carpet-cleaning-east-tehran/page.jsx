@@ -2,7 +2,11 @@ import EastContent from './EastContent';
 
 export const metadata = {
   title: 'قالیشویی شرق تهران | زارع',
-  description: 'قالیشویی زارع با سرویس در شرق، شمال‌شرق و جنوب‌شرق تهران شامل تهرانپارس، نارمک، افسریه و مناطق دیگر. خدمات حرفه‌ای شستشوی فرش و ترمیم.',
+  description:
+    'قالیشویی زارع با سرویس در شرق، شمال‌شرق و جنوب‌شرق تهران شامل تهرانپارس، نارمک، افسریه و مناطق دیگر. خدمات حرفه‌ای شستشوی فرش و ترمیم.',
+  alternates: {
+    canonical: 'https://zarecarpet.com/carpet-cleaning-east-tehran',
+  },
 };
 
 const schemaData = {
@@ -29,6 +33,7 @@ export default function EastPage() {
   return (
     <>
       <EastContent />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

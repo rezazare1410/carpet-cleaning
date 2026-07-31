@@ -1,4 +1,5 @@
 'use client';
+
 import '../../styles/carpet-cleaning-east-tehran.css';
 
 const cardData = [
@@ -32,8 +33,9 @@ export default function EastContent() {
   return (
     <main className="root-repair-page">
       <div className="hero-root-section">
-        {/* کارت‌ها */}
         <div className="hero-right-content">
+          <h1 className="east-page-title">قالیشویی شرق تهران</h1>
+
           <div className="cards-grid">
             {cardData.map((card, index) => (
               <div key={index} className="info-card">
@@ -42,6 +44,7 @@ export default function EastContent() {
               </div>
             ))}
           </div>
+
           <div className="button-container">
             <a href="/order-carpet-cleaning" className="root-order-button">
               ثبت سفارش قالیشویی شرق تهران
@@ -49,7 +52,6 @@ export default function EastContent() {
           </div>
         </div>
 
-        {/* تصویر */}
         <div className="hero-image">
           <img src="/images/zareeast.webp" alt="قالیشویی شرق تهران" />
         </div>

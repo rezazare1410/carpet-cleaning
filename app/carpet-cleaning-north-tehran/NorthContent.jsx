@@ -1,4 +1,5 @@
 'use client';
+
 import '../../styles/carpet-cleaning-north-tehran.css';
 
 const cardData = [
@@ -33,6 +34,8 @@ export default function NorthContent() {
     <main className="root-repair-page">
       <div className="hero-root-section">
         <div className="hero-right-content">
+          <h1 className="north-page-title">قالیشویی شمال تهران</h1>
+
           <div className="cards-grid">
             {cardData.map((card, index) => (
               <div key={index} className="info-card">
@@ -41,6 +44,7 @@ export default function NorthContent() {
               </div>
             ))}
           </div>
+
           <div className="button-container">
             <a href="/order-carpet-cleaning" className="root-order-button">
               ثبت سفارش قالیشویی شمال تهران
