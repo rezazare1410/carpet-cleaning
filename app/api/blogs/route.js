@@ -24,8 +24,8 @@ export async function GET(req) {
     const snapshot = await getDocs(q);
 
     let allPosts = snapshot.docs.map((doc) => ({
-      id: doc.id,
       ...doc.data(),
+      id: doc.id,
     }));
 
     // حذف مقاله فعلی از لیست (مثلاً برای "مطالب مرتبط")
