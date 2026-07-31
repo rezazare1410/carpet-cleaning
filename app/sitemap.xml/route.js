@@ -1,5 +1,5 @@
-import { db } from '@/lib/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { db } from "@/lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export async function GET() {
   const domain = "https://zarecarpet.com";
@@ -7,19 +7,41 @@ export async function GET() {
 
   // صفحات ثابت سایت
   const staticPages = [
-    "", "about", "contact", "faq", "blog", "areas",
-    "order-carpet-cleaning", "service-pricing",
-    "handmade-wool-carpet-wash", "handmade-silk-carpet-wash",
-    "handmade-full-silk-carpet-wash", "machine-carpet-wash",
-    "root-carpet-repair", "double-knot", "Shirazeh-doozi",
-    "charm-doozi", "paregi", "pardakht", "poosidegi",
-    "bidkhordegi", "sabidegi", "sarnakh", "stain-removal",
-    "darkeshi", "final-inspection" ,"carpet-cleaning-east-tehran" , "carpet-cleaning-west-tehran" , "carpet-cleaning-north-tehran" , "carpet-cleaning-south-tehran" , "carpet-cleaning-center-tehran" ,
-    "repair-services"
+    "",
+    "about",
+    "contact",
+    "faq",
+    "blog",
+    "areas",
+    "order-carpet-cleaning",
+    "service-pricing",
+    "handmade-wool-carpet-wash",
+    "handmade-silk-carpet-wash",
+    "handmade-full-silk-carpet-wash",
+    "machine-carpet-wash",
+    "root-carpet-repair",
+    "double-knot",
+    "Shirazeh-doozi",
+    "charm-doozi",
+    "paregi",
+    "pardakht",
+    "poosidegi",
+    "bidkhordegi",
+    "sabidegi",
+    "sarnakh",
+    "stain-removal",
+    "darkeshi",
+    "final-inspection",
+    "carpet-cleaning-east-tehran",
+    "carpet-cleaning-west-tehran",
+    "carpet-cleaning-north-tehran",
+    "carpet-cleaning-south-tehran",
+    "carpet-cleaning-center-tehran",
+    "repair-services",
   ];
 
   const staticUrls = staticPages.map((page) => {
-    const url = `${domain}${page ? `/${page}` : ''}`;
+    const url = `${domain}${page ? `/${page}` : ""}`;
     const priority = page === "" ? "1.0" : "0.8";
 
     return `
@@ -33,30 +55,39 @@ export async function GET() {
 
   // مقالات وبلاگ از Firestore
   let blogUrls = [];
+
   try {
     const snapshot = await getDocs(collection(db, "blogPosts"));
-    blogUrls = snapshot.docs.map(doc => {
-      const slug = doc.id;
+
+    blogUrls = snapshot.docs.map((document) => {
+      const data = document.data();
+
+      // استفاده از فیلد slug و استفاده از Document ID فقط در صورت نبودن slug
+      const slug = String(data.slug || document.id)
+        .normalize("NFC")
+        .trim();
+
       return `
         <url>
-          <loc>${domain}/blog/${slug}</loc>
+          <loc>${domain}/blog/${encodeURIComponent(slug)}</loc>
           <lastmod>${today}</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.6</priority>
         </url>`;
     });
-  } catch (err) {
-    console.error("❌ خطا در واکشی مقالات بلاگ برای sitemap:", err);
+  } catch (error) {
+    console.error("❌ خطا در واکشی مقالات بلاگ برای sitemap:", error);
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${[...staticUrls, ...blogUrls].join('\n')}
+    ${[...staticUrls, ...blogUrls].join("\n")}
   </urlset>`;
 
   return new Response(xml, {
+    status: 200,
     headers: {
-      "Content-Type": "application/xml"
-    }
+      "Content-Type": "application/xml; charset=utf-8",
+    },
   });
 }

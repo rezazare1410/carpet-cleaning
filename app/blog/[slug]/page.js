@@ -1,6 +1,6 @@
 import { cache } from "react";
 import { unstable_cache } from "next/cache";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import {
   collection,
   doc,
@@ -63,19 +63,21 @@ function makeSerializable(value) {
 async function fetchPost(slug) {
   const normalizedSlug = normalizeSlug(slug);
 
-  // ابتدا جست‌وجو با شناسهٔ سند Firestore
+  // ابتدا جست‌وجو با Document ID
   const documentRef = doc(db, "blogPosts", normalizedSlug);
   const documentSnapshot = await withTimeout(getDoc(documentRef));
 
   if (documentSnapshot.exists()) {
+    const data = documentSnapshot.data();
+
     return makeSerializable({
-      ...documentSnapshot.data(),
+      ...data,
       id: documentSnapshot.id,
-      slug: documentSnapshot.data().slug || normalizedSlug,
+      slug: data.slug || documentSnapshot.id,
     });
   }
 
-  // اگر شناسهٔ سند نبود، جست‌وجو با فیلد slug
+  // اگر Document ID پیدا نشد، جست‌وجو با فیلد slug
   const postsQuery = query(
     collection(db, "blogPosts"),
     where("slug", "==", normalizedSlug),
@@ -89,11 +91,12 @@ async function fetchPost(slug) {
   }
 
   const matchedDocument = querySnapshot.docs[0];
+  const data = matchedDocument.data();
 
   return makeSerializable({
-    ...matchedDocument.data(),
+    ...data,
     id: matchedDocument.id,
-    slug: matchedDocument.data().slug || normalizedSlug,
+    slug: data.slug || matchedDocument.id,
   });
 }
 
@@ -162,11 +165,11 @@ export async function generateMetadata({ params }) {
       };
     }
 
+    const canonicalSlug = normalizeSlug(post.slug || post.id).trim();
     const description = getDescription(post);
     const image = getImageUrl(post.image);
-    const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(
-      slug,
-    )}`;
+
+    const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(canonicalSlug)}`;
 
     return {
       title: `${post.title} | قالیشویی زارع`,
@@ -200,8 +203,9 @@ export async function generateMetadata({ params }) {
       title: `مقاله ${slug} | قالیشویی زارع`,
       description:
         "مطالب تخصصی درباره شستشو، نگهداری و ترمیم فرش توسط قالیشویی زارع.",
-      alternates: {
-        canonical: `https://zarecarpet.com/blog/${encodeURIComponent(slug)}`,
+      robots: {
+        index: false,
+        follow: false,
       },
     };
   }
@@ -217,14 +221,20 @@ export default async function Page({ params }) {
     notFound();
   }
 
+  const canonicalSlug = normalizeSlug(post.slug || post.id).trim();
+
+  // انتقال دائمی آدرس قدیمی دارای فاصله به آدرس تمیز
+  if (slug !== canonicalSlug) {
+    permanentRedirect(`/blog/${encodeURIComponent(canonicalSlug)}`);
+  }
+
   const publishedDate = getIsoDate(post.date || post.createdAt);
+
   const modifiedDate = getIsoDate(
     post.updatedAt || post.date || post.createdAt,
   );
 
-  const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(
-    slug,
-  )}`;
+  const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(canonicalSlug)}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -261,7 +271,7 @@ export default async function Page({ params }) {
         }}
       />
 
-      <BlogPostContent post={post} slug={slug} />
+      <BlogPostContent post={post} slug={canonicalSlug} />
     </>
   );
 }

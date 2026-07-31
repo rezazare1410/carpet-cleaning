@@ -23,10 +23,15 @@ export async function GET(req) {
     const q = query(postsRef, orderBy('sortDate', 'desc'));
     const snapshot = await getDocs(q);
 
-    let allPosts = snapshot.docs.map((doc) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
+    let allPosts = snapshot.docs.map((doc) => {
+      const data = doc.data();
+
+      return {
+        ...data,
+        id: doc.id,
+        slug: data.slug || doc.id,
+      };
+    });
 
     // حذف مقاله فعلی از لیست (مثلاً برای "مطالب مرتبط")
     if (excludeSlug) {

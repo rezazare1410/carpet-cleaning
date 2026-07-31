@@ -67,7 +67,11 @@ export default function BlogPageContent() {
 
       <div className="blog-grid">
         {posts.map((post) => (
-          <a href={`/blog/${post.id}`} key={post.id} className="blog-card-link">
+          <a
+            href={`/blog/${encodeURIComponent(post.slug || post.id)}`}
+            key={post.id}
+            className="blog-card-link"
+          >
             <div className="blog-card">
               <h2 className="post-title">{post.title}</h2>
               <div
