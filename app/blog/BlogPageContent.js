@@ -67,10 +67,13 @@ export default function BlogPageContent() {
 
       <div className="blog-grid">
         {posts.map((post) => (
-          <a href={`/blog/${post.slug}`} key={post.slug} className="blog-card-link">
+          <a href={`/blog/${post.id}`} key={post.id} className="blog-card-link">
             <div className="blog-card">
               <h2 className="post-title">{post.title}</h2>
-              <div className="post-excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+              <div
+                className="post-excerpt"
+                dangerouslySetInnerHTML={{ __html: post.excerpt }}
+              />
               <p className="post-date">📅 انتشار: {post.date}</p>
               <span className="read-more">ادامه مطلب</span>
             </div>
