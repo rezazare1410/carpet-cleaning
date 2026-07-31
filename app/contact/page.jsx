@@ -29,7 +29,7 @@ const schemaData = {
     "openingHours": "Sa-Th 08:00-22:00",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+989221105868",
+      "telephone": "+989122356809",
       "contactType": "customer support",
       "availableLanguage": ["Persian"]
     }
