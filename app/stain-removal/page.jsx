@@ -29,8 +29,8 @@ const schemaData = {
 };
 
 export default function StainRemoval() {
-  return (
-    <>
+  return ( 
+        <>
       <StainRemovalPage />
       <script
         type="application/ld+json"
