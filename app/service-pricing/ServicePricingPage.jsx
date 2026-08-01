@@ -11,7 +11,7 @@ function CarpetWashPricing() {
         <div className="carpetwash-row">
           <div className="carpetwash-cell title">شستشوی فرش دستبافت گل ابریشم</div>
           <div className="carpetwash-cell subtitle">شستشوی درجه یک</div>
-          <div className="carpetwash-cell price">30.000.000 ریال (هر متر مربع)</div>
+          <div className="carpetwash-cell price">3.000.000 ریال (هر متر مربع)</div>
         </div>
         <div className="carpetwash-row">
           <div className="carpetwash-cell title">شستشوی فرش دستبافت کرم و رنگ‌های روشن</div>
