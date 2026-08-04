@@ -1,82 +1,124 @@
 .slider-container {
-    width: 100%;
+    width: calc(100% - 30px);
     max-width: 1200px;
     margin: 30px auto;
     position: relative;
-    overflow: hidden;
     padding-bottom: 60px;
+    box-sizing: border-box;
+}
+
+/* جلوگیری از بیرون‌زدگی اسلایدها */
+.slider-container .slick-list {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* کادر هر اسلاید با نسبت دقیق بنرها */
+.slide-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* تصویر بنر */
+.slider-image {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+/* اصلاح فاصله‌های ایجادشده توسط react-slick */
+.slider-container .slick-slide>div {
+    line-height: 0;
+}
+
+.slider-container .slick-track {
+    display: flex;
+    align-items: stretch;
 }
 
 /* متن زیر اسلایدر */
 .slider-text {
-    text-align: center;
-    margin-top: 50px;
+    width: 90%;
+    margin: 50px auto 0;
     padding: 25px;
-    font-family: 'BKoodak', sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    direction: rtl;
+    font-family: "BKoodak", sans-serif;
     background: #f8f8f8;
     border-radius: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .slider-text h2 {
+    margin: 0 0 15px;
     font-size: 28px;
+    line-height: 1.7;
     color: #d32f2f;
-    margin-bottom: 15px;
 }
 
 .slider-text p {
+    max-width: 800px;
+    margin: 0 auto;
     font-size: 18px;
-    color: #333;
     line-height: 2;
     text-align: center;
-    max-width: 800px;
-    margin: auto;
+    color: #333;
 }
 
-.slider-container img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
-    margin: auto;
-    border-radius: 10px;
+/* فاصله بین پاراگراف‌ها */
+.slider-text p+p {
+    margin-top: 8px;
 }
 
 /* نقاط زیر اسلایدر */
-.slick-dots {
+.slider-container .slick-dots {
     position: absolute !important;
     bottom: -35px !important;
-    left: 50%;
+    left: 50% !important;
+    right: auto !important;
+    width: auto !important;
+    margin: 0;
+    padding: 0;
     transform: translateX(-50%);
-    width: auto;
+    direction: ltr;
 }
 
-.slick-dots li {
+.slider-container .slick-dots li {
+    width: 12px;
+    height: 12px;
     margin: 0 5px;
 }
 
-.slick-dots li button {
-    font-size: 14px;
+.slider-container .slick-dots li button {
     width: 12px;
     height: 12px;
-    background: gray;
-    border-radius: 50%;
+    padding: 0;
+    font-size: 0;
+    background: #808080;
     border: none;
-    transition: background 0.3s ease;
+    border-radius: 50%;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.slick-dots li.slick-active button {
-    background: red !important;
-}
-
-.slick-dots li button:before {
+.slider-container .slick-dots li button::before {
     display: none !important;
 }
 
+.slider-container .slick-dots li.slick-active button {
+    background: #d32f2f !important;
+    transform: scale(1.15);
+}
 
+/* فلش‌های سفارشی */
+.custom-arrow {
+    z-index: 5;
+}
 
 .custom-arrow:hover {
     background: rgba(0, 0, 0, 0.9);
@@ -90,36 +132,85 @@
     right: 20px;
 }
 
-
 .pause-button:hover {
-    background: gray;
-    color: white;
+    color: #fff;
+    background: #808080;
 }
 
-/* فلش‌ها زمانی که منو بازه یا اسکرول شده باشه */
+/* مخفی‌کردن فلش‌ها هنگام بازبودن منو */
 .slider-container.slider-menu-open .custom-arrow,
 .slider-container.hide-arrows .custom-arrow,
 .slider-container.hide-arrows-mobile .custom-arrow,
 body.menu-open .slider-container .custom-arrow {
+    z-index: -1 !important;
     display: none !important;
+    visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
-    z-index: -1 !important;
-}
-.slide-wrapper {
-    width: 100%;
-    height: 400px;
-    position: relative;
 }
 
-/* نسخه موبایل فقط */
+/* تبلت و موبایل */
 @media (max-width: 768px) {
-    .slider-container.hide-arrows-mobile .custom-arrow {
-        display: none !important;
+    .slider-container {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding-bottom: 45px;
     }
-        body.menu-open .slider-container .custom-arrow {
-            display: none !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-        }
+
+    .slider-container .slick-list,
+    .slide-wrapper,
+    .slider-image {
+        border-radius: 8px;
+    }
+
+    .slider-text {
+        width: 94%;
+        margin-top: 40px;
+        padding: 18px 15px;
+    }
+
+    .slider-text h2 {
+        font-size: 22px;
+        line-height: 1.7;
+    }
+
+    .slider-text p {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .slider-container .slick-dots {
+        bottom: -30px !important;
+    }
+
+    .slider-container.hide-arrows-mobile .custom-arrow,
+    body.menu-open .slider-container .custom-arrow {
+        z-index: -1 !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
+
+/* موبایل‌های کوچک */
+@media (max-width: 480px) {
+    .slider-container {
+        width: calc(100% - 16px);
+        margin-top: 15px;
+    }
+
+    .slider-text {
+        width: 96%;
+        padding: 16px 12px;
+    }
+
+    .slider-text h2 {
+        font-size: 20px;
+    }
+
+    .slider-text p {
+        font-size: 15px;
+        line-height: 1.85;
+    }
 }
