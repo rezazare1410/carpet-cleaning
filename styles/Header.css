@@ -1,15 +1,18 @@
 @font-face {
-  font-family: 'BKoodak';
-  src: url('/fonts/BKoodak.ttf') format('truetype');
+  font-family: "BKoodak";
+  src: url("/fonts/BKoodak.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
 }
 
 .header-container {
   position: fixed;
   top: 0;
+  right: 0;
   width: 100%;
   background: white;
   z-index: 1000;
-  font-family: 'BKoodak', sans-serif;
+  font-family: "BKoodak", sans-serif;
   direction: rtl;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -23,43 +26,7 @@
   font-size: 14px;
 }
 
-/* ========== نسخه دسکتاپ ========== */
-@media (min-width: 769px) {
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-  }
-
-  .logo {
-    order: 1;
-    justify-content: flex-end;
-    display: flex;
-    align-items: center;
-    width: 120px;
-  }
-
-  .nav-menu {
-    order: 2;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .cta-buttons {
-    order: 3;
-    display: flex;
-    gap: 10px;
-    justify-content: flex-start;
-  }
-
-  .mobile-menu-btn {
-    display: none;
-  }
-}
-
-
+/* دکمه‌های سفارش و تماس */
 
 .order-btn,
 .call-btn {
@@ -82,12 +49,12 @@
   color: red;
 }
 
-
 .call-btn:hover {
   background: red;
   color: white;
 }
 
+/* منوی اصلی دسکتاپ */
 
 .nav-menu ul {
   display: flex;
@@ -122,7 +89,7 @@
 
 .dropdown-icon {
   font-size: 12px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .dropdown-icon.rotate {
@@ -133,12 +100,12 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 240px;
   flex-direction: column;
   padding: 10px 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
 
@@ -156,24 +123,25 @@
   position: relative;
 }
 
+.sub-dropdown-text,
+.refogh-dropdown-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .sub-dropdown-menu,
 .refogh-dropdown-menu {
   position: absolute;
   top: 0;
   right: 100%;
-  background: white;
   width: 220px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   padding: 6px 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
-}
-
-@media (min-width: 769px) {
-  .refogh-dropdown-menu {
-    top: -110px;
-  }
 }
 
 .sub-dropdown-icon,
@@ -187,7 +155,73 @@
   padding: 8px 12px;
 }
 
-/* ========== نسخه موبایل ========== */
+/* نسخه دسکتاپ */
+
+@media (min-width: 769px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  .logo {
+    order: 1;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .nav-menu {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cta-buttons {
+    order: 3;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .mobile-menu-btn,
+  .mobile-menu {
+    display: none;
+  }
+
+  .refogh-dropdown-menu {
+    top: -110px;
+  }
+     /* خط ذغالی با فاصله از چپ و راست */
+     .dropdown-menu>li::after,
+     .sub-dropdown-menu>li::after,
+     .refogh-dropdown-menu>li::after {
+       content: "";
+       position: absolute;
+       right: 14px;
+       left: 14px;
+       bottom: 0;
+       height: 1px;
+       background-color: #444;
+     }
+  
+     /* حذف خط از آخرین گزینه هر منو */
+     .dropdown-menu>li:last-child::after,
+     .sub-dropdown-menu>li:last-child::after,
+     .refogh-dropdown-menu>li:last-child::after {
+       display: none;
+     }
+
+  .sub-dropdown-menu > li:last-child,
+  .refogh-dropdown-menu > li:last-child {
+    border-bottom: none;
+  }
+}
+
+/* نسخه موبایل */
 
 @media (max-width: 768px) {
   .nav-menu {
@@ -199,14 +233,15 @@
     grid-template-areas: "menu logo buttons";
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    gap: 8px;
     padding: 10px 16px;
-    grid-gap: 8px;
   }
 
   .mobile-menu-btn {
     grid-area: menu;
     justify-self: start;
     display: block;
+    padding: 6px;
     background: none;
     border: none;
     font-size: 1.6rem;
@@ -218,8 +253,8 @@
     grid-area: logo;
     justify-self: center;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   .cta-buttons {
@@ -230,29 +265,29 @@
     gap: 8px;
   }
 
+  /*
+    منو زیر هدر قرار می‌گیرد و تا انتهای صفحه
+    داخل خودش قابلیت اسکرول دارد.
+  */
+
   .mobile-menu {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 100%;
+    width: 70vw;
+    max-width: 320px;
+    max-height: calc(100dvh - 112px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
+    padding: 16px 16px 40px;
     background: white;
-    padding: 16px;
     border-top: 1px solid #eee;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 6px 12px rgba(0, 0, 0, 0.12);
     animation: slideDown 0.3s ease;
     z-index: 999;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    -webkit-overflow-scrolling: touch;
   }
 
   .mobile-menu ul {
@@ -261,90 +296,122 @@
     margin: 0;
   }
 
+  .mobile-menu li {
+    width: 100%;
+  }
+    .mobile-menu>ul>li {
+      border-bottom: 1px solid #444;
+    }
+  
+    .mobile-menu>ul>li:last-child {
+      border-bottom: none;
+    }
+
   .mobile-menu li,
   .mobile-menu a,
   .mobile-menu button {
     display: block;
+    width: 100%;
+    box-sizing: border-box;
     text-align: right;
+    font-family: "BKoodak", sans-serif;
     font-size: 16px;
     padding: 8px 0;
     text-decoration: none;
     color: black;
     background: none;
     border: none;
-    width: 100%;
+  }
+
+  .mobile-menu a:hover {
+    color: red;
   }
 
   .mobile-dropdown-toggle {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-between;
     font-weight: bold;
+    cursor: pointer;
+  }
+
+  .mobile-dropdown-toggle svg {
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-dropdown-toggle svg.rotate {
+    transform: rotate(180deg);
   }
 
   .mobile-submenu {
     padding-right: 12px;
   }
+    /* زیرمنوهای بخش خدمات فقط در موبایل */
+    .mobile-submenu>a {
+      color: #666;
+      padding: 10px 8px;
+      border-bottom: 1px solid #555;
+    }
+  
+    /* سرمنوهای خدمات قرمز باقی بمانند */
+    .mobile-submenu>.mobile-subsection {
+      color: red;
+      padding: 10px 0 6px;
+      font-weight: bold;
+    }
+        .mobile-submenu>a:last-child {
+          border-bottom: none;
+        }
 
   .mobile-subsection {
     margin-top: 10px;
+    padding: 8px 0 4px;
     font-weight: bold;
     color: red;
   }
 
-  .mobile-menu-close {
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    color: red;
-    margin-bottom: 10px;
-    cursor: pointer;
-    float: left;
+  .call-btn {
+    display: none;
   }
-    .call-btn {
-      display: none;
-    }
-                .order-btn {
-                  background: red;
-                  color: white;
-                  font-family: 'BKoodak', sans-serif;
-                  font-size: 14px;
-                  font-weight: bold;
-                  padding: 8px 0;
-                  width: 140px;
-                  height: 40px;
-                  border: none;
-                  border-radius: 8px;
-                  text-align: center;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  margin: 0 auto;
-                  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-                  transition: background 0.3s ease;
-                }
-/* Scrollable mobile menu */
-.mobile-menu.open {
-  max-height: 100vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.mobile-menu {
-  max-height: 100vh;
-  /* ارتفاع محدود به اندازه صفحه */
-  overflow-y: auto;
-  /* فعال کردن اسکرول عمودی */
-  -webkit-overflow-scrolling: touch;
-  /* اسکرول نرم در موبایل */
-}
-.mobile-menu {
-  width: 70vw;
-}
-@media (hover: hover) and (pointer: fine) {
-  .order-btn:hover {
-    background-color: #b71c1c;
-    /* سایر افکت‌ها */
+
+  .order-btn {
+    width: 140px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: "BKoodak", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
   }
 }
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* جلوگیری از باقی‌ماندن حالت Hover روی صفحات لمسی */
+
+@media (hover: hover) and (pointer: fine) {
+  .order-btn:hover {
+    background-color: #b71c1c;
+  }
 }
