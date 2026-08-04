@@ -4,30 +4,31 @@ import Footer from './_components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
-  title: 'کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی',
+  title: "کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی",
   description:
-    'قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌برداری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.',
+    "قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌برداری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.",
   icons: {
-    icon: '/favicon.ico',
+    icon: "/favicon-512.png",
   },
   openGraph: {
-    title: 'کارخانه قالیشویی زارع | خدمات تخصصی شستشوی فرش',
-    description: 'شستشوی فرش، لکه‌برداری، رفوگری و سرویس‌دهی سریع در سراسر تهران',
-    url: 'https://zarecarpet.com',
-    siteName: 'قالیشویی زارع',
+    title: "کارخانه قالیشویی زارع | خدمات تخصصی شستشوی فرش",
+    description:
+      "شستشوی فرش، لکه‌برداری، رفوگری و سرویس‌دهی سریع در سراسر تهران",
+    url: "https://zarecarpet.com",
+    siteName: "قالیشویی زارع",
     images: [
       {
-        url: 'https://zarecarpet.com/images/cover.jpg',
+        url: "https://zarecarpet.com/images/cover.jpg",
         width: 1200,
         height: 630,
-        alt: 'کارگر در حال حمل فرش - قالیشویی زارع',
+        alt: "کارگر در حال حمل فرش - قالیشویی زارع",
       },
     ],
-    locale: 'fa_IR',
-    type: 'website',
+    locale: "fa_IR",
+    type: "website",
   },
   alternates: {
-    canonical: 'https://zarecarpet.com',
+    canonical: "https://zarecarpet.com",
   },
 };
 
@@ -59,7 +60,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon-512.png" type="image/png" />
 
         {/* ✅ preload فونت BKoodak */}
         <link
