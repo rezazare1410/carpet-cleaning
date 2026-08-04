@@ -156,6 +156,10 @@ body.menu-open .slider-container .custom-arrow {
         margin: 20px auto;
         padding-bottom: 45px;
     }
+        .slide-wrapper {
+            aspect-ratio: auto;
+            height: clamp(190px, 42vw, 230px);
+        }
 
     .slider-container .slick-list,
     .slide-wrapper,
