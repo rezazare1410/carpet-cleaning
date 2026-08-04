@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -10,17 +9,20 @@ import "../../styles/Slider.css";
 const slides = [
   {
     id: 1,
-    src: "/images/slider/banner-1.webp",
+    desktopSrc: "/images/slider/banner-1.webp",
+    mobileSrc: "/images/slider/banner-mobile-1.webp",
     alt: "خدمات تخصصی کارخانه قالیشویی زارع",
   },
   {
     id: 2,
-    src: "/images/slider/banner-2.webp",
+    desktopSrc: "/images/slider/banner-2.webp",
+    mobileSrc: "/images/slider/banner-mobile-2.webp",
     alt: "شستشوی تخصصی فرش در قالیشویی زارع",
   },
   {
     id: 3,
-    src: "/images/slider/banner-3.webp",
+    desktopSrc: "/images/slider/banner-3.webp",
+    mobileSrc: "/images/slider/banner-mobile-3.webp",
     alt: "خدمات شستشو و ترمیم فرش قالیشویی زارع",
   },
 ];
@@ -47,19 +49,23 @@ const SliderComponent = () => {
       className="slider-container"
       aria-label="معرفی خدمات قالیشویی زارع"
     >
-      <div dir="ltr">
+      <div className="slider-carousel" dir="ltr">
         <Slider {...settings}>
           {slides.map((slide, index) => (
             <div className="slide-wrapper" key={slide.id}>
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                quality={85}
-                className="slider-image"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={slide.mobileSrc} />
+
+                <img
+                  src={slide.desktopSrc}
+                  alt={slide.alt}
+                  width="1536"
+                  height="512"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                />
+              </picture>
             </div>
           ))}
         </Slider>

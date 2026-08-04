@@ -7,13 +7,17 @@
     box-sizing: border-box;
 }
 
-/* جلوگیری از بیرون‌زدگی اسلایدها */
+/* بخش اصلی اسلایدر */
+.slider-carousel {
+    width: 100%;
+}
+
 .slider-container .slick-list {
     overflow: hidden;
     border-radius: 10px;
 }
 
-/* کادر هر اسلاید با نسبت دقیق بنرها */
+/* کادر بنر دسکتاپ با نسبت 3:1 */
 .slide-wrapper {
     position: relative;
     width: 100%;
@@ -22,14 +26,22 @@
     border-radius: 10px;
 }
 
-/* تصویر بنر */
-.slider-image {
+.slide-wrapper picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
 }
 
-/* اصلاح فاصله‌های ایجادشده توسط react-slick */
+/* اصلاح ساختار react-slick */
 .slider-container .slick-slide>div {
     line-height: 0;
 }
@@ -45,8 +57,8 @@
     margin: 50px auto 0;
     padding: 25px;
     box-sizing: border-box;
-    text-align: center;
     direction: rtl;
+    text-align: center;
     font-family: "BKoodak", sans-serif;
     background: #f8f8f8;
     border-radius: 10px;
@@ -69,12 +81,11 @@
     color: #333;
 }
 
-/* فاصله بین پاراگراف‌ها */
 .slider-text p+p {
     margin-top: 8px;
 }
 
-/* نقاط زیر اسلایدر */
+/* نقاط اسلایدر */
 .slider-container .slick-dots {
     position: absolute !important;
     bottom: -35px !important;
@@ -83,8 +94,8 @@
     width: auto !important;
     margin: 0;
     padding: 0;
-    transform: translateX(-50%);
     direction: ltr;
+    transform: translateX(-50%);
 }
 
 .slider-container .slick-dots li {
@@ -149,22 +160,29 @@ body.menu-open .slider-container .custom-arrow {
     pointer-events: none !important;
 }
 
-/* تبلت و موبایل */
+/* نسخه موبایل */
 @media (max-width: 768px) {
     .slider-container {
-        width: calc(100% - 20px);
-        margin: 20px auto;
+        width: calc(100% - 16px);
+        margin: 15px auto 20px;
         padding-bottom: 45px;
     }
-        .slide-wrapper {
-            aspect-ratio: auto;
-            height: clamp(190px, 42vw, 230px);
-        }
 
     .slider-container .slick-list,
     .slide-wrapper,
-    .slider-image {
+    .slide-wrapper img {
         border-radius: 8px;
+    }
+
+    /* نسبت دقیق تصاویر موبایل 1000×1185 */
+    .slide-wrapper {
+        aspect-ratio: 1000 / 1185;
+        height: auto;
+    }
+
+    .slide-wrapper img {
+        object-fit: cover;
+        object-position: center;
     }
 
     .slider-text {
@@ -199,11 +217,6 @@ body.menu-open .slider-container .custom-arrow {
 
 /* موبایل‌های کوچک */
 @media (max-width: 480px) {
-    .slider-container {
-        width: calc(100% - 16px);
-        margin-top: 15px;
-    }
-
     .slider-text {
         width: 96%;
         padding: 16px 12px;
