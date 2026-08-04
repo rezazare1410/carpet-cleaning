@@ -37,22 +37,23 @@ export default function RootLayout({ children }) {
     "@graph": [
       {
         "@type": "Organization",
-        "name": "قالیشویی زارع",
-        "url": "https://zarecarpet.com",
-        "logo": "https://zarecarpet.com/icons/logo1.png",
-        "sameAs": ["https://instagram.com/zarecarpet"]
+        "@id": "https://zarecarpet.com/#organization",
+        name: "قالیشویی زارع",
+        url: "https://zarecarpet.com",
+        logo: "https://zarecarpet.com/icons/logo1.png",
+        sameAs: ["https://instagram.com/zarecarpet"],
       },
       {
         "@type": "WebSite",
-        "url": "https://zarecarpet.com",
-        "name": "قالیشویی زارع",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://zarecarpet.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    ]
+        "@id": "https://zarecarpet.com/#website",
+        url: "https://zarecarpet.com/",
+        name: "قالیشویی زارع",
+        alternateName: "کارخانه قالیشویی زارع",
+        publisher: {
+          "@id": "https://zarecarpet.com/#organization",
+        },
+      },
+    ],
   };
 
   return (
