@@ -62,6 +62,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon-512.png" type="image/png" />
 
+
         {/* ✅ preload فونت BKoodak */}
         <link
           rel="preload"
