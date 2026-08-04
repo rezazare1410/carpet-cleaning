@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -12,6 +13,7 @@ const slides = [
     desktopSrc: "/images/slider/banner-1.webp",
     mobileSrc: "/images/slider/banner-mobile-1.webp",
     alt: "خدمات تخصصی کارخانه قالیشویی زارع",
+    href: "/automatic-carpet-cleaning",
   },
   {
     id: 2,
@@ -23,8 +25,10 @@ const slides = [
     id: 3,
     desktopSrc: "/images/slider/banner-3.webp",
     mobileSrc: "/images/slider/banner-mobile-3.webp",
-    alt: "خدمات شستشو و ترمیم فرش قالیشویی زارع",
+    alt: "انجام کلیه خدمات رفوگری در قالیشویی زارع",
+    href: "/repair-services",
   },
+  
 ];
 
 const SliderComponent = () => {
@@ -44,6 +48,22 @@ const SliderComponent = () => {
     initialSlide: 0,
   };
 
+  const renderPicture = (slide, index) => (
+    <picture>
+      <source media="(max-width: 768px)" srcSet={slide.mobileSrc} />
+
+      <img
+        src={slide.desktopSrc}
+        alt={slide.alt}
+        width="1536"
+        height="512"
+        loading={index === 0 ? "eager" : "lazy"}
+        fetchPriority={index === 0 ? "high" : "auto"}
+        decoding="async"
+      />
+    </picture>
+  );
+
   return (
     <section
       className="slider-container"
@@ -53,19 +73,17 @@ const SliderComponent = () => {
         <Slider {...settings}>
           {slides.map((slide, index) => (
             <div className="slide-wrapper" key={slide.id}>
-              <picture>
-                <source media="(max-width: 768px)" srcSet={slide.mobileSrc} />
-
-                <img
-                  src={slide.desktopSrc}
-                  alt={slide.alt}
-                  width="1536"
-                  height="512"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  decoding="async"
-                />
-              </picture>
+              {slide.href ? (
+                <Link
+                  href={slide.href}
+                  aria-label="مشاهده خدمات قالیشویی با دستگاه‌های تمام اتوماتیک"
+                  className="slide-link"
+                >
+                  {renderPicture(slide, index)}
+                </Link>
+              ) : (
+                renderPicture(slide, index)
+              )}
             </div>
           ))}
         </Slider>

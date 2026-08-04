@@ -231,3 +231,9 @@ body.menu-open .slider-container .custom-arrow {
         line-height: 1.85;
     }
 }
+.slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
