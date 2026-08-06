@@ -1,8 +1,9 @@
-import Slider from './_components/Slider';
-import Cards from './_components/Cards';
-import ServiceHighlight from './_components/ServiceHighlight';
-import TehranMapSection from './_components/TehranMapSection';
-import LatestPosts from './_components/LatestPosts';
+import Slider from "./_components/Slider";
+import WhyChooseUs from "./_components/WhyChooseUs";
+import Cards from "./_components/Cards";
+import ServiceHighlight from "./_components/ServiceHighlight";
+import TehranMapSection from "./_components/TehranMapSection";
+import LatestPosts from "./_components/LatestPosts";
 
 export default function HomePage() {
   return (
@@ -14,32 +15,31 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "قالیشویی زارع",
-            "image": "https://www.zarecarpet.com/logo.png",
-            "url": "https://www.zarecarpet.com",
-            "telephone": "02177169450",
-            "address": {
+            name: "قالیشویی زارع",
+            image: "https://www.zarecarpet.com/logo.png",
+            url: "https://www.zarecarpet.com",
+            telephone: "02177169450",
+            address: {
               "@type": "PostalAddress",
-              "addressLocality": "Tehran",
-              "addressRegion": "Tehran",
-              "streetAddress": "خیابان پیروزی، خیابان ششم نیروی هوایی، پلاک ۹۳",
-              "postalCode": "1777730000"
+              addressLocality: "Tehran",
+              addressRegion: "Tehran",
+              streetAddress: "خیابان پیروزی، خیابان ششم نیروی هوایی، پلاک ۹۳",
+              postalCode: "1777730000",
             },
-            "priceRange": "توافقی",
-            "openingHours": "Sa-Th 08:00-22:00",
-            "geo": {
+            priceRange: "توافقی",
+            openingHours: "Sa-Th 08:00-22:00",
+            geo: {
               "@type": "GeoCoordinates",
-              "latitude": "35.6978809",
-              "longitude": "51.489013"
+              latitude: "35.6978809",
+              longitude: "51.489013",
             },
-            "sameAs": [
-              "https://instagram.com/zarecarpet"
-            ]
-          })
+            sameAs: ["https://instagram.com/zarecarpet"],
+          }),
         }}
       />
 
       <Slider />
+      <WhyChooseUs />
       <Cards />
       <ServiceHighlight />
       <TehranMapSection />

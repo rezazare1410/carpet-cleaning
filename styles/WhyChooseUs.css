@@ -1,0 +1,216 @@
+.why-choose-us {
+    width: 100%;
+    padding: 15px 20px 30px;
+    box-sizing: border-box;
+    direction: rtl;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.why-choose-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 25px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* عنوان بخش */
+.why-choose-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.why-choose-heading span {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #ff0000;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.why-choose-heading h2 {
+    margin: 0;
+    color: #252525;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+/* چیدمان مزیت‌ها */
+.why-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* هر مزیت */
+.why-feature {
+    position: relative;
+    display: flex;
+    min-height: 255px;
+    padding: 32px 22px 28px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+    box-shadow: 0 7px 24px rgba(0, 0, 0, 0.055);
+
+    /* حالت عادی؛ اگر انیمیشن اجرا نشود، کارت‌ها دیده می‌شوند */
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 700ms ease var(--delay, 0ms),
+        transform 700ms ease var(--delay, 0ms),
+        border-color 300ms ease,
+        box-shadow 300ms ease;
+}
+
+/* فقط بعد از آماده‌شدن JavaScript، کارت‌ها برای انیمیشن مخفی می‌شوند */
+.why-animation-ready .why-feature {
+    opacity: 0;
+    transform: translateY(45px);
+}
+
+/* نمایش یکی‌یکی کارت‌ها */
+.why-animation-ready .why-feature.why-feature-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.why-feature:hover {
+    border-color: rgba(230, 0, 0, 0.18);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* آیکون */
+.why-feature-icon {
+    display: flex;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    color: #e60000;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+}
+
+.why-feature-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.7;
+}
+
+/* متن */
+.why-feature-content h3 {
+    margin: 0 0 12px;
+    color: #292929;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.why-feature-content p {
+    margin: 0;
+    color: #686868;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+}
+
+/* تبلت */
+@media (max-width: 1050px) {
+    .why-features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .why-choose-us {
+        padding: 15px 0 30px;
+    }
+
+    .why-choose-container {
+        width: calc(100% - 32px);
+        padding: 32px 16px;
+    }
+
+    .why-choose-heading {
+        margin-bottom: 28px;
+    }
+
+    .why-choose-heading span {
+        margin-bottom: 8px;
+        font-size: 18px;
+    }
+
+    .why-choose-heading h2 {
+        font-size: 21px;
+        line-height: 1.8;
+    }
+
+    .why-features-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .why-feature {
+        min-height: auto;
+        padding: 20px 16px;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        text-align: right;
+    }
+
+    .why-feature-icon {
+        width: 54px;
+        height: 54px;
+        margin-bottom: 0;
+    }
+
+    .why-feature-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .why-feature-content {
+        flex: 1;
+    }
+
+    .why-feature-content h3 {
+        margin-bottom: 6px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .why-feature-content p {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+}
+
+/* حذف انیمیشن برای کاربرانی که حرکت کمتر را انتخاب کرده‌اند */
+@media (prefers-reduced-motion: reduce) {
+
+    .why-feature,
+    .why-animation-ready .why-feature,
+    .why-animation-ready .why-feature.why-feature-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
