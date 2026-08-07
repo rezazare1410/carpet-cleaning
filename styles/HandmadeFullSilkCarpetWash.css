@@ -1,270 +1,358 @@
-.hero-section-full-silk {
+/* ==== صفحه شستشوی فرش دستبافت تمام ابریشم ==== */
+.handmade-full-silk-page {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Shabnam", sans-serif;
+}
+
+/* ==== بخش Hero ==== */
+.handmade-full-silk-page .hero-section-full-silk {
+    width: 100%;
+    height: 80vh;
+    min-height: 520px;
+    margin: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+
     background-image: url('/images/full-silk-hero.webp');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    background-repeat: no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
     color: white;
+    text-align: center;
 }
 
-.hero-overlay-full-silk {
-    background-color: rgba(0, 0, 0, 0.6);
+.handmade-full-silk-page .hero-overlay-full-silk {
+    width: 100%;
+    max-width: 600px;
     padding: 40px;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     text-align: center;
-    max-width: 600px;
-}
-
-.hero-overlay-full-silk h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.hero-overlay-full-silk p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.hero-overlay-full-silk button {
-    background-color: #007b9e;
     color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 25px;
+}
+
+.handmade-full-silk-page .hero-overlay-full-silk h1 {
+    margin: 0 0 15px;
+
+    font-size: 2.2rem;
+    line-height: 1.5;
+    color: white;
+}
+
+.handmade-full-silk-page .hero-overlay-full-silk p {
+    margin: 0 0 24px;
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white;
+}
+
+/* دکمه ثبت سفارش */
+.handmade-full-silk-page .full-silk-order-button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+
+    font-family: inherit;
+    font-size: 1.1rem;
     font-weight: bold;
+
+    background-color: #2e7d32;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
     cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.hero-overlay-full-silk button:hover {
-    background-color: #005c78;
+.handmade-full-silk-page .full-silk-order-button:hover {
+    background-color: #388e3c;
+    color: white;
+    transform: scale(1.03);
 }
 
-/* بخش چرا شستشو */
-.why-wash-full-silk {
+/* ==== بخش اهمیت شستشوی اصولی ==== */
+.handmade-full-silk-page .why-wash-full-silk {
     padding: 60px 20px;
+    box-sizing: border-box;
+
+    background-color: white;
     text-align: center;
 }
 
-.why-wash-full-silk h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
+.handmade-full-silk-page .why-wash-full-silk h2 {
+    margin: 0 0 20px;
 
-.why-wash-full-silk p {
-    max-width: 720px;
-    margin: 0 auto 40px;
-    font-size: 15px;
+    font-size: 2rem;
+    line-height: 1.6;
     color: #333;
 }
 
-/* ویژگی‌ها */
-.features-full-silk {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.handmade-full-silk-page .why-wash-full-silk>p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #555;
 }
 
-.feature-full-silk {
-    background-color: #f9f9f9;
+/* ==== کارت‌های ویژگی‌ها ==== */
+.handmade-full-silk-page .features-full-silk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.handmade-full-silk-page .feature-full-silk {
+    width: 280px;
     padding: 20px;
+    box-sizing: border-box;
+
+    background-color: #f9f9f9;
     border-radius: 12px;
-    max-width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
-.feature-full-silk:hover {
+.handmade-full-silk-page .feature-full-silk:hover {
     transform: translateY(-5px);
 }
 
-.feature-full-silk img {
-    height: 60px;
-    margin-bottom: 15px;
+/* اندازه قطعی آیکون‌های بخش ویژگی‌ها */
+.handmade-full-silk-page .feature-full-silk>img {
+    display: block !important;
+
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+
+    margin: 0 auto 15px !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
 }
 
-.feature-full-silk h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+.handmade-full-silk-page .feature-full-silk h3 {
+    margin: 0 0 10px;
+
+    font-size: 1.2rem;
+    line-height: 1.7;
     color: #222;
 }
 
-.feature-full-silk p {
-    font-size: 14px;
-    color: #444;
+.handmade-full-silk-page .feature-full-silk p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #555;
 }
 
-/* مراحل شستشو */
-.wash-process-full-silk {
+/* ==== مراحل شستشو ==== */
+.handmade-full-silk-page .wash-process-full-silk {
     padding: 60px 20px;
+    box-sizing: border-box;
+
     background-color: #fafafa;
     text-align: center;
 }
 
-.wash-process-full-silk h2 {
-    font-size: 22px;
-    margin-bottom: 40px;
+.handmade-full-silk-page .wash-process-full-silk h2 {
+    margin: 0 0 40px;
+
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #333;
 }
 
-.process-steps-full-silk {
+.handmade-full-silk-page .process-steps-full-silk {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 16px;
-    justify-content: space-between;
-    padding: 0 20px;
+
     direction: rtl;
-    overflow-x: auto;
 }
 
-.silk-step {
-    flex: 1 1 calc((100% - 5 * 16px) / 6);
-    min-width: 180px;
-    background-color: white;
+.handmade-full-silk-page .full-silk-step {
+    flex: 1 1 0;
+    min-width: 0;
     padding: 16px;
+    box-sizing: border-box;
+
+    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.silk-step:hover {
+.handmade-full-silk-page .full-silk-step:hover {
     transform: translateY(-5px);
 }
 
-.silk-step img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    object-fit: contain;
+/* اندازه قطعی آیکون‌های مراحل شستشو */
+.handmade-full-silk-page .full-silk-step>img {
+    display: block !important;
+
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+
+    margin: 0 auto 10px !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
 }
 
-.silk-step h3 {
-    font-size: 15px;
+.handmade-full-silk-page .full-silk-step h3 {
+    margin: 0 0 8px;
+
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    line-height: 1.7;
     color: #222;
 }
 
-.silk-step p {
-    font-size: 13px;
+.handmade-full-silk-page .full-silk-step p {
+    margin: 0;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
     color: #555;
-    line-height: 1.6;
-}
-.hero-overlay-full-silk button {
-    padding: 0.9rem 2rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    background-color: #2e7d32;
-    /* سبز تیره */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
 }
 
-.hero-overlay-full-silk button:hover {
-    background-color: #388e3c;
-    /* سبز روشن‌تر در حالت hover */
-    transform: scale(1.03);
-}
-
+/* ==== تبلت ==== */
 @media (max-width: 1024px) {
-    .hero-overlay-full-silk {
+    .handmade-full-silk-page .hero-overlay-full-silk {
         padding: 30px;
     }
 
-    .hero-overlay-full-silk h1 {
-        font-size: 24px;
+    .handmade-full-silk-page .process-steps-full-silk {
+        max-width: 750px;
+        padding: 0;
+
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
     }
 
-    .hero-overlay-full-silk p {
-        font-size: 15px;
-    }
-
-    .hero-overlay-full-silk button {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    .feature-full-silk {
-        max-width: 240px;
-    }
-
-    .silk-step {
-        min-width: 200px;
+    .handmade-full-silk-page .full-silk-step {
+        flex: 1 1 calc(50% - 24px);
+        max-width: 330px;
     }
 }
 
+/* ==== موبایل ==== */
 @media (max-width: 768px) {
-    .hero-section-full-silk {
-        height: 60vh;
+    .handmade-full-silk-page .hero-section-full-silk {
+        height: 70vh;
+        min-height: 480px;
         padding: 0 15px;
     }
 
-    .hero-overlay-full-silk {
-        padding: 20px;
+    .handmade-full-silk-page .hero-overlay-full-silk {
+        max-width: 100%;
+        padding: 30px 20px;
     }
 
-    .hero-overlay-full-silk h1 {
-        font-size: 20px;
+    .handmade-full-silk-page .hero-overlay-full-silk h1 {
+        font-size: 1.8rem;
     }
 
-    .hero-overlay-full-silk p {
-        font-size: 14px;
+    .handmade-full-silk-page .hero-overlay-full-silk p {
+        font-size: 1rem;
     }
 
-    .hero-overlay-full-silk button {
-        font-size: 13px;
-        padding: 8px 16px;
+    .handmade-full-silk-page .why-wash-full-silk,
+    .handmade-full-silk-page .wash-process-full-silk {
+        padding: 45px 15px;
     }
 
-    .features-full-silk {
+    .handmade-full-silk-page .why-wash-full-silk h2,
+    .handmade-full-silk-page .wash-process-full-silk h2 {
+        font-size: 1.7rem;
+    }
+
+    .handmade-full-silk-page .why-wash-full-silk>p {
+        font-size: 1rem;
+    }
+
+    .handmade-full-silk-page .features-full-silk,
+    .handmade-full-silk-page .process-steps-full-silk {
         flex-direction: column;
         align-items: center;
     }
 
-    .wash-process-full-silk h2 {
-        font-size: 20px;
-    }
-
-        .process-steps-full-silk {
-            flex-wrap: wrap;
-            overflow-x: unset;
-            justify-content: center;
-        }
-
-    .silk-step {
-        flex: 0 0 auto;
-        width: 220px;
-        margin-left: 10px;
+    .handmade-full-silk-page .feature-full-silk,
+    .handmade-full-silk-page .full-silk-step {
+        width: 90%;
+        max-width: 350px;
+        flex: none;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-overlay-full-silk h1 {
-        font-size: 18px;
+    .handmade-full-silk-page .hero-section-full-silk {
+        height: 65vh;
+        min-height: 430px;
     }
 
-    .hero-overlay-full-silk p {
-        font-size: 13px;
+    .handmade-full-silk-page .hero-overlay-full-silk {
+        padding: 25px 15px;
     }
 
-    .hero-overlay-full-silk button {
-        font-size: 12px;
+    .handmade-full-silk-page .hero-overlay-full-silk h1 {
+        font-size: 1.55rem;
     }
 
-    .feature-full-silk {
-        max-width: 100%;
+    .handmade-full-silk-page .full-silk-order-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 
-    .silk-step {
-        width: 90%;
-        max-width: 300px;
+    .handmade-full-silk-page .feature-full-silk,
+    .handmade-full-silk-page .full-silk-step {
+        width: 100%;
     }
 }

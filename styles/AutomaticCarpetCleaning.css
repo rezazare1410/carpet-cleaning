@@ -1,7 +1,7 @@
 
 .page-container {
     direction: rtl;
-    font-family: 'BKoodak', sans-serif;
+    font-family: "Shabnam", sans-serif;
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -38,7 +38,7 @@
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
-    font-family: 'BKoodak', sans-serif;
+    font-family: "Shabnam", sans-serif;
 }
 
 .service-card:hover {

@@ -1,32 +1,124 @@
+/* ========================================
+   فونت شبنم با اعداد فارسی
+======================================== */
+
 @font-face {
-    font-family: 'BKoodak';
-    src: url('/fonts/BKoodak.woff2') format('woff2');
-    font-weight: normal;
+    font-family: "ShabnamFD";
+    src: url("/fonts/shabnam/Shabnam-FD.woff2?v=2") format("woff2");
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
-/* تنظیم فونت برای کل پروژه */
-* {
-    font-family: 'BKoodak', Arial, sans-serif;
+@font-face {
+    font-family: "ShabnamFD";
+    src: url("/fonts/shabnam/Shabnam-Medium-FD.woff2?v=2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: "ShabnamFD";
+    src: url("/fonts/shabnam/Shabnam-Medium-FD.woff2?v=2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ShabnamFD";
+    src: url("/fonts/shabnam/Shabnam-Bold-FD.woff2?v=2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ========================================
+   رنگ‌های اصلی سایت
+======================================== */
+
+:root {
+    --color-primary: #e60000;
+    --color-primary-hover: #c90000;
+
+    --color-accent: #2e7d32;
+    --color-accent-hover: #256628;
+
+    --color-text: #252525;
+    --color-text-light: #686868;
+
+    --color-background: #ffffff;
+    --color-background-light: #f8f8f8;
+    --color-border: #eeeeee;
+}
+
+
+/* ========================================
+   تنظیمات عمومی سایت
+======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
+html {
+    font-family: "ShabnamFD", Tahoma, Arial, sans-serif;
+}
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: "ShabnamFD", Tahoma, Arial, sans-serif;
+    font-weight: 400;
+}
+
+
+/* جلوگیری از جایگزینی فونت در فایل‌های دیگر */
+
+body,
+body * {
+    font-family: "ShabnamFD", Tahoma, Arial, sans-serif !important;
+}
+
+
+/* عناصر فرم */
+
+button,
+input,
+textarea,
+select {
+    font-family: "ShabnamFD", Tahoma, Arial, sans-serif !important;
+}
+
+
+/* اعداد بزرگ */
+
 .big-number {
+    color: var(--color-primary);
     font-size: 20px;
-    /* اندازه بزرگ‌تر */
-    font-weight: bold;
-    /* ضخیم‌تر */
-    color: red;
-    /* رنگ قرمز (اختیاری) */
+    font-weight: 700;
 }
+
+
+/* فاصله محتوا از منوی بالای سایت */
+
 .page-content {
-    padding-top: 130px;
-    /* مقدار برابر با ارتفاع دقیق منو */
+    padding-top: 0;
 }
+
+
+/* حذف علامت پیش‌فرض لیست‌ها */
+
 ul li::marker {
     content: none;
 }

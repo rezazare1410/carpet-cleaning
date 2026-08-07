@@ -13,7 +13,7 @@
     position: relative;
     margin-top: 40px;
     direction: rtl;
-    font-family: 'BKoodak', sans-serif;
+    font-family: "Shabnam", sans-serif;
 }
 
 .map-header {
@@ -284,4 +284,12 @@
     max-width: 280px;
     text-align: center;
 }
+}
+/* حذف آندرلاین لینک‌های بخش نقشه تهران */
+.tehran-map-section a,
+.tehran-map-section a:hover,
+.tehran-map-section a:focus,
+.tehran-map-section a:active,
+.tehran-map-section a:visited {
+    text-decoration: none !important;
 }

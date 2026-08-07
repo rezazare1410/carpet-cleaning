@@ -1,15 +1,18 @@
-import './globals.css';
-import Header from './_components/Header';
-import Footer from './_components/Footer';
-import { Analytics } from '@vercel/analytics/react';
+import "./globals.css";
+import Header from "./_components/Header";
+import Footer from "./_components/Footer";
+import PersianDigits from "./_components/PersianDigits";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی",
   description:
     "قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌برداری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.",
+
   icons: {
     icon: "/favicon-512.png",
   },
+
   openGraph: {
     title: "کارخانه قالیشویی زارع | خدمات تخصصی شستشوی فرش",
     description:
@@ -27,6 +30,7 @@ export const metadata = {
     locale: "fa_IR",
     type: "website",
   },
+
   alternates: {
     canonical: "https://zarecarpet.com",
   },
@@ -60,28 +64,33 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <head>
-        <link rel="icon" href="/favicon-512.png" type="image/png" />
-
-
-        {/* ✅ preload فونت BKoodak */}
+        {/* پیش‌بارگذاری فونت شبنم با اعداد فارسی */}
         <link
           rel="preload"
-          href="/fonts/BKoodak.ttf"
+          href="/fonts/shabnam/Shabnam-FD.woff2"
           as="font"
-          type="font/ttf"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
 
-        {/* ✅ اسکیمای ساختاری */}
+        {/* اسکیمای ساختاری سایت */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
         />
       </head>
+
       <body>
+        <PersianDigits />
+
         <Header />
+
         {children}
+
         <Footer />
+
         <Analytics />
       </body>
     </html>

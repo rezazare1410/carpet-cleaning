@@ -1,205 +1,301 @@
-/* فونت اصلی پروژه */
-body {
-    font-family: 'BKoodak', sans-serif;
+/* ==== صفحه شستشوی فرش دستبافت کرک و پشم ==== */
+.handmade-wool-page {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Shabnam", sans-serif;
 }
 
 /* ==== HERO SECTION ==== */
-.hero-section {
+.handmade-wool-hero {
+    width: 100%;
+    height: 80vh;
+    min-height: 520px;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+
     background-image: url('/images/handmadewash.webp');
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    background-repeat: no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
     color: white;
     text-align: center;
-    padding: 0 20px;
 }
 
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 12px;
+/* کادر تیره روی تصویر */
+.handmade-wool-hero .hero-overlay {
+    width: 100%;
     max-width: 600px;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
 }
 
-.hero-overlay h1 {
+.handmade-wool-hero .hero-overlay h1 {
+    margin: 0 0 16px;
+
     font-size: 2.2rem;
-    margin-bottom: 16px;
-}
-
-.hero-overlay p {
-    font-size: 1.2rem;
-    margin-bottom: 24px;
-}
-
-.hero-overlay button {
-    background-color: #00b894;
+    line-height: 1.5;
     color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.hero-overlay button:hover {
-    background-color: #019874;
-}
+.handmade-wool-hero .hero-overlay p {
+    margin: 0 0 24px;
 
-/* ==== WHY WASH SECTION ==== */
-.why-wash-section {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f8f8f8;
-}
-
-.why-wash-section h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 12px;
-}
-
-.why-wash-section p {
     font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
+    line-height: 1.8;
+    color: white;
 }
 
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.feature {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateY(-5px);
-}
-
-.feature img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
-}
-
-.feature h3 {
-    font-size: 1.3rem;
-    color: #222;
-    margin-bottom: 8px;
-}
-
-.feature p {
-    font-size: 1rem;
-    color: #666;
-}
-.hero-section button {
+/* لینک ثبت سفارش */
+.handmade-wool-hero .hero-overlay a {
+    display: inline-block;
     padding: 0.9rem 2rem;
+
+    font-family: inherit;
     font-size: 1.1rem;
     font-weight: bold;
+
     background-color: #2e7d32;
-    /* سبز تیره زیبا */
     color: white;
+
     border: none;
     border-radius: 8px;
+    text-decoration: none;
     cursor: pointer;
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.hero-section button:hover {
+.handmade-wool-hero .hero-overlay a:hover {
     background-color: #388e3c;
+    color: white;
     transform: scale(1.03);
 }
 
-/* ==== WASH PROCESS SECTION ==== */
-.wash-process {
-    text-align: center;
+/* ==== WHY WASH SECTION ==== */
+.handmade-wool-page .why-wash-section {
     padding: 60px 20px;
-    background-color: #fff;
-}
+    box-sizing: border-box;
 
-.wash-process h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.process-steps {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.step {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
     text-align: center;
-    width: 230px;
+}
+
+.handmade-wool-page .why-wash-section h2 {
+    margin: 0 0 12px;
+
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.handmade-wool-page .why-wash-section>p {
+    max-width: 900px;
+    margin: 0 auto 30px;
+
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #555;
+}
+
+/* کارت‌های ویژگی */
+.handmade-wool-page .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.handmade-wool-page .feature {
+    width: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.step:hover {
+.handmade-wool-page .feature:hover {
     transform: translateY(-5px);
 }
 
-.step img {
+.handmade-wool-page .feature img {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
+    object-fit: contain;
 }
 
-.step h3 {
+.handmade-wool-page .feature h3 {
+    margin: 0 0 8px;
+
     font-size: 1.3rem;
+    line-height: 1.7;
     color: #222;
-    margin-bottom: 8px;
 }
 
-.step p {
+.handmade-wool-page .feature p {
+    margin: 0;
+
     font-size: 1rem;
+    line-height: 1.9;
+    color: #666;
+}
+
+/* ==== WASH PROCESS SECTION ==== */
+.handmade-wool-page .wash-process {
+    padding: 60px 20px;
+    box-sizing: border-box;
+
+    background-color: white;
+    text-align: center;
+}
+
+.handmade-wool-page .wash-process h2 {
+    margin: 0 0 30px;
+
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* کارت‌های مراحل شستشو */
+.handmade-wool-page .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.handmade-wool-page .step {
+    width: 230px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.handmade-wool-page .step:hover {
+    transform: translateY(-5px);
+}
+
+.handmade-wool-page .step img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+    object-fit: contain;
+}
+
+.handmade-wool-page .step h3 {
+    margin: 0 0 8px;
+
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #222;
+}
+
+.handmade-wool-page .step p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.9;
     color: #666;
 }
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
+    .handmade-wool-hero {
+        height: 70vh;
+        min-height: 480px;
+        padding: 0 15px !important;
+    }
 
-    .features,
-    .process-steps {
+    .handmade-wool-hero .hero-overlay {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .handmade-wool-hero .hero-overlay h1 {
+        font-size: 1.8rem;
+    }
+
+    .handmade-wool-hero .hero-overlay p {
+        font-size: 1rem;
+    }
+
+    .handmade-wool-page .features,
+    .handmade-wool-page .process-steps {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature,
-    .step {
+    .handmade-wool-page .feature,
+    .handmade-wool-page .step {
         width: 90%;
         max-width: 320px;
     }
 
-    .hero-overlay h1 {
-        font-size: 1.8rem;
+    .handmade-wool-page .why-wash-section,
+    .handmade-wool-page .wash-process {
+        padding: 45px 15px;
     }
 
-    .hero-overlay p {
+    .handmade-wool-page .why-wash-section h2,
+    .handmade-wool-page .wash-process h2 {
+        font-size: 1.7rem;
+    }
+
+    .handmade-wool-page .why-wash-section>p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .handmade-wool-hero {
+        height: 65vh;
+        min-height: 430px;
+    }
+
+    .handmade-wool-hero .hero-overlay {
+        padding: 25px 15px;
+    }
+
+    .handmade-wool-hero .hero-overlay h1 {
+        font-size: 1.55rem;
+    }
+
+    .handmade-wool-hero .hero-overlay a {
+        padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
 
-    .hero-overlay {
-        padding: 30px;
+    .handmade-wool-page .feature,
+    .handmade-wool-page .step {
+        width: 100%;
     }
 }

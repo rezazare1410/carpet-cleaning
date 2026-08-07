@@ -1,69 +1,71 @@
-@font-face {
-  font-family: "BKoodak";
-  src: url("/fonts/BKoodak.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
 .header-container {
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   width: 100%;
-  background: white;
+  background: var(--color-background, #fff);
   z-index: 1000;
-  font-family: "BKoodak", sans-serif;
+  font-family: "Shabnam", Tahoma, sans-serif;
   direction: rtl;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
+/* نوار بالای سایت */
+
 .top-bar {
-  background: red;
+  padding: 10px;
+  background: var(--color-primary, #e60000);
   color: white;
   text-align: center;
-  font-weight: bold;
-  padding: 10px;
   font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
 }
+
 
 /* دکمه‌های سفارش و تماس */
 
 .order-btn,
 .call-btn {
-  border-radius: 25px;
-  font-weight: bold;
   padding: 10px 18px;
-  border: 2px solid red;
-  font-size: 16px;
+  border: 2px solid var(--color-primary, #e60000);
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
   cursor: pointer;
   text-decoration: none;
 }
 
 .order-btn {
-  background: red;
+  background: var(--color-primary, #e60000);
   color: white;
 }
 
 .call-btn {
   background: white;
-  color: red;
+  color: var(--color-primary, #e60000);
 }
 
 .call-btn:hover {
-  background: red;
+  background: var(--color-primary, #e60000);
   color: white;
 }
+
 
 /* منوی اصلی دسکتاپ */
 
 .nav-menu ul {
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
-  list-style: none;
   padding: 0;
   margin: 0;
-  font-weight: bold;
-  flex-wrap: wrap;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .nav-menu li {
@@ -73,18 +75,20 @@
 }
 
 .nav-menu a {
+  color: var(--color-text, #252525);
+  font-weight: 600;
   text-decoration: none;
-  color: black;
 }
 
 .nav-menu a:hover {
-  color: red;
+  color: var(--color-primary, #e60000);
 }
 
 .dropdown-title {
   display: flex;
   align-items: center;
   gap: 6px;
+  font-weight: 600;
 }
 
 .dropdown-icon {
@@ -96,26 +100,39 @@
   transform: rotate(180deg);
 }
 
+
+/* منوهای بازشونده */
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
+  z-index: 999;
   width: 240px;
   flex-direction: column;
+  gap: 0;
   padding: 10px 0;
+  margin: 0;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
 }
 
 .dropdown-menu li {
-  padding: 8px 12px;
+  padding: 12px 16px;
+  border-bottom: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  background-color: #f0f0f0;
+  background-color: var(--color-background-light, #f8f8f8);
+}
+
+.dropdown-menu li a {
+  font-weight: 500;
 }
 
 .sub-dropdown,
@@ -135,25 +152,32 @@
   position: absolute;
   top: 0;
   right: 100%;
+  z-index: 9999;
   width: 220px;
   flex-direction: column;
-  padding: 6px 0;
+  gap: 0;
+  padding: 10px 0;
+  margin: 0;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
 }
 
 .sub-dropdown-icon,
 .refogh-dropdown-icon {
-  font-size: 14px;
   margin-right: 6px;
+  font-size: 14px;
 }
 
 .sub-dropdown-menu li,
 .refogh-dropdown-menu li {
-  padding: 8px 12px;
+  padding: 12px 16px;
+  border-bottom: none;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
 }
+
 
 /* نسخه دسکتاپ */
 
@@ -167,10 +191,10 @@
 
   .logo {
     order: 1;
-    width: 120px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 120px;
   }
 
   .nav-menu {
@@ -195,31 +219,51 @@
   .refogh-dropdown-menu {
     top: -110px;
   }
-     /* خط ذغالی با فاصله از چپ و راست */
-     .dropdown-menu>li::after,
-     .sub-dropdown-menu>li::after,
-     .refogh-dropdown-menu>li::after {
-       content: "";
-       position: absolute;
-       right: 14px;
-       left: 14px;
-       bottom: 0;
-       height: 1px;
-       background-color: #444;
-     }
-  
-     /* حذف خط از آخرین گزینه هر منو */
-     .dropdown-menu>li:last-child::after,
-     .sub-dropdown-menu>li:last-child::after,
-     .refogh-dropdown-menu>li:last-child::after {
-       display: none;
-     }
 
-  .sub-dropdown-menu > li:last-child,
-  .refogh-dropdown-menu > li:last-child {
-    border-bottom: none;
+  /* فاصله یکسان منوهای بازشونده */
+
+  .dropdown-menu,
+  .sub-dropdown-menu,
+  .refogh-dropdown-menu {
+    gap: 0 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* فاصله یکسان تمام گزینه‌ها */
+
+    .dropdown-menu>li,
+    .sub-dropdown-menu>li,
+    .refogh-dropdown-menu>li {
+      box-sizing: border-box;
+      padding: 12px 16px;
+      border-bottom: none !important;
+      line-height: 26px;
+    }
+
+  /* خط جداکننده نازک و یکسان */
+
+    .dropdown-menu>li::after,
+    .sub-dropdown-menu>li::after,
+    .refogh-dropdown-menu>li::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      bottom: 0;
+      left: 16px;
+      height: 1px;
+      background: #d5d5d5;
+    }
+
+  /* حذف خط آخرین گزینه */
+
+  .dropdown-menu>li:last-child::after,
+  .sub-dropdown-menu>li:last-child::after,
+  .refogh-dropdown-menu>li:last-child::after {
+    display: none;
   }
 }
+
 
 /* نسخه موبایل */
 
@@ -244,8 +288,8 @@
     padding: 6px;
     background: none;
     border: none;
+    color: var(--color-primary, #e60000);
     font-size: 1.6rem;
-    color: red;
     cursor: pointer;
   }
 
@@ -265,47 +309,43 @@
     gap: 8px;
   }
 
-  /*
-    منو زیر هدر قرار می‌گیرد و تا انتهای صفحه
-    داخل خودش قابلیت اسکرول دارد.
-  */
-
   .mobile-menu {
     position: absolute;
     top: 100%;
     right: 0;
+    z-index: 999;
     width: 70vw;
     max-width: 320px;
     max-height: calc(100dvh - 112px);
-    overflow-y: auto;
     overflow-x: hidden;
+    overflow-y: auto;
     overscroll-behavior: contain;
     box-sizing: border-box;
     padding: 16px 16px 40px;
     background: white;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border, #eee);
     box-shadow: -4px 6px 12px rgba(0, 0, 0, 0.12);
     animation: slideDown 0.3s ease;
-    z-index: 999;
     -webkit-overflow-scrolling: touch;
   }
 
   .mobile-menu ul {
-    list-style: none;
     padding: 0;
     margin: 0;
+    list-style: none;
   }
 
   .mobile-menu li {
     width: 100%;
   }
-    .mobile-menu>ul>li {
-      border-bottom: 1px solid #444;
-    }
-  
-    .mobile-menu>ul>li:last-child {
-      border-bottom: none;
-    }
+
+  .mobile-menu>ul>li {
+    border-bottom: 1px solid #d5d5d5;
+  }
+
+  .mobile-menu>ul>li:last-child {
+    border-bottom: none;
+  }
 
   .mobile-menu li,
   .mobile-menu a,
@@ -313,25 +353,27 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    text-align: right;
-    font-family: "BKoodak", sans-serif;
-    font-size: 16px;
     padding: 8px 0;
-    text-decoration: none;
-    color: black;
     background: none;
     border: none;
+    color: var(--color-text, #252525);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.8;
+    text-align: right;
+    text-decoration: none;
   }
 
   .mobile-menu a:hover {
-    color: red;
+    color: var(--color-primary, #e60000);
   }
 
   .mobile-dropdown-toggle {
     display: flex !important;
     align-items: center;
     justify-content: space-between;
-    font-weight: bold;
+    font-weight: 600 !important;
     cursor: pointer;
   }
 
@@ -346,28 +388,24 @@
   .mobile-submenu {
     padding-right: 12px;
   }
-    /* زیرمنوهای بخش خدمات فقط در موبایل */
-    .mobile-submenu>a {
-      color: #666;
-      padding: 10px 8px;
-      border-bottom: 1px solid #555;
-    }
-  
-    /* سرمنوهای خدمات قرمز باقی بمانند */
-    .mobile-submenu>.mobile-subsection {
-      color: red;
-      padding: 10px 0 6px;
-      font-weight: bold;
-    }
-        .mobile-submenu>a:last-child {
-          border-bottom: none;
-        }
 
+  .mobile-submenu>a {
+    padding: 10px 8px;
+    border-bottom: 1px solid #d5d5d5;
+    color: var(--color-text-light, #686868);
+    font-weight: 400;
+  }
+
+  .mobile-submenu>a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-submenu>.mobile-subsection,
   .mobile-subsection {
     margin-top: 10px;
     padding: 8px 0 4px;
-    font-weight: bold;
-    color: red;
+    color: var(--color-primary, #e60000);
+    font-weight: 600;
   }
 
   .call-btn {
@@ -375,26 +413,28 @@
   }
 
   .order-btn {
-    width: 140px;
-    height: 40px;
-    margin: 0 auto;
-    padding: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 140px;
+    height: 40px;
     box-sizing: border-box;
-    background: red;
-    color: white;
+    margin: 0 auto;
+    padding: 8px 0;
+    background: var(--color-primary, #e60000);
     border: none;
     border-radius: 8px;
-    font-family: "BKoodak", sans-serif;
+    color: white;
+    font-family: inherit;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    line-height: 1.5;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
   }
 }
+
 
 @keyframes slideDown {
   from {
@@ -408,10 +448,11 @@
   }
 }
 
-/* جلوگیری از باقی‌ماندن حالت Hover روی صفحات لمسی */
+
+/* هاور فقط برای دستگاه‌های دارای ماوس */
 
 @media (hover: hover) and (pointer: fine) {
   .order-btn:hover {
-    background-color: #b71c1c;
+    background-color: var(--color-primary-hover, #c90000);
   }
 }

@@ -1,7 +1,7 @@
 .contact-container {
     direction: rtl;
     padding: 2rem 1rem;
-    font-family: 'BKoodak', Arial, sans-serif;
+    font-family: "Shabnam", Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -225,4 +225,12 @@
     .map-container iframe {
         height: 250px;
     }
+}
+.contact-info-section,
+.contact-info-section ul,
+.contact-info-section li,
+.contact-info-section a,
+.contact-info-section span {
+    font-family: "Shabnam", Arial, sans-serif !important;
+    font-weight: 400;
 }

@@ -62,3 +62,11 @@
     text-align: center;
     margin-top: 2rem;
 }
+/* حذف آندرلاین لینک‌های بخش جدیدترین مقالات */
+.latest-posts-section a,
+.latest-posts-section a:hover,
+.latest-posts-section a:focus,
+.latest-posts-section a:active,
+.latest-posts-section a:visited {
+    text-decoration: none !important;
+}

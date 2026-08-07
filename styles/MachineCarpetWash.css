@@ -1,207 +1,305 @@
 /* ==== فونت اصلی پروژه ==== */
 body {
-    font-family: 'BKoodak', sans-serif;
+    font-family: "Shabnam", sans-serif;
+}
+
+/* ==== صفحه فرش ماشینی ==== */
+.machine-carpet-page {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* ==== HERO SECTION ==== */
-.hero-section {
+.machine-carpet-hero {
+    width: 100%;
+    height: 80vh;
+    min-height: 520px;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+
     background-image: url('/images/machine-carpet.webp');
-    /* عکس بنر فرش ماشینی */
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    background-repeat: no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: relative;
     color: white;
     text-align: center;
-    padding: 0 20px;
 }
 
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 12px;
+/* کادر تیره روی تصویر */
+.machine-carpet-hero .hero-overlay {
+    width: 100%;
     max-width: 600px;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
 }
 
-.hero-overlay h1 {
+.machine-carpet-hero .hero-overlay h1 {
+    margin: 0 0 16px;
     font-size: 2.2rem;
-    margin-bottom: 16px;
-}
-
-.hero-overlay p {
-    font-size: 1.2rem;
-    margin-bottom: 24px;
-}
-
-.hero-overlay button {
-    background-color: #00b894;
+    line-height: 1.5;
     color: white;
-    padding: 12px 24px;
+}
+
+.machine-carpet-hero .hero-overlay p {
+    margin: 0 0 24px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white;
+}
+
+/* دکمه یا لینک ثبت سفارش */
+.machine-carpet-hero .hero-overlay a,
+.machine-carpet-hero .hero-overlay button {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    background-color: #2e7d32;
+    color: white;
+
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.hero-overlay button:hover {
-    background-color: #019874;
+.machine-carpet-hero .hero-overlay a:hover,
+.machine-carpet-hero .hero-overlay button:hover {
+    background-color: #388e3c;
+    color: white;
+    transform: scale(1.03);
 }
 
 /* ==== WHY WASH SECTION ==== */
-.why-wash-section {
-    text-align: center;
+.machine-carpet-page .why-wash-section {
     padding: 60px 20px;
+    box-sizing: border-box;
+
     background-color: #f8f8f8;
-}
-
-.why-wash-section h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 12px;
-}
-
-.why-wash-section p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 30px;
-}
-
-.features {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.feature {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.machine-carpet-page .why-wash-section h2 {
+    margin: 0 0 12px;
+
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.machine-carpet-page .why-wash-section>p {
+    max-width: 900px;
+    margin: 0 auto 30px;
+
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #555;
+}
+
+/* کارت‌های ویژگی */
+.machine-carpet-page .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.machine-carpet-page .feature {
     width: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.feature:hover {
+.machine-carpet-page .feature:hover {
     transform: translateY(-5px);
 }
 
-.feature img {
+.machine-carpet-page .feature img {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
+    object-fit: contain;
 }
 
-.feature h3 {
+.machine-carpet-page .feature h3 {
+    margin: 0 0 8px;
+
     font-size: 1.3rem;
+    line-height: 1.7;
     color: #222;
-    margin-bottom: 8px;
 }
 
-.feature p {
+.machine-carpet-page .feature p {
+    margin: 0;
+
     font-size: 1rem;
+    line-height: 1.9;
     color: #666;
 }
 
 /* ==== WASH PROCESS SECTION ==== */
-.wash-process {
-    text-align: center;
+.machine-carpet-page .wash-process {
     padding: 60px 20px;
+    box-sizing: border-box;
+
     background-color: #fff;
-}
-
-.wash-process h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.process-steps {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.step {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.machine-carpet-page .wash-process h2 {
+    margin: 0 0 30px;
+
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* کارت‌های مراحل شستشو */
+.machine-carpet-page .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.machine-carpet-page .step {
     width: 230px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.step:hover {
+.machine-carpet-page .step:hover {
     transform: translateY(-5px);
 }
 
-.step img {
+.machine-carpet-page .step img {
     width: 60px;
     height: 60px;
     margin-bottom: 12px;
+    object-fit: contain;
 }
 
-.step h3 {
+.machine-carpet-page .step h3 {
+    margin: 0 0 8px;
+
     font-size: 1.3rem;
+    line-height: 1.7;
     color: #222;
-    margin-bottom: 8px;
 }
 
-.step p {
+.machine-carpet-page .step p {
+    margin: 0;
+
     font-size: 1rem;
+    line-height: 1.9;
     color: #666;
-}
-.machine-carpet-hero button {
-    padding: 0.9rem 2rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    background-color: #2e7d32;
-    /* سبز تیره */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.machine-carpet-hero button:hover {
-    background-color: #388e3c;
-    /* سبز روشن‌تر در حالت hover */
-    transform: scale(1.03);
 }
 
 /* ==== RESPONSIVE ==== */
 @media (max-width: 768px) {
+    .machine-carpet-hero {
+        height: 70vh;
+        min-height: 480px;
+        padding: 0 15px !important;
+    }
 
-    .features,
-    .process-steps {
+    .machine-carpet-hero .hero-overlay {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .machine-carpet-hero .hero-overlay h1 {
+        font-size: 1.8rem;
+    }
+
+    .machine-carpet-hero .hero-overlay p {
+        font-size: 1rem;
+    }
+
+    .machine-carpet-page .features,
+    .machine-carpet-page .process-steps {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature,
-    .step {
+    .machine-carpet-page .feature,
+    .machine-carpet-page .step {
         width: 90%;
         max-width: 320px;
     }
 
-    .hero-overlay h1 {
-        font-size: 1.8rem;
+    .machine-carpet-page .why-wash-section,
+    .machine-carpet-page .wash-process {
+        padding: 45px 15px;
     }
 
-    .hero-overlay p {
+    .machine-carpet-page .why-wash-section h2,
+    .machine-carpet-page .wash-process h2 {
+        font-size: 1.7rem;
+    }
+
+    .machine-carpet-page .why-wash-section>p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .machine-carpet-hero {
+        height: 65vh;
+        min-height: 430px;
+    }
+
+    .machine-carpet-hero .hero-overlay {
+        padding: 25px 15px;
+    }
+
+    .machine-carpet-hero .hero-overlay h1 {
+        font-size: 1.55rem;
+    }
+
+    .machine-carpet-hero .hero-overlay a,
+    .machine-carpet-hero .hero-overlay button {
+        padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
 
-    .hero-overlay {
-        padding: 30px;
+    .machine-carpet-page .feature,
+    .machine-carpet-page .step {
+        width: 100%;
     }
 }

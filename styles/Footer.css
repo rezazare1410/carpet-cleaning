@@ -5,12 +5,12 @@
     background: #fff;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 40px auto 20px;
     max-width: 1200px;
     width: 90%;
     direction: rtl;
-    font-family: 'BKoodak', sans-serif;
+    font-family: "Shabnam", sans-serif;
 }
 
 .footer-content {
@@ -33,7 +33,7 @@
 /* عنوان پوشش سراسری */
 .footertitle1 {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 10px;
     text-align: right;
     padding-right: 20px;
@@ -55,7 +55,7 @@
     gap: 10px;
 }
 
-/* آیکون های لیست مکان */
+/* آیکون‌های مکان */
 .footer-icon {
     background-color: #f5f5f5;
     width: 34px;
@@ -65,18 +65,18 @@
     justify-content: center;
     border-radius: 10px;
     font-size: 16px;
-    color: black;
+    color: #000;
     flex-shrink: 0;
 }
 
-/* وسط لوگو و متن */
+/* لوگوی فوتر */
 .footer-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    /* اختیاری برای فاصله پایین */
 }
+
 .footer-description {
     width: 100%;
     text-align: justify;
@@ -88,28 +88,50 @@
     color: #333;
 }
 
-/* دکمه اصلی فوتر */
+/* کادر قرمز فوتر */
 .footer-button {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: red;
-    color: white;
+    background-color: #e60000;
+    color: #fff !important;
     padding: 20px;
     border-radius: 12px;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: center;
-    transition: all 0.3s ease-in-out;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     cursor: pointer;
     width: 300px;
     height: 100px;
     margin: 20px auto 0;
+    text-decoration: none !important;
+}
+
+/* حذف خط از خود کادر و تمام نوشته‌های داخل آن */
+.footer-button,
+.footer-button:link,
+.footer-button:visited,
+.footer-button:hover,
+.footer-button:focus,
+.footer-button:active,
+.footer-button *,
+.footer-button a,
+.footer-button a:link,
+.footer-button a:visited,
+.footer-button a:hover,
+.footer-button a:focus,
+.footer-button a:active {
+    color: #fff !important;
+    text-decoration: none !important;
 }
 
 .footer-button:hover {
-    background-color: darkred;
+    background-color: #b40000;
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -138,6 +160,7 @@
     border-radius: 10px;
     font-size: 18px;
     color: red;
+    flex-shrink: 0;
 }
 
 .contact-icon i {
@@ -152,7 +175,7 @@
 }
 
 .contact-title {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 16px;
     color: #333;
 }
@@ -173,9 +196,10 @@
     margin: 0 10px;
     font-size: 24px;
     color: red;
+    text-decoration: none;
 }
 
-/* ریسپانسیو */
+/* نمایش در موبایل */
 @media (max-width: 768px) {
     .footer-container {
         padding: 20px;
@@ -197,6 +221,7 @@
     .footer-title,
     .footertitle1 {
         text-align: center;
+        padding-right: 0;
     }
 
     .footer-list li {
@@ -212,15 +237,17 @@
 
     .contact-info {
         align-items: center;
+        text-align: center;
     }
 
     .footer-button {
         width: 100%;
         max-width: 300px;
-        font-size: 18px;
-        padding: 15px;
         height: auto;
+        min-height: 90px;
+        padding: 15px;
         margin-top: 20px;
+        font-size: 18px;
     }
 
     .footer-description {

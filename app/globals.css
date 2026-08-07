@@ -1,53 +1,98 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ========================================
+   فونت شبنم
+======================================== */
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("/fonts/shabnam/Shabnam.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Shabnam";
+  src: url("/fonts/shabnam/Shabnam-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Shabnam";
+  src: url("/fonts/shabnam/Shabnam-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================
+   رنگ‌های اصلی سایت
+======================================== */
+
+:root {
+  --color-primary: #e60000;
+  --color-primary-hover: #c90000;
+
+  --color-accent: #2e7d32;
+  --color-accent-hover: #256628;
+
+  --color-text: #252525;
+  --color-text-light: #686868;
+
+  --color-background: #ffffff;
+  --color-background-light: #f8f8f8;
+  --color-border: #eeeeee;
+}
+
+/* ========================================
+   تنظیمات عمومی سایت
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-@font-face {
-  font-family: 'BKoodak';
-  src: url('/fonts/BKoodak.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  padding: 0;
 }
 
 body {
-  font-family: 'BKoodak', sans-serif;
-  padding-top: 120px;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-family: "Shabnam", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* اعمال فونت روی عناصر فرم */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* اعداد بزرگ */
+
+.big-number {
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* فاصله محتوا از منوی بالای سایت */
+
+.page-content {
+  padding-top: 130px;
+}
+
+/* حذف علامت پیش‌فرض لیست‌ها */
+
+ul li::marker {
+  content: none;
 }

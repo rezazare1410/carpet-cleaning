@@ -1,250 +1,356 @@
-/* ======================== */
-/* HERO SECTION اختصاصی ابریشم */
-.hero-section-silk {
+/* ==== صفحه شستشوی فرش دستبافت گل ابریشم ==== */
+.handmade-silk-page {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: "Shabnam", sans-serif;
+}
+
+/* ==== HERO SECTION ==== */
+.handmade-silk-hero {
+    width: 100%;
+    height: 80vh;
+    min-height: 520px;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+
     background-image: url('/images/hero-silk.webp');
-    /* تصویر مخصوص فرش ابریشم */
     background-size: cover;
     background-position: center;
-    height: 80vh;
-    position: relative;
+    background-repeat: no-repeat;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    color: white;
+    text-align: center;
 }
 
-.hero-overlay-silk {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
+/* کادر تیره روی تصویر */
+.handmade-silk-hero .hero-overlay-silk {
+    width: 100%;
     max-width: 600px;
-}
+    padding: 40px;
+    box-sizing: border-box;
 
-.hero-overlay-silk h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.hero-overlay-silk p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.hero-overlay-silk button {
-    background-color: #00c896;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 25px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.hero-overlay-silk button:hover {
-    background-color: #009c76;
-}
-
-
-/* ======================== */
-/* بخش چرا شستشوی ابریشم مهم است */
-.why-wash-silk {
-    padding: 60px 20px;
     text-align: center;
 }
 
-.why-wash-silk h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+.handmade-silk-hero .hero-overlay-silk h1 {
+    margin: 0 0 16px;
+
+    font-size: 2.2rem;
+    line-height: 1.5;
+    color: white;
 }
 
-.why-wash-silk p {
-    max-width: 700px;
-    margin: 0 auto 40px;
-    font-size: 15px;
+.handmade-silk-hero .hero-overlay-silk p {
+    margin: 0 0 24px;
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: white;
+}
+
+/* لینک ثبت سفارش */
+.handmade-silk-hero .hero-overlay-silk a {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    background-color: #2e7d32;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.handmade-silk-hero .hero-overlay-silk a:hover {
+    background-color: #388e3c;
+    color: white;
+    transform: scale(1.03);
+}
+
+/* ==== بخش اهمیت شستشوی اصولی ==== */
+.handmade-silk-page .why-wash-silk {
+    padding: 60px 20px;
+    box-sizing: border-box;
+
+    background-color: white;
+    text-align: center;
+}
+
+.handmade-silk-page .why-wash-silk h2 {
+    margin: 0 0 20px;
+
+    font-size: 2rem;
+    line-height: 1.6;
     color: #333;
 }
 
+.handmade-silk-page .why-wash-silk>p {
+    max-width: 800px;
+    margin: 0 auto 40px;
 
-/* ======================== */
-/* ویژگی‌ها */
-.features-silk {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #555;
+}
+
+/* ==== کارت‌های ویژگی ==== */
+.handmade-silk-page .features-silk {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    align-items: stretch;
+    gap: 25px;
 }
 
-.feature-silk {
-    background-color: #f9f9f9;
+.handmade-silk-page .feature-silk {
+    width: 280px;
     padding: 20px;
+    box-sizing: border-box;
+
+    background-color: #f9f9f9;
     border-radius: 12px;
-    max-width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 
-.feature-silk:hover {
-    transform: translateY(-5px);
-}
-
-.feature-silk img {
-    height: 60px;
-    margin-bottom: 15px;
-}
-
-.feature-silk h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.feature-silk p {
-    font-size: 14px;
-    color: #444;
-}
-
-
-/* ======================== */
-/* مراحل شستشو */
-.wash-process-silk {
-    padding: 60px 20px;
-    background-color: #fafafa;
-    text-align: center;
-}
-
-.wash-process-silk h2 {
-    font-size: 22px;
-    margin-bottom: 40px;
-}
-
-.process-steps-silk {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 16px;
-    justify-content: space-between;
-    padding: 0 20px;
-    direction: rtl;
-}
-
-.silk-step {
-    flex: 1 1 calc((100% - 5 * 16px) / 6);
-    min-width: 0;
-    background-color: white;
-    padding: 16px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.silk-step:hover {
+.handmade-silk-page .feature-silk:hover {
     transform: translateY(-5px);
 }
 
-.silk-step img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    object-fit: contain;
+/* اندازه قطعی آیکون‌های بخش ویژگی‌ها */
+.handmade-silk-page .features-silk .feature-silk>img {
+    display: block !important;
+
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+
+    margin: 0 auto 15px !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
 }
 
-.silk-step h3 {
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 8px;
+.handmade-silk-page .feature-silk h3 {
+    margin: 0 0 10px;
+
+    font-size: 1.2rem;
+    line-height: 1.7;
     color: #222;
 }
 
-.silk-step p {
-    font-size: 13px;
+.handmade-silk-page .feature-silk p {
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.9;
     color: #555;
+}
+
+/* ==== مراحل شستشو ==== */
+.handmade-silk-page .wash-process-silk {
+    padding: 60px 20px;
+    box-sizing: border-box;
+
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.handmade-silk-page .wash-process-silk h2 {
+    margin: 0 0 40px;
+
+    font-size: 2rem;
     line-height: 1.6;
+    color: #333;
 }
-.hero-overlay-silk button {
-    padding: 0.9rem 2rem;
-    font-size: 1.1rem;
+
+/* کارت‌های مراحل */
+.handmade-silk-page .process-steps-silk {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+
+    direction: rtl;
+}
+
+.handmade-silk-page .silk-step {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 16px;
+    box-sizing: border-box;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.handmade-silk-page .silk-step:hover {
+    transform: translateY(-5px);
+}
+
+/* اندازه قطعی آیکون‌های مراحل شستشو */
+.handmade-silk-page .process-steps-silk .silk-step>img {
+    display: block !important;
+
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+
+    margin: 0 auto 10px !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+.handmade-silk-page .silk-step h3 {
+    margin: 0 0 8px;
+
+    font-size: 1rem;
     font-weight: bold;
-    background-color: #2e7d32;
-    /* سبز تیره */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    line-height: 1.7;
+    color: #222;
 }
 
-.hero-overlay-silk button:hover {
-    background-color: #388e3c;
-    /* سبز روشن‌تر در حالت hover */
-    transform: scale(1.03);
+.handmade-silk-page .silk-step p {
+    margin: 0;
+
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #555;
 }
 
-/* ======================== */
-/* ریسپانسیو مخصوص ابریشم */
-/* برای تبلت و موبایل */
+/* ==== تبلت ==== */
 @media (max-width: 1024px) {
-    .process-steps-silk {
+    .handmade-silk-page .process-steps-silk {
+        max-width: 750px;
+        padding: 0;
+
         flex-wrap: wrap;
         justify-content: center;
-        padding: 0;
         gap: 24px;
     }
 
-    .silk-step {
-        flex: 1 1 45%;
-        max-width: 300px;
+    .handmade-silk-page .silk-step {
+        flex: 1 1 calc(50% - 24px);
+        max-width: 330px;
     }
 }
 
+/* ==== موبایل ==== */
 @media (max-width: 768px) {
-    .hero-section-silk {
-        height: auto;
-        padding: 60px 20px;
-        text-align: center;
+    .handmade-silk-hero {
+        height: 70vh;
+        min-height: 480px;
+        padding: 0 15px !important;
     }
 
-    .hero-overlay-silk {
-        padding: 30px 20px;
+    .handmade-silk-hero .hero-overlay-silk {
         max-width: 100%;
+        padding: 30px 20px;
     }
 
-    .hero-overlay-silk h1 {
-        font-size: 20px;
+    .handmade-silk-hero .hero-overlay-silk h1 {
+        font-size: 1.8rem;
     }
 
-    .hero-overlay-silk p {
-        font-size: 14px;
+    .handmade-silk-hero .hero-overlay-silk p {
+        font-size: 1rem;
     }
 
-    .hero-overlay-silk button {
-        font-size: 14px;
-        padding: 10px 20px;
+    .handmade-silk-page .why-wash-silk,
+    .handmade-silk-page .wash-process-silk {
+        padding: 45px 15px;
     }
 
-    .features-silk {
+    .handmade-silk-page .why-wash-silk h2,
+    .handmade-silk-page .wash-process-silk h2 {
+        font-size: 1.7rem;
+    }
+
+    .handmade-silk-page .why-wash-silk>p {
+        font-size: 1rem;
+    }
+
+    .handmade-silk-page .features-silk,
+    .handmade-silk-page .process-steps-silk {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature-silk {
+    .handmade-silk-page .feature-silk,
+    .handmade-silk-page .silk-step {
         width: 90%;
         max-width: 350px;
+        flex: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .handmade-silk-hero {
+        height: 65vh;
+        min-height: 430px;
     }
 
-    .wash-process-silk {
-        padding: 40px 15px;
+    .handmade-silk-hero .hero-overlay-silk {
+        padding: 25px 15px;
     }
 
-    .process-steps-silk {
-        flex-direction: column;
-        gap: 20px;
+    .handmade-silk-hero .hero-overlay-silk h1 {
+        font-size: 1.55rem;
     }
 
-    .silk-step {
+    .handmade-silk-hero .hero-overlay-silk a {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .handmade-silk-page .feature-silk,
+    .handmade-silk-page .silk-step {
         width: 100%;
-        max-width: 320px;
     }
 }
