@@ -1,130 +1,1389 @@
-/* ساختار کلی صفحه */
-.root-repair-page {
+/* ========================================
+   ساختار اصلی صفحه غرب تهران
+======================================== */
+
+.west-page {
+    width: 100%;
     padding: 2rem;
+    color: #52616b;
+    background-color: #ffffff;
+    direction: rtl;
 }
 
-/* ردیف اصلی شامل عکس و محتوا */
-.hero-root-section {
+.west-page *,
+.west-page *::before,
+.west-page *::after {
+    box-sizing: border-box;
+}
+
+.west-page h1,
+.west-page h2,
+.west-page h3,
+.west-page p {
+    margin-top: 0;
+}
+
+.west-page h2 {
+    margin-bottom: 0.85rem;
+    color: #172832;
+    font-size: 2rem;
+    font-weight: 850;
+    line-height: 1.55;
+}
+
+.west-page h3 {
+    color: #223640;
+}
+
+.west-page p {
+    color: #52616b;
+    font-size: 0.98rem;
+    line-height: 2.05;
+}
+
+.west-page a {
+    text-decoration: none;
+}
+
+.west-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+}
+
+
+/* ========================================
+   بخش ابتدایی صفحه
+======================================== */
+
+.west-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(380px, 0.95fr);
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 1rem auto 2rem;
+    padding: 4rem;
+    overflow: hidden;
+    background:
+        linear-gradient(120deg,
+            rgba(238, 243, 246, 0.98),
+            rgba(248, 250, 251, 0.98));
+    border: 1px solid #dce6eb;
+    border-radius: 28px;
+}
+
+.west-hero::before {
+    content: "";
+    position: absolute;
+    top: -130px;
+    right: -130px;
+    width: 350px;
+    height: 350px;
+    background-color: rgba(141, 168, 183, 0.14);
+    border-radius: 50%;
+}
+
+.west-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -170px;
+    left: 28%;
+    width: 300px;
+    height: 300px;
+    border: 65px solid rgba(203, 215, 222, 0.2);
+    border-radius: 50%;
+}
+
+.west-hero-content,
+.west-hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.west-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.west-eyebrow {
+    display: inline-flex;
+    margin-bottom: 1.15rem;
+    padding: 0.55rem 1rem;
+    color: #223640;
+    background-color: #ffffff;
+    border: 1px solid #cbd7de;
+    border-radius: 100px;
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+.west-page-title {
+    max-width: 680px;
+    margin-bottom: 1.15rem;
+    color: #172832;
+    font-size: clamp(2.25rem, 4.2vw, 3.65rem);
+    font-weight: 900;
+    line-height: 1.38;
+    letter-spacing: -0.04em;
+}
+
+.west-hero-description {
+    max-width: 680px;
+    margin-bottom: 1.5rem;
+    font-size: 1.02rem;
+}
+
+.west-hero-features {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 2rem;
+    gap: 0.65rem;
+    margin-bottom: 1.8rem;
 }
 
-/* بخش تصویر */
-.hero-image img {
+.west-hero-features span {
+    position: relative;
+    padding: 0.55rem 1.75rem 0.55rem 0.9rem;
+    color: #344852;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #dce5ea;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 750;
+}
+
+.west-hero-features span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    width: 7px;
+    height: 7px;
+    background-color: #8da8b7;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.west-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.west-primary-button,
+.west-secondary-button,
+.west-dark-button,
+.west-outline-button,
+.west-light-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    padding: 0.75rem 1.55rem;
+    border-radius: 11px;
+    font-size: 0.94rem;
+    font-weight: 800;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.west-primary-button {
+    color: #ffffff;
+    background-color: #f00000;
+    border: 1px solid #f00000;
+    box-shadow: 0 8px 20px rgba(240, 0, 0, 0.18);
+}
+
+.west-primary-button:hover {
+    color: #ffffff;
+    background-color: #c90000;
+    border-color: #c90000;
+    transform: translateY(-2px);
+}
+
+.west-secondary-button {
+    color: #172832;
+    background-color: #ffffff;
+    border: 1px solid #b9c9d2;
+    direction: ltr;
+}
+
+.west-secondary-button:hover {
+    color: #ffffff;
+    background-color: #172832;
+    border-color: #172832;
+    transform: translateY(-2px);
+}
+
+.west-hero-image {
+    margin: 0;
+    overflow: hidden;
+    background-color: #dce6eb;
+    border: 8px solid #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 24px 50px rgba(23, 40, 50, 0.18);
+    transform: rotate(-1.5deg);
+}
+
+.west-hero-image img {
+    display: block;
     width: 100%;
-    max-width: 500px;
-    border-radius: 1rem;
+    height: auto !important;
     object-fit: cover;
 }
 
-/* ستون راست شامل عنوان، کارت‌ها و دکمه */
-.hero-right-content {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
+.west-hero-image figcaption {
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
+    padding: 0.8rem 1rem;
+    color: #ffffff;
+    background-color: rgba(16, 29, 37, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   نوار پوشش مناطق
+======================================== */
+
+.west-coverage-strip {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr auto;
+    align-items: center;
+    gap: 2rem;
+    width: calc(100% - 5rem);
+    max-width: 1100px;
+    margin: -1rem auto 6rem;
+    padding: 1.4rem 1.75rem;
+    color: #ffffff;
+    background-color: #172832;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 14px 30px rgba(23, 40, 50, 0.17);
+}
+
+.west-coverage-title {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 0.2rem;
 }
 
-/* عنوان اصلی صفحه */
-.west-page-title {
-    margin: 0 0 1.5rem;
-    color: #1c2c38;
-    font-size: 2rem;
+.west-coverage-title span {
+    color: #a9bec9;
+    font-size: 0.75rem;
     font-weight: 800;
-    line-height: 1.4;
+}
+
+.west-coverage-title strong {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.west-coverage-strip p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.82rem;
+    line-height: 1.8;
+}
+
+.west-coverage-strip>a {
+    flex-shrink: 0;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   عنوان بخش‌ها
+======================================== */
+
+.west-section-heading {
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
     text-align: center;
 }
 
-/* گرید کارت‌ها */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* استایل کارت‌ها */
-.info-card {
-    display: block;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 1rem;
-    text-align: right;
-    transition: 0.3s ease;
-}
-
-.info-card:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-.info-card-title {
-    margin-bottom: 0.5rem;
-    color: #1c2c38;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: right;
-}
-
-.info-card-text {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: right;
-}
-
-/* دکمه سفارش */
-.button-container {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.root-order-button {
+.west-section-heading>span,
+.west-small-label {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: #ff0000;
-    color: white;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.3s ease;
+    margin-bottom: 0.65rem;
+    color: #7893a2;
+    font-size: 0.82rem;
+    font-weight: 850;
 }
 
-.root-order-button:hover {
-    background-color: #cc0000;
+.west-section-heading p {
+    margin-bottom: 0;
 }
 
-/* ریسپانسیو برای موبایل */
-@media (max-width: 768px) {
-    .root-repair-page {
-        padding: 1rem;
+
+/* ========================================
+   خدمات شستشو
+======================================== */
+
+.west-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.west-service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    padding: 2rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #dfe7ec;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(23, 40, 50, 0.055);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.west-service-card::after {
+    content: "";
+    position: absolute;
+    bottom: -75px;
+    left: -65px;
+    width: 170px;
+    height: 170px;
+    background-color: #f2f6f8;
+    border-radius: 50%;
+}
+
+.west-service-card:hover {
+    border-color: #b8c9d2;
+    box-shadow: 0 18px 38px rgba(23, 40, 50, 0.1);
+    transform: translateY(-5px);
+}
+
+.west-service-number {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    background-color: #172832;
+    border-radius: 14px 14px 4px 14px;
+    font-size: 0.86rem;
+    font-weight: 850;
+}
+
+.west-service-card h3 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0.65rem;
+    font-size: 1.2rem;
+    font-weight: 850;
+}
+
+.west-service-card p {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+    font-size: 0.91rem;
+}
+
+.west-service-card a {
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    margin-top: auto;
+    color: #172832;
+    border-bottom: 1px solid #8da8b7;
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   دریافت و تحویل فرش
+======================================== */
+
+.west-logistics-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    align-items: stretch;
+    gap: 1.2rem;
+}
+
+.west-logistics-content {
+    padding: 3.2rem;
+    background-color: #f5f8fa;
+    border: 1px solid #dce6eb;
+    border-radius: 22px;
+}
+
+.west-logistics-content p {
+    max-width: 700px;
+}
+
+.west-logistics-content ul {
+    display: grid;
+    gap: 0.7rem;
+    margin: 1.5rem 0 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+.west-logistics-content li {
+    position: relative;
+    padding-right: 1.5rem;
+    color: #3f515b;
+    font-size: 0.9rem;
+    font-weight: 650;
+    line-height: 1.8;
+}
+
+.west-logistics-content li::before {
+    content: "";
+    position: absolute;
+    top: 0.72rem;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #8da8b7;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #8da8b7;
+}
+
+.west-dark-button {
+    color: #ffffff;
+    background-color: #172832;
+    border: 1px solid #172832;
+}
+
+.west-dark-button:hover {
+    color: #ffffff;
+    background-color: #294451;
+    border-color: #294451;
+    transform: translateY(-2px);
+}
+
+.west-logistics-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.2rem;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 0% 100%,
+            rgba(255, 255, 255, 0.12),
+            transparent 35%),
+        linear-gradient(145deg, #172832, #294957);
+    border-radius: 22px;
+    box-shadow: 0 18px 38px rgba(23, 40, 50, 0.18);
+}
+
+.west-logistics-panel>span {
+    margin-bottom: 1.2rem;
+    color: #afc3cd;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.west-route-line {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.7rem;
+}
+
+.west-route-line::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    left: 12px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%);
+}
+
+.west-route-line i {
+    position: relative;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    background-color: #8da8b7;
+    border: 6px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.west-logistics-panel strong {
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.75;
+}
+
+.west-logistics-panel p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   خدمات ترمیم
+======================================== */
+
+.west-repair-section {
+    padding: 4rem;
+    background-color: #172832;
+    border-radius: 26px;
+    box-shadow: 0 20px 42px rgba(23, 40, 50, 0.2);
+}
+
+.west-heading-light h2 {
+    color: #ffffff;
+}
+
+.west-heading-light>span {
+    color: #adc0ca;
+}
+
+.west-heading-light p {
+    color: rgba(255, 255, 255, 0.73);
+}
+
+.west-repair-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.west-repair-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.065);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 15px;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.west-repair-card:hover {
+    background-color: rgba(255, 255, 255, 0.11);
+    border-color: rgba(255, 255, 255, 0.24);
+    transform: translateY(-2px);
+}
+
+.west-repair-icon {
+    width: 14px;
+    height: 14px;
+    background-color: #8da8b7;
+    border: 4px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+
+.west-repair-card h3 {
+    margin-bottom: 0.2rem;
+    color: #ffffff;
+    font-size: 0.98rem;
+    font-weight: 800;
+}
+
+.west-repair-card p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.81rem;
+    line-height: 1.8;
+}
+
+.west-repair-card b {
+    color: #bed0d8;
+    font-size: 0.75rem;
+    font-weight: 750;
+}
+
+/* ========================================
+   تصاویر خدمات و تجهیزات
+======================================== */
+
+.west-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.west-gallery-card {
+    display: block;
+    overflow: hidden;
+    color: inherit;
+    background-color: #ffffff;
+    border: 1px solid #dfe7ec;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(23, 40, 50, 0.06);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.west-gallery-card:hover {
+    color: inherit;
+    border-color: #b8c9d2;
+    box-shadow: 0 18px 38px rgba(23, 40, 50, 0.12);
+    transform: translateY(-5px);
+}
+
+.west-gallery-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: #e9eef1;
+}
+
+.west-gallery-image img {
+    display: block;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.west-gallery-card:hover .west-gallery-image img {
+    transform: scale(1.025);
+}
+
+.west-gallery-content {
+    padding: 1.5rem 1.6rem 1.7rem;
+}
+
+.west-gallery-content>span {
+    display: inline-block;
+    margin-bottom: 0.45rem;
+    color: #7893a2;
+    font-size: 0.76rem;
+    font-weight: 850;
+}
+
+.west-gallery-content h3 {
+    margin-bottom: 0.45rem;
+    color: #223640;
+    font-size: 1.12rem;
+    font-weight: 850;
+}
+
+.west-gallery-content p {
+    margin-bottom: 0;
+    color: #61717a;
+    font-size: 0.87rem;
+    line-height: 1.9;
+}
+/* ========================================
+   مراحل انجام کار
+======================================== */
+
+.west-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.west-process-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #dfe7ec;
+    border-radius: 15px;
+}
+
+.west-process-card>span {
+    display: inline-flex;
+    flex: 0 0 42px;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    color: #ffffff;
+    background-color: #8da8b7;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 850;
+}
+
+.west-process-card h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1rem;
+    font-weight: 850;
+}
+
+.west-process-card p {
+    margin-bottom: 0;
+    font-size: 0.83rem;
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   محله‌های غرب تهران
+======================================== */
+
+.west-areas-section {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 3rem;
+    padding: 3.5rem;
+    background-color: #f2f6f8;
+    border: 1px solid #dce6eb;
+    border-radius: 24px;
+    scroll-margin-top: 100px;
+}
+
+.west-areas-intro p {
+    margin-bottom: 1.3rem;
+}
+
+.west-areas-intro>a {
+    color: #172832;
+    border-bottom: 1px solid #8da8b7;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.9;
+}
+
+.west-area-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.west-area-list span {
+    padding: 0.65rem 1rem;
+    color: #344852;
+    background-color: #ffffff;
+    border: 1px solid #d4e0e6;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 750;
+    box-shadow: 0 4px 12px rgba(23, 40, 50, 0.04);
+}
+
+
+/* ========================================
+   اعتمادسازی
+======================================== */
+
+.west-trust-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.8fr);
+    align-items: center;
+    gap: 4rem;
+}
+
+.west-trust-main {
+    padding-right: 2rem;
+    border-right: 4px solid #172832;
+}
+
+.west-trust-main p {
+    max-width: 720px;
+    margin-bottom: 1.2rem;
+}
+
+.west-trust-main>a {
+    color: #172832;
+    border-bottom: 1px solid #8da8b7;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.9;
+}
+
+.west-trust-items {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.west-trust-items>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.25rem 1.4rem;
+    background-color: #ffffff;
+    border: 1px solid #dfe7ec;
+    border-right: 4px solid #8da8b7;
+    border-radius: 13px;
+    box-shadow: 0 7px 22px rgba(23, 40, 50, 0.045);
+}
+
+.west-trust-items strong {
+    color: #223640;
+    font-size: 0.94rem;
+    font-weight: 850;
+}
+
+.west-trust-items span {
+    color: #6d7b83;
+    font-size: 0 0.82rem;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   تعرفه
+======================================== */
+
+.west-price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.6rem 3rem;
+    background-color: #ffffff;
+    border: 1px solid #dce5ea;
+    border-bottom: 5px solid #172832;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(23, 40, 50, 0.07);
+}
+
+.west-price-section>div {
+    max-width: 760px;
+}
+
+.west-price-section p {
+    margin-bottom: 0;
+}
+
+.west-outline-button {
+    flex-shrink: 0;
+    color: #172832;
+    background-color: transparent;
+    border: 1px solid #172832;
+}
+
+.west-outline-button:hover {
+    color: #ffffff;
+    background-color: #172832;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   سؤالات متداول
+======================================== */
+
+.west-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.west-faq-card {
+    padding: 1.6rem 1.7rem;
+    background-color: #ffffff;
+    border: 1px solid #dfe6ea;
+    border-radius: 15px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.west-faq-card:hover {
+    border-color: #b9c9d2;
+    box-shadow: 0 9px 24px rgba(23, 40, 50, 0.06);
+}
+
+.west-faq-card h3 {
+    position: relative;
+    margin-bottom: 0.65rem;
+    padding-right: 1.4rem;
+    font-size: 1rem;
+    font-weight: 850;
+    line-height: 1.75;
+}
+
+.west-faq-card h3::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #8da8b7;
+    border-radius: 50%;
+}
+
+.west-faq-card p {
+    margin-bottom: 0;
+    font-size: 0.89rem;
+    line-height: 1.95;
+}
+
+
+/* ========================================
+   دعوت نهایی به ثبت سفارش
+======================================== */
+
+.west-final-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 3.2rem;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at 5% 0%,
+            rgba(255, 255, 255, 0.14),
+            transparent 32%),
+        linear-gradient(130deg, #101d25 0%, #294957 100%);
+    border-radius: 24px;
+    box-shadow: 0 20px 42px rgba(23, 40, 50, 0.23);
+}
+
+.west-final-cta>div:first-child {
+    max-width: 650px;
+}
+
+.west-final-cta>div:first-child>span {
+    display: inline-block;
+    margin-bottom: 0.55rem;
+    color: #b7cad3;
+    font-size: 0.8rem;
+    font-weight: 850;
+}
+
+.west-final-cta h2 {
+    color: #ffffff;
+}
+
+.west-final-cta p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.west-final-buttons {
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.west-final-cta .west-primary-button {
+    color: #ffffff;
+    background-color: #f00000;
+    border-color: #f00000;
+}
+
+.west-final-cta .west-primary-button:hover {
+    background-color: #c90000;
+    border-color: #c90000;
+}
+
+.west-light-button {
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    direction: ltr;
+}
+
+.west-light-button:hover {
+    color: #172832;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   فوکوس لینک‌ها
+======================================== */
+
+.west-page a:focus-visible {
+    outline: 3px solid rgba(23, 40, 50, 0.35);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   تبلت
+======================================== */
+
+@media (max-width: 1050px) {
+    .west-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+        gap: 2.5rem;
+        padding: 3rem;
     }
 
-    .hero-root-section {
-        flex-direction: column;
+    .west-coverage-strip {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .hero-right-content {
-        width: 100%;
-        min-width: 0;
+    .west-coverage-strip>a {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+
+    .west-logistics-section {
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .west-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .west-trust-section {
+        gap: 2.5rem;
+    }
+}
+
+
+/* ========================================
+   موبایل و تبلت کوچک
+======================================== */
+
+@media (max-width: 800px) {
+    .west-page {
+        padding: 1.25rem;
+    }
+
+    .west-section {
+        margin-bottom: 4.5rem;
+    }
+
+    .west-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+        padding: 2rem;
+    }
+
+    .west-hero-content {
+        align-items: stretch;
+    }
+
+    .west-eyebrow {
+        align-self: flex-start;
     }
 
     .west-page-title {
-        margin-bottom: 1rem;
-        font-size: 1.6rem;
-        text-align: center;
+        font-size: 2.25rem;
     }
 
-    .hero-image {
+    .west-hero-image {
+        grid-row: 1;
+        transform: none;
+    }
+
+    .west-hero-image img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .west-coverage-strip {
+        grid-template-columns: 1fr;
+        width: calc(100% - 2rem);
+        gap: 0.8rem;
+        margin-bottom: 4.5rem;
+    }
+
+    .west-coverage-strip>a {
+        grid-column: auto;
+    }
+
+    .west-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .west-service-card {
+        min-height: auto;
+    }
+
+    .west-logistics-section {
+        grid-template-columns: 1fr;
+    }
+
+    .west-logistics-panel {
+        min-height: 300px;
+    }
+
+    .west-repair-section {
+        padding: 3rem 2rem;
+    }
+
+    .west-areas-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .west-trust-section {
+        grid-template-columns: 1fr;
+    }
+
+    .west-price-section,
+    .west-final-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .west-faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .west-final-buttons {
         width: 100%;
-        text-align: center;
+    }
+}
+
+
+/* ========================================
+   موبایل
+======================================== */
+
+@media (max-width: 580px) {
+    .west-page {
+        padding: 0.85rem;
+    }
+
+    .west-page p {
+        font-size: 0.94rem;
+        line-height: 1.95;
+    }
+
+    .west-page h2 {
+        font-size: 1.45rem;
+    }
+
+    .west-section {
+        margin-bottom: 3.75rem;
+    }
+
+    .west-hero {
+        gap: 1.5rem;
+        margin-top: 0.4rem;
+        padding: 1.15rem;
+        border-radius: 19px;
+    }
+
+    .west-hero-image {
+        border-width: 4px;
+        border-radius: 15px;
+    }
+
+    .west-hero-image img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .west-hero-image figcaption {
+        right: 0.55rem;
+        bottom: 0.55rem;
+        left: 0.55rem;
+        padding: 0.6rem 0.7rem;
+        font-size: 0.71rem;
+    }
+
+    .west-eyebrow {
+        margin-bottom: 0.85rem;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.76rem;
+    }
+
+    .west-page-title {
+        margin-bottom: 0.85rem;
+        font-size: 1.8rem;
+    }
+
+    .west-hero-description {
+        margin-bottom: 1.2rem;
+    }
+
+    .west-hero-features {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .west-hero-features span {
+        width: 100%;
+    }
+
+    .west-hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .west-primary-button,
+    .west-secondary-button,
+    .west-dark-button,
+    .west-outline-button,
+    .west-light-button {
+        width: 100%;
+        min-height: 48px;
+        padding: 0.7rem 1rem;
+    }
+
+    .west-coverage-strip {
+        width: calc(100% - 1rem);
+        margin-bottom: 3.75rem;
+        padding: 1.25rem;
+        border-radius: 0 0 14px 14px;
+    }
+
+    .west-section-heading {
+        margin-bottom: 1.75rem;
+        text-align: right;
+    }
+
+    .west-service-card {
+        padding: 1.4rem;
+        border-radius: 14px;
+    }
+
+    .west-service-number {
+        width: 43px;
+        height: 43px;
+        margin-bottom: 1.4rem;
+    }
+
+    .west-logistics-content,
+    .west-logistics-panel {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .west-logistics-panel {
+        min-height: 270px;
+    }
+
+    .west-repair-section {
+        padding: 2.25rem 1.1rem;
+        border-radius: 18px;
+    }
+
+    .west-repair-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .west-repair-card {
+        padding: 1.1rem;
+    }
+
+    .west-process-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .west-process-card {
+        padding: 1.2rem;
+    }
+
+    .west-areas-section {
+        padding: 1.5rem;
+        border-radius: 17px;
+    }
+
+    .west-area-list {
+        justify-content: flex-start;
+        gap: 0.55rem;
+    }
+
+    .west-area-list span {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.82rem;
+    }
+
+    .west-trust-main {
+        padding-right: 1.25rem;
+    }
+
+    .west-price-section {
+        gap: 1.25rem;
+        padding: 1.5rem;
+        border-radius: 15px;
+    }
+
+    .west-faq-card {
+        padding: 1.3rem;
+    }
+
+    .west-final-cta {
+        gap: 1.5rem;
+        margin-bottom: 0.5rem;
+        padding: 1.75rem 1.35rem;
+        border-radius: 18px;
+    }
+
+    .west-final-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+        .west-gallery-grid {
+            grid-template-columns: 1fr;
+            gap: 0.9rem;
+        }
+    
+        .west-gallery-card {
+            border-radius: 15px;
+        }
+    
+        .west-gallery-content {
+            padding: 1.25rem;
+        }
+}
+
+
+/* ========================================
+   نمایشگرهای بسیار کوچک
+======================================== */
+
+@media (max-width: 360px) {
+    .west-page {
+        padding: 0.55rem;
+    }
+
+    .west-hero {
+        padding: 0.9rem;
+    }
+
+    .west-page-title {
+        font-size: 1.62rem;
+    }
+
+    .west-area-list span {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.78rem;
     }
 }
