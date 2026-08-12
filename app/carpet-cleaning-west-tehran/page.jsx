@@ -2,10 +2,8 @@ import WestContent from './WestContent';
 
 export const metadata = {
   title: 'قالیشویی غرب تهران | شستشوی تخصصی فرش | زارع',
-
   description:
     'خدمات قالیشویی زارع در غرب تهران با پوشش صادقیه، پونک، ستارخان، مرزداران، جنت‌آباد، شهران، گیشا، اکباتان، تهرانسر و چیتگر؛ شستشو، لکه‌برداری و ترمیم تخصصی فرش.',
-
   keywords: [
     'قالیشویی غرب تهران',
     'قالیشویی در غرب تهران',
@@ -20,12 +18,9 @@ export const metadata = {
     'قالیشویی چیتگر',
     'قالیشویی زارع',
   ],
-
   alternates: {
-    canonical:
-      'https://zarecarpet.com/carpet-cleaning-west-tehran',
+    canonical: 'https://zarecarpet.com/carpet-cleaning-west-tehran',
   },
-
   openGraph: {
     title: 'قالیشویی غرب تهران | قالیشویی زارع',
     description:
@@ -36,10 +31,19 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://zarecarpet.com/images/zareeast.webp',
-        alt: 'خدمات قالیشویی زارع در غرب تهران',
+        url: 'https://zarecarpet.com/images/westrugwash.webp',
+        width: 1200,
+        height: 1500,
+        alt: 'شستشوی تخصصی فرش در کارخانه قالیشویی زارع برای غرب تهران',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'قالیشویی غرب تهران | قالیشویی زارع',
+    description:
+      'شستشوی تخصصی انواع فرش همراه با لکه‌برداری، ترمیم و سرویس دریافت و تحویل در غرب تهران.',
+    images: ['https://zarecarpet.com/images/westrugwash.webp'],
   },
 };
 
@@ -66,45 +70,39 @@ const westAreas = [
 
 const faqData = [
   {
-    question: 'قالیشویی زارع کدام محله‌های غرب تهران را پوشش می‌دهد؟',
+    question: 'قالیشویی زارع کدام مناطق غرب تهران را پوشش می‌دهد؟',
     answer:
-      'سرویس قالیشویی زارع در صادقیه، ستارخان، مرزداران، پونک، جنت‌آباد، شهران، گیشا، اکباتان، تهرانسر، چیتگر و دیگر مناطق غرب تهران ارائه می‌شود.',
+      'خدمات دریافت و تحویل فرش در صادقیه، ستارخان، پونک، مرزداران، جنت‌آباد، شهران، گیشا، اکباتان، تهرانسر و سایر مناطق غرب تهران ارائه می‌شود.',
   },
   {
     question: 'تحویل فرش‌های شسته‌شده چقدر زمان می‌برد؟',
     answer:
-      'مدت تحویل با توجه به نوع فرش، روش شستشو و خدمات موردنیاز مشخص می‌شود. زمان تقریبی هنگام تحویل گرفتن فرش به مشتری اعلام خواهد شد.',
+      'زمان تحویل به نوع فرش، روش شستشو و خدمات موردنیاز بستگی دارد. زمان تقریبی هنگام دریافت و بررسی فرش به مشتری اعلام می‌شود.',
   },
   {
-    question: 'آیا فرش‌های دستباف و ابریشم نیز شسته می‌شوند؟',
+    question: 'آیا فرش قبل از شستشو کارشناسی می‌شود؟',
     answer:
-      'بله، فرش‌های دستباف، پشمی، کرکی و ابریشم پس از کارشناسی و با روش متناسب با جنس، رنگ و وضعیت بافت شسته می‌شوند.',
+      'بله، نوع الیاف، ثبات رنگ، لکه‌ها، ریشه، شیرازه و وضعیت کلی فرش پیش از شروع شستشو بررسی می‌شود.',
   },
   {
-    question: 'آیا قبل از شستشو فرش کارشناسی می‌شود؟',
+    question: 'آیا فرش دستباف و ابریشم هم پذیرفته می‌شود؟',
     answer:
-      'بله، نوع بافت، ثبات رنگ، لکه‌ها، آسیب‌دیدگی ریشه و شیرازه و وضعیت کلی فرش پیش از آغاز شستشو بررسی می‌شود.',
+      'بله، فرش‌های دستباف، پشمی، کرکی و ابریشم پس از کارشناسی و با روش متناسب با جنس و شرایط بافت شسته می‌شوند.',
   },
   {
-    question: 'آیا خدمات لکه‌برداری و ترمیم فرش هم انجام می‌شود؟',
+    question: 'خدمات ترمیم فرش هم انجام می‌شود؟',
     answer:
-      'بله، خدمات تخصصی لکه‌برداری، رفوگری، ترمیم پارگی، رفع بیدخوردگی، ریشه‌دوزی، شیرازه‌دوزی، پرداخت و دارکشی ارائه می‌شود.',
+      'بله، رفوگری، ترمیم پارگی، ریشه‌دوزی، شیرازه‌دوزی، رفع بیدخوردگی، پرداخت، لکه‌برداری و دارکشی از خدمات تخصصی قالیشویی زارع هستند.',
   },
   {
-    question: 'فرش‌ها با چه روشی شسته می‌شوند؟',
+    question: 'چگونه سفارش قالیشویی غرب تهران ثبت کنم؟',
     answer:
-      'روش شستشو بر اساس نوع فرش تعیین می‌شود. فرش‌های ماشینی با تجهیزات کارخانه و فرش‌های حساس و دستباف با روش کنترل‌شده و متناسب با ساختار آن‌ها شسته می‌شوند.',
-  },
-  {
-    question: 'چطور می‌توانم سفارش قالیشویی غرب تهران ثبت کنم؟',
-    answer:
-      'می‌توانید از طریق فرم ثبت سفارش آنلاین سایت یا تماس با شماره ۰۲۱۷۷۱۶۹۴۵۰ درخواست خود را ثبت کنید.',
+      'می‌توانید فرم ثبت سفارش آنلاین را در سایت تکمیل کنید یا برای هماهنگی با شماره ۰۲۱۷۷۱۶۹۴۵۰ تماس بگیرید.',
   },
 ];
 
 const schemaData = {
   '@context': 'https://schema.org',
-
   '@graph': [
     {
       '@type': 'LocalBusiness',
@@ -114,52 +112,40 @@ const schemaData = {
       image: 'https://zarecarpet.com/icons/logo1.png',
       logo: 'https://zarecarpet.com/icons/logo1.png',
       telephone: '+982177169450',
-
       address: {
         '@type': 'PostalAddress',
-        streetAddress:
-          'خیابان پیروزی، خیابان ششم نیروی هوایی، پلاک ۹۳',
+        streetAddress: 'خیابان پیروزی، خیابان ششم نیروی هوایی، پلاک ۹۳',
         addressLocality: 'تهران',
         addressRegion: 'تهران',
         addressCountry: 'IR',
       },
-
       areaServed: westAreas.map((area) => ({
         '@type': 'Place',
         name: area,
       })),
     },
-
     {
       '@type': 'Service',
       '@id':
-        'https://zarecarpet.com/carpet-cleaning-west-tehran/#service',
-
+        'https://zarecarpet.com/carpet-cleaning-west-tehran#service',
       name: 'خدمات قالیشویی در غرب تهران',
-
-      serviceType:
-        'شستشو، لکه‌برداری، ترمیم و تحویل فرش در غرب تهران',
-
+      serviceType: 'شستشو، لکه‌برداری و ترمیم تخصصی فرش در غرب تهران',
       url: 'https://zarecarpet.com/carpet-cleaning-west-tehran',
-
+      image: 'https://zarecarpet.com/images/westrugwash.webp',
       description:
         'خدمات تخصصی شستشوی فرش ماشینی، دستباف و ابریشم، لکه‌برداری و ترمیم فرش در مناطق غرب تهران.',
-
       provider: {
         '@id': 'https://zarecarpet.com/#business',
       },
-
       areaServed: westAreas.map((area) => ({
         '@type': 'Place',
         name: area,
       })),
     },
-
     {
       '@type': 'BreadcrumbList',
       '@id':
-        'https://zarecarpet.com/carpet-cleaning-west-tehran/#breadcrumb',
-
+        'https://zarecarpet.com/carpet-cleaning-west-tehran#breadcrumb',
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -177,17 +163,13 @@ const schemaData = {
           '@type': 'ListItem',
           position: 3,
           name: 'قالیشویی غرب تهران',
-          item:
-            'https://zarecarpet.com/carpet-cleaning-west-tehran',
+          item: 'https://zarecarpet.com/carpet-cleaning-west-tehran',
         },
       ],
     },
-
     {
       '@type': 'FAQPage',
-      '@id':
-        'https://zarecarpet.com/carpet-cleaning-west-tehran/#faq',
-
+      '@id': 'https://zarecarpet.com/carpet-cleaning-west-tehran#faq',
       mainEntity: faqData.map((item) => ({
         '@type': 'Question',
         name: item.question,
