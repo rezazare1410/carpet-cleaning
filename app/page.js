@@ -5,36 +5,75 @@ import ServiceHighlight from "./_components/ServiceHighlight";
 import TehranMapSection from "./_components/TehranMapSection";
 import LatestPosts from "./_components/LatestPosts";
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://zarecarpet.com/#website",
+      url: "https://zarecarpet.com/",
+      name: "قالیشویی زارع",
+      alternateName: ["کارخانه قالیشویی زارع", "زارع"],
+      inLanguage: "fa-IR",
+      publisher: {
+        "@id": "https://zarecarpet.com/#organization",
+      },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://zarecarpet.com/#organization",
+      name: "قالیشویی زارع",
+      alternateName: "کارخانه قالیشویی زارع",
+      url: "https://zarecarpet.com/",
+      image: "https://zarecarpet.com/icon.png",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://zarecarpet.com/icon.png",
+        width: 512,
+        height: 512,
+      },
+      telephone: "+982177169450",
+      priceRange: "توافقی",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "خیابان پیروزی، خیابان ششم نیروی هوایی، پلاک ۹۳",
+        addressLocality: "تهران",
+        addressRegion: "تهران",
+        postalCode: "1777730000",
+        addressCountry: "IR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 35.6978809,
+        longitude: 51.489013,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+          ],
+          opens: "08:00",
+          closes: "22:00",
+        },
+      ],
+      sameAs: ["https://www.instagram.com/zarecarpet/"],
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
-      {/* ✅ اسکیما JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            name: "قالیشویی زارع",
-            image: "https://www.zarecarpet.com/logo.png",
-            url: "https://www.zarecarpet.com",
-            telephone: "02177169450",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Tehran",
-              addressRegion: "Tehran",
-              streetAddress: "خیابان پیروزی، خیابان ششم نیروی هوایی، پلاک ۹۳",
-              postalCode: "1777730000",
-            },
-            priceRange: "توافقی",
-            openingHours: "Sa-Th 08:00-22:00",
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: "35.6978809",
-              longitude: "51.489013",
-            },
-            sameAs: ["https://instagram.com/zarecarpet"],
-          }),
+          __html: JSON.stringify(schemaData).replace(/</g, "\\u003c"),
         }}
       />
 
