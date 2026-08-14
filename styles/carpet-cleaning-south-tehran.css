@@ -1,130 +1,954 @@
-/* ساختار کلی صفحه */
-.root-repair-page {
-    padding: 2rem;
+/* ========================================
+   صفحه قالیشویی جنوب تهران
+======================================== */
+
+.south-page {
+    --south-navy: #172832;
+    --south-navy-light: #213b49;
+    --south-red: #e60000;
+    --south-red-hover: #c90000;
+    --south-text: #25323a;
+    --south-muted: #60717b;
+    --south-surface: #f5f8fa;
+    --south-border: #dde6eb;
+    --south-white: #ffffff;
+
+    padding: 38px 24px 80px;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg,
+            #f2f6f8 0,
+            #ffffff 430px);
+    color: var(--south-text);
+    direction: rtl;
 }
 
-/* ردیف اصلی شامل عکس و محتوا */
-.hero-root-section {
+.south-page h1,
+.south-page h2,
+.south-page h3,
+.south-page p {
+    margin-top: 0;
+}
+
+.south-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.south-page a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   هدر اصلی صفحه
+======================================== */
+
+.south-hero {
+    display: grid;
+    width: min(1240px, 100%);
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+    align-items: center;
+    gap: 42px;
+}
+
+.south-hero__content {
+    padding: 20px 0;
+}
+
+.south-eyebrow,
+.south-section-heading>span,
+.south-price-section__content>span,
+.south-mobile-consultation__content>span,
+.south-areas__content>span,
+.south-final-cta>div>span {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: var(--south-red);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.south-hero h1 {
+    margin-bottom: 20px;
+    color: var(--south-navy);
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.south-hero__lead {
+    margin-bottom: 14px;
+    color: #344852;
+    font-size: 1.06rem;
+    font-weight: 500;
+    line-height: 2;
+}
+
+.south-hero__text {
+    margin-bottom: 25px;
+    color: var(--south-muted);
+    font-size: 0.98rem;
+    line-height: 2;
+}
+
+.south-hero__actions {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
+    gap: 12px;
 }
 
-/* بخش تصویر */
-.hero-image img {
+.south-button {
+    display: inline-flex;
+    min-height: 50px;
+    padding: 12px 23px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.south-button--primary {
+    background: var(--south-red);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(230, 0, 0, 0.18);
+}
+
+.south-button--primary:hover {
+    background: var(--south-red-hover);
+    transform: translateY(-2px);
+}
+
+.south-button--dark {
+    background: var(--south-navy);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(23, 40, 50, 0.14);
+}
+
+.south-button--dark:hover {
+    background: var(--south-navy-light);
+    transform: translateY(-2px);
+}
+
+.south-hero__notes {
+    display: flex;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.south-hero__notes span {
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 999px;
+    color: var(--south-navy);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.south-hero__media {
+    position: relative;
+    overflow: hidden;
+    border: 8px solid #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 22px 55px rgba(23, 40, 50, 0.17);
+}
+
+.south-hero__image {
     width: 100%;
-    max-width: 500px;
-    border-radius: 1rem;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
-/* ستون راست شامل عنوان، کارت‌ها و دکمه */
-.hero-right-content {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
+.south-hero__caption {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    padding: 12px 15px;
+    background: rgba(23, 40, 50, 0.88);
+    border-radius: 11px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   تیترهای بخش‌ها
+======================================== */
+
+.south-section-heading {
+    max-width: 760px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.south-section-heading h2,
+.south-price-section h2,
+.south-mobile-consultation h2,
+.south-areas h2,
+.south-final-cta h2 {
+    margin-bottom: 13px;
+    color: var(--south-navy);
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    font-weight: 800;
+    line-height: 1.55;
+}
+
+.south-section-heading p {
+    color: var(--south-muted);
+    line-height: 2;
+}
+
+
+/* ========================================
+   معرفی و مزایا
+======================================== */
+
+.south-intro {
+    width: min(1160px, 100%);
+    margin: 90px auto 0;
+}
+
+.south-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.south-feature-grid article {
+    padding: 25px 20px;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 17px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(23, 40, 50, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.south-feature-grid article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(23, 40, 50, 0.1);
+}
+
+.south-feature-grid strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--south-navy);
+    font-size: 1.05rem;
+}
+
+.south-feature-grid p {
+    margin-bottom: 0;
+    color: var(--south-muted);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   کارت خدمات
+======================================== */
+
+.south-services {
+    width: min(1240px, 100%);
+    margin: 100px auto 0;
+}
+
+.south-service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.south-service-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 22px;
+    box-shadow: 0 14px 38px rgba(23, 40, 50, 0.08);
+}
+
+.south-service-card__media {
+    overflow: hidden;
+}
+
+.south-service-card__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.south-service-card:hover .south-service-card__image {
+    transform: scale(1.025);
+}
+
+.south-service-card__content {
+    padding: 25px;
+}
+
+.south-service-card h3 {
+    margin-bottom: 12px;
+    color: var(--south-navy);
+    font-size: 1.27rem;
+    font-weight: 800;
+}
+
+.south-service-card p {
+    margin-bottom: 17px;
+    color: var(--south-muted);
+    font-size: 0.94rem;
+    line-height: 2;
+}
+
+.south-service-card a {
+    display: inline-flex;
+    color: var(--south-red);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.south-service-card a:hover {
+    color: var(--south-red-hover);
+}
+
+
+/* ========================================
+   محاسبه قیمت
+======================================== */
+
+.south-price-section {
+    display: grid;
+    width: min(1160px, 100%);
+    margin: 100px auto 0;
+    padding: 42px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 35px;
+    background: var(--south-navy);
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(23, 40, 50, 0.17);
+}
+
+.south-price-section h2 {
+    color: #ffffff;
+}
+
+.south-price-section__content>span {
+    color: #ff8b8b;
+}
+
+.south-price-section p {
+    max-width: 750px;
+    margin-bottom: 12px;
+    color: #dce6ea;
+    line-height: 2;
+}
+
+.south-price-section__note {
+    margin-bottom: 0 !important;
+    color: #ffdda4 !important;
+    font-size: 0.88rem;
+}
+
+.south-price-section__action a {
+    display: inline-flex;
+    min-height: 54px;
+    padding: 13px 24px;
+    align-items: center;
+    justify-content: center;
+    background: var(--south-red);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.south-price-section__action a:hover {
+    background: var(--south-red-hover);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   مشاوره آنلاین موبایل
+======================================== */
+
+.south-mobile-consultation {
+    display: grid;
+    width: min(1160px, 100%);
+    margin: 28px auto 0;
+    padding: 30px 34px;
+    grid-template-columns: 74px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 21px;
+    box-shadow: 0 13px 35px rgba(23, 40, 50, 0.07);
+}
+
+.south-mobile-consultation__icon {
+    display: flex;
+    width: 66px;
+    height: 66px;
+    align-items: center;
+    justify-content: center;
+    background: #edf8f2;
+    border-radius: 20px;
+}
+
+.south-mobile-consultation__icon svg {
+    width: 35px;
+    height: 35px;
+    fill: none;
+    stroke: #1c9455;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.south-mobile-consultation h2 {
+    margin-bottom: 8px;
+    font-size: 1.45rem;
+}
+
+.south-mobile-consultation__content>span {
+    margin-bottom: 5px;
+    color: #1c9455;
+}
+
+.south-mobile-consultation p {
+    margin-bottom: 0;
+    color: var(--south-muted);
+    font-size: 0.92rem;
+    line-height: 1.95;
+}
+
+.south-mobile-consultation__button {
+    display: inline-flex;
+    min-height: 50px;
+    padding: 12px 21px;
+    align-items: center;
+    justify-content: center;
+    background: #1c9455;
+    border-radius: 11px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.south-mobile-consultation__button:hover {
+    background: #167944;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   مناطق تحت پوشش
+======================================== */
+
+.south-areas {
+    display: grid;
+    width: min(1160px, 100%);
+    margin: 100px auto 0;
+    padding: 42px;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: 45px;
+    background: var(--south-surface);
+    border: 1px solid var(--south-border);
+    border-radius: 24px;
+}
+
+.south-areas__content p {
+    margin-bottom: 0;
+    color: var(--south-muted);
+    line-height: 2;
+}
+
+.south-areas__list {
+    display: grid;
+    padding: 0;
+    margin: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 11px;
+    list-style: none;
+}
+
+.south-areas__list li {
+    padding: 11px 10px;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 10px;
+    color: var(--south-navy);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* ========================================
+   مراحل کار
+======================================== */
+
+.south-process {
+    width: min(1160px, 100%);
+    margin: 100px auto 0;
+}
+
+.south-process__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.south-process__grid article {
+    position: relative;
+    padding: 27px 20px;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 17px;
+    text-align: center;
+}
+
+.south-process__grid article>span {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 16px;
+    align-items: center;
+    justify-content: center;
+    background: var(--south-red);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.south-process__grid h3 {
+    margin-bottom: 9px;
+    color: var(--south-navy);
+    font-size: 1.05rem;
+}
+
+.south-process__grid p {
+    margin-bottom: 0;
+    color: var(--south-muted);
+    font-size: 0.86rem;
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   سؤالات متداول
+======================================== */
+
+.south-faq {
+    width: min(900px, 100%);
+    margin: 100px auto 0;
+}
+
+.south-faq__list {
+    display: grid;
+    gap: 12px;
+}
+
+.south-faq details {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    border-radius: 13px;
+}
+
+.south-faq summary {
+    position: relative;
+    padding: 18px 52px 18px 20px;
+    color: var(--south-navy);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.8;
+    list-style: none;
+    cursor: pointer;
+}
+
+.south-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.south-faq summary::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    color: var(--south-red);
+    font-size: 1.25rem;
+    line-height: 24px;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.south-faq details[open] summary::before {
+    content: "−";
+}
+
+.south-faq details[open] summary {
+    border-bottom: 1px solid var(--south-border);
+}
+
+.south-faq details p {
+    padding: 17px 22px 21px;
+    margin-bottom: 0;
+    color: var(--south-muted);
+    font-size: 0.92rem;
+    line-height: 2;
+}
+
+
+/* ========================================
+   دعوت به سفارش
+======================================== */
+
+.south-final-cta {
+    display: flex;
+    width: min(1160px, 100%);
+    margin: 100px auto 0;
+    padding: 40px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background:
+        linear-gradient(135deg,
+            #fff3f3,
+            #ffffff);
+    border: 1px solid #ffd3d3;
+    border-radius: 23px;
+}
+
+.south-final-cta p {
+    max-width: 650px;
+    margin-bottom: 0;
+    color: var(--south-muted);
+    line-height: 1.9;
+}
+
+.south-final-cta__actions {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 10px;
 }
 
-/* عنوان اصلی صفحه */
-.south-page-title {
-    margin: 0 0 1.5rem;
-    color: #1c2c38;
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1.4;
-    text-align: center;
+.south-final-cta__actions a {
+    display: inline-flex;
+    min-width: 220px;
+    min-height: 49px;
+    padding: 11px 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-/* گرید کارت‌ها */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+.south-final-cta__actions a:first-child {
+    background: var(--south-red);
+    color: #ffffff;
 }
 
-/* استایل کارت‌ها */
-.info-card {
-    display: block;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 1rem;
-    text-align: right;
-    transition: 0.3s ease;
+.south-final-cta__actions a:first-child:hover {
+    background: var(--south-red-hover);
+    transform: translateY(-2px);
 }
 
-.info-card:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+.south-final-cta__actions a:last-child {
+    background: #ffffff;
+    border: 1px solid var(--south-border);
+    color: var(--south-navy);
 }
 
-.info-card-title {
-    margin-bottom: 0.5rem;
-    color: #1c2c38;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: right;
+.south-final-cta__actions a:last-child:hover {
+    border-color: var(--south-navy);
+    transform: translateY(-2px);
 }
 
-.info-card-text {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: right;
+
+/* ========================================
+   تبلت
+======================================== */
+
+@media (max-width: 1024px) {
+    .south-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.85fr);
+        gap: 28px;
+    }
+
+    .south-feature-grid,
+    .south-process__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .south-price-section {
+        grid-template-columns: 1fr;
+    }
+
+    .south-price-section__action {
+        justify-self: start;
+    }
+
+    .south-mobile-consultation {
+        grid-template-columns: 65px minmax(0, 1fr);
+    }
+
+    .south-mobile-consultation__button {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .south-areas {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* دکمه سفارش */
-.button-container {
-    margin-top: 1rem;
-    text-align: center;
-}
 
-.root-order-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: #ff0000;
-    color: white;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
+/* ========================================
+   موبایل
+======================================== */
 
-.root-order-button:hover {
-    background-color: #cc0000;
-}
-
-/* ریسپانسیو برای موبایل */
 @media (max-width: 768px) {
-    .root-repair-page {
-        padding: 1rem;
+    .south-page {
+        padding: 20px 14px 60px;
+        background:
+            linear-gradient(180deg,
+                #f2f6f8 0,
+                #ffffff 330px);
     }
 
-    .hero-root-section {
+    .south-hero {
+        display: flex;
         flex-direction: column;
+        gap: 25px;
     }
 
-    .hero-right-content {
+    .south-hero__content {
+        padding: 0;
+    }
+
+    .south-hero h1 {
+        margin-bottom: 15px;
+        font-size: 1.85rem;
+    }
+
+    .south-hero__lead,
+    .south-hero__text {
+        font-size: 0.93rem;
+        line-height: 1.95;
+    }
+
+    .south-hero__actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .south-button {
+        width: 100%;
+    }
+
+    .south-hero__notes {
+        gap: 7px;
+    }
+
+    .south-hero__notes span {
+        font-size: 0.73rem;
+    }
+
+    .south-hero__media {
+        width: 100%;
+        border-width: 5px;
+        border-radius: 18px;
+    }
+
+    .south-hero__caption {
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        padding: 9px 11px;
+        font-size: 0.76rem;
+    }
+
+    .south-intro,
+    .south-services,
+    .south-areas,
+    .south-process,
+    .south-faq,
+    .south-final-cta {
+        margin-top: 70px;
+    }
+
+    .south-section-heading {
+        margin-bottom: 25px;
+        text-align: right;
+    }
+
+    .south-section-heading h2,
+    .south-price-section h2,
+    .south-mobile-consultation h2,
+    .south-areas h2,
+    .south-final-cta h2 {
+        font-size: 1.4rem;
+    }
+
+    .south-feature-grid,
+    .south-service-grid,
+    .south-process__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .south-feature-grid {
+        gap: 11px;
+    }
+
+    .south-feature-grid article {
+        padding: 20px 16px;
+        text-align: right;
+    }
+
+    .south-service-grid {
+        gap: 20px;
+    }
+
+    .south-service-card {
+        border-radius: 17px;
+    }
+
+    .south-service-card__content {
+        padding: 20px;
+    }
+
+    .south-service-card h3 {
+        font-size: 1.12rem;
+    }
+
+    .south-price-section {
+        margin-top: 70px;
+        padding: 27px 20px;
+        border-radius: 19px;
+    }
+
+    .south-price-section__action,
+    .south-price-section__action a {
+        width: 100%;
+    }
+
+    .south-mobile-consultation {
+        display: flex;
+        padding: 24px 19px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .south-mobile-consultation__icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+    }
+
+    .south-mobile-consultation__button {
+        width: 100%;
+    }
+
+    .south-areas {
+        padding: 26px 19px;
+        gap: 25px;
+        border-radius: 19px;
+    }
+
+    .south-areas__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .south-areas__list li {
+        padding: 10px 6px;
+        font-size: 0.78rem;
+    }
+
+    .south-process__grid article {
+        text-align: right;
+    }
+
+    .south-process__grid article>span {
+        margin-bottom: 12px;
+    }
+
+    .south-faq summary {
+        padding: 16px 47px 16px 15px;
+        font-size: 0.88rem;
+    }
+
+    .south-faq details p {
+        padding: 15px 17px 19px;
+        font-size: 0.86rem;
+    }
+
+    .south-final-cta {
+        padding: 27px 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .south-final-cta__actions a {
         width: 100%;
         min-width: 0;
     }
+}
 
-    .south-page-title {
-        margin-bottom: 1rem;
-        font-size: 1.6rem;
-        text-align: center;
+
+/* ========================================
+   موبایل‌های کوچک
+======================================== */
+
+@media (max-width: 390px) {
+    .south-page {
+        padding-right: 11px;
+        padding-left: 11px;
     }
 
-    .hero-image {
-        width: 100%;
-        text-align: center;
+    .south-hero h1 {
+        font-size: 1.65rem;
+    }
+
+    .south-areas__list {
+        grid-template-columns: 1fr 1fr;
     }
 }
