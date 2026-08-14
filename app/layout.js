@@ -91,7 +91,10 @@ export default function RootLayout({ children }) {
 
         <Footer />
 
+        {/* نوار دسترسی سریع فقط در موبایل */}
         <MobileBottomBar />
+
+        
 
         <Analytics />
       </body>

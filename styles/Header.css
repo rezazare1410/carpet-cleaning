@@ -24,12 +24,16 @@
 }
 
 
-/* دکمه‌های سفارش و تماس */
+/* دکمه سفارش و محاسبه قیمت در دسکتاپ */
 
 .order-btn,
-.call-btn {
+.calculator-btn {
+  display: inline-flex;
   padding: 10px 18px;
-  border: 2px solid var(--color-primary, #e60000);
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 2px solid;
   border-radius: 25px;
   font-family: inherit;
   font-size: 15px;
@@ -37,21 +41,38 @@
   line-height: 1.5;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .order-btn {
+  color: #ffffff;
   background: var(--color-primary, #e60000);
-  color: white;
+  border-color: var(--color-primary, #e60000);
 }
 
-.call-btn {
-  background: white;
-  color: var(--color-primary, #e60000);
+.calculator-btn {
+  color: #172832;
+  background: #ffffff;
+  border-color: #172832;
 }
 
-.call-btn:hover {
-  background: var(--color-primary, #e60000);
-  color: white;
+.calculator-btn-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+}
+
+.calculator-btn:hover {
+  color: #ffffff;
+  background: #172832;
+  border-color: #172832;
+  box-shadow: 0 7px 18px rgba(23, 40, 50, 0.2);
+  transform: translateY(-1px);
 }
 
 
@@ -128,7 +149,8 @@
 }
 
 .dropdown-menu li:hover {
-  background-color: var(--color-background-light, #f8f8f8);
+  background-color: var(--color-background-light,
+      #f8f8f8);
 }
 
 .dropdown-menu li a {
@@ -220,8 +242,6 @@
     top: -110px;
   }
 
-  /* فاصله یکسان منوهای بازشونده */
-
   .dropdown-menu,
   .sub-dropdown-menu,
   .refogh-dropdown-menu {
@@ -230,32 +250,26 @@
     padding-bottom: 10px;
   }
 
-  /* فاصله یکسان تمام گزینه‌ها */
+  .dropdown-menu>li,
+  .sub-dropdown-menu>li,
+  .refogh-dropdown-menu>li {
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-bottom: none !important;
+    line-height: 26px;
+  }
 
-    .dropdown-menu>li,
-    .sub-dropdown-menu>li,
-    .refogh-dropdown-menu>li {
-      box-sizing: border-box;
-      padding: 12px 16px;
-      border-bottom: none !important;
-      line-height: 26px;
-    }
-
-  /* خط جداکننده نازک و یکسان */
-
-    .dropdown-menu>li::after,
-    .sub-dropdown-menu>li::after,
-    .refogh-dropdown-menu>li::after {
-      content: "";
-      position: absolute;
-      right: 16px;
-      bottom: 0;
-      left: 16px;
-      height: 1px;
-      background: #d5d5d5;
-    }
-
-  /* حذف خط آخرین گزینه */
+  .dropdown-menu>li::after,
+  .sub-dropdown-menu>li::after,
+  .refogh-dropdown-menu>li::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    bottom: 0;
+    left: 16px;
+    height: 1px;
+    background: #d5d5d5;
+  }
 
   .dropdown-menu>li:last-child::after,
   .sub-dropdown-menu>li:last-child::after,
@@ -408,7 +422,9 @@
     font-weight: 600;
   }
 
-  .call-btn {
+  /* محاسبه‌گر فقط در دسکتاپ نمایش داده می‌شود */
+
+  .calculator-btn {
     display: none;
   }
 
@@ -453,6 +469,15 @@
 
 @media (hover: hover) and (pointer: fine) {
   .order-btn:hover {
-    background-color: var(--color-primary-hover, #c90000);
+    background-color: var(--color-primary-hover,
+        #c90000);
+  }
+
+  .calculator-btn:hover {
+    color: #ffffff;
+    background: #172832;
+    border-color: #172832;
+    box-shadow: 0 7px 18px rgba(23, 40, 50, 0.2);
+    transform: translateY(-1px);
   }
 }
