@@ -282,7 +282,7 @@ export default function PriceCalculator() {
           >
             <div className="price-calculator-card-heading">
               <span>مرحله اول</span>
-              <h2 id="add-item-title">افزودن فرش یا پتو</h2>
+              <h2 id="add-item-title">افزودن فرش، موکت یا پتو</h2>
             </div>
 
             <div className="price-calculator-field">
@@ -394,7 +394,7 @@ export default function PriceCalculator() {
               <label htmlFor="carpet-quantity">
                 {isPerItem
                   ? 'تعداد پتو'
-                  : 'تعداد فرش با همین نوع و اندازه'}
+                  : 'تعداد فرش یا موکت با همین نوع و اندازه'}
               </label>
 
               <input
@@ -536,8 +536,7 @@ export default function PriceCalculator() {
               className="price-calculator-new-item"
               onClick={startNewItem}
             >
-              + افزودن فرش یا پتوی جدید
-            </button>
+افزودن فرش، موکت یا پتوی جدید            </button>
           </section>
 
           <aside
