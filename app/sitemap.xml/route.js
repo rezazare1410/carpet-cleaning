@@ -15,6 +15,7 @@ export async function GET() {
     "areas",
     "order-carpet-cleaning",
     "service-pricing",
+    "carpet-cleaning-price-calculator",
     "handmade-wool-carpet-wash",
     "handmade-silk-carpet-wash",
     "handmade-full-silk-carpet-wash",
@@ -62,7 +63,7 @@ export async function GET() {
     blogUrls = snapshot.docs.map((document) => {
       const data = document.data();
 
-      // استفاده از فیلد slug و استفاده از Document ID فقط در صورت نبودن slug
+      // استفاده از slug و Document ID در صورت نبودن slug
       const slug = String(data.slug || document.id)
         .normalize("NFC")
         .trim();

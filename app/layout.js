@@ -2,10 +2,16 @@ import "./globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import PersianDigits from "./_components/PersianDigits";
+import MobileBottomBar from "./_components/MobileBottomBar";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
+  metadataBase: new URL("https://zarecarpet.com"),
+
+  applicationName: "قالیشویی زارع",
+
   title: "کارخانه قالیشویی زارع | بزرگترین و مجهزترین قالیشویی",
+
   description:
     "قالیشویی زارع از معتبرترین قالیشویی‌های تهران است که با خدمات تخصصی شستشوی فرش، لکه‌برداری، رفوگری و سرویس‌دهی سریع در سراسر تهران، کیفیت و رضایت مشتری را تضمین می‌کند.",
 
@@ -49,7 +55,7 @@ export default function RootLayout({ children }) {
         "@id": "https://zarecarpet.com/#website",
         url: "https://zarecarpet.com/",
         name: "قالیشویی زارع",
-        alternateName: "کارخانه قالیشویی زارع",
+        alternateName: ["کارخانه قالیشویی زارع", "زارع"],
         publisher: {
           "@id": "https://zarecarpet.com/#organization",
         },
@@ -60,7 +66,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <head>
-        {/* پیش‌بارگذاری فونت شبنم با اعداد فارسی */}
         <link
           rel="preload"
           href="/fonts/shabnam/Shabnam-FD.woff2"
@@ -69,11 +74,10 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
 
-        {/* اسکیمای ساختاری سایت */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema),
+            __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
           }}
         />
       </head>
@@ -86,6 +90,8 @@ export default function RootLayout({ children }) {
         {children}
 
         <Footer />
+
+        <MobileBottomBar />
 
         <Analytics />
       </body>

@@ -122,3 +122,152 @@ select {
 ul li::marker {
     content: none;
 }
+
+
+/* ========================================
+   نوار دسترسی سریع پایین موبایل
+======================================== */
+
+.mobile-bottom-bar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: calc(68px + env(safe-area-inset-bottom));
+    }
+
+    .mobile-bottom-bar {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        display: block;
+        padding-bottom: env(safe-area-inset-bottom);
+        background: #ffffff;
+        border-top: 1px solid #e1e8ec;
+        border-radius: 14px 14px 0 0;
+        box-shadow: 0 -4px 16px rgba(23, 40, 50, 0.09);
+    }
+
+    .mobile-bottom-bar__inner {
+        display: grid;
+        min-height: 66px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        direction: rtl;
+        background: #ffffff;
+    }
+
+    .mobile-bottom-bar__item {
+        display: flex;
+        min-width: 0;
+        padding: 7px 2px 6px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        color: #172832;
+        background: #ffffff;
+        border: 0;
+        border-left: 1px solid #eef3f6;
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+            color 0.2s ease,
+            background-color 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-bottom-bar__item:last-child {
+        border-left: 0;
+    }
+
+    .mobile-bottom-bar__icon {
+        width: 23px;
+        height: 23px;
+        color: #172832;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.65;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .mobile-bottom-bar__item:hover,
+    .mobile-bottom-bar__item:active {
+        color: #172832;
+        background: #f5f8fa;
+    }
+
+
+    /* ========================================
+       تماس فوری؛ گزینه وسط نوار
+       زمینه سفید، متن و آیکن قرمز
+    ======================================== */
+
+    .mobile-bottom-bar__inner>.mobile-bottom-bar__item:nth-child(2),
+    .mobile-bottom-bar__item--call,
+    .mobile-bottom-bar__call {
+        color: #f00000 !important;
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        border-color: #eef3f6 !important;
+        box-shadow: none !important;
+    }
+
+    .mobile-bottom-bar__inner>.mobile-bottom-bar__item:nth-child(2) .mobile-bottom-bar__icon,
+    .mobile-bottom-bar__item--call .mobile-bottom-bar__icon,
+    .mobile-bottom-bar__call .mobile-bottom-bar__icon {
+        color: #f00000 !important;
+        stroke: #f00000 !important;
+    }
+
+    .mobile-bottom-bar__inner>.mobile-bottom-bar__item:nth-child(2) span,
+    .mobile-bottom-bar__item--call span,
+    .mobile-bottom-bar__call span {
+        color: #f00000 !important;
+    }
+
+    .mobile-bottom-bar__inner>.mobile-bottom-bar__item:nth-child(2)::before,
+    .mobile-bottom-bar__item--call::before,
+    .mobile-bottom-bar__call::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    .mobile-bottom-bar__inner>.mobile-bottom-bar__item:nth-child(2):hover,
+    .mobile-bottom-bar__inner>.mobile-bottom-bar__item:nth-child(2):active,
+    .mobile-bottom-bar__item--call:hover,
+    .mobile-bottom-bar__item--call:active,
+    .mobile-bottom-bar__call:hover,
+    .mobile-bottom-bar__call:active {
+        color: #c90000 !important;
+        background: #fff3f3 !important;
+        background-color: #fff3f3 !important;
+    }
+}
+
+
+/* موبایل‌های کوچک */
+
+@media (max-width: 390px) {
+    .mobile-bottom-bar__item {
+        font-size: 0.66rem;
+    }
+
+    .mobile-bottom-bar__icon {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media (max-width: 340px) {
+    .mobile-bottom-bar__item {
+        font-size: 0.61rem;
+    }
+}
