@@ -1,115 +1,559 @@
-/* ====== ساختار کلی ====== */
-.order-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* ==============================
+   صفحه ثبت سفارش قالیشویی
+================================= */
+
+.order-page {
+    --order-red: #f00000;
+    --order-dark-red: #c90000;
+    --order-navy: #1c2c38;
+    --order-blue: #007b83;
+    --order-border: #dce2e6;
+    --order-light: #f6f8fa;
+    --order-muted: #66727c;
+
     direction: rtl;
-    font-family: inherit;
+    padding: 42px 20px 90px;
+    background:
+        radial-gradient(circle at top right,
+            rgba(0, 123, 131, 0.08),
+            transparent 34%),
+        #ffffff;
+    color: var(--order-navy);
 }
 
-.order-title {
-    font-size: 1.8rem;
-    color: #007B83;
-    margin-bottom: 1.5rem;
-    text-align: center;
+.order-hero {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:
+        minmax(320px, 0.82fr) minmax(540px, 1.18fr);
+    gap: 34px;
+    align-items: start;
 }
 
-/* ====== فرم ====== */
+/* ==============================
+   معرفی و اعتمادسازی
+================================= */
+
+.order-intro {
+    padding: 34px 8px 20px;
+}
+
+.order-eyebrow {
+    display: inline-flex;
+    padding: 7px 13px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    color: var(--order-red);
+    background: #fff0f0;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.order-intro h1 {
+    margin: 0;
+    color: var(--order-navy);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.45;
+    font-weight: 900;
+}
+
+.order-intro-text {
+    margin: 18px 0 24px;
+    color: #4b5862;
+    font-size: 1.05rem;
+    line-height: 2;
+}
+
+.order-trust-list {
+    display: grid;
+    gap: 12px;
+    margin: 26px 0;
+}
+
+.order-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 14px;
+    border: 1px solid #e5eaed;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.86);
+}
+
+.order-trust-item span {
+    display: grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    flex: 0 0 27px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--order-blue);
+    font-weight: 900;
+}
+
+.order-trust-item p {
+    margin: 0;
+    color: var(--order-navy);
+    font-weight: 700;
+}
+
+.order-license-link {
+    display: inline-flex;
+    color: var(--order-blue);
+    font-weight: 800;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.order-license-link:hover {
+    text-decoration: underline;
+}
+
+.order-calculator-box {
+    margin-top: 26px;
+    padding: 18px;
+    border-radius: 15px;
+    border-right: 4px solid var(--order-red);
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(28, 44, 56, 0.08);
+}
+
+.order-calculator-box p {
+    margin: 0 0 10px;
+    color: #4f5b65;
+    line-height: 1.8;
+}
+
+.order-calculator-box a {
+    color: var(--order-red);
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.order-calculator-box a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   کارت فرم
+================================= */
+
+.order-container {
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 1px solid #edf0f2;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 20px 55px rgba(28, 44, 56, 0.12);
+}
+
+.order-form-heading {
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e8ecef;
+}
+
+.order-form-heading h2 {
+    margin: 0 0 7px;
+    color: var(--order-navy);
+    font-size: 1.65rem;
+    font-weight: 900;
+}
+
+.order-form-heading p {
+    margin: 0;
+    color: var(--order-muted);
+    font-size: 0.92rem;
+}
+
 .order-form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 22px;
 }
 
-.order-form label {
+.order-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.order-field {
     display: flex;
     flex-direction: column;
-    font-weight: bold;
-    color: #333;
+    gap: 8px;
+    min-width: 0;
+    color: var(--order-navy);
+    font-weight: 800;
 }
 
-.order-form input,
-.order-form textarea {
-    padding: 0.8rem;
-    margin-top: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.order-form textarea {
-    resize: vertical;
-}
-
-/* ====== گروه چک‌باکس ====== */
-.form-group {
+.order-field>span {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    text-align: right;
-}
-
-.group-label {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 0.4rem;
-}
-
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    align-items: flex-start;
-}
-
-.checkbox-group label {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.6rem;
-    font-weight: normal;
-    color: #444;
+    gap: 6px;
+}
+
+.order-field small {
+    color: #7a858d;
+    font-size: 0.77rem;
+    font-weight: 600;
+}
+
+.required-mark {
+    color: var(--order-red);
     font-size: 1rem;
+}
+
+.order-form input:not([type="checkbox"]):not([type="hidden"]),
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid #cfd7dc;
+    border-radius: 11px;
+    outline: none;
+    background: #ffffff;
+    color: var(--order-navy);
+    font-family: inherit;
+    font-size: 0.96rem;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.order-form input:not([type="checkbox"]):not([type="hidden"]):focus,
+.order-form select:focus,
+.order-form textarea:focus {
+    border-color: var(--order-blue);
+    box-shadow: 0 0 0 4px rgba(0, 123, 131, 0.11);
+}
+
+.order-form input:disabled {
+    cursor: not-allowed;
+    color: #8d969d;
+    background: #f0f2f3;
+}
+
+.order-form textarea {
+    min-height: 96px;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+.order-form input::placeholder,
+.order-form textarea::placeholder {
+    color: #9aa2a8;
+}
+
+.order-full-field {
+    width: 100%;
+}
+
+/* ==============================
+   زمان دریافت
+================================= */
+
+
+
+
+
+
+/* ==============================
+   انتخاب خدمات
+================================= */
+
+.order-services-section {
+    min-width: 0;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid var(--order-border);
+    border-radius: 16px;
+    background: var(--order-light);
+}
+
+.order-services-section legend {
+    padding: 0 8px;
+    color: var(--order-navy);
+    font-weight: 900;
+}
+
+.order-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.order-service-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 12px 13px;
+    box-sizing: border-box;
+    border: 1px solid #d6dde1;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #3d4952 !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
     cursor: pointer;
-    direction: rtl;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.checkbox-group input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #007B83;
+.order-service-card:hover {
+    border-color: #9aaab2;
+    transform: translateY(-1px);
 }
 
-/* ====== دکمه ارسال ====== */
-.order-form button {
-    background-color: #d90000;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
-    font-size: 1rem;
+.order-service-card.is-selected {
+    border-color: var(--order-red);
+    background: #fff3f3;
+    color: #b40000 !important;
+}
+
+.order-service-card input {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    margin: 0;
+    accent-color: var(--order-red);
+}
+
+.order-photo-note {
+    margin: 16px 0 0;
+    color: #5c6871;
+    font-size: 0.87rem;
+    line-height: 1.8;
+}
+
+.order-photo-note a {
+    color: #087c50;
+    font-weight: 900;
+}
+
+/* ==============================
+   ارسال و خطا
+================================= */
+
+.order-error-message {
+    padding: 13px 15px;
+    border: 1px solid #f2bcbc;
+    border-radius: 11px;
+    color: #a90000;
+    background: #fff2f2;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.order-submit-button {
+    width: 100%;
+    min-height: 54px;
+    border: 0;
+    border-radius: 12px;
+    color: #ffffff;
+    background: var(--order-red);
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 900;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(240, 0, 0, 0.2);
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.order-form button:hover {
-    background-color: #a50000;
+.order-submit-button:hover:not(:disabled) {
+    background: var(--order-dark-red);
+    transform: translateY(-1px);
+    box-shadow: 0 13px 30px rgba(201, 0, 0, 0.25);
 }
 
-/* ====== پیام موفقیت ====== */
+.order-submit-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.order-privacy-note {
+    margin: -10px 0 0;
+    color: var(--order-muted);
+    text-align: center;
+    font-size: 0.82rem;
+}
+
+.order-honeypot {
+    position: absolute !important;
+    right: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ==============================
+   بخش‌های پایین صفحه
+================================= */
+
+.order-process-section,
+.order-coverage-section,
+.order-faq-section {
+    width: min(1180px, 100%);
+    margin: 74px auto 0;
+    box-sizing: border-box;
+}
+
+.order-section-heading {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.order-section-heading>span,
+.order-coverage-section>div:first-child>span {
+    color: var(--order-red);
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+.order-section-heading h2,
+.order-coverage-section h2 {
+    margin: 8px 0 0;
+    color: var(--order-navy);
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    font-weight: 900;
+}
+
+.order-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.order-process-grid article {
+    padding: 25px;
+    border: 1px solid #e5e9ec;
+    border-radius: 17px;
+    background: #ffffff;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(28, 44, 56, 0.06);
+}
+
+.order-process-grid article b {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--order-blue);
+    font-size: 1.1rem;
+}
+
+.order-process-grid h3 {
+    margin: 0 0 10px;
+    color: var(--order-navy);
+}
+
+.order-process-grid p {
+    margin: 0;
+    color: #5f6b74;
+    line-height: 1.9;
+}
+
+.order-coverage-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: center;
+    padding: 32px;
+    border-radius: 20px;
+    color: #ffffff;
+    background: var(--order-navy);
+}
+
+.order-coverage-section h2 {
+    color: #ffffff;
+}
+
+.order-coverage-section p {
+    margin: 13px 0 0;
+    color: #d8e0e5;
+    line-height: 1.9;
+}
+
+.order-coverage-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+}
+
+.order-coverage-links a {
+    padding: 13px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    text-align: center;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.order-coverage-links a:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.order-faq-list {
+    display: grid;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.order-faq-list details {
+    padding: 0 19px;
+    border: 1px solid #e1e6e9;
+    border-radius: 13px;
+    background: #ffffff;
+}
+
+.order-faq-list summary {
+    padding: 18px 0;
+    color: var(--order-navy);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.order-faq-list p {
+    margin: 0;
+    padding: 0 0 19px;
+    color: #59666f;
+    line-height: 1.9;
+}
+
+/* ==============================
+   صفحه موفقیت قبلی
+================================= */
+
 .success-message {
     margin-top: 2rem;
-    background-color: #e7f9ec;
-    border: 1px solid #b2e0c5;
-    color: #2b7a4b;
     padding: 1rem;
+    border: 1px solid #b2e0c5;
     border-radius: 10px;
+    color: #2b7a4b;
+    background: #e7f9ec;
     text-align: center;
     font-size: 1.05rem;
     line-height: 1.8;
@@ -118,42 +562,130 @@
 .back-home-button {
     display: inline-block;
     margin-top: 1rem;
-    text-decoration: none;
-    color: #007B83;
+    color: #007b83;
     font-weight: bold;
-    transition: color 0.3s;
-}
-
-.back-home-button:hover {
-    color: #004b50;
+    text-decoration: none;
 }
 
 .order-success-container {
     max-width: 600px;
     margin: 5rem auto;
     padding: 2rem;
-    background-color: #f7f7f7;
-    text-align: center;
     border-radius: 12px;
+    background: #f7f7f7;
+    text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ====== ریسپانسیو موبایل ====== */
-@media (max-width: 768px) {
+/* ==============================
+   تبلت و موبایل
+================================= */
+
+@media (max-width: 960px) {
+    .order-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .order-intro {
+        padding-top: 10px;
+    }
+
+    .order-coverage-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .order-page {
+        padding: 25px 12px 120px;
+    }
+
+    .order-intro {
+        padding: 8px 4px 14px;
+    }
+
+    .order-intro h1 {
+        font-size: 1.85rem;
+    }
+
+    .order-intro-text {
+        font-size: 0.98rem;
+    }
+
     .order-container {
-        padding: 1rem;
+        padding: 21px 15px;
+        border-radius: 17px;
     }
 
-    .order-title {
-        font-size: 1.5rem;
+    .order-fields-grid,
+    .order-services-grid,
+    .order-process-grid,
+    .order-coverage-links {
+        grid-template-columns: 1fr;
     }
 
-    .order-form input,
-    .order-form textarea {
-        font-size: 0.95rem;
+    .order-process-section,
+    .order-coverage-section,
+    .order-faq-section {
+        margin-top: 52px;
     }
 
-    .order-form button {
-        font-size: 0.95rem;
+    .order-coverage-section {
+        padding: 24px 17px;
     }
+
+    .order-service-card {
+        min-height: 50px;
+    }
+
+    .order-date-note {
+        margin-right: 0;
+    }
+}
+.order-persian-date-container {
+    width: 100%;
+}
+
+.order-persian-date-input {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 13px 14px !important;
+    border: 1px solid #cfd7dc !important;
+    border-radius: 11px !important;
+    outline: none;
+    color: #1c2c38;
+    background: #ffffff;
+    font-family: inherit !important;
+    font-size: 0.96rem !important;
+    direction: rtl;
+    cursor: pointer;
+}
+
+.order-persian-date-input:focus {
+    border-color: #007b83 !important;
+    box-shadow: 0 0 0 4px rgba(0, 123, 131, 0.11);
+}
+
+.rmdp-wrapper,
+.rmdp-container,
+.rmdp-calendar {
+    font-family: inherit !important;
+    direction: rtl;
+}
+
+.rmdp-week-day {
+    color: #f00000 !important;
+}
+
+.rmdp-day.rmdp-today span {
+    background-color: #007b83 !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight) {
+    background-color: #f00000 !important;
+    box-shadow: none !important;
+}
+
+.rmdp-arrow {
+    border-color: #f00000 !important;
 }
