@@ -78,6 +78,9 @@ export default function MobileBottomBar() {
 
       <style>{`
         @media (max-width: 768px) {
+        html body .mobile-bottom-bar {
+  z-index: 9000 !important;
+}
           html body
           .mobile-bottom-bar
           .mobile-bottom-bar__inner
