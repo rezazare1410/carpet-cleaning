@@ -1,5 +1,7 @@
+
 import "../../styles/carpet-cleaning-east-tehran.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -295,10 +297,22 @@ export default function EastContent() {
         </div>
 
         <div className="east-area-list">
-          {serviceAreas.map((area) => (
-            <span key={area}>{area}</span>
-          ))}
-        </div>
+  {serviceAreas.map((area) => (
+    <span key={area}>
+      {area === "نیروی هوایی" ? (
+        <Link
+          href="/blog/قالیشویی_در_نیروهوایی"
+          className="east-area-link"
+          aria-label="مشاهده خدمات قالیشویی در نیروی هوایی"
+        >
+          {area}
+        </Link>
+      ) : (
+        area
+      )}
+    </span>
+  ))}
+</div>
 
         <p className="east-area-note">
           اگر نام محله شما در این فهرست نیست، برای بررسی محدوده سرویس با

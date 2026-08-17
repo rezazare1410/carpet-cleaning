@@ -1079,3 +1079,18 @@
         font-size: 0.8rem;
     }
 }
+.east-area-link {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+}
+
+.east-area-link:hover {
+    text-decoration: underline;
+}
+
+.east-area-link:focus-visible {
+    outline: 2px solid #007b83;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
