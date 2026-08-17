@@ -2,7 +2,27 @@ import OrderCarpetCleaningPage from './OrderCarpetCleaningPage';
 
 export const metadata = {
   title: 'ثبت سفارش آنلاین قالیشویی | قالیشویی زارع',
-  description: 'با تکمیل فرم سفارش آنلاین قالیشویی زارع، فرش خود را برای شستشو، موکت‌شویی یا رفوگری ثبت کنید. پاسخ‌گویی سریع و خدمات در محل.',
+  description:
+    'با تکمیل فرم سفارش آنلاین قالیشویی زارع، فرش خود را برای شستشو، موکت‌شویی یا رفوگری ثبت کنید. پاسخ‌گویی سریع و خدمات در محل.',
+
+  alternates: {
+    canonical: 'https://zarecarpet.com/order-carpet-cleaning',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: 'ثبت سفارش آنلاین قالیشویی | قالیشویی زارع',
+    description:
+      'ثبت سفارش آنلاین شستشوی فرش، موکت‌شویی، لکه‌برداری و رفوگری در قالیشویی زارع.',
+    url: 'https://zarecarpet.com/order-carpet-cleaning',
+    siteName: 'قالیشویی زارع',
+    locale: 'fa_IR',
+    type: 'website',
+  },
 };
 
 const schemaData = {
