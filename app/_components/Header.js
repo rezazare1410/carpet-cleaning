@@ -25,9 +25,23 @@ const Header = () => {
   const [showRefoghDropdown, setShowRefoghDropdown] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 90);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -37,6 +51,7 @@ const Header = () => {
         setShowRefoghDropdown(false);
       }
     };
+  
 
     document.addEventListener("mousedown", handleClickOutside);
 
@@ -53,11 +68,15 @@ const Header = () => {
 
   return (
     <>
-      <header className="header-container">
+      <header
+        className={`header-container${
+          isHomePage ? " header-container--home" : ""
+        }${isScrolled ? " header-container--scrolled" : ""}`}
+      >
+        {" "}
         <div className="top-bar">
           پاسخگویی ۲۴ ساعته، سرویس دهی سراسر تهران: 77169450-021
         </div>
-
         <div className="nav-container">
           <button
             className="mobile-menu-btn"
@@ -245,11 +264,10 @@ const Header = () => {
               className="calculator-btn"
             >
               <FaCalculator className="calculator-btn-icon" />
-             محاسبه قیمت قالیشویی
+              محاسبه قیمت قالیشویی
             </Link>
           </div>
         </div>
-
         {isMobileMenuOpen && (
           <div className="mobile-menu open">
             <ul>

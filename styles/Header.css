@@ -481,3 +481,379 @@
     transform: translateY(-1px);
   }
 }
+/* هدر روی عکس Hero فقط در صفحه اصلی */
+.header-container--home {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* نوار بالایی نیمه‌شفاف */
+.header-container--home .top-bar {
+  background: rgba(10, 24, 32, 0.58);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(5px);
+}
+
+/* منوی اصلی نیمه‌شفاف */
+.header-container--home .nav-container {
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* رنگ نوشته‌های منو */
+.header-container--home .nav-menu a,
+.header-container--home .dropdown-title {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+.header-container--home .nav-menu a:hover,
+.header-container--home .dropdown-title:hover {
+  color: #f19850;
+}
+
+/* دکمه سفارش دیگر قرمز نباشد */
+.header-container--home .order-btn {
+  color: var(--zare-white, #ffffff);
+  background: var(--zare-red, #f00000);
+  border-color: var(--zare-red, #f00000);
+}
+.header-container--home .order-btn:hover {
+  background: var(--zare-red-hover, #c90000);
+  border-color: var(--zare-red-hover, #c90000);
+}
+
+.header-container--home .nav-menu a:hover,
+.header-container--home .dropdown-title:hover {
+  color: var(--zare-border-strong, #cbd7de);
+}
+
+/* دکمه محاسبه قیمت */
+.header-container--home .calculator-btn {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.header-container--home .calculator-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
+}
+
+/* لوگو روی هدر تیره */
+.header-container--home .logo a {
+  display: flex;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.header-container--home .logo img {
+  background: transparent;
+}
+
+/* منوهای بازشونده سفید باقی بمانند */
+.header-container--home .dropdown-menu,
+.header-container--home .sub-dropdown-menu,
+.header-container--home .refogh-dropdown-menu,
+.header-container--home .mobile-menu {
+  background: #ffffff;
+}
+
+.header-container--home .dropdown-menu a,
+.header-container--home .dropdown-menu span,
+.header-container--home .sub-dropdown-menu a,
+.header-container--home .refogh-dropdown-menu a,
+.header-container--home .mobile-menu a,
+.header-container--home .mobile-menu button {
+  color: #252525;
+}
+
+@media (max-width: 768px) {
+  .header-container--home .nav-container {
+    background: rgba(15, 30, 39, 0.62);
+  }
+
+  .header-container--home .mobile-menu-btn {
+    color: #f19850;
+  }
+}
+.header-container--home .logo img {
+  background: transparent;
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
+/* جلوگیری از تکرار دکمه سفارش در Hero صفحه اصلی */
+.header-container--home .order-btn {
+  display: none;
+}
+/* اصلاح رنگ نوشته‌های منوهای بازشونده */
+.header-container--home .dropdown-menu a,
+.header-container--home .sub-dropdown-menu a,
+.header-container--home .refogh-dropdown-menu a {
+  color: var(--zare-text-main, #1c2c38);
+  text-shadow: none;
+}
+
+/* حالت قرارگرفتن ماوس روی گزینه‌ها */
+.header-container--home .dropdown-menu li:hover,
+.header-container--home .sub-dropdown-menu li:hover,
+.header-container--home .refogh-dropdown-menu li:hover {
+  background: var(--zare-background-secondary, #eef3f6);
+}
+
+.header-container--home .dropdown-menu li:hover>a,
+.header-container--home .sub-dropdown-menu li:hover>a,
+.header-container--home .refogh-dropdown-menu li:hover>a {
+  color: var(--zare-primary, #172832);
+  text-shadow: none;
+}
+/* ==================================
+   هدر یکپارچه قالیشویی زارع
+================================== */
+
+.header-container {
+  background: var(--zare-primary, #172832);
+  box-shadow: 0 2px 8px rgba(16, 29, 37, 0.18);
+}
+
+/* نوار بالایی تمام صفحات */
+.header-container .top-bar {
+  color: var(--zare-white, #ffffff);
+  background: var(--zare-primary-dark, #101d25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* منوی اصلی صفحات داخلی */
+.header-container .nav-container {
+  background: var(--zare-primary, #172832);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* لوگوی سفید در تمام صفحات */
+.header-container .logo a {
+  display: flex;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.header-container .logo img {
+  background: transparent;
+  filter: brightness(0) invert(1);
+}
+
+/* نوشته‌های اصلی منو */
+.header-container .nav-menu>ul>li>a,
+.header-container .dropdown-title {
+  color: var(--zare-white, #ffffff);
+  text-shadow: none;
+}
+
+.header-container .nav-menu>ul>li>a:hover,
+.header-container .dropdown-title:hover {
+  color: var(--zare-border-strong, #cbd7de);
+}
+
+/* دکمه سفارش */
+.header-container .order-btn {
+  color: var(--zare-white, #ffffff);
+  background: var(--zare-red, #f00000);
+  border-color: var(--zare-red, #f00000);
+}
+
+.header-container .order-btn:hover {
+  color: var(--zare-white, #ffffff);
+  background: var(--zare-red-hover, #c90000);
+  border-color: var(--zare-red-hover, #c90000);
+}
+
+/* دکمه محاسبه قیمت */
+.header-container .calculator-btn {
+  color: var(--zare-white, #ffffff);
+  background: transparent;
+  border-color: var(--zare-border-strong, #cbd7de);
+}
+
+.header-container .calculator-btn:hover {
+  color: var(--zare-primary, #172832);
+  background: var(--zare-white, #ffffff);
+  border-color: var(--zare-white, #ffffff);
+}
+
+/* زیرمنوها */
+.header-container .dropdown-menu,
+.header-container .sub-dropdown-menu,
+.header-container .refogh-dropdown-menu,
+.header-container .mobile-menu {
+  background: var(--zare-white, #ffffff);
+}
+
+.header-container .dropdown-menu a,
+.header-container .dropdown-menu span,
+.header-container .sub-dropdown-menu a,
+.header-container .refogh-dropdown-menu a {
+  color: var(--zare-text-main, #1c2c38);
+  text-shadow: none;
+}
+
+.header-container .dropdown-menu li:hover,
+.header-container .sub-dropdown-menu li:hover,
+.header-container .refogh-dropdown-menu li:hover {
+  background: var(--zare-background-secondary, #eef3f6);
+}
+
+.header-container .dropdown-menu li:hover>a,
+.header-container .sub-dropdown-menu li:hover>a,
+.header-container .refogh-dropdown-menu li:hover>a {
+  color: var(--zare-primary, #172832);
+}
+
+/* صفحه اصلی: منو مستقیماً روی تصویر قرار بگیرد */
+.header-container--home {
+  position: absolute;
+  background: transparent;
+  box-shadow: none;
+}
+
+.header-container--home .top-bar {
+  background: rgba(16, 29, 37, 0.88);
+}
+
+.header-container--home .nav-container {
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* در صفحه اصلی دکمه سفارش داخل Hero وجود دارد */
+.header-container--home .order-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-container .mobile-menu-btn {
+    color: var(--zare-white, #ffffff);
+  }
+
+  .header-container .mobile-menu a,
+  .header-container .mobile-menu button {
+    color: var(--zare-text-main, #1c2c38);
+  }
+}
+/* گرادینت هدر فقط در صفحات داخلی */
+.header-container:not(.header-container--home) {
+  background:
+    radial-gradient(circle at 18% 50%,
+      rgba(203, 215, 222, 0.12) 0%,
+      transparent 34%),
+    linear-gradient(to left,
+      var(--zare-primary-dark, #101d25) 0%,
+      var(--zare-primary, #172832) 55%,
+      var(--zare-primary-light, #1f3c4c) 100%);
+
+  box-shadow: 0 4px 14px rgba(16, 29, 37, 0.2);
+}
+
+/* گرادینت اصلی از پشت هر دو ردیف دیده شود */
+.header-container:not(.header-container--home) {
+  background: linear-gradient(to bottom,
+      var(--zare-primary-dark, #101d25) 0%,
+      var(--zare-primary, #172832) 52%,
+      var(--zare-primary-light, #1f3c4c) 100%);
+
+  box-shadow: 0 4px 14px rgba(16, 29, 37, 0.2);
+}
+/* انیمیشن جمع‌شدن هدر */
+.header-container,
+.header-container .top-bar,
+.header-container .nav-container,
+.header-container .logo img,
+.header-container .order-btn,
+.header-container .calculator-btn {
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.2s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* حالت عادی نوار بالا */
+.header-container .top-bar {
+  max-height: 60px;
+  overflow: hidden;
+}
+
+/* حذف نوار پاسخگویی بعد از اسکرول */
+.header-container--scrolled .top-bar {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ظاهر هدر جمع‌شده */
+.header-container--scrolled {
+  box-shadow: 0 5px 18px rgba(16, 29, 37, 0.24);
+}
+
+/* صفحه اصلی بعد از اسکرول */
+.header-container--home.header-container--scrolled {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: linear-gradient(to bottom,
+      var(--zare-primary-dark, #101d25),
+      var(--zare-primary, #172832));
+}
+
+/* منوی باریک دسکتاپ */
+@media (min-width: 769px) {
+  .header-container--scrolled .nav-container {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .header-container--scrolled .logo img {
+    width: 100px;
+    height: auto;
+  }
+
+  .header-container--scrolled .order-btn,
+  .header-container--scrolled .calculator-btn {
+    padding: 7px 14px;
+    font-size: 14px;
+  }
+
+  /* وقتی Hero از صفحه خارج شد، سفارش دوباره در هدر دیده شود */
+  .header-container--home.header-container--scrolled .order-btn {
+    display: inline-flex;
+  }
+}
+
+/* نسخه موبایل */
+@media (max-width: 768px) {
+  .header-container--scrolled .nav-container {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .header-container--scrolled .logo img {
+    width: 90px;
+    height: auto;
+  }
+}

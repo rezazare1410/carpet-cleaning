@@ -1,4 +1,4 @@
-import Slider from "./_components/Slider";
+import Hero from "./_components/Hero";
 import WhyChooseUs from "./_components/WhyChooseUs";
 import Cards from "./_components/Cards";
 import ServiceHighlight from "./_components/ServiceHighlight";
@@ -77,7 +77,7 @@ export default function HomePage() {
         }}
       />
 
-      <Slider />
+      <Hero />
       <WhyChooseUs />
       <Cards />
       <ServiceHighlight />
