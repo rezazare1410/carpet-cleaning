@@ -773,64 +773,150 @@
 
   box-shadow: 0 4px 14px rgba(16, 29, 37, 0.2);
 }
-/* انیمیشن جمع‌شدن هدر */
-.header-container,
-.header-container .top-bar,
-.header-container .nav-container,
-.header-container .logo img,
-.header-container .order-btn,
-.header-container .calculator-btn {
-  transition:
-    max-height 0.3s ease,
-    padding 0.3s ease,
-    opacity 0.2s ease,
-    width 0.3s ease,
-    height 0.3s ease,
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
+/* انیمیشن جمع‌شدن هدر *//* ==================================
+   انیمیشن نرم جمع‌شدن هدر
+================================== */
+
+.header-container {
+  transition: box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* حالت عادی نوار بالا */
+/*
+  هدر صفحه اصلی از ابتدا fixed است تا هنگام تبدیل
+  absolute به fixed پرش ناگهانی ایجاد نشود.
+*/
+.header-container--home {
+  position: fixed;
+  isolation: isolate;
+  background: transparent;
+}
+
+/* لایه گرادینت قابل انیمیشن برای صفحه اصلی */
+.header-container--home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom,
+      var(--zare-primary-dark, #101d25) 0%,
+      var(--zare-primary, #172832) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-container--home.header-container--scrolled::before {
+  opacity: 1;
+}
+
+/* حالت عادی نوار پاسخگویی */
 .header-container .top-bar {
-  max-height: 60px;
+  display: block;
+  box-sizing: border-box;
+  max-height: 44px;
+  min-height: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transform-origin: top;
+  will-change: max-height, padding, opacity, transform;
+
+  transition:
+    max-height 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-top 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-bottom 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    transform 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s ease,
+    visibility 0s linear;
 }
 
-/* حذف نوار پاسخگویی بعد از اسکرول */
+/* جمع‌شدن نرم نوار پاسخگویی */
 .header-container--scrolled .top-bar {
+  display: block;
   max-height: 0;
   padding-top: 0;
   padding-bottom: 0;
-  border-bottom: none;
+  border-bottom-color: transparent;
   opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, -10px, 0);
   pointer-events: none;
+
+  transition:
+    max-height 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-top 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-bottom 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.28s ease,
+    transform 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s ease,
+    visibility 0s linear 0.48s;
 }
 
-/* ظاهر هدر جمع‌شده */
+/* تغییر نرم ارتفاع منوی اصلی */
+.header-container .nav-container {
+  box-sizing: border-box;
+
+  transition:
+    min-height 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-top 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-bottom 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* تغییر نرم اندازه لوگو */
+.header-container .logo img {
+  display: block;
+  width: 120px;
+  height: auto;
+  transform: translateZ(0);
+  will-change: width, transform;
+
+  transition:
+    width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* تغییر نرم اندازه دکمه‌ها */
+.header-container .order-btn,
+.header-container .calculator-btn {
+  will-change: max-width, padding, opacity, transform;
+
+  transition:
+    max-width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    font-size 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* سایه هدر در حالت جمع‌شده */
 .header-container--scrolled {
   box-shadow: 0 5px 18px rgba(16, 29, 37, 0.24);
 }
 
-/* صفحه اصلی بعد از اسکرول */
-.header-container--home.header-container--scrolled {
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: linear-gradient(to bottom,
-      var(--zare-primary-dark, #101d25),
-      var(--zare-primary, #172832));
-}
-
-/* منوی باریک دسکتاپ */
+/* دسکتاپ */
 @media (min-width: 769px) {
+  .header-container .nav-container {
+    min-height: 79px;
+  }
+
   .header-container--scrolled .nav-container {
+    min-height: 62px;
     padding-top: 6px;
     padding-bottom: 6px;
   }
 
   .header-container--scrolled .logo img {
     width: 100px;
-    height: auto;
   }
 
   .header-container--scrolled .order-btn,
@@ -839,14 +925,78 @@
     font-size: 14px;
   }
 
-  /* وقتی Hero از صفحه خارج شد، سفارش دوباره در هدر دیده شود */
+  /*
+    مخفی‌شدن دکمه سفارش در بالای صفحه اصلی
+    بدون استفاده از display:none
+  */
+  .header-container--home .order-btn {
+    display: inline-flex;
+    box-sizing: border-box;
+    max-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+    overflow: hidden;
+    border-right-width: 0;
+    border-left-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px) scale(0.96);
+    pointer-events: none;
+
+    transition:
+      max-width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      padding 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease,
+      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      border-width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear 0.48s,
+      color 0.25s ease,
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  /*
+    ظاهرشدن نرم دکمه سفارش
+    بعد از جمع‌شدن هدر
+  */
   .header-container--home.header-container--scrolled .order-btn {
     display: inline-flex;
+    max-width: 230px;
+    padding: 7px 14px;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+
+    transition:
+      max-width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      padding 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease 0.08s,
+      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      border-width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0s linear,
+      color 0.25s ease,
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
   }
 }
 
-/* نسخه موبایل */
+/* موبایل */
 @media (max-width: 768px) {
+
+  /*
+    در صفحه اصلی موبایل دکمه سفارش هدر مخفی می‌ماند
+    چون دکمه سفارش داخل Hero وجود دارد.
+  */
+  .header-container--home .order-btn,
+  .header-container--home.header-container--scrolled .order-btn {
+    display: none;
+  }
+
   .header-container--scrolled .nav-container {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -854,6 +1004,19 @@
 
   .header-container--scrolled .logo img {
     width: 90px;
-    height: auto;
+  }
+}
+
+/* تنظیمات دسترسی‌پذیری */
+@media (prefers-reduced-motion: reduce) {
+
+  .header-container,
+  .header-container::before,
+  .header-container .top-bar,
+  .header-container .nav-container,
+  .header-container .logo img,
+  .header-container .order-btn,
+  .header-container .calculator-btn {
+    transition-duration: 0.01ms !important;
   }
 }
