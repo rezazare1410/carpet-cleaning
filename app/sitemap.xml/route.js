@@ -5,6 +5,9 @@ export async function GET() {
   const domain = "https://zarecarpet.com";
   const today = new Date().toISOString().split("T")[0];
 
+  // مقاله‌هایی که به صفحه جدید منتقل شده‌اند
+  const redirectedBlogSlugs = new Set(["قالیشویی_در_نیروهوایی"]);
+
   // صفحات ثابت سایت
   const staticPages = [
     "",
@@ -38,11 +41,22 @@ export async function GET() {
     "carpet-cleaning-north-tehran",
     "carpet-cleaning-south-tehran",
     "carpet-cleaning-center-tehran",
+
+    // صفحه محله‌ای جدید
+    "قالیشویی-در-نیروی-هوایی",
+
     "repair-services",
   ];
 
   const staticUrls = staticPages.map((page) => {
-    const url = `${domain}${page ? `/${page}` : ""}`;
+    const encodedPage = page
+      ? page
+          .split("/")
+          .map((segment) => encodeURIComponent(segment))
+          .join("/")
+      : "";
+
+    const url = `${domain}${encodedPage ? `/${encodedPage}` : ""}`;
     const priority = page === "" ? "1.0" : "0.8";
 
     return `
@@ -60,21 +74,27 @@ export async function GET() {
   try {
     const snapshot = await getDocs(collection(db, "blogPosts"));
 
-    blogUrls = snapshot.docs.map((document) => {
+    blogUrls = snapshot.docs.flatMap((document) => {
       const data = document.data();
 
-      // استفاده از slug و Document ID در صورت نبودن slug
       const slug = String(data.slug || document.id)
         .normalize("NFC")
         .trim();
 
-      return `
+      // مقاله قدیمی نیروی هوایی دیگر وارد Sitemap نشود
+      if (redirectedBlogSlugs.has(slug)) {
+        return [];
+      }
+
+      return [
+        `
         <url>
           <loc>${domain}/blog/${encodeURIComponent(slug)}</loc>
           <lastmod>${today}</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.6</priority>
-        </url>`;
+        </url>`,
+      ];
     });
   } catch (error) {
     console.error("❌ خطا در واکشی مقالات بلاگ برای sitemap:", error);

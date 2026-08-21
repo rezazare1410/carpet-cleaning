@@ -16,12 +16,26 @@ import BlogPostContent from "./BlogPostContent";
 
 const FIRESTORE_TIMEOUT = 8000;
 
+/*
+ * مقالاتی که به صفحات خدماتی منتقل شده‌اند.
+ * بررسی این فهرست قبل از اتصال به Firestore انجام می‌شود.
+ */
+const permanentBlogRedirects = new Map([
+  ["قالیشویی_در_نیروهوایی", "/قالیشویی-در-نیروی-هوایی"],
+]);
+
 function normalizeSlug(value = "") {
   try {
     return decodeURIComponent(value).normalize("NFC");
   } catch {
     return value.normalize("NFC");
   }
+}
+
+function getPermanentRedirectPath(slug) {
+  const normalizedSlug = normalizeSlug(slug).trim();
+
+  return permanentBlogRedirects.get(normalizedSlug) || null;
 }
 
 function withTimeout(request) {
@@ -151,6 +165,28 @@ function getIsoDate(value) {
 export async function generateMetadata({ params }) {
   const { slug: rawSlug } = await params;
   const slug = normalizeSlug(rawSlug);
+  const redirectPath = getPermanentRedirectPath(slug);
+
+  /*
+   * برای مقاله منتقل‌شده دیگر اطلاعات Firestore خوانده نمی‌شود.
+   * Canonical مستقیماً روی صفحه جدید قرار می‌گیرد.
+   */
+  if (redirectPath) {
+    const newPageUrl = `https://zarecarpet.com${redirectPath}`;
+
+    return {
+      title: "قالیشویی در نیروی هوایی | شستشو و ترمیم تخصصی فرش",
+      description:
+        "خدمات شستشو، لکه‌برداری و ترمیم تخصصی فرش در محله نیروی هوایی تهران توسط قالیشویی زارع.",
+      alternates: {
+        canonical: newPageUrl,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  }
 
   try {
     const post = await getPost(slug);
@@ -166,10 +202,12 @@ export async function generateMetadata({ params }) {
     }
 
     const canonicalSlug = normalizeSlug(post.slug || post.id).trim();
+
     const description = getDescription(post);
     const image = getImageUrl(post.image);
 
-    const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(canonicalSlug)}`;
+    const canonicalUrl =
+      `https://zarecarpet.com/blog/` + encodeURIComponent(canonicalSlug);
 
     return {
       title: `${post.title} | قالیشویی زارع`,
@@ -215,6 +253,16 @@ export default async function Page({ params }) {
   const { slug: rawSlug } = await params;
   const slug = normalizeSlug(rawSlug);
 
+  /*
+   * ریدایرکت قبل از دریافت مقاله از Firestore انجام می‌شود.
+   * بنابراین پس از حذف مقاله نیز آدرس قدیمی کار می‌کند.
+   */
+  const redirectPath = getPermanentRedirectPath(slug);
+
+  if (redirectPath) {
+    permanentRedirect(encodeURI(redirectPath));
+  }
+
   const post = await getPost(slug);
 
   if (!post) {
@@ -223,7 +271,7 @@ export default async function Page({ params }) {
 
   const canonicalSlug = normalizeSlug(post.slug || post.id).trim();
 
-  // انتقال دائمی آدرس قدیمی دارای فاصله به آدرس تمیز
+  // انتقال دائمی آدرس غیراستاندارد به آدرس اصلی مقاله
   if (slug !== canonicalSlug) {
     permanentRedirect(`/blog/${encodeURIComponent(canonicalSlug)}`);
   }
@@ -234,7 +282,8 @@ export default async function Page({ params }) {
     post.updatedAt || post.date || post.createdAt,
   );
 
-  const canonicalUrl = `https://zarecarpet.com/blog/${encodeURIComponent(canonicalSlug)}`;
+  const canonicalUrl =
+    `https://zarecarpet.com/blog/` + encodeURIComponent(canonicalSlug);
 
   const articleSchema = {
     "@context": "https://schema.org",

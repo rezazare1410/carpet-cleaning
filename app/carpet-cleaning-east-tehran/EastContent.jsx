@@ -301,7 +301,7 @@ export default function EastContent() {
     <span key={area}>
       {area === "نیروی هوایی" ? (
         <Link
-          href="/blog/قالیشویی_در_نیروهوایی"
+          href="/قالیشویی-در-نیروی-هوایی"
           className="east-area-link"
           aria-label="مشاهده خدمات قالیشویی در نیروی هوایی"
         >
