@@ -1020,3 +1020,20 @@
     transition-duration: 0.01ms !important;
   }
 }
+@media (max-width: 768px) {
+  .header-container .top-bar {
+    max-height: 76px;
+    height: auto;
+    padding: 8px 10px;
+    font-size: clamp(11px, 3.2vw, 14px);
+    line-height: 1.7;
+    white-space: normal;
+    overflow: hidden;
+  }
+
+  .header-container--scrolled .top-bar {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
