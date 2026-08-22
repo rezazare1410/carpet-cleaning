@@ -17,11 +17,28 @@ import BlogPostContent from "./BlogPostContent";
 const FIRESTORE_TIMEOUT = 8000;
 
 /*
- * مقالاتی که به صفحات خدماتی منتقل شده‌اند.
- * بررسی این فهرست قبل از اتصال به Firestore انجام می‌شود.
+ * مقالاتی که از وبلاگ به صفحات خدماتی منتقل شده‌اند.
+ * این فهرست پیش از اتصال به Firestore بررسی می‌شود.
  */
 const permanentBlogRedirects = new Map([
-  ["قالیشویی_در_نیروهوایی", "/قالیشویی-در-نیروی-هوایی"],
+  [
+    "قالیشویی_در_نیروهوایی",
+    {
+      path: "/قالیشویی-در-نیروی-هوایی",
+      title: "قالیشویی در نیروی هوایی | شستشو و ترمیم تخصصی فرش",
+      description:
+        "خدمات شستشو، لکه‌برداری و ترمیم تخصصی فرش در محله نیروی هوایی تهران توسط قالیشویی زارع.",
+    },
+  ],
+  [
+    "post13",
+    {
+      path: "/قالیشویی-در-تهران-نو",
+      title: "قالیشویی در تهران نو | شستشو و ترمیم تخصصی فرش",
+      description:
+        "خدمات دریافت و تحویل، شستشو، لکه‌برداری و ترمیم تخصصی فرش در محله تهران نو توسط قالیشویی زارع.",
+    },
+  ],
 ]);
 
 function normalizeSlug(value = "") {
@@ -32,7 +49,7 @@ function normalizeSlug(value = "") {
   }
 }
 
-function getPermanentRedirectPath(slug) {
+function getPermanentRedirectData(slug) {
   const normalizedSlug = normalizeSlug(slug).trim();
 
   return permanentBlogRedirects.get(normalizedSlug) || null;
@@ -79,6 +96,7 @@ async function fetchPost(slug) {
 
   // ابتدا جست‌وجو با Document ID
   const documentRef = doc(db, "blogPosts", normalizedSlug);
+
   const documentSnapshot = await withTimeout(getDoc(documentRef));
 
   if (documentSnapshot.exists()) {
@@ -165,22 +183,24 @@ function getIsoDate(value) {
 export async function generateMetadata({ params }) {
   const { slug: rawSlug } = await params;
   const slug = normalizeSlug(rawSlug);
-  const redirectPath = getPermanentRedirectPath(slug);
+
+  const redirectData = getPermanentRedirectData(slug);
 
   /*
-   * برای مقاله منتقل‌شده دیگر اطلاعات Firestore خوانده نمی‌شود.
-   * Canonical مستقیماً روی صفحه جدید قرار می‌گیرد.
+   * برای مقاله منتقل‌شده اطلاعات Firestore خوانده نمی‌شود.
+   * Canonical مستقیماً به صفحه خدماتی جدید اشاره می‌کند.
    */
-  if (redirectPath) {
-    const newPageUrl = `https://zarecarpet.com${redirectPath}`;
+  if (redirectData) {
+    const newPageUrl = `https://zarecarpet.com` + encodeURI(redirectData.path);
 
     return {
-      title: "قالیشویی در نیروی هوایی | شستشو و ترمیم تخصصی فرش",
-      description:
-        "خدمات شستشو، لکه‌برداری و ترمیم تخصصی فرش در محله نیروی هوایی تهران توسط قالیشویی زارع.",
+      title: redirectData.title,
+      description: redirectData.description,
+
       alternates: {
         canonical: newPageUrl,
       },
+
       robots: {
         index: true,
         follow: true,
@@ -255,12 +275,12 @@ export default async function Page({ params }) {
 
   /*
    * ریدایرکت قبل از دریافت مقاله از Firestore انجام می‌شود.
-   * بنابراین پس از حذف مقاله نیز آدرس قدیمی کار می‌کند.
+   * بنابراین پس از حذف مقاله نیز آدرس قدیمی کار خواهد کرد.
    */
-  const redirectPath = getPermanentRedirectPath(slug);
+  const redirectData = getPermanentRedirectData(slug);
 
-  if (redirectPath) {
-    permanentRedirect(encodeURI(redirectPath));
+  if (redirectData) {
+    permanentRedirect(encodeURI(redirectData.path));
   }
 
   const post = await getPost(slug);
@@ -271,7 +291,7 @@ export default async function Page({ params }) {
 
   const canonicalSlug = normalizeSlug(post.slug || post.id).trim();
 
-  // انتقال دائمی آدرس غیراستاندارد به آدرس اصلی مقاله
+  // انتقال آدرس غیراستاندارد به آدرس اصلی مقاله
   if (slug !== canonicalSlug) {
     permanentRedirect(`/blog/${encodeURIComponent(canonicalSlug)}`);
   }
@@ -290,10 +310,12 @@ export default async function Page({ params }) {
     "@type": "Article",
     headline: post.title,
     description: getDescription(post),
+
     author: {
       "@type": "Organization",
       name: "قالیشویی زارع",
     },
+
     publisher: {
       "@type": "Organization",
       name: "قالیشویی زارع",
@@ -302,12 +324,15 @@ export default async function Page({ params }) {
         url: "https://zarecarpet.com/icons/logo1.png",
       },
     },
+
     datePublished: publishedDate,
     dateModified: modifiedDate,
+
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": canonicalUrl,
     },
+
     image: getImageUrl(post.image),
   };
 

@@ -4,8 +4,12 @@ import NirooHavayiPage, {
   metadata as nirooHavayiMetadata,
 } from "../carpet-cleaning-niroo-havayi/page";
 
-const NIROO_HAVAYI_SLUG =
-  "قالیشویی-در-نیروی-هوایی";
+import TehranNoPage, {
+  metadata as tehranNoMetadata,
+} from "../carpet-cleaning-tehran-no/page";
+
+const NIROO_HAVAYI_SLUG = "قالیشویی-در-نیروی-هوایی";
+const TEHRAN_NO_SLUG = "قالیشویی-در-تهران-نو";
 
 function normalizeSlug(value = "") {
   try {
@@ -22,6 +26,9 @@ export function generateStaticParams() {
     {
       slug: NIROO_HAVAYI_SLUG,
     },
+    {
+      slug: TEHRAN_NO_SLUG,
+    },
   ];
 }
 
@@ -29,20 +36,28 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const normalizedSlug = normalizeSlug(slug);
 
-  if (normalizedSlug !== NIROO_HAVAYI_SLUG) {
-    return {};
+  if (normalizedSlug === NIROO_HAVAYI_SLUG) {
+    return nirooHavayiMetadata;
   }
 
-  return nirooHavayiMetadata;
+  if (normalizedSlug === TEHRAN_NO_SLUG) {
+    return tehranNoMetadata;
+  }
+
+  return {};
 }
 
 export default async function PersianLocationPage({ params }) {
   const { slug } = await params;
   const normalizedSlug = normalizeSlug(slug);
 
-  if (normalizedSlug !== NIROO_HAVAYI_SLUG) {
-    notFound();
+  if (normalizedSlug === NIROO_HAVAYI_SLUG) {
+    return <NirooHavayiPage />;
   }
 
-  return <NirooHavayiPage />;
+  if (normalizedSlug === TEHRAN_NO_SLUG) {
+    return <TehranNoPage />;
+  }
+
+  notFound();
 }

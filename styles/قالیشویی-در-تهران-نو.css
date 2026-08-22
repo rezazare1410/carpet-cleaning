@@ -1,0 +1,1086 @@
+/* ========================================
+   صفحه قالیشویی در تهران‌نو
+======================================== */
+
+.tehran-no-page {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 32px 24px 80px;
+    background:
+        radial-gradient(circle at 0 8%,
+            rgba(203, 215, 222, 0.55) 0,
+            rgba(203, 215, 222, 0.18) 190px,
+            transparent 191px),
+        var(--zare-background, #f5f8fa);
+    color: var(--zare-text-main, #1c2c38);
+    font-family: "Shabnam", Tahoma, sans-serif;
+    direction: rtl;
+}
+
+.tehran-no-page *,
+.tehran-no-page *::before,
+.tehran-no-page *::after {
+    box-sizing: border-box;
+}
+
+.tehran-no-page a {
+    text-decoration: none;
+}
+
+.tehran-no-page p {
+    margin-top: 0;
+    color: var(--zare-text-secondary, #334852);
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* ========================================
+   مسیر بالای صفحه
+======================================== */
+
+.tehran-no-breadcrumb {
+    display: flex;
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto 34px;
+    align-items: center;
+    gap: 12px;
+    color: var(--zare-text-muted, #52616b);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.tehran-no-breadcrumb a {
+    color: var(--zare-text-muted, #52616b);
+    transition: color 0.25s ease;
+}
+
+.tehran-no-breadcrumb a:hover {
+    color: var(--zare-red, #f00000);
+}
+
+.tehran-no-breadcrumb strong {
+    color: var(--zare-primary, #172832);
+    font-weight: 700;
+}
+
+/* ========================================
+   هیرو
+======================================== */
+
+.tehran-no-hero {
+    position: relative;
+    display: grid;
+    width: 100%;
+    max-width: 1480px;
+    min-height: 560px;
+    grid-template-columns:
+        minmax(0, 1.45fr) minmax(340px, 0.7fr);
+    align-items: center;
+    gap: 70px;
+    margin: 0 auto 80px;
+    padding: 46px 0 30px;
+}
+
+.tehran-no-hero::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -90px;
+    left: -140px;
+    width: 380px;
+    height: 380px;
+    border: 1px solid rgba(203, 215, 222, 0.75);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.tehran-no-hero::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 30px;
+    left: -40px;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(203, 215, 222, 0.55);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.tehran-no-hero-content,
+.tehran-no-service-card {
+    position: relative;
+    z-index: 1;
+}
+
+.tehran-no-eyebrow {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: var(--zare-badge-background, #e5edf2);
+    border: 1px solid var(--zare-border-strong, #cbd7de);
+    border-radius: 999px;
+    color: var(--zare-primary, #172832);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.tehran-no-eyebrow>span {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    background: var(--zare-red, #f00000);
+    border: 4px solid rgba(240, 0, 0, 0.16);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(240, 0, 0, 0.08);
+}
+
+.tehran-no-hero h1 {
+    max-width: 900px;
+    margin: 30px 0 20px;
+    color: var(--zare-primary, #172832);
+    font-size: clamp(42px, 5vw, 70px);
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: -1.5px;
+}
+
+.tehran-no-hero-description {
+    max-width: 930px;
+    margin-bottom: 8px;
+    font-size: 19px !important;
+    line-height: 2.1 !important;
+}
+
+.tehran-no-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.tehran-no-primary-button,
+.tehran-no-secondary-button {
+    display: inline-flex;
+    min-height: 62px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 28px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.7;
+    text-align: center;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.tehran-no-primary-button {
+    background: var(--zare-red, #f00000);
+    border: 1px solid var(--zare-red, #f00000);
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(240, 0, 0, 0.18);
+}
+
+.tehran-no-primary-button:hover {
+    background: var(--zare-red-hover, #c90000);
+    border-color: var(--zare-red-hover, #c90000);
+    color: #ffffff;
+    box-shadow: 0 15px 32px rgba(201, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.tehran-no-secondary-button {
+    background: transparent;
+    border: 1px solid var(--zare-primary, #172832);
+    color: var(--zare-primary, #172832);
+}
+
+.tehran-no-secondary-button:hover {
+    background: var(--zare-primary, #172832);
+    border-color: var(--zare-primary, #172832);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.tehran-no-trust-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 30px;
+    margin-top: 30px;
+}
+
+.tehran-no-trust-items span {
+    position: relative;
+    padding-right: 31px;
+    color: var(--zare-primary, #172832);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.tehran-no-trust-items span::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    width: 23px;
+    height: 23px;
+    align-items: center;
+    justify-content: center;
+    background: var(--zare-primary-light, #1f3c4c);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 13px;
+    transform: translateY(-50%);
+}
+
+/* کارت سرویس هیرو */
+
+.tehran-no-service-card {
+    width: 100%;
+    padding: 42px 36px;
+    background:
+        linear-gradient(145deg,
+            var(--zare-primary-light, #1f3c4c),
+            var(--zare-primary, #172832) 60%,
+            var(--zare-primary-dark, #101d25));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 26px;
+    box-shadow: 0 24px 60px rgba(16, 29, 37, 0.2);
+    color: #ffffff;
+}
+
+.tehran-no-card-label,
+.tehran-no-card-small-title {
+    display: block;
+    margin-bottom: 10px;
+    color: #dce8ee;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tehran-no-service-card h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.tehran-no-service-card p {
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.tehran-no-card-divider {
+    width: 100%;
+    height: 1px;
+    margin: 24px 0;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.tehran-no-card-phone {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 900;
+    direction: ltr;
+    transition: color 0.25s ease;
+}
+
+.tehran-no-card-phone:hover {
+    color: #ffb0b0;
+}
+
+/* ========================================
+   تنظیمات عمومی سکشن‌ها
+======================================== */
+
+.tehran-no-section {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.tehran-no-section+.tehran-no-section {
+    border-top: 1px solid var(--zare-border-soft, #e1e8ec);
+}
+
+.tehran-no-section-heading {
+    max-width: 850px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.tehran-no-section-heading>span,
+.tehran-no-media-content>span,
+.tehran-no-feature-card>span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--zare-red, #f00000);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.tehran-no-section-heading h2,
+.tehran-no-media-content h2,
+.tehran-no-feature-card h2,
+.tehran-no-final-cta h2 {
+    margin: 0 0 18px;
+    color: var(--zare-primary, #172832);
+    font-size: clamp(28px, 3.2vw, 42px);
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.tehran-no-section-heading p {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   کارت متنی قیمت
+======================================== */
+
+.tehran-no-text-card {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 38px 42px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 22px;
+    box-shadow: 0 15px 38px rgba(23, 40, 50, 0.07);
+}
+
+.tehran-no-text-card p:last-of-type {
+    margin-bottom: 0;
+}
+
+.tehran-no-inline-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.tehran-no-inline-links a {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    background: var(--zare-background-secondary, #eef3f6);
+    border: 1px solid var(--zare-border-strong, #cbd7de);
+    border-radius: 10px;
+    color: var(--zare-primary, #172832);
+    font-size: 15px;
+    font-weight: 800;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.tehran-no-inline-links a:hover {
+    background: var(--zare-primary, #172832);
+    border-color: var(--zare-primary, #172832);
+    color: #ffffff;
+}
+
+/* ========================================
+   سکشن‌های تصویر و متن
+======================================== */
+
+.tehran-no-media-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 60px;
+}
+
+.tehran-no-media-reverse .tehran-no-media {
+    order: 2;
+}
+
+.tehran-no-media-reverse .tehran-no-media-content {
+    order: 1;
+}
+
+.tehran-no-media {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(23, 40, 50, 0.1);
+}
+
+.tehran-no-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.tehran-no-media figcaption {
+    padding: 15px 18px 17px;
+    color: var(--zare-text-muted, #52616b);
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.tehran-no-media-content p {
+    margin-bottom: 14px;
+}
+
+.tehran-no-media-content>a {
+    display: inline-flex;
+    margin-top: 8px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--zare-red, #f00000);
+    color: var(--zare-primary, #172832);
+    font-size: 16px;
+    font-weight: 800;
+    transition: color 0.25s ease;
+}
+
+.tehran-no-media-content>a:hover {
+    color: var(--zare-red, #f00000);
+}
+
+/* ========================================
+   کارت انواع فرش
+======================================== */
+
+.tehran-no-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.tehran-no-service-item {
+    display: flex;
+    min-height: 285px;
+    flex-direction: column;
+    padding: 28px 24px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(23, 40, 50, 0.055);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.tehran-no-service-item:hover {
+    border-color: var(--zare-border-strong, #cbd7de);
+    box-shadow: 0 18px 38px rgba(23, 40, 50, 0.1);
+    transform: translateY(-4px);
+}
+
+.tehran-no-service-item h3 {
+    margin: 0 0 14px;
+    color: var(--zare-primary, #172832);
+    font-size: 21px;
+    font-weight: 900;
+    line-height: 1.65;
+}
+
+.tehran-no-service-item p {
+    margin-bottom: 22px;
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+.tehran-no-service-item a {
+    margin-top: auto;
+    color: var(--zare-red, #f00000);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.tehran-no-service-item a:hover {
+    color: var(--zare-red-hover, #c90000);
+}
+
+/* ========================================
+   لکه‌برداری و رفوگری
+======================================== */
+
+.tehran-no-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.tehran-no-feature-card {
+    padding: 38px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 22px;
+    box-shadow: 0 15px 38px rgba(23, 40, 50, 0.065);
+}
+
+.tehran-no-feature-card p {
+    margin-bottom: 12px;
+}
+
+.tehran-no-feature-card>a {
+    display: inline-flex;
+    margin-top: 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--zare-red, #f00000);
+    color: var(--zare-primary, #172832);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.tehran-no-feature-card>a:hover {
+    color: var(--zare-red, #f00000);
+}
+
+/* ========================================
+   لینک خدمات ترمیم
+======================================== */
+
+.tehran-no-repair-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.tehran-no-repair-item {
+    display: flex;
+    min-height: 135px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background: var(--zare-background-card, #f2f6f8);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 15px;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.tehran-no-repair-item strong {
+    margin-bottom: 8px;
+    color: var(--zare-primary, #172832);
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.tehran-no-repair-item span {
+    color: var(--zare-text-muted, #52616b);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.tehran-no-repair-item:hover {
+    background: var(--zare-primary, #172832);
+    border-color: var(--zare-primary, #172832);
+    transform: translateY(-3px);
+}
+
+.tehran-no-repair-item:hover strong,
+.tehran-no-repair-item:hover span {
+    color: #ffffff;
+}
+
+/* ========================================
+   مراحل ثبت تا تحویل
+======================================== */
+
+.tehran-no-process-section {
+    max-width: 1480px;
+}
+
+.tehran-no-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.tehran-no-process-item {
+    position: relative;
+    min-height: 235px;
+    padding: 30px 24px;
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 18px;
+}
+
+.tehran-no-process-item>span {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background: var(--zare-primary, #172832);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.tehran-no-process-item h3 {
+    margin: 0 0 10px;
+    color: var(--zare-primary, #172832);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.tehran-no-process-item p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* ========================================
+   مناطق تحت پوشش
+======================================== */
+
+.tehran-no-area-list {
+    display: flex;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.tehran-no-area-list>span {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 22px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border-strong, #cbd7de);
+    border-radius: 999px;
+    color: var(--zare-primary, #172832);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.tehran-no-area-note {
+    max-width: 950px;
+    margin: 28px auto 0;
+    padding: 17px 22px;
+    background: var(--zare-background-secondary, #eef3f6);
+    border-right: 4px solid var(--zare-primary-light, #1f3c4c);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tehran-no-area-note a {
+    color: var(--zare-red, #f00000);
+    font-weight: 800;
+}
+
+/* ========================================
+   سوالات متداول
+======================================== */
+
+.tehran-no-faq-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tehran-no-faq-item {
+    margin-bottom: 13px;
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 14px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tehran-no-faq-item[open] {
+    border-color: var(--zare-border-strong, #cbd7de);
+    box-shadow: 0 12px 28px rgba(23, 40, 50, 0.07);
+}
+
+.tehran-no-faq-item summary {
+    position: relative;
+    padding: 21px 58px 21px 22px;
+    color: var(--zare-primary, #172832);
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.8;
+    cursor: pointer;
+    list-style: none;
+}
+
+.tehran-no-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.tehran-no-faq-item summary::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: flex;
+    width: 27px;
+    height: 27px;
+    align-items: center;
+    justify-content: center;
+    background: var(--zare-badge-background, #e5edf2);
+    border-radius: 50%;
+    color: var(--zare-primary, #172832);
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+
+.tehran-no-faq-item[open] summary::before {
+    content: "−";
+    background: var(--zare-primary, #172832);
+    color: #ffffff;
+}
+
+.tehran-no-faq-item p {
+    margin: 0;
+    padding: 0 58px 23px 22px;
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* ========================================
+   دعوت نهایی
+======================================== */
+
+.tehran-no-final-cta {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 70px auto 0;
+    padding: 48px;
+    background:
+        linear-gradient(135deg,
+            var(--zare-primary-light, #1f3c4c),
+            var(--zare-primary-dark, #101d25));
+    border-radius: 26px;
+    box-shadow: 0 25px 60px rgba(16, 29, 37, 0.2);
+}
+
+.tehran-no-final-cta>div:first-child {
+    max-width: 730px;
+}
+
+.tehran-no-final-cta>div:first-child>span {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #dce8ee;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.tehran-no-final-cta h2 {
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.tehran-no-final-cta p {
+    margin-bottom: 0;
+    color: #e5edf2;
+    font-size: 16px;
+}
+
+.tehran-no-final-buttons {
+    display: flex;
+    min-width: 285px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tehran-no-final-cta .tehran-no-secondary-button {
+    border-color: rgba(255, 255, 255, 0.75);
+    color: #ffffff;
+}
+
+.tehran-no-final-cta .tehran-no-secondary-button:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--zare-primary, #172832);
+}
+
+/* ========================================
+   دسترسی‌پذیری
+======================================== */
+
+.tehran-no-page a:focus-visible,
+.tehran-no-page summary:focus-visible {
+    outline: 3px solid rgba(240, 0, 0, 0.35);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   تبلت
+======================================== */
+
+@media (max-width: 1180px) {
+    .tehran-no-hero {
+        grid-template-columns:
+            minmax(0, 1.25fr) minmax(310px, 0.75fr);
+        gap: 38px;
+    }
+
+    .tehran-no-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tehran-no-repair-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tehran-no-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   موبایل و تبلت عمودی
+======================================== */
+
+@media (max-width: 900px) {
+    .tehran-no-page {
+        padding: 24px 18px 70px;
+    }
+
+    .tehran-no-breadcrumb {
+        margin-bottom: 18px;
+        overflow-x: auto;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .tehran-no-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        margin-bottom: 45px;
+        padding-top: 25px;
+    }
+
+    .tehran-no-hero::before,
+    .tehran-no-hero::after {
+        display: none;
+    }
+
+    .tehran-no-service-card {
+        max-width: 620px;
+    }
+
+    .tehran-no-media-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .tehran-no-media-reverse .tehran-no-media,
+    .tehran-no-media-reverse .tehran-no-media-content {
+        order: initial;
+    }
+
+    .tehran-no-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tehran-no-final-cta {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 38px 30px;
+    }
+
+    .tehran-no-final-buttons {
+        min-width: 0;
+    }
+}
+
+/* ========================================
+   موبایل
+======================================== */
+
+@media (max-width: 600px) {
+    .tehran-no-page {
+        padding: 18px 12px 92px;
+    }
+
+    .tehran-no-eyebrow {
+        min-height: 44px;
+        padding: 8px 13px;
+        font-size: 13px;
+    }
+
+    .tehran-no-hero h1 {
+        margin-top: 22px;
+        font-size: 37px;
+        line-height: 1.45;
+        letter-spacing: -0.5px;
+    }
+
+    .tehran-no-hero-description {
+        font-size: 16px !important;
+        line-height: 2 !important;
+    }
+
+    .tehran-no-hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .tehran-no-primary-button,
+    .tehran-no-secondary-button {
+        width: 100%;
+        min-height: 56px;
+        padding: 11px 16px;
+        font-size: 15px;
+    }
+
+    .tehran-no-trust-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .tehran-no-service-card {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    .tehran-no-service-card h2 {
+        font-size: 25px;
+    }
+
+    .tehran-no-section {
+        padding: 48px 0;
+    }
+
+    .tehran-no-section-heading {
+        margin-bottom: 28px;
+        text-align: right;
+    }
+
+    .tehran-no-section-heading h2,
+    .tehran-no-media-content h2,
+    .tehran-no-feature-card h2,
+    .tehran-no-final-cta h2 {
+        font-size: 27px;
+        line-height: 1.6;
+    }
+
+    .tehran-no-page p {
+        font-size: 15px;
+        line-height: 1.95;
+    }
+
+    .tehran-no-text-card {
+        padding: 25px 19px;
+        border-radius: 16px;
+    }
+
+    .tehran-no-inline-links {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .tehran-no-media {
+        border-radius: 16px;
+    }
+
+    .tehran-no-services-grid,
+    .tehran-no-repair-grid,
+    .tehran-no-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tehran-no-service-item {
+        min-height: auto;
+        padding: 24px 20px;
+    }
+
+    .tehran-no-feature-card {
+        padding: 26px 20px;
+        border-radius: 17px;
+    }
+
+    .tehran-no-repair-item {
+        min-height: 110px;
+    }
+
+    .tehran-no-process-item {
+        min-height: auto;
+        padding: 24px 20px;
+    }
+
+    .tehran-no-area-list {
+        justify-content: flex-start;
+    }
+
+    .tehran-no-area-list>span {
+        min-height: 44px;
+        padding: 7px 16px;
+        font-size: 13px;
+    }
+
+    .tehran-no-area-note {
+        text-align: right;
+    }
+
+    .tehran-no-faq-item summary {
+        padding: 18px 52px 18px 16px;
+        font-size: 15px;
+    }
+
+    .tehran-no-faq-item summary::before {
+        right: 16px;
+    }
+
+    .tehran-no-faq-item p {
+        padding: 0 20px 20px;
+    }
+
+    .tehran-no-final-cta {
+        margin-top: 48px;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+}
+
+/* جلوگیری از انیمیشن برای کاربران حساس به حرکت */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .tehran-no-page *,
+    .tehran-no-page *::before,
+    .tehran-no-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
