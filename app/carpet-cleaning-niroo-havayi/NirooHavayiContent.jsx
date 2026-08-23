@@ -416,6 +416,44 @@ export default function NirooHavayiContent() {
           </p>
         </section>
 
+        <section className="niroo-content-section niroo-map-section">
+          <div className="niroo-map-heading">
+            <div>
+              <span>موقعیت واقعی دفتر قالیشویی زارع</span>
+
+              <h2>دفتر قالیشویی زارع در نیروی هوایی روی نقشه</h2>
+
+              <p>
+                دفتر قالیشویی زارع در خیابان پیروزی، خیابان ششم
+                نیروی هوایی، بین فرعی ۶/۲۸ و ۶/۲۹، پلاک ۹۳ قرار
+                دارد.
+              </p>
+            </div>
+
+            <a
+              href="https://maps.app.goo.gl/w9QLBTfj9cBQypdv7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="niroo-map-button"
+            >
+              مسیریابی با گوگل مپ
+            </a>
+          </div>
+
+          <div className="niroo-map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3240.151836939145!2d51.489013!3d35.697880999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDQxJzUyLjQiTiA1McKwMjknMjAuNSJF!5e0!3m2!1sen!2s!4v1743157506445!5m2!1sen!2s"
+              title="موقعیت دفتر قالیشویی زارع در نیروی هوایی"
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </section>
+
         <section
           className="niroo-content-section niroo-faq-section"
           id="faq"
