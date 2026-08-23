@@ -1,0 +1,1097 @@
+.piroozi-page {
+    --piroozi-primary: var(--zare-primary, #172832);
+    --piroozi-primary-dark: var(--zare-primary-dark, #101d25);
+    --piroozi-primary-light: var(--zare-primary-light, #1f3c4c);
+    --piroozi-heading: var(--zare-heading, #223640);
+    --piroozi-text: var(--zare-text-secondary, #334852);
+    --piroozi-muted: var(--zare-text-muted, #52616b);
+    --piroozi-white: var(--zare-white, #ffffff);
+    --piroozi-background: var(--zare-background, #f5f8fa);
+    --piroozi-background-secondary: var(--zare-background-secondary, #eef3f6);
+    --piroozi-card: var(--zare-background-card, #f2f6f8);
+    --piroozi-badge: var(--zare-badge-background, #e5edf2);
+    --piroozi-border: var(--zare-border, #dfe7ec);
+    --piroozi-border-strong: var(--zare-border-strong, #cbd7de);
+    --piroozi-red: var(--zare-red, #f00000);
+    --piroozi-red-hover: var(--zare-red-hover, #c90000);
+
+    width: 100%;
+    overflow: hidden;
+    padding: 32px 20px 80px;
+    background:
+        radial-gradient(circle at 5% 6%, rgba(31, 60, 76, 0.12), transparent 340px),
+        var(--piroozi-background);
+    color: var(--piroozi-text);
+    font-family: "Shabnam", Tahoma, sans-serif;
+    direction: rtl;
+}
+
+.piroozi-page *,
+.piroozi-page *::before,
+.piroozi-page *::after {
+    box-sizing: border-box;
+}
+
+.piroozi-page a {
+    text-decoration: none;
+}
+
+.piroozi-container {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+}
+
+.piroozi-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 28px;
+    color: var(--piroozi-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.piroozi-breadcrumb a {
+    color: var(--piroozi-muted);
+    transition: color 0.2s ease;
+}
+
+.piroozi-breadcrumb a:hover {
+    color: var(--piroozi-red);
+}
+
+.piroozi-breadcrumb strong {
+    color: var(--piroozi-primary);
+    font-weight: 800;
+}
+
+/* هیرو */
+
+.piroozi-hero {
+    position: relative;
+    display: grid;
+    min-height: 560px;
+    grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.65fr);
+    align-items: center;
+    gap: 64px;
+    padding: 40px 0 70px;
+}
+
+.piroozi-hero::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -80px;
+    left: -130px;
+    width: 360px;
+    height: 360px;
+    border: 1px solid rgba(23, 40, 50, 0.09);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 55px rgba(23, 40, 50, 0.025),
+        0 0 0 110px rgba(23, 40, 50, 0.015);
+    pointer-events: none;
+}
+
+.piroozi-hero-content,
+.piroozi-office-card {
+    position: relative;
+    z-index: 1;
+}
+
+.piroozi-eyebrow {
+    display: inline-flex;
+    min-height: 50px;
+    align-items: center;
+    gap: 11px;
+    padding: 9px 18px;
+    color: var(--piroozi-primary);
+    background: var(--piroozi-badge);
+    border: 1px solid var(--piroozi-border-strong);
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.8;
+}
+
+.piroozi-eyebrow i {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    background: var(--piroozi-red);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(240, 0, 0, 0.1);
+}
+
+.piroozi-hero h1 {
+    max-width: 900px;
+    margin: 26px 0 20px;
+    color: var(--piroozi-primary);
+    font-size: clamp(46px, 5.4vw, 76px);
+    font-weight: 900;
+    line-height: 1.32;
+    letter-spacing: -1.5px;
+}
+
+.piroozi-hero-content>p {
+    max-width: 940px;
+    margin: 0 0 8px;
+    color: var(--piroozi-text);
+    font-size: 18px;
+    line-height: 2.15;
+}
+
+.piroozi-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.piroozi-primary-button,
+.piroozi-secondary-button {
+    display: inline-flex;
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.8;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.piroozi-page a.piroozi-primary-button,
+.piroozi-page a.piroozi-primary-button:visited {
+    color: #ffffff !important;
+    background: var(--piroozi-red);
+    border: 1px solid var(--piroozi-red);
+    box-shadow: 0 12px 28px rgba(240, 0, 0, 0.17);
+}
+
+.piroozi-page a.piroozi-primary-button:hover {
+    color: #ffffff !important;
+    background: var(--piroozi-red-hover);
+    border-color: var(--piroozi-red-hover);
+    transform: translateY(-2px);
+}
+
+.piroozi-page a.piroozi-secondary-button,
+.piroozi-page a.piroozi-secondary-button:visited {
+    color: var(--piroozi-primary) !important;
+    background: transparent;
+    border: 1px solid var(--piroozi-primary);
+}
+
+.piroozi-page a.piroozi-secondary-button:hover {
+    color: #ffffff !important;
+    background: var(--piroozi-primary);
+    transform: translateY(-2px);
+}
+
+.piroozi-trust-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 26px;
+    margin-top: 28px;
+}
+
+.piroozi-trust-list span {
+    position: relative;
+    padding-right: 30px;
+    color: var(--piroozi-primary);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.piroozi-trust-list span::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: var(--piroozi-primary-light);
+    border-radius: 50%;
+    font-size: 12px;
+    transform: translateY(-50%);
+}
+
+.piroozi-office-card {
+    width: 100%;
+    padding: 40px 34px;
+    color: #ffffff;
+    background:
+        linear-gradient(145deg,
+            var(--piroozi-primary-light),
+            var(--piroozi-primary) 58%,
+            var(--piroozi-primary-dark));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+    box-shadow: 0 24px 58px rgba(16, 29, 37, 0.2);
+}
+
+.piroozi-office-card>span,
+.piroozi-office-card small {
+    display: block;
+    margin-bottom: 9px;
+    color: #dce8ee;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.piroozi-office-card h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.piroozi-office-card address {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 2.1;
+}
+
+.piroozi-office-divider {
+    width: 100%;
+    height: 1px;
+    margin: 23px 0;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.piroozi-office-card>a[href^="tel"] {
+    display: block;
+    margin-bottom: 15px;
+    color: #ffffff !important;
+    font-size: 23px;
+    font-weight: 900;
+    direction: ltr;
+    text-align: right;
+}
+
+.piroozi-office-card>a:last-child {
+    display: inline-flex;
+    padding-bottom: 3px;
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* تنظیمات عمومی سکشن‌ها */
+
+.piroozi-section {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.piroozi-section+.piroozi-section {
+    border-top: 1px solid var(--piroozi-border);
+}
+
+.piroozi-section-heading {
+    max-width: 880px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.piroozi-section-heading>span,
+.piroozi-media-content>span,
+.piroozi-price-section>div:first-child>span,
+.piroozi-map-heading>div>span {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: var(--piroozi-red);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.piroozi-section h2,
+.piroozi-section-heading h2,
+.piroozi-media-content h2,
+.piroozi-price-section h2,
+.piroozi-final-cta h2 {
+    margin: 0 0 17px;
+    color: var(--piroozi-primary);
+    font-size: clamp(28px, 3.2vw, 42px);
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.piroozi-section p,
+.piroozi-final-cta p {
+    margin-top: 0;
+    color: var(--piroozi-text);
+    font-size: 17px;
+    line-height: 2.05;
+}
+
+.piroozi-section-heading p {
+    margin-bottom: 0;
+}
+
+/* معیارهای اعتماد */
+
+.piroozi-criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.piroozi-criteria-card {
+    min-height: 240px;
+    padding: 28px 24px;
+    background: var(--piroozi-white);
+    border: 1px solid var(--piroozi-border);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(23, 40, 50, 0.055);
+}
+
+.piroozi-criteria-card>span {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: #ffffff;
+    background: var(--piroozi-primary);
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.piroozi-criteria-card h3,
+.piroozi-service-card h3,
+.piroozi-process-card h3 {
+    margin: 0 0 11px;
+    color: var(--piroozi-primary);
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.piroozi-criteria-card p {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+/* تصویر و متن */
+
+.piroozi-media-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 58px;
+}
+
+.piroozi-media-reverse .piroozi-media {
+    order: 2;
+}
+
+.piroozi-media-reverse .piroozi-media-content {
+    order: 1;
+}
+
+.piroozi-media {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--piroozi-white);
+    border: 1px solid var(--piroozi-border);
+    border-radius: 21px;
+    box-shadow: 0 18px 44px rgba(23, 40, 50, 0.1);
+}
+
+.piroozi-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.piroozi-media figcaption {
+    padding: 15px 18px 17px;
+    color: var(--piroozi-muted);
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.piroozi-media-content p {
+    margin-bottom: 13px;
+}
+
+.piroozi-media-content>a {
+    display: inline-flex;
+    margin-top: 7px;
+    padding-bottom: 3px;
+    color: var(--piroozi-primary);
+    border-bottom: 2px solid var(--piroozi-red);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.piroozi-media-content>a:hover {
+    color: var(--piroozi-red);
+}
+
+/* خدمات */
+
+.piroozi-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.piroozi-service-card {
+    display: flex;
+    min-height: 255px;
+    flex-direction: column;
+    padding: 28px 24px;
+    background: var(--piroozi-white);
+    border: 1px solid var(--piroozi-border);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(23, 40, 50, 0.055);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.piroozi-service-card:hover {
+    border-color: var(--piroozi-border-strong);
+    box-shadow: 0 18px 38px rgba(23, 40, 50, 0.1);
+    transform: translateY(-4px);
+}
+
+.piroozi-service-card p {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+.piroozi-service-card a {
+    margin-top: auto;
+    color: var(--piroozi-red);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.piroozi-service-card a:hover {
+    color: var(--piroozi-red-hover);
+}
+
+/* مراحل */
+
+.piroozi-process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.piroozi-process-card {
+    min-height: 220px;
+    padding: 27px 23px;
+    background: var(--piroozi-white);
+    border: 1px solid var(--piroozi-border);
+    border-radius: 18px;
+}
+
+.piroozi-process-card>span {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: #ffffff;
+    background: var(--piroozi-primary-light);
+    border-radius: 50%;
+    font-weight: 900;
+}
+
+.piroozi-process-card p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+/* قیمت */
+
+.piroozi-price-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 46px;
+    margin-top: 55px;
+    padding: 42px;
+    background: var(--piroozi-badge);
+    border: 1px solid var(--piroozi-border-strong);
+    border-radius: 23px;
+}
+
+.piroozi-price-section>div:first-child {
+    max-width: 850px;
+}
+
+.piroozi-price-section p {
+    margin-bottom: 0;
+}
+
+.piroozi-price-actions {
+    display: flex;
+    min-width: 235px;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.piroozi-price-actions a {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    color: #ffffff !important;
+    background: var(--piroozi-primary);
+    border: 1px solid var(--piroozi-primary);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.piroozi-price-actions a:last-child {
+    color: var(--piroozi-primary) !important;
+    background: transparent;
+}
+
+.piroozi-price-actions a:hover {
+    color: #ffffff !important;
+    background: var(--piroozi-primary-dark);
+}
+
+/* محله‌ها */
+
+.piroozi-area-list {
+    display: flex;
+    max-width: 1080px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px;
+    margin: 0 auto;
+}
+
+.piroozi-area-list span {
+    display: inline-flex;
+    min-height: 49px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    color: var(--piroozi-primary);
+    background: var(--piroozi-white);
+    border: 1px solid var(--piroozi-border-strong);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.piroozi-area-note {
+    max-width: 930px;
+    margin: 27px auto 0;
+    padding: 16px 20px;
+    background: var(--piroozi-background-secondary);
+    border-right: 4px solid var(--piroozi-primary-light);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.piroozi-area-note a {
+    color: var(--piroozi-red);
+    font-weight: 900;
+}
+
+/* نقشه */
+
+.piroozi-map-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 24px;
+}
+
+.piroozi-map-heading>div {
+    max-width: 850px;
+}
+
+.piroozi-map-heading p {
+    margin-bottom: 0;
+}
+
+.piroozi-page .piroozi-map-heading a.piroozi-map-button,
+.piroozi-page .piroozi-map-heading a.piroozi-map-button:visited {
+    display: inline-flex;
+    min-width: 195px;
+    min-height: 52px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 20px;
+    color: #ffffff !important;
+    background: var(--piroozi-primary);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.piroozi-page .piroozi-map-heading a.piroozi-map-button:hover {
+    color: #ffffff !important;
+    background: var(--piroozi-primary-dark);
+    transform: translateY(-2px);
+}
+
+.piroozi-map-container {
+    width: 100%;
+    overflow: hidden;
+    background: var(--piroozi-background-secondary);
+    border: 1px solid var(--piroozi-border);
+    border-radius: 19px;
+    box-shadow: 0 16px 38px rgba(23, 40, 50, 0.09);
+}
+
+.piroozi-map-container iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+}
+
+/* سوالات متداول */
+
+.piroozi-faq-list {
+    display: grid;
+    max-width: 1020px;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.piroozi-faq-list details {
+    overflow: hidden;
+    background: var(--piroozi-white);
+    border: 1px solid var(--piroozi-border);
+    border-radius: 14px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.piroozi-faq-list details[open] {
+    border-color: var(--piroozi-border-strong);
+    box-shadow: 0 12px 28px rgba(23, 40, 50, 0.07);
+}
+
+.piroozi-faq-list summary {
+    position: relative;
+    padding: 20px 58px 20px 21px;
+    color: var(--piroozi-primary);
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.8;
+    cursor: pointer;
+    list-style: none;
+}
+
+.piroozi-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.piroozi-faq-list summary::before {
+    content: "+";
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: var(--piroozi-primary);
+    border-radius: 50%;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.piroozi-faq-list details[open] summary::before {
+    content: "−";
+    background: var(--piroozi-red);
+}
+
+.piroozi-faq-list details p {
+    margin: 0;
+    padding: 0 58px 22px 21px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* دعوت نهایی */
+
+.piroozi-final-cta {
+    display: grid;
+    width: 100%;
+    max-width: 1320px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 42px;
+    margin: 65px auto 0;
+    padding: 46px;
+    color: #ffffff;
+    background:
+        linear-gradient(135deg,
+            var(--piroozi-primary-light),
+            var(--piroozi-primary-dark));
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(16, 29, 37, 0.2);
+}
+
+.piroozi-final-cta>div:first-child {
+    max-width: 780px;
+}
+
+.piroozi-final-cta>div:first-child>span {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #dce8ee;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.piroozi-final-cta h2 {
+    color: #ffffff;
+}
+
+.piroozi-final-cta p {
+    margin-bottom: 0;
+    color: #e5edf2;
+    font-size: 16px;
+}
+
+.piroozi-final-actions {
+    display: flex;
+    min-width: 260px;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.piroozi-final-actions a {
+    display: inline-flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 21px;
+    color: #ffffff !important;
+    background: var(--piroozi-red);
+    border: 1px solid var(--piroozi-red);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.piroozi-final-actions a:last-child {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.65);
+}
+
+.piroozi-final-actions a:hover {
+    color: #ffffff !important;
+    background: var(--piroozi-red-hover);
+}
+
+.piroozi-final-actions a:last-child:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.piroozi-page a:focus-visible,
+.piroozi-page summary:focus-visible {
+    outline: 3px solid rgba(240, 0, 0, 0.32);
+    outline-offset: 3px;
+}
+
+/* تبلت */
+
+@media (max-width: 1120px) {
+    .piroozi-hero {
+        grid-template-columns: minmax(0, 1.2fr) minmax(310px, 0.8fr);
+        gap: 38px;
+    }
+
+    .piroozi-services-grid,
+    .piroozi-criteria-grid,
+    .piroozi-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .piroozi-page {
+        padding: 24px 16px 72px;
+    }
+
+    .piroozi-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 25px 0 50px;
+    }
+
+    .piroozi-hero::before {
+        display: none;
+    }
+
+    .piroozi-office-card {
+        max-width: 620px;
+    }
+
+    .piroozi-media-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .piroozi-media-reverse .piroozi-media,
+    .piroozi-media-reverse .piroozi-media-content {
+        order: initial;
+    }
+
+    .piroozi-price-section {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .piroozi-price-actions {
+        min-width: 0;
+    }
+
+    .piroozi-map-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .piroozi-map-button {
+        align-self: flex-start;
+    }
+
+    .piroozi-map-container iframe {
+        height: 360px;
+    }
+
+    .piroozi-final-cta {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+    .piroozi-page {
+        padding: 18px 10px 95px;
+    }
+
+    .piroozi-breadcrumb {
+        margin-bottom: 17px;
+        overflow-x: auto;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .piroozi-eyebrow {
+        min-height: 44px;
+        padding: 7px 13px;
+        font-size: 12px;
+    }
+
+    .piroozi-hero h1 {
+        margin-top: 20px;
+        font-size: 38px;
+        line-height: 1.42;
+        letter-spacing: -0.5px;
+    }
+
+    .piroozi-hero-content>p {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .piroozi-hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .piroozi-primary-button,
+    .piroozi-secondary-button {
+        width: 100%;
+        min-height: 54px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .piroozi-trust-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .piroozi-office-card {
+        padding: 28px 21px;
+        border-radius: 19px;
+    }
+
+    .piroozi-office-card h2 {
+        font-size: 25px;
+    }
+
+    .piroozi-section {
+        padding: 47px 0;
+    }
+
+    .piroozi-section-heading {
+        margin-bottom: 27px;
+        text-align: right;
+    }
+
+    .piroozi-section h2,
+    .piroozi-section-heading h2,
+    .piroozi-media-content h2,
+    .piroozi-price-section h2,
+    .piroozi-final-cta h2 {
+        font-size: 27px;
+        line-height: 1.6;
+    }
+
+    .piroozi-section p,
+    .piroozi-final-cta p {
+        font-size: 15px;
+        line-height: 1.95;
+    }
+
+    .piroozi-criteria-grid,
+    .piroozi-services-grid,
+    .piroozi-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .piroozi-criteria-card,
+    .piroozi-service-card,
+    .piroozi-process-card {
+        min-height: auto;
+        padding: 24px 20px;
+    }
+
+    .piroozi-media {
+        border-radius: 15px;
+    }
+
+    .piroozi-price-section {
+        margin-top: 40px;
+        padding: 27px 20px;
+        border-radius: 18px;
+    }
+
+    .piroozi-area-list {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .piroozi-area-list span {
+        min-height: 43px;
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+
+    .piroozi-area-note {
+        text-align: right;
+    }
+
+    .piroozi-map-heading {
+        gap: 17px;
+        margin-bottom: 18px;
+    }
+
+    .piroozi-page .piroozi-map-heading a.piroozi-map-button {
+        width: 100%;
+        min-width: 0;
+        min-height: 50px;
+    }
+
+    .piroozi-map-container {
+        border-radius: 14px;
+    }
+
+    .piroozi-map-container iframe {
+        height: 280px;
+    }
+
+    .piroozi-faq-list summary {
+        padding: 17px 51px 17px 14px;
+        font-size: 14px;
+    }
+
+    .piroozi-faq-list summary::before {
+        top: 15px;
+        right: 14px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .piroozi-faq-list details p {
+        padding: 0 18px 19px;
+        font-size: 14px;
+    }
+
+    .piroozi-final-cta {
+        margin-top: 45px;
+        padding: 29px 20px;
+        border-radius: 19px;
+    }
+
+    .piroozi-final-actions {
+        min-width: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .piroozi-page *,
+    .piroozi-page *::before,
+    .piroozi-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

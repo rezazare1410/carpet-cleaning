@@ -3,11 +3,14 @@ import TehranNoContent from "./TehranNoContent";
 const canonicalUrl =
   "https://zarecarpet.com/قالیشویی-در-تهران-نو";
 
+const pageTitle =
+  "قالیشویی در تهران نو | خدمات حرفه‌ای شستشوی فرش با ضمانت کیفیت";
+
 const pageDescription =
   "خدمات قالیشویی در تهران نو شامل دریافت و تحویل فرش، شستشوی تخصصی فرش ماشینی، دستبافت و ابریشم، لکه‌برداری و رفوگری توسط قالیشویی زارع.";
 
 export const metadata = {
-  title: "قالیشویی در تهران نو | شستشوی تخصصی فرش | زارع",
+  title: pageTitle,
   description: pageDescription,
 
   alternates: {
@@ -20,7 +23,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "قالیشویی در تهران نو | قالیشویی زارع",
+    title: pageTitle,
     description: pageDescription,
     url: canonicalUrl,
     siteName: "قالیشویی زارع",
@@ -31,7 +34,7 @@ export const metadata = {
         url: "https://zarecarpet.com/images/blog/tehran-no-handmade-carpet-after-washing.webp",
         width: 1200,
         height: 675,
-        alt: "شستشوی تخصصی فرش در قالیشویی زارع تهران نو",
+        alt: "شستشوی حرفه‌ای فرش در قالیشویی زارع تهران نو",
       },
     ],
   },
@@ -40,7 +43,7 @@ export const metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "قالیشویی در تهران نو",
+  name: "خدمات حرفه‌ای قالیشویی در تهران نو",
   serviceType: "شستشو، لکه‌برداری و ترمیم تخصصی فرش",
   description: pageDescription,
   url: canonicalUrl,

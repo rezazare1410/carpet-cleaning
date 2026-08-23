@@ -3,13 +3,19 @@ import NirooHavayiContent from "./NirooHavayiContent";
 const pageUrl =
   "https://zarecarpet.com/قالیشویی-در-نیروی-هوایی";
 
+const pageTitle =
+  "بهترین و مجهزترین قالیشویی در نیروی هوایی | شستشو و ترمیم تخصصی فرش";
+
+const pageDescription =
+  "قالیشویی زارع در نیروی هوایی؛ شستشوی تخصصی فرش ماشینی، دستبافت، گل‌ابریشم و ابریشم همراه با خدمات لکه‌برداری، رفوگری و دریافت و تحویل فرش.";
+
 const pageImage =
   "https://zarecarpet.com/images/blog/nirou-havaei-automatic-carpet-washing.webp";
 
 export const metadata = {
-  title: "قالیشویی در نیروی هوایی | شستشو و ترمیم تخصصی فرش",
-  description:
-    "قالیشویی زارع در نیروی هوایی؛ شستشوی تخصصی فرش ماشینی، دستبافت، گل‌ابریشم و ابریشم همراه با خدمات لکه‌برداری، رفوگری و دریافت و تحویل فرش.",
+  title: pageTitle,
+  description: pageDescription,
+
   keywords: [
     "قالیشویی در نیروی هوایی",
     "قالیشویی نیروی هوایی",
@@ -19,17 +25,19 @@ export const metadata = {
     "قالیشویی زارع",
     "رفوگری فرش در نیروی هوایی",
   ],
+
   alternates: {
     canonical: pageUrl,
   },
+
   robots: {
     index: true,
     follow: true,
   },
+
   openGraph: {
-    title: "قالیشویی در نیروی هوایی | قالیشویی زارع",
-    description:
-      "شستشو و ترمیم تخصصی فرش‌های ماشینی، دستبافت و ابریشم در محله نیروی هوایی و مناطق اطراف.",
+    title: pageTitle,
+    description: pageDescription,
     url: pageUrl,
     siteName: "قالیشویی زارع",
     locale: "fa_IR",
@@ -39,15 +47,15 @@ export const metadata = {
         url: pageImage,
         width: 1200,
         height: 675,
-        alt: "شستشوی فرش در قالیشویی زارع نیروی هوایی",
+        alt: "شستشو و ترمیم تخصصی فرش در قالیشویی زارع نیروی هوایی",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "قالیشویی در نیروی هوایی | قالیشویی زارع",
-    description:
-      "شستشو و ترمیم تخصصی فرش در محله نیروی هوایی و مناطق اطراف.",
+    title: pageTitle,
+    description: pageDescription,
     images: [pageImage],
   },
 };
@@ -87,26 +95,30 @@ const schemaData = {
       "@type": "WebPage",
       "@id": `${pageUrl}#webpage`,
       url: pageUrl,
-      name: "قالیشویی در نیروی هوایی",
-      description:
-        "خدمات شستشو، لکه‌برداری و ترمیم تخصصی فرش در محله نیروی هوایی تهران.",
+      name: pageTitle,
+      description: pageDescription,
       inLanguage: "fa-IR",
+
       isPartOf: {
         "@id": "https://zarecarpet.com/#website",
       },
+
       primaryImageOfPage: {
         "@type": "ImageObject",
         url: pageImage,
         width: 1200,
         height: 675,
       },
+
       breadcrumb: {
         "@id": `${pageUrl}#breadcrumb`,
       },
     },
+
     {
       "@type": "BreadcrumbList",
       "@id": `${pageUrl}#breadcrumb`,
+
       itemListElement: [
         {
           "@type": "ListItem",
@@ -128,16 +140,20 @@ const schemaData = {
         },
       ],
     },
+
     {
       "@type": "Service",
       "@id": `${pageUrl}#service`,
-      name: "قالیشویی در نیروی هوایی",
+      name: "شستشو و ترمیم تخصصی فرش در نیروی هوایی",
       serviceType:
         "شستشو، لکه‌برداری، رفوگری و ترمیم تخصصی فرش",
+      description: pageDescription,
       url: pageUrl,
+
       provider: {
         "@id": "https://zarecarpet.com/#organization",
       },
+
       areaServed: [
         {
           "@type": "Neighborhood",
@@ -149,12 +165,15 @@ const schemaData = {
         },
       ],
     },
+
     {
       "@type": "FAQPage",
       "@id": `${pageUrl}#faq`,
+
       mainEntity: faqItems.map((item) => ({
         "@type": "Question",
         name: item.question,
+
         acceptedAnswer: {
           "@type": "Answer",
           text: item.answer,
@@ -170,7 +189,10 @@ export default function NirooHavayiPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(schemaData).replace(
+            /</g,
+            "\\u003c",
+          ),
         }}
       />
 

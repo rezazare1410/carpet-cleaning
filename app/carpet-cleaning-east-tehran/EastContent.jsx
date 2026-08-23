@@ -118,6 +118,7 @@ const serviceAreas = [
 ];
 
 const serviceAreaLinks = {
+  "پیروزی": "/قالیشویی-در-پیروزی",
   "نیروی هوایی": "/قالیشویی-در-نیروی-هوایی",
   "تهران نو": "/قالیشویی-در-تهران-نو",
 };
@@ -326,26 +327,26 @@ export default function EastContent() {
         </div>
 
         <div className="east-area-list">
-          {serviceAreas.map((area) => {
-            const areaHref = serviceAreaLinks[area];
+  {serviceAreas.map((area) => {
+    const href = serviceAreaLinks[area];
 
-            return (
-              <span key={area}>
-                {areaHref ? (
-                  <Link
-                    href={areaHref}
-                    className="east-area-link"
-                    aria-label={`مشاهده خدمات قالیشویی در ${area}`}
-                  >
-                    {area}
-                  </Link>
-                ) : (
-                  area
-                )}
-              </span>
-            );
-          })}
-        </div>
+    return (
+      <span key={area}>
+        {href ? (
+          <Link
+            href={href}
+            className="east-area-link"
+            aria-label={`مشاهده خدمات قالیشویی در ${area}`}
+          >
+            {area}
+          </Link>
+        ) : (
+          area
+        )}
+      </span>
+    );
+  })}
+</div>
 
         <p className="east-area-note">
           اگر نام محله شما در این فهرست نیست، برای بررسی

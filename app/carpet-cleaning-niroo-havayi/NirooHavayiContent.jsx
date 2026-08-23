@@ -133,7 +133,7 @@ export default function NirooHavayiContent() {
               </div>
 
               <div className="niroo-trust-list">
-                <span>کارخانه مجهز</span>
+                <span> دارای کارخانه اختصاصی و مجهز </span>
                 <span>کارشناسی تخصصی</span>
                 <span>دریافت و تحویل فرش</span>
               </div>
