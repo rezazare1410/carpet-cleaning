@@ -4,10 +4,10 @@ const canonicalUrl =
   "https://zarecarpet.com/قالیشویی-در-تهران-نو";
 
 const pageDescription =
-  "خدمات قالیشویی در تهران‌نو شامل دریافت و تحویل فرش، شستشوی تخصصی فرش ماشینی، دستبافت و ابریشم، لکه‌برداری و رفوگری توسط قالیشویی زارع.";
+  "خدمات قالیشویی در تهران نو شامل دریافت و تحویل فرش، شستشوی تخصصی فرش ماشینی، دستبافت و ابریشم، لکه‌برداری و رفوگری توسط قالیشویی زارع.";
 
 export const metadata = {
-  title: "قالیشویی در تهران‌نو | شستشوی تخصصی فرش | زارع",
+  title: "قالیشویی در تهران نو | شستشوی تخصصی فرش | زارع",
   description: pageDescription,
 
   alternates: {
@@ -20,7 +20,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "قالیشویی در تهران‌نو | قالیشویی زارع",
+    title: "قالیشویی در تهران نو | قالیشویی زارع",
     description: pageDescription,
     url: canonicalUrl,
     siteName: "قالیشویی زارع",
@@ -40,7 +40,7 @@ export const metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "قالیشویی در تهران‌نو",
+  name: "قالیشویی در تهران نو",
   serviceType: "شستشو، لکه‌برداری و ترمیم تخصصی فرش",
   description: pageDescription,
   url: canonicalUrl,
@@ -56,7 +56,7 @@ const serviceSchema = {
   areaServed: [
     {
       "@type": "Place",
-      name: "تهران‌نو",
+      name: "تهران نو",
     },
     {
       "@type": "Place",
@@ -96,7 +96,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 3,
-      name: "قالیشویی در تهران‌نو",
+      name: "قالیشویی در تهران نو",
       item: canonicalUrl,
     },
   ],
@@ -108,7 +108,7 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "قیمت شستشوی فرش در تهران‌نو چقدر است؟",
+      name: "قیمت شستشوی فرش در تهران نو چقدر است؟",
       acceptedAnswer: {
         "@type": "Answer",
         text: "قیمت براساس نوع، ابعاد و جنس فرش و خدمات موردنیاز مانند لکه‌برداری یا ترمیم محاسبه می‌شود.",
@@ -116,7 +116,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "آیا برای مشتریان تهران‌نو فاکتور کامپیوتری صادر می‌شود؟",
+      name: "آیا برای مشتریان تهران نو فاکتور کامپیوتری صادر می‌شود؟",
       acceptedAnswer: {
         "@type": "Answer",
         text: "بله. مشخصات فرش‌ها، خدمات ثبت‌شده و هزینه سفارش در فاکتور کامپیوتری درج می‌شوند.",
@@ -140,7 +140,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "چگونه سفارش قالیشویی در تهران‌نو ثبت کنم؟",
+      name: "چگونه سفارش قالیشویی در تهران نو ثبت کنم؟",
       acceptedAnswer: {
         "@type": "Answer",
         text: "سفارش به‌صورت آنلاین یا تلفنی ثبت می‌شود و زمان دریافت فرش از محل مشتری هماهنگ خواهد شد.",
