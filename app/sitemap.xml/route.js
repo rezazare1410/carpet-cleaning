@@ -42,10 +42,11 @@ export async function GET() {
     "carpet-cleaning-south-tehran",
     "carpet-cleaning-center-tehran",
 
-    // صفحه محله‌ای جدید
+    // صفحات محله‌ای
     "قالیشویی-در-نیروی-هوایی",
     "قالیشویی-در-تهران-نو",
     "قالیشویی-در-پیروزی",
+    "قالیشویی-در-نارمک",
 
     "repair-services",
   ];
@@ -83,7 +84,7 @@ export async function GET() {
         .normalize("NFC")
         .trim();
 
-      // مقاله قدیمی نیروی هوایی دیگر وارد Sitemap نشود
+      // مقاله‌های منتقل‌شده دیگر وارد Sitemap نشوند
       if (redirectedBlogSlugs.has(slug)) {
         return [];
       }
@@ -103,7 +104,7 @@ export async function GET() {
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <urlset xmlns="http://www.sitemaps.org/sitemap/0.9">
     ${[...staticUrls, ...blogUrls].join("\n")}
   </urlset>`;
 

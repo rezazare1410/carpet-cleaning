@@ -12,9 +12,14 @@ import PirooziPage, {
   metadata as pirooziMetadata,
 } from "../carpet-cleaning-piroozi/page";
 
+import NarmakPage, {
+  metadata as narmakMetadata,
+} from "../carpet-cleaning-narmak/page";
+
 const NIROO_HAVAYI_SLUG = "قالیشویی-در-نیروی-هوایی";
 const TEHRAN_NO_SLUG = "قالیشویی-در-تهران-نو";
 const PIROOZI_SLUG = "قالیشویی-در-پیروزی";
+const NARMAK_SLUG = "قالیشویی-در-نارمک";
 
 function normalizeSlug(value = "") {
   try {
@@ -37,6 +42,9 @@ export function generateStaticParams() {
     {
       slug: PIROOZI_SLUG,
     },
+    {
+      slug: NARMAK_SLUG,
+    },
   ];
 }
 
@@ -56,6 +64,10 @@ export async function generateMetadata({ params }) {
     return pirooziMetadata;
   }
 
+  if (normalizedSlug === NARMAK_SLUG) {
+    return narmakMetadata;
+  }
+
   return {};
 }
 
@@ -73,6 +85,10 @@ export default async function PersianLocationPage({ params }) {
 
   if (normalizedSlug === PIROOZI_SLUG) {
     return <PirooziPage />;
+  }
+
+  if (normalizedSlug === NARMAK_SLUG) {
+    return <NarmakPage />;
   }
 
   notFound();
