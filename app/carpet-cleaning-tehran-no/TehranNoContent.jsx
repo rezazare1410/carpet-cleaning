@@ -569,6 +569,57 @@ export default function TehranNoContent() {
         </p>
       </section>
 
+      <section className="tehran-no-section tehran-no-map-section">
+        <div className="tehran-no-map-heading">
+          <div>
+            <span>محدوده ارائه خدمات</span>
+            <h2>محدوده قالیشویی در تهران نو روی نقشه</h2>
+
+            <p>
+              خدمات دریافت و تحویل فرش قالیشویی زارع در محله
+              تهران نو و خیابان‌های اطراف ارائه می‌شود.
+            </p>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Tehran%20Now%2C%20Tehran%2C%20Iran"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tehran-no-map-button"
+          >
+            مشاهده محدوده در گوگل مپ
+          </a>
+        </div>
+
+        <div className="tehran-no-map-container">
+          <iframe
+            src="https://www.google.com/maps?q=Tehran%20Now%2C%20Tehran%2C%20Iran&z=14&hl=fa&output=embed"
+            title="محدوده محله تهران نو روی نقشه گوگل"
+            width="100%"
+            height="480"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Tehran%20Now%2C%20Tehran%2C%20Iran"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tehran-no-map-overlay"
+          >
+            <strong>محدوده تهران نو</strong>
+            <span>بازکردن در Google Maps</span>
+          </a>
+        </div>
+
+        <p className="tehran-no-map-note">
+          محدوده نمایش‌داده‌شده براساس اطلاعات Google Maps است و
+          نشان‌دهنده محدوده دریافت و تحویل فرش است، نه نشانی شعبه.
+        </p>
+      </section>
+
       <section className="tehran-no-section tehran-no-faq-section">
         <div className="tehran-no-section-heading">
           <span>پاسخ به پرسش‌های مشتریان</span>
