@@ -16,10 +16,24 @@ import NarmakPage, {
   metadata as narmakMetadata,
 } from "../carpet-cleaning-narmak/page";
 
-const NIROO_HAVAYI_SLUG = "قالیشویی-در-نیروی-هوایی";
-const TEHRAN_NO_SLUG = "قالیشویی-در-تهران-نو";
-const PIROOZI_SLUG = "قالیشویی-در-پیروزی";
-const NARMAK_SLUG = "قالیشویی-در-نارمک";
+import TehranparsPage, {
+  metadata as tehranparsMetadata,
+} from "../carpet-cleaning-tehranpars/page";
+
+const NIROO_HAVAYI_SLUG =
+  "قالیشویی-در-نیروی-هوایی";
+
+const TEHRAN_NO_SLUG =
+  "قالیشویی-در-تهران-نو";
+
+const PIROOZI_SLUG =
+  "قالیشویی-در-پیروزی";
+
+const NARMAK_SLUG =
+  "قالیشویی-در-نارمک";
+
+const TEHRANPARS_SLUG =
+  "قالیشویی-در-تهرانپارس";
 
 function normalizeSlug(value = "") {
   try {
@@ -45,6 +59,9 @@ export function generateStaticParams() {
     {
       slug: NARMAK_SLUG,
     },
+    {
+      slug: TEHRANPARS_SLUG,
+    },
   ];
 }
 
@@ -68,10 +85,16 @@ export async function generateMetadata({ params }) {
     return narmakMetadata;
   }
 
+  if (normalizedSlug === TEHRANPARS_SLUG) {
+    return tehranparsMetadata;
+  }
+
   return {};
 }
 
-export default async function PersianLocationPage({ params }) {
+export default async function PersianLocationPage({
+  params,
+}) {
   const { slug } = await params;
   const normalizedSlug = normalizeSlug(slug);
 
@@ -89,6 +112,10 @@ export default async function PersianLocationPage({ params }) {
 
   if (normalizedSlug === NARMAK_SLUG) {
     return <NarmakPage />;
+  }
+
+  if (normalizedSlug === TEHRANPARS_SLUG) {
+    return <TehranparsPage />;
   }
 
   notFound();

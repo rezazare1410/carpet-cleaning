@@ -5,6 +5,10 @@ export async function GET() {
   const domain = "https://zarecarpet.com";
   const today = new Date().toISOString().split("T")[0];
 
+  const tehranparsPage = "قالیشویی-در-تهرانپارس";
+
+  const tehranparsImage = `${domain}/images/blog/tehranpars-handmade-carpets-washing.webp`;
+
   // مقاله‌هایی که به صفحه جدید منتقل شده‌اند
   const redirectedBlogSlugs = new Set(["قالیشویی_در_نیروهوایی"]);
 
@@ -47,6 +51,7 @@ export async function GET() {
     "قالیشویی-در-تهران-نو",
     "قالیشویی-در-پیروزی",
     "قالیشویی-در-نارمک",
+    "قالیشویی-در-تهرانپارس",
 
     "repair-services",
   ];
@@ -60,11 +65,25 @@ export async function GET() {
       : "";
 
     const url = `${domain}${encodedPage ? `/${encodedPage}` : ""}`;
+
     const priority = page === "" ? "1.0" : "0.8";
+
+    /*
+     * معرفی تصویر اصلی صفحه تهرانپارس به گوگل
+     * برای افزایش امکان کشف و ایندکس تصویر
+     */
+    const imageEntry =
+      page === tehranparsPage
+        ? `
+        <image:image>
+          <image:loc>${tehranparsImage}</image:loc>
+        </image:image>`
+        : "";
 
     return `
       <url>
         <loc>${url}</loc>
+        ${imageEntry}
         <lastmod>${today}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>${priority}</priority>
@@ -84,7 +103,7 @@ export async function GET() {
         .normalize("NFC")
         .trim();
 
-      // مقاله‌های منتقل‌شده دیگر وارد Sitemap نشوند
+      // مقاله‌های منتقل‌شده وارد Sitemap نشوند
       if (redirectedBlogSlugs.has(slug)) {
         return [];
       }
@@ -104,7 +123,10 @@ export async function GET() {
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/sitemap/0.9">
+  <urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  >
     ${[...staticUrls, ...blogUrls].join("\n")}
   </urlset>`;
 
