@@ -25,7 +25,7 @@ const washingServices = [
   },
   {
     id: 'belgian-silk-machine',
-    title: 'فرش ماشینی بلژیکی و تمام‌ابریشم (اعلاءشویی)',
+    title: 'فرش ماشینی بلژیکی و گل‌ ابریشم (اعلاءشویی)',
     price: 1500000,
     unit: 'area',
   },

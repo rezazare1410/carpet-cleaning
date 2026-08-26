@@ -198,7 +198,9 @@ export default function HandmadeWoolContent({
       >
         <Link href="/">خانه</Link>
         <span aria-hidden="true">/</span>
-        <span>خدمات شستشوی فرش</span>
+        <Link href="/automatic-carpet-cleaning">
+  خدمات شستشوی فرش
+</Link>
         <span aria-hidden="true">/</span>
         <strong>شستشوی فرش دستبافت کرک و پشم</strong>
       </nav>
@@ -652,7 +654,7 @@ export default function HandmadeWoolContent({
           <h2>فرش دستبافت شما دارای ابریشم است؟</h2>
 
           <p>
-            فرش گل‌ابریشم و تمام‌ابریشم به‌دلیل تفاوت در
+            فرش گل‌ ابریشم به‌دلیل تفاوت در
             جنس الیاف و حساسیت بیشتر، باید با روش مخصوص خود
             بررسی و شسته شوند.
           </p>

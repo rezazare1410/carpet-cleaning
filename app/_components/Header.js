@@ -182,13 +182,6 @@ const Header = () => {
                             فرش دستبافت گل ابریشم
                           </Link>
                         </li>
-
-                        <li>
-                          <Link href="/handmade-full-silk-carpet-wash">
-                            فرش دستبافت تمام ابریشم
-                          </Link>
-                        </li>
-
                         <li>
                           <Link href="/machine-carpet-wash">فرش ماشینی</Link>
                         </li>
@@ -339,10 +332,6 @@ const Header = () => {
 
                   <Link href="/handmade-silk-carpet-wash">
                     فرش دستبافت گل ابریشم
-                  </Link>
-
-                  <Link href="/handmade-full-silk-carpet-wash">
-                    فرش دستبافت تمام ابریشم
                   </Link>
 
                   <Link href="/machine-carpet-wash">فرش ماشینی</Link>

@@ -1628,3 +1628,7 @@
     text-decoration: none !important;
     text-decoration-line: none !important;
 }
+.handmade-wool-breadcrumb a {
+    cursor: pointer;
+    text-decoration: none;
+}

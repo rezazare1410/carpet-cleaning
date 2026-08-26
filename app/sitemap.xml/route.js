@@ -25,7 +25,6 @@ export async function GET() {
     "carpet-cleaning-price-calculator",
     "handmade-wool-carpet-wash",
     "handmade-silk-carpet-wash",
-    "handmade-full-silk-carpet-wash",
     "machine-carpet-wash",
     "root-carpet-repair",
     "double-knot",
