@@ -1,305 +1,1689 @@
-/* ==== فونت اصلی پروژه ==== */
-body {
-    font-family: "Shabnam", sans-serif;
+/* ==================================================
+   MACHINE CARPET WASH PAGE
+   ================================================== */
+
+.mcw-page {
+    --mcw-primary: #172832;
+    --mcw-primary-dark: #101d25;
+    --mcw-primary-light: #1f3c4c;
+
+    --mcw-text: #1c2c38;
+    --mcw-heading: #223640;
+    --mcw-text-secondary: #334852;
+    --mcw-text-muted: #52616b;
+
+    --mcw-white: #ffffff;
+    --mcw-bg: #f5f8fa;
+    --mcw-bg-secondary: #eef3f6;
+    --mcw-card: #f2f6f8;
+    --mcw-badge: #e5edf2;
+
+    --mcw-border: #dfe7ec;
+    --mcw-border-soft: #e1e8ec;
+    --mcw-border-strong: #cbd7de;
+
+    --mcw-red: #f00000;
+    --mcw-red-hover: #c90000;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    color: var(--mcw-text);
+    background: var(--mcw-white);
+    font-family: inherit;
+    direction: rtl;
 }
 
-/* ==== صفحه فرش ماشینی ==== */
-.machine-carpet-page {
-    width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* ==== HERO SECTION ==== */
-.machine-carpet-hero {
-    width: 100%;
-    height: 80vh;
-    min-height: 520px;
-    margin: 0 !important;
-    padding: 0 20px !important;
+.mcw-page *,
+.mcw-page *::before,
+.mcw-page *::after {
     box-sizing: border-box;
+}
 
-    background-image: url('/images/machine-carpet.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.mcw-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.mcw-page a {
+    text-decoration: none;
+}
+
+.mcw-container {
+    width: min(1200px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.mcw-section {
+    position: relative;
+    padding: 90px 0;
+}
+
+.mcw-section[id] {
+    scroll-margin-top: 120px;
+}
+
+/* ==================================================
+   BUTTONS
+   ================================================== */
+
+.mcw-button {
+    min-height: 54px;
+    padding: 13px 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.6;
+    text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.mcw-button:hover {
+    transform: translateY(-2px);
+}
+
+.mcw-button-primary {
+    color: var(--mcw-white);
+    background: var(--mcw-red);
+    box-shadow: 0 10px 25px rgba(240, 0, 0, 0.18);
+}
+
+.mcw-button-primary:hover {
+    color: var(--mcw-white);
+    background: var(--mcw-red-hover);
+    box-shadow: 0 13px 30px rgba(240, 0, 0, 0.26);
+}
+
+.mcw-button-light {
+    color: var(--mcw-primary-dark);
+    background: var(--mcw-white);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.mcw-button-light:hover {
+    color: var(--mcw-primary-dark);
+    background: var(--mcw-bg);
+}
+
+.mcw-button-outline {
+    color: var(--mcw-primary);
+    background: transparent;
+    border-color: var(--mcw-primary);
+}
+
+.mcw-button-outline:hover {
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+}
+
+.mcw-button-call {
+    color: var(--mcw-white);
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.55);
+    direction: ltr;
+}
+
+.mcw-button-call:hover {
+    color: var(--mcw-white);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--mcw-white);
+}
+
+/* ==================================================
+   HERO
+   ================================================== */
+
+.mcw-hero {
+    position: relative;
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--mcw-primary-dark);
+}
+
+.mcw-hero-image {
+    z-index: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mcw-hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(90deg,
+            rgba(16, 29, 37, 0.2) 0%,
+            rgba(16, 29, 37, 0.5) 48%,
+            rgba(16, 29, 37, 0.86) 100%),
+        linear-gradient(180deg,
+            rgba(16, 29, 37, 0.04) 45%,
+            rgba(16, 29, 37, 0.55) 100%);
+}
+
+.mcw-hero-content {
+    position: relative;
+    z-index: 2;
+
+    padding-top: 115px;
+    padding-bottom: 85px;
+}
+
+.mcw-eyebrow {
+    width: fit-content;
+    margin-bottom: 22px;
+    padding: 8px 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--mcw-white);
+    background: rgba(255, 255, 255, 0.11);
+    border: 1px solid rgba(255, 255, 255, 0.27);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.mcw-eyebrow::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+
+    background: var(--mcw-red);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(240, 0, 0, 0.16);
+}
+
+.mcw-page .mcw-hero h1 {
+    max-width: 790px;
+    margin: 0 0 21px;
+
+    color: var(--mcw-white);
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -1.2px;
+}
+
+.mcw-page .mcw-hero-content>p {
+    max-width: 720px;
+    margin: 0 0 31px;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 2.05;
+}
+
+.mcw-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+}
+
+.mcw-hero-facts {
+    max-width: 880px;
+    margin-top: 36px;
+    padding-top: 23px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.mcw-hero-facts span {
+    position: relative;
+    padding-right: 18px;
+
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.91rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.mcw-hero-facts span::before {
+    content: "";
+
+    position: absolute;
+    top: 0.72em;
+    right: 0;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--mcw-red);
+    border-radius: 50%;
+}
+
+/* ==================================================
+   QUICK NAVIGATION
+   ================================================== */
+
+.mcw-quick-nav {
+    position: relative;
+    z-index: 5;
+
+    background: var(--mcw-white);
+    border-bottom: 1px solid var(--mcw-border);
+    box-shadow: 0 8px 25px rgba(23, 40, 50, 0.06);
+}
+
+.mcw-quick-nav-inner {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 12px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.mcw-quick-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.mcw-quick-nav a {
+    padding: 9px 14px;
+    flex: 0 0 auto;
+
+    color: var(--mcw-text-secondary);
+    border-radius: 8px;
+
+    font-size: 0.93rem;
+    font-weight: 800;
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.mcw-quick-nav a:hover {
+    color: var(--mcw-primary);
+    background: var(--mcw-bg-secondary);
+}
+
+/* ==================================================
+   SECTION HEADINGS
+   ================================================== */
+
+.mcw-section-heading {
+    max-width: 820px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.mcw-section-heading>span,
+.mcw-feature-content>span,
+.mcw-extraction-header>div>span,
+.mcw-pricing-box>div>span,
+.mcw-faq-intro>span,
+.mcw-final-cta-content>div>span {
+    display: block;
+    margin-bottom: 10px;
+
+    color: var(--mcw-primary-light);
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.mcw-section-heading h2,
+.mcw-feature-content h2,
+.mcw-extraction-header h2,
+.mcw-pricing-box h2,
+.mcw-faq-intro h2,
+.mcw-final-cta h2 {
+    margin: 0;
+
+    color: var(--mcw-heading);
+    font-size: clamp(1.8rem, 3vw, 2.55rem);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+}
+
+.mcw-section-heading>p {
+    max-width: 760px;
+    margin: 17px auto 0;
+
+    color: var(--mcw-text-secondary);
+    font-size: 1.02rem;
+    line-height: 2;
+}
+
+/* ==================================================
+   INSPECTION
+   ================================================== */
+
+.mcw-intro-section {
+    background:
+        radial-gradient(circle at 10% 20%,
+            rgba(31, 60, 76, 0.07),
+            transparent 28%),
+        var(--mcw-bg);
+}
+
+.mcw-inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 21px;
+}
+
+.mcw-inspection-card {
+    position: relative;
+    min-height: 260px;
+    padding: 31px 27px;
+
+    overflow: hidden;
+
+    background: var(--mcw-white);
+    border: 1px solid var(--mcw-border);
+    border-radius: 17px;
+    box-shadow: 0 14px 38px rgba(23, 40, 50, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.mcw-inspection-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--mcw-border-strong);
+    box-shadow: 0 19px 45px rgba(23, 40, 50, 0.1);
+}
+
+.mcw-inspection-card>span {
+    display: block;
+    margin-bottom: 27px;
+
+    color: var(--mcw-primary-light);
+    font-size: 2.25rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.mcw-inspection-card h3 {
+    margin: 0 0 11px;
+
+    color: var(--mcw-heading);
+    font-size: 1.22rem;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.mcw-inspection-card p {
+    margin: 0;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.95;
+}
+
+/* ==================================================
+   CARPET TYPES
+   ================================================== */
+
+.mcw-types-section {
+    background: var(--mcw-white);
+}
+
+.mcw-types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mcw-type-card {
+    position: relative;
+    padding: 29px 31px 29px 27px;
+
+    background: var(--mcw-bg);
+    border: 1px solid var(--mcw-border);
+    border-right: 5px solid var(--mcw-primary-light);
+    border-radius: 14px;
+
+    transition:
+        background-color 0.22s ease,
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.mcw-type-card:hover {
+    background: var(--mcw-bg-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 13px 30px rgba(23, 40, 50, 0.07);
+}
+
+.mcw-type-card h3 {
+    margin: 0 0 10px;
+
+    color: var(--mcw-heading);
+    font-size: 1.18rem;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.mcw-type-card p {
+    margin: 0;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.95;
+}
+
+.mcw-inline-note {
+    margin: 29px 0 0;
+    padding: 19px 22px;
+
+    color: var(--mcw-text-secondary);
+    background: var(--mcw-bg);
+    border: 1px dashed var(--mcw-border-strong);
+    border-radius: 12px;
+
+    font-size: 0.96rem;
+    line-height: 2;
+}
+
+.mcw-inline-note a,
+.mcw-coverage-section .mcw-section-heading a {
+    color: var(--mcw-primary);
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+}
+
+/* ==================================================
+   AUTOMATIC WASHING
+   ================================================== */
+
+.mcw-feature-section {
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+}
+
+.mcw-feature-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 62px;
+}
+
+.mcw-feature-image {
+    position: relative;
+}
+
+.mcw-feature-image::before {
+    content: "";
+
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 0;
+
+    width: 110px;
+    height: 110px;
+
+    border-top: 4px solid var(--mcw-red);
+    border-right: 4px solid var(--mcw-red);
+    border-radius: 8px 0 0;
+}
+
+.mcw-feature-image img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border-radius: 17px;
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.27);
+}
+
+.mcw-feature-content>span {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.mcw-feature-content h2 {
+    color: var(--mcw-white);
+}
+
+.mcw-feature-content p {
+    margin: 17px 0 0;
+
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.99rem;
+    line-height: 2;
+}
+
+.mcw-feature-content p a {
+    color: var(--mcw-white);
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.mcw-feature-content ul {
+    margin: 27px 0 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 20px;
+
+    list-style: none;
+}
+
+.mcw-feature-content li {
+    position: relative;
+    padding-right: 23px;
+
+    color: rgba(255, 255, 255, 0.91);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.mcw-feature-content li::before {
+    content: "✓";
+
+    position: absolute;
+    right: 0;
+
+    color: var(--mcw-red);
+    font-weight: 900;
+}
+
+/* ==================================================
+   PROCESS
+   ================================================== */
+
+.mcw-process-section {
+    background: var(--mcw-bg);
+}
+
+.mcw-process-list {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0;
+
+    display: grid;
+    gap: 14px;
+
+    list-style: none;
+}
+
+.mcw-process-item {
+    position: relative;
+    min-height: 108px;
+    padding: 22px 23px;
+
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+    gap: 21px;
+
+    background: var(--mcw-white);
+    border: 1px solid var(--mcw-border);
+    border-radius: 14px;
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.mcw-process-item:hover {
+    transform: translateX(-4px);
+    border-color: var(--mcw-border-strong);
+    box-shadow: 0 13px 33px rgba(23, 40, 50, 0.08);
+}
+
+.mcw-process-number {
+    width: 56px;
+    height: 56px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    position: relative;
-    color: white;
-    text-align: center;
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+    border-radius: 13px;
+
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
-/* کادر تیره روی تصویر */
-.machine-carpet-hero .hero-overlay {
-    width: 100%;
-    max-width: 600px;
-    padding: 40px;
-    box-sizing: border-box;
-
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
+.mcw-process-item:nth-child(6) .mcw-process-number {
+    background: var(--mcw-red);
+    box-shadow: 0 8px 22px rgba(240, 0, 0, 0.21);
 }
 
-.machine-carpet-hero .hero-overlay h1 {
-    margin: 0 0 16px;
-    font-size: 2.2rem;
-    line-height: 1.5;
-    color: white;
-}
+.mcw-process-item h3 {
+    margin: 0 0 5px;
 
-.machine-carpet-hero .hero-overlay p {
-    margin: 0 0 24px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: white;
-}
-
-/* دکمه یا لینک ثبت سفارش */
-.machine-carpet-hero .hero-overlay a,
-.machine-carpet-hero .hero-overlay button {
-    display: inline-block;
-    padding: 0.9rem 2rem;
-
-    font-family: inherit;
-    font-size: 1.1rem;
-    font-weight: bold;
-
-    background-color: #2e7d32;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    cursor: pointer;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.machine-carpet-hero .hero-overlay a:hover,
-.machine-carpet-hero .hero-overlay button:hover {
-    background-color: #388e3c;
-    color: white;
-    transform: scale(1.03);
-}
-
-/* ==== WHY WASH SECTION ==== */
-.machine-carpet-page .why-wash-section {
-    padding: 60px 20px;
-    box-sizing: border-box;
-
-    background-color: #f8f8f8;
-    text-align: center;
-}
-
-.machine-carpet-page .why-wash-section h2 {
-    margin: 0 0 12px;
-
-    font-size: 2rem;
+    color: var(--mcw-heading);
+    font-size: 1.08rem;
+    font-weight: 900;
     line-height: 1.6;
-    color: #333;
 }
 
-.machine-carpet-page .why-wash-section>p {
-    max-width: 900px;
-    margin: 0 auto 30px;
+.mcw-process-item p {
+    margin: 0;
 
-    font-size: 1.2rem;
+    color: var(--mcw-text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.9;
+}
+
+/* ==================================================
+   WATER EXTRACTION
+   ================================================== */
+
+.mcw-extraction-section {
+    color: var(--mcw-white);
+    background:
+        radial-gradient(circle at 15% 15%,
+            rgba(240, 0, 0, 0.1),
+            transparent 25%),
+        linear-gradient(135deg,
+            var(--mcw-primary-dark),
+            var(--mcw-primary-light));
+}
+
+.mcw-extraction-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    align-items: end;
+    gap: 52px;
+}
+
+.mcw-extraction-header>div>span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.mcw-extraction-header h2 {
+    color: var(--mcw-white);
+}
+
+.mcw-extraction-header>p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.81);
+    font-size: 0.99rem;
     line-height: 2;
-    color: #555;
 }
 
-/* کارت‌های ویژگی */
-.machine-carpet-page .features {
+.mcw-extraction-stats {
+    margin: 47px 0 33px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 17px;
+    backdrop-filter: blur(8px);
+}
+
+.mcw-extraction-stats>div {
+    min-height: 160px;
+    padding: 26px 19px;
+
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-}
-
-.machine-carpet-page .feature {
-    width: 250px;
-    padding: 20px;
-    box-sizing: border-box;
-
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
-.machine-carpet-page .feature:hover {
-    transform: translateY(-5px);
+.mcw-extraction-stats>div+div {
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.machine-carpet-page .feature img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
-    object-fit: contain;
+.mcw-extraction-stats strong {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--mcw-white);
+    font-size: clamp(2rem, 3.7vw, 3.25rem);
+    font-weight: 900;
+    line-height: 1.15;
 }
 
-.machine-carpet-page .feature h3 {
-    margin: 0 0 8px;
-
-    font-size: 1.3rem;
-    line-height: 1.7;
-    color: #222;
+.mcw-extraction-stats>div:nth-child(2) strong {
+    color: #ffffff;
 }
 
-.machine-carpet-page .feature p {
+.mcw-extraction-stats span {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.mcw-extraction-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 21px;
+}
+
+.mcw-extraction-gallery figure {
+    margin: 0;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+}
+
+.mcw-extraction-gallery img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+}
+
+.mcw-extraction-gallery figure:hover img {
+    transform: scale(1.025);
+}
+
+.mcw-extraction-gallery figcaption {
+    padding: 15px 19px;
+
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.89rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.mcw-extraction-note {
+    margin-top: 24px;
+    padding: 21px 23px;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+
+    background: rgba(255, 255, 255, 0.09);
+    border-right: 4px solid var(--mcw-red);
+    border-radius: 10px;
+}
+
+.mcw-extraction-note strong {
+    color: var(--mcw-white);
+    white-space: nowrap;
+}
+
+.mcw-extraction-note p {
     margin: 0;
 
-    font-size: 1rem;
-    line-height: 1.9;
-    color: #666;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.93rem;
+    line-height: 1.95;
 }
 
-/* ==== WASH PROCESS SECTION ==== */
-.machine-carpet-page .wash-process {
-    padding: 60px 20px;
-    box-sizing: border-box;
+/* ==================================================
+   COMMON PROBLEMS
+   ================================================== */
 
-    background-color: #fff;
-    text-align: center;
+.mcw-problems-section {
+    background: var(--mcw-bg-secondary);
 }
 
-.machine-carpet-page .wash-process h2 {
-    margin: 0 0 30px;
+.mcw-problems-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
 
-    font-size: 2rem;
+.mcw-problems-grid article {
+    position: relative;
+    min-height: 225px;
+    padding: 28px 23px;
+
+    background: var(--mcw-white);
+    border: 1px solid var(--mcw-border);
+    border-radius: 15px;
+}
+
+.mcw-problems-grid article::before {
+    content: "!";
+
+    width: 38px;
+    height: 38px;
+    margin-bottom: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--mcw-primary);
+    background: var(--mcw-badge);
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+.mcw-problems-grid h3 {
+    margin: 0 0 9px;
+
+    color: var(--mcw-heading);
+    font-size: 1.06rem;
+    font-weight: 900;
     line-height: 1.6;
-    color: #333;
 }
 
-/* کارت‌های مراحل شستشو */
-.machine-carpet-page .process-steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-}
-
-.machine-carpet-page .step {
-    width: 230px;
-    padding: 20px;
-    box-sizing: border-box;
-
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.machine-carpet-page .step:hover {
-    transform: translateY(-5px);
-}
-
-.machine-carpet-page .step img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
-    object-fit: contain;
-}
-
-.machine-carpet-page .step h3 {
-    margin: 0 0 8px;
-
-    font-size: 1.3rem;
-    line-height: 1.7;
-    color: #222;
-}
-
-.machine-carpet-page .step p {
+.mcw-problems-grid p {
     margin: 0;
 
-    font-size: 1rem;
-    line-height: 1.9;
-    color: #666;
+    color: var(--mcw-text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.95;
 }
 
-/* ==== RESPONSIVE ==== */
+/* ==================================================
+   EXTRA SERVICES
+   ================================================== */
+
+.mcw-services-section {
+    background: var(--mcw-white);
+}
+
+.mcw-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mcw-service-card {
+    position: relative;
+    min-height: 215px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    color: var(--mcw-text);
+    background: var(--mcw-bg);
+    border: 1px solid var(--mcw-border);
+    border-radius: 16px;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.mcw-service-card:hover {
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+    border-color: var(--mcw-primary);
+
+    transform: translateY(-4px);
+    box-shadow: 0 18px 42px rgba(23, 40, 50, 0.15);
+}
+
+.mcw-service-card h3 {
+    margin: 0 0 9px;
+
+    color: var(--mcw-heading);
+    font-size: 1.17rem;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.mcw-service-card p {
+    margin: 0 0 23px;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.95;
+}
+
+.mcw-service-card>span {
+    margin-top: auto;
+
+    color: var(--mcw-primary);
+    font-size: 0.89rem;
+    font-weight: 900;
+}
+
+.mcw-service-card:hover h3,
+.mcw-service-card:hover p,
+.mcw-service-card:hover>span {
+    color: var(--mcw-white);
+}
+
+/* ==================================================
+   PRICING
+   ================================================== */
+
+.mcw-pricing-section {
+    padding-top: 35px;
+    background: var(--mcw-white);
+}
+
+.mcw-pricing-box {
+    padding: 52px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.75fr);
+    gap: 33px 62px;
+
+    background: linear-gradient(120deg,
+            var(--mcw-white),
+            var(--mcw-bg));
+    border: 1px solid var(--mcw-border);
+    border-radius: 21px;
+    box-shadow: 0 20px 55px rgba(23, 40, 50, 0.08);
+}
+
+.mcw-pricing-box>div:first-child p {
+    margin: 16px 0 0;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.99rem;
+    line-height: 2;
+}
+
+.mcw-pricing-box>ul {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    align-content: center;
+    gap: 10px;
+
+    list-style: none;
+}
+
+.mcw-pricing-box li {
+    position: relative;
+    padding-right: 22px;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.mcw-pricing-box li::before {
+    content: "";
+
+    position: absolute;
+    top: 0.68em;
+    right: 0;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--mcw-primary-light);
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.mcw-pricing-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ==================================================
+   COVERAGE
+   ================================================== */
+
+.mcw-coverage-section {
+    background: var(--mcw-bg);
+}
+
+.mcw-coverage-links {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.mcw-coverage-links a {
+    min-height: 78px;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--mcw-primary);
+    background: var(--mcw-white);
+    border: 1px solid var(--mcw-border);
+    border-radius: 12px;
+
+    font-size: 0.95rem;
+    font-weight: 900;
+    line-height: 1.7;
+    text-align: center;
+
+    transition:
+        color 0.22s ease,
+        background-color 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+}
+
+.mcw-coverage-links a:hover {
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+    border-color: var(--mcw-primary);
+    transform: translateY(-3px);
+}
+
+/* ==================================================
+   FAQ
+   ================================================== */
+
+.mcw-faq-section {
+    background: var(--mcw-white);
+}
+
+.mcw-faq-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: 66px;
+}
+
+.mcw-faq-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.mcw-faq-intro p {
+    margin: 17px 0 21px;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.97rem;
+    line-height: 2;
+}
+
+.mcw-faq-intro>a {
+    color: var(--mcw-primary);
+    font-size: 0.93rem;
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.mcw-faq-list {
+    display: grid;
+    gap: 12px;
+}
+
+.mcw-faq-list details {
+    overflow: hidden;
+
+    background: var(--mcw-bg);
+    border: 1px solid var(--mcw-border);
+    border-radius: 12px;
+
+    transition:
+        border-color 0.22s ease,
+        background-color 0.22s ease;
+}
+
+.mcw-faq-list details[open] {
+    background: var(--mcw-white);
+    border-color: var(--mcw-border-strong);
+}
+
+.mcw-faq-list summary {
+    position: relative;
+    min-height: 72px;
+    padding: 20px 24px 20px 59px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--mcw-heading);
+    cursor: pointer;
+    list-style: none;
+
+    font-size: 0.99rem;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.mcw-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.mcw-faq-list summary::after {
+    content: "+";
+
+    position: absolute;
+    top: 50%;
+    left: 20px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+    border-radius: 8px;
+
+    font-size: 1.23rem;
+    font-weight: 500;
+
+    transform: translateY(-50%);
+}
+
+.mcw-faq-list details[open] summary::after {
+    content: "−";
+    background: var(--mcw-red);
+}
+
+.mcw-faq-list details p {
+    margin: 0;
+    padding: 0 24px 22px;
+
+    color: var(--mcw-text-secondary);
+    font-size: 0.94rem;
+    line-height: 2;
+}
+
+/* ==================================================
+   USEFUL LINKS
+   ================================================== */
+
+.mcw-useful-links {
+    padding-top: 52px;
+    padding-bottom: 52px;
+
+    background: var(--mcw-bg-secondary);
+    border-top: 1px solid var(--mcw-border-soft);
+}
+
+.mcw-useful-links .mcw-container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 33px;
+}
+
+.mcw-useful-links h2 {
+    margin: 0;
+
+    color: var(--mcw-heading);
+    font-size: 1.23rem;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.mcw-useful-links .mcw-container>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.mcw-useful-links a {
+    padding: 9px 13px;
+
+    color: var(--mcw-text-secondary);
+    background: var(--mcw-white);
+    border: 1px solid var(--mcw-border);
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.mcw-useful-links a:hover {
+    color: var(--mcw-primary);
+    background: var(--mcw-bg);
+    border-color: var(--mcw-border-strong);
+}
+
+/* ==================================================
+   FINAL CTA
+   ================================================== */
+
+.mcw-final-cta {
+    position: relative;
+    padding: 78px 0;
+    overflow: hidden;
+
+    color: var(--mcw-white);
+    background: var(--mcw-primary);
+}
+
+.mcw-final-cta::before {
+    content: "";
+
+    position: absolute;
+    top: -140px;
+    left: -80px;
+
+    width: 360px;
+    height: 360px;
+
+    border: 70px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.mcw-final-cta-content {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 42px;
+}
+
+.mcw-final-cta-content>div>span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.mcw-final-cta h2 {
+    color: var(--mcw-white);
+}
+
+.mcw-final-cta p {
+    max-width: 700px;
+    margin: 14px 0 0;
+
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 0.99rem;
+    line-height: 1.95;
+}
+
+.mcw-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+/* ==================================================
+   ACCESSIBILITY
+   ================================================== */
+
+.mcw-page a:focus-visible,
+.mcw-page summary:focus-visible {
+    outline: 3px solid rgba(240, 0, 0, 0.35);
+    outline-offset: 4px;
+}
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 1024px) {
+    .mcw-section {
+        padding: 78px 0;
+    }
+
+    .mcw-hero {
+        min-height: 660px;
+    }
+
+    .mcw-feature-layout {
+        gap: 40px;
+    }
+
+    .mcw-problems-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mcw-coverage-links {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .mcw-faq-layout {
+        gap: 42px;
+    }
+}
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
 @media (max-width: 768px) {
-    .machine-carpet-hero {
-        height: 70vh;
-        min-height: 480px;
-        padding: 0 15px !important;
+    .mcw-container {
+        width: min(100% - 28px, 1200px);
     }
 
-    .machine-carpet-hero .hero-overlay {
-        max-width: 100%;
-        padding: 30px 20px;
+    .mcw-section {
+        padding: 64px 0;
     }
 
-    .machine-carpet-hero .hero-overlay h1 {
-        font-size: 1.8rem;
+    .mcw-section-heading {
+        margin-bottom: 35px;
+        text-align: right;
     }
 
-    .machine-carpet-hero .hero-overlay p {
-        font-size: 1rem;
+    .mcw-section-heading>p {
+        margin-right: 0;
+        margin-left: 0;
     }
 
-    .machine-carpet-page .features,
-    .machine-carpet-page .process-steps {
-        flex-direction: column;
-        align-items: center;
+    .mcw-hero {
+        min-height: 680px;
+        align-items: flex-end;
     }
 
-    .machine-carpet-page .feature,
-    .machine-carpet-page .step {
-        width: 90%;
-        max-width: 320px;
+    .mcw-hero-image {
+        object-position: center;
     }
 
-    .machine-carpet-page .why-wash-section,
-    .machine-carpet-page .wash-process {
-        padding: 45px 15px;
+    .mcw-hero-shade {
+        background:
+            linear-gradient(180deg,
+                rgba(16, 29, 37, 0.12) 0%,
+                rgba(16, 29, 37, 0.65) 42%,
+                rgba(16, 29, 37, 0.97) 100%);
     }
 
-    .machine-carpet-page .why-wash-section h2,
-    .machine-carpet-page .wash-process h2 {
-        font-size: 1.7rem;
+    .mcw-hero-content {
+        padding-top: 160px;
+        padding-bottom: 51px;
     }
 
-    .machine-carpet-page .why-wash-section>p {
-        font-size: 1rem;
+    .mcw-page .mcw-hero h1 {
+        font-size: clamp(2rem, 8.5vw, 3.1rem);
+        letter-spacing: -0.7px;
+    }
+
+    .mcw-page .mcw-hero-content>p {
+        font-size: 0.98rem;
+        line-height: 1.95;
+    }
+
+    .mcw-hero-actions {
+        align-items: stretch;
+    }
+
+    .mcw-hero-actions .mcw-button {
+        flex: 1 1 220px;
+    }
+
+    .mcw-hero-facts {
+        margin-top: 27px;
+        padding-top: 19px;
+        gap: 7px;
+    }
+
+    .mcw-hero-facts span {
+        width: 100%;
+    }
+
+    .mcw-quick-nav-inner {
+        justify-content: flex-start;
+    }
+
+    .mcw-inspection-grid,
+    .mcw-types-grid,
+    .mcw-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-inspection-card {
+        min-height: auto;
+    }
+
+    .mcw-feature-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .mcw-feature-image::before {
+        top: -9px;
+        right: -7px;
+
+        width: 76px;
+        height: 76px;
+    }
+
+    .mcw-feature-content ul {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-extraction-header {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .mcw-extraction-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-extraction-stats>div {
+        min-height: 125px;
+    }
+
+    .mcw-extraction-stats>div+div {
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        border-right: 0;
+    }
+
+    .mcw-extraction-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-problems-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-problems-grid article {
+        min-height: auto;
+    }
+
+    .mcw-pricing-section {
+        padding-top: 23px;
+    }
+
+    .mcw-pricing-box {
+        padding: 32px 24px;
+
+        grid-template-columns: 1fr;
+        gap: 28px;
+
+        border-radius: 17px;
+    }
+
+    .mcw-pricing-actions {
+        grid-column: auto;
+    }
+
+    .mcw-pricing-actions .mcw-button {
+        width: 100%;
+    }
+
+    .mcw-coverage-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mcw-faq-layout {
+        grid-template-columns: 1fr;
+        gap: 33px;
+    }
+
+    .mcw-faq-intro {
+        position: static;
+    }
+
+    .mcw-useful-links .mcw-container {
+        grid-template-columns: 1fr;
+        gap: 21px;
+    }
+
+    .mcw-useful-links .mcw-container>div {
+        justify-content: flex-start;
+    }
+
+    .mcw-final-cta-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .mcw-final-actions {
+        align-items: stretch;
+    }
+
+    .mcw-final-actions .mcw-button {
+        flex: 1 1 220px;
     }
 }
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
 
 @media (max-width: 480px) {
-    .machine-carpet-hero {
-        height: 65vh;
-        min-height: 430px;
+    .mcw-container {
+        width: min(100% - 24px, 1200px);
     }
 
-    .machine-carpet-hero .hero-overlay {
-        padding: 25px 15px;
+    .mcw-section {
+        padding: 55px 0;
     }
 
-    .machine-carpet-hero .hero-overlay h1 {
-        font-size: 1.55rem;
+    .mcw-hero {
+        min-height: 650px;
     }
 
-    .machine-carpet-hero .hero-overlay a,
-    .machine-carpet-hero .hero-overlay button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+    .mcw-hero-content {
+        padding-bottom: 40px;
     }
 
-    .machine-carpet-page .feature,
-    .machine-carpet-page .step {
+    .mcw-page .mcw-hero h1 {
+        font-size: 1.95rem;
+        line-height: 1.4;
+    }
+
+    .mcw-eyebrow {
+        font-size: 0.79rem;
+    }
+
+    .mcw-hero-actions {
         width: 100%;
+    }
+
+    .mcw-hero-actions .mcw-button,
+    .mcw-final-actions .mcw-button {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .mcw-section-heading h2,
+    .mcw-feature-content h2,
+    .mcw-extraction-header h2,
+    .mcw-pricing-box h2,
+    .mcw-faq-intro h2,
+    .mcw-final-cta h2 {
+        font-size: 1.6rem;
+    }
+
+    .mcw-inspection-card,
+    .mcw-type-card,
+    .mcw-service-card {
+        padding: 24px 20px;
+    }
+
+    .mcw-process-item {
+        padding: 19px 17px;
+
+        grid-template-columns: 47px minmax(0, 1fr);
+        align-items: start;
+        gap: 14px;
+    }
+
+    .mcw-process-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.08rem;
+    }
+
+    .mcw-extraction-note {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-extraction-note strong {
+        white-space: normal;
+    }
+
+    .mcw-coverage-links {
+        grid-template-columns: 1fr;
+    }
+
+    .mcw-faq-list summary {
+        padding: 17px 18px 17px 52px;
+        font-size: 0.93rem;
+    }
+
+    .mcw-faq-list summary::after {
+        left: 14px;
+    }
+
+    .mcw-faq-list details p {
+        padding: 0 18px 19px;
+    }
+
+    .mcw-final-cta {
+        padding: 61px 0;
     }
 }
