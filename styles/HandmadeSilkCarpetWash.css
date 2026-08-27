@@ -1,356 +1,1729 @@
-/* ==== صفحه شستشوی فرش دستبافت گل ابریشم ==== */
-.handmade-silk-page {
+/* ==================================================
+   HANDMADE SILK CARPET WASH PAGE
+   ================================================== */
+
+.hsw-page {
+    --hsw-primary: #172832;
+    --hsw-primary-dark: #101d25;
+    --hsw-primary-light: #1f3c4c;
+
+    --hsw-text: #1c2c38;
+    --hsw-heading: #223640;
+    --hsw-text-secondary: #334852;
+    --hsw-text-muted: #52616b;
+
+    --hsw-white: #ffffff;
+    --hsw-bg: #f5f8fa;
+    --hsw-bg-secondary: #eef3f6;
+    --hsw-card: #f2f6f8;
+    --hsw-badge: #e5edf2;
+
+    --hsw-border: #dfe7ec;
+    --hsw-border-soft: #e1e8ec;
+    --hsw-border-strong: #cbd7de;
+
+    --hsw-red: #f00000;
+    --hsw-red-hover: #c90000;
+
     width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
-    font-family: "Shabnam", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    color: var(--hsw-text);
+    background: var(--hsw-white);
+    font-family: inherit;
+    direction: rtl;
 }
 
-/* ==== HERO SECTION ==== */
-.handmade-silk-hero {
-    width: 100%;
-    height: 80vh;
-    min-height: 520px;
-    margin: 0 !important;
-    padding: 0 20px !important;
+.hsw-page *,
+.hsw-page *::before,
+.hsw-page *::after {
     box-sizing: border-box;
+}
 
-    background-image: url('/images/hero-silk.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.hsw-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.hsw-page a {
+    text-decoration: none;
+}
+
+.hsw-container {
+    width: min(1200px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.hsw-section {
+    position: relative;
+    padding: 90px 0;
+}
+
+.hsw-section[id] {
+    scroll-margin-top: 120px;
+}
+
+/* ==================================================
+   BUTTONS
+   ================================================== */
+
+.hsw-button {
+    min-height: 54px;
+    padding: 13px 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.6;
+    text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.hsw-button:hover {
+    transform: translateY(-2px);
+}
+
+.hsw-button-primary {
+    color: var(--hsw-white);
+    background: var(--hsw-red);
+    box-shadow: 0 10px 25px rgba(240, 0, 0, 0.18);
+}
+
+.hsw-button-primary:hover {
+    color: var(--hsw-white);
+    background: var(--hsw-red-hover);
+    box-shadow: 0 13px 30px rgba(240, 0, 0, 0.26);
+}
+
+.hsw-button-light {
+    color: var(--hsw-primary-dark);
+    background: var(--hsw-white);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.hsw-button-light:hover {
+    color: var(--hsw-primary-dark);
+    background: var(--hsw-bg);
+}
+
+.hsw-button-outline {
+    color: var(--hsw-primary);
+    background: transparent;
+    border-color: var(--hsw-primary);
+}
+
+.hsw-button-outline:hover {
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+}
+
+.hsw-button-call {
+    color: var(--hsw-white);
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.55);
+    direction: ltr;
+}
+
+.hsw-button-call:hover {
+    color: var(--hsw-white);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--hsw-white);
+}
+
+/* ==================================================
+   HERO
+   ================================================== */
+
+.hsw-hero {
+    position: relative;
+    min-height: 700px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--hsw-primary-dark);
+}
+
+.hsw-hero-image {
+    z-index: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hsw-hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(90deg,
+            rgba(16, 29, 37, 0.93) 0%,
+            rgba(16, 29, 37, 0.76) 42%,
+            rgba(16, 29, 37, 0.28) 75%,
+            rgba(16, 29, 37, 0.08) 100%),
+        linear-gradient(180deg,
+            rgba(16, 29, 37, 0.02) 45%,
+            rgba(16, 29, 37, 0.48) 100%);
+}
+
+.hsw-hero-content {
+    position: relative;
+    z-index: 2;
+
+    padding-top: 115px;
+    padding-right: 48%;
+    padding-bottom: 85px;
+}
+
+.hsw-eyebrow {
+    width: fit-content;
+    margin-bottom: 21px;
+    padding: 8px 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--hsw-white);
+    background: rgba(255, 255, 255, 0.11);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.hsw-eyebrow::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+
+    background: var(--hsw-red);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(240, 0, 0, 0.16);
+}
+
+.hsw-page .hsw-hero h1 {
+    max-width: 650px;
+    margin: 0 0 21px;
+
+    color: var(--hsw-white);
+    font-size: clamp(2.35rem, 4.2vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: -1px;
+}
+
+.hsw-page .hsw-hero-content>p {
+    max-width: 650px;
+    margin: 0 0 31px;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 2.05;
+}
+
+.hsw-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+}
+
+.hsw-hero-trust {
+    max-width: 720px;
+    margin-top: 35px;
+    padding-top: 22px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.hsw-hero-trust span {
+    position: relative;
+    padding-right: 18px;
+
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.hsw-hero-trust span::before {
+    content: "";
+
+    position: absolute;
+    top: 0.72em;
+    right: 0;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--hsw-red);
+    border-radius: 50%;
+}
+
+/* ==================================================
+   QUICK NAVIGATION
+   ================================================== */
+
+.hsw-quick-nav {
+    position: relative;
+    z-index: 5;
+
+    background: var(--hsw-white);
+    border-bottom: 1px solid var(--hsw-border);
+    box-shadow: 0 8px 25px rgba(23, 40, 50, 0.06);
+}
+
+.hsw-quick-nav-inner {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 12px;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.hsw-quick-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.hsw-quick-nav a {
+    padding: 9px 14px;
+    flex: 0 0 auto;
+
+    color: var(--hsw-text-secondary);
+    border-radius: 8px;
+
+    font-size: 0.93rem;
+    font-weight: 800;
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.hsw-quick-nav a:hover {
+    color: var(--hsw-primary);
+    background: var(--hsw-bg-secondary);
+}
+
+/* ==================================================
+   COMMON SECTION HEADINGS
+   ================================================== */
+
+.hsw-section-heading {
+    max-width: 830px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.hsw-section-heading>span,
+.hsw-identity-heading>span,
+.hsw-washing-content>span,
+.hsw-gallery-heading>div>span,
+.hsw-pricing-content>span,
+.hsw-related-heading>span,
+.hsw-faq-intro>span,
+.hsw-final-cta-content>div>span {
+    display: block;
+    margin-bottom: 10px;
+
+    color: var(--hsw-primary-light);
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.hsw-section-heading h2,
+.hsw-identity-heading h2,
+.hsw-washing-content h2,
+.hsw-gallery-heading h2,
+.hsw-pricing-content h2,
+.hsw-related-heading h2,
+.hsw-faq-intro h2,
+.hsw-final-cta h2 {
+    margin: 0;
+
+    color: var(--hsw-heading);
+    font-size: clamp(1.8rem, 3vw, 2.55rem);
+    font-weight: 900;
+    line-height: 1.55;
+    letter-spacing: -0.5px;
+}
+
+.hsw-section-heading>p {
+    max-width: 760px;
+    margin: 17px auto 0;
+
+    color: var(--hsw-text-secondary);
+    font-size: 1.01rem;
+    line-height: 2;
+}
+
+/* ==================================================
+   SILK CARPET IDENTITY
+   ================================================== */
+
+.hsw-identity-section {
+    background: var(--hsw-white);
+}
+
+.hsw-identity-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: start;
+    gap: 70px;
+}
+
+.hsw-identity-heading {
+    position: relative;
+    padding-right: 25px;
+}
+
+.hsw-identity-heading::before {
+    content: "";
+
+    position: absolute;
+    top: 3px;
+    right: 0;
+
+    width: 5px;
+    height: 90px;
+
+    background: var(--hsw-primary-light);
+    border-radius: 4px;
+}
+
+.hsw-identity-content {
+    padding-top: 4px;
+}
+
+.hsw-identity-content p {
+    margin: 0;
+
+    color: var(--hsw-text-secondary);
+    font-size: 1rem;
+    line-height: 2.1;
+}
+
+.hsw-identity-content p+p {
+    margin-top: 17px;
+}
+
+.hsw-care-principles {
+    margin-top: 52px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.hsw-care-principles article {
+    min-height: 230px;
+    padding: 28px 25px;
+
+    background: var(--hsw-bg);
+    border: 1px solid var(--hsw-border);
+    border-radius: 16px;
+
+    transition:
+        transform 0.23s ease,
+        background-color 0.23s ease,
+        box-shadow 0.23s ease;
+}
+
+.hsw-care-principles article:hover {
+    transform: translateY(-4px);
+    background: var(--hsw-bg-secondary);
+    box-shadow: 0 15px 34px rgba(23, 40, 50, 0.08);
+}
+
+.hsw-care-principles strong {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 22px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+    border-radius: 50%;
+
+    font-size: 0.91rem;
+    font-weight: 900;
+}
+
+.hsw-care-principles h3 {
+    margin: 0 0 9px;
+
+    color: var(--hsw-heading);
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.hsw-care-principles p {
+    margin: 0;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.95;
+}
+
+/* ==================================================
+   INSPECTION
+   ================================================== */
+
+.hsw-inspection-section {
+    background:
+        radial-gradient(circle at 8% 18%,
+            rgba(31, 60, 76, 0.07),
+            transparent 27%),
+        var(--hsw-bg);
+}
+
+.hsw-inspection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.hsw-inspection-card {
     position: relative;
-    color: white;
-    text-align: center;
-}
+    min-height: 270px;
+    padding: 29px 26px;
 
-/* کادر تیره روی تصویر */
-.handmade-silk-hero .hero-overlay-silk {
-    width: 100%;
-    max-width: 600px;
-    padding: 40px;
-    box-sizing: border-box;
+    overflow: hidden;
 
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    color: white;
-    text-align: center;
-}
-
-.handmade-silk-hero .hero-overlay-silk h1 {
-    margin: 0 0 16px;
-
-    font-size: 2.2rem;
-    line-height: 1.5;
-    color: white;
-}
-
-.handmade-silk-hero .hero-overlay-silk p {
-    margin: 0 0 24px;
-
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: white;
-}
-
-/* لینک ثبت سفارش */
-.handmade-silk-hero .hero-overlay-silk a {
-    display: inline-block;
-    padding: 0.9rem 2rem;
-
-    font-family: inherit;
-    font-size: 1.1rem;
-    font-weight: bold;
-
-    background-color: #2e7d32;
-    color: white;
-
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    cursor: pointer;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: var(--hsw-white);
+    border: 1px solid var(--hsw-border);
+    border-radius: 16px;
+    box-shadow: 0 13px 35px rgba(23, 40, 50, 0.055);
 
     transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.23s ease,
+        border-color 0.23s ease,
+        box-shadow 0.23s ease;
 }
 
-.handmade-silk-hero .hero-overlay-silk a:hover {
-    background-color: #388e3c;
-    color: white;
-    transform: scale(1.03);
+.hsw-inspection-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--hsw-border-strong);
+    box-shadow: 0 18px 42px rgba(23, 40, 50, 0.09);
 }
 
-/* ==== بخش اهمیت شستشوی اصولی ==== */
-.handmade-silk-page .why-wash-silk {
-    padding: 60px 20px;
-    box-sizing: border-box;
+.hsw-inspection-card>span {
+    display: block;
+    margin-bottom: 26px;
 
-    background-color: white;
-    text-align: center;
+    color: var(--hsw-primary-light);
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
 }
 
-.handmade-silk-page .why-wash-silk h2 {
-    margin: 0 0 20px;
-
-    font-size: 2rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.handmade-silk-page .why-wash-silk>p {
-    max-width: 800px;
-    margin: 0 auto 40px;
-
-    font-size: 1.1rem;
-    line-height: 2;
-    color: #555;
-}
-
-/* ==== کارت‌های ویژگی ==== */
-.handmade-silk-page .features-silk {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 25px;
-}
-
-.handmade-silk-page .feature-silk {
-    width: 280px;
-    padding: 20px;
-    box-sizing: border-box;
-
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.handmade-silk-page .feature-silk:hover {
-    transform: translateY(-5px);
-}
-
-/* اندازه قطعی آیکون‌های بخش ویژگی‌ها */
-.handmade-silk-page .features-silk .feature-silk>img {
-    display: block !important;
-
-    width: 60px !important;
-    min-width: 60px !important;
-    max-width: 60px !important;
-
-    height: 60px !important;
-    min-height: 60px !important;
-    max-height: 60px !important;
-
-    margin: 0 auto 15px !important;
-    padding: 0 !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-    transform: none !important;
-}
-
-.handmade-silk-page .feature-silk h3 {
+.hsw-inspection-card h3 {
     margin: 0 0 10px;
 
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: #222;
+    color: var(--hsw-heading);
+    font-size: 1.14rem;
+    font-weight: 900;
+    line-height: 1.65;
 }
 
-.handmade-silk-page .feature-silk p {
+.hsw-inspection-card p {
     margin: 0;
 
-    font-size: 1rem;
-    line-height: 1.9;
-    color: #555;
+    color: var(--hsw-text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.95;
 }
 
-/* ==== مراحل شستشو ==== */
-.handmade-silk-page .wash-process-silk {
-    padding: 60px 20px;
-    box-sizing: border-box;
+/* ==================================================
+   CONTROLLED WASHING
+   ================================================== */
 
-    background-color: #fafafa;
-    text-align: center;
+.hsw-washing-section {
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
 }
 
-.handmade-silk-page .wash-process-silk h2 {
-    margin: 0 0 40px;
-
-    font-size: 2rem;
-    line-height: 1.6;
-    color: #333;
+.hsw-washing-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 62px;
 }
 
-/* کارت‌های مراحل */
-.handmade-silk-page .process-steps-silk {
+.hsw-washing-image {
+    position: relative;
+}
+
+.hsw-washing-image::before {
+    content: "";
+
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    z-index: 0;
+
+    width: 105px;
+    height: 105px;
+
+    border-top: 4px solid var(--hsw-red);
+    border-right: 4px solid var(--hsw-red);
+    border-radius: 8px 0 0;
+}
+
+.hsw-washing-image img {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border-radius: 17px;
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.27);
+}
+
+.hsw-washing-content>span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.hsw-washing-content h2 {
+    color: var(--hsw-white);
+}
+
+.hsw-washing-content>p {
+    margin: 17px 0 0;
+
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.98rem;
+    line-height: 2;
+}
+
+.hsw-washing-note {
+    margin-top: 27px;
+    padding: 20px 21px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border-right: 4px solid var(--hsw-red);
+    border-radius: 10px;
+}
+
+.hsw-washing-note strong {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--hsw-white);
+    font-size: 0.94rem;
+    font-weight: 900;
+}
+
+.hsw-washing-note p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.81);
+    font-size: 0.91rem;
+    line-height: 1.95;
+}
+
+/* ==================================================
+   PROCESS
+   ================================================== */
+
+.hsw-process-section {
+    background: var(--hsw-bg-secondary);
+}
+
+.hsw-process-list {
+    max-width: 970px;
     margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+
+    list-style: none;
+}
+
+.hsw-process-item {
+    min-height: 155px;
+    padding: 23px;
+
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    align-items: start;
+    gap: 18px;
+
+    background: var(--hsw-white);
+    border: 1px solid var(--hsw-border);
+    border-radius: 14px;
+
+    transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.hsw-process-item:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 8px);
+    width: 100%;
+    justify-self: center;
+}
+
+.hsw-process-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--hsw-border-strong);
+    box-shadow: 0 13px 32px rgba(23, 40, 50, 0.075);
+}
+
+.hsw-process-number {
+    width: 53px;
+    height: 53px;
 
     display: flex;
-    flex-wrap: nowrap;
+    align-items: center;
     justify-content: center;
-    align-items: stretch;
-    gap: 16px;
 
-    direction: rtl;
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+    border-radius: 50%;
+
+    font-size: 1.22rem;
+    font-weight: 900;
 }
 
-.handmade-silk-page .silk-step {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 16px;
-    box-sizing: border-box;
-
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-
-    text-align: center;
-    transition: transform 0.3s ease;
+.hsw-process-item:nth-child(2) .hsw-process-number {
+    background: var(--hsw-red);
+    box-shadow: 0 7px 20px rgba(240, 0, 0, 0.18);
 }
 
-.handmade-silk-page .silk-step:hover {
-    transform: translateY(-5px);
+.hsw-process-item h3 {
+    margin: 0 0 6px;
+
+    color: var(--hsw-heading);
+    font-size: 1.06rem;
+    font-weight: 900;
+    line-height: 1.65;
 }
 
-/* اندازه قطعی آیکون‌های مراحل شستشو */
-.handmade-silk-page .process-steps-silk .silk-step>img {
-    display: block !important;
-
-    width: 50px !important;
-    min-width: 50px !important;
-    max-width: 50px !important;
-
-    height: 50px !important;
-    min-height: 50px !important;
-    max-height: 50px !important;
-
-    margin: 0 auto 10px !important;
-    padding: 0 !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-    transform: none !important;
-}
-
-.handmade-silk-page .silk-step h3 {
-    margin: 0 0 8px;
-
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.7;
-    color: #222;
-}
-
-.handmade-silk-page .silk-step p {
+.hsw-process-item p {
     margin: 0;
 
+    color: var(--hsw-text-secondary);
+    font-size: 0.91rem;
+    line-height: 1.9;
+}
+
+/* ==================================================
+   FACTORY GALLERY
+   ================================================== */
+
+.hsw-gallery-section {
+    background: var(--hsw-white);
+}
+
+.hsw-gallery-heading {
+    margin-bottom: 42px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    align-items: end;
+    gap: 55px;
+}
+
+.hsw-gallery-heading>p {
+    margin: 0;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.98rem;
+    line-height: 2;
+}
+
+.hsw-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 21px;
+}
+
+.hsw-gallery-grid figure {
+    margin: 0;
+    overflow: hidden;
+
+    background: var(--hsw-bg);
+    border: 1px solid var(--hsw-border);
+    border-radius: 16px;
+}
+
+.hsw-gallery-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+}
+
+.hsw-gallery-grid figure:hover img {
+    transform: scale(1.025);
+}
+
+.hsw-gallery-grid figcaption {
+    padding: 15px 19px;
+
+    color: var(--hsw-text-secondary);
     font-size: 0.9rem;
+    font-weight: 700;
     line-height: 1.8;
-    color: #555;
 }
 
-/* ==== تبلت ==== */
+/* ==================================================
+   RISKS
+   ================================================== */
+
+.hsw-risk-section {
+    background: var(--hsw-bg);
+}
+
+.hsw-risk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.hsw-risk-grid article {
+    min-height: 245px;
+    padding: 27px 23px;
+
+    background: var(--hsw-white);
+    border: 1px solid var(--hsw-border);
+    border-radius: 15px;
+}
+
+.hsw-risk-grid article>span {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--hsw-primary);
+    background: var(--hsw-badge);
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+.hsw-risk-grid h3 {
+    margin: 0 0 9px;
+
+    color: var(--hsw-heading);
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1.65;
+}
+
+.hsw-risk-grid p {
+    margin: 0;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.91rem;
+    line-height: 1.95;
+}
+
+/* ==================================================
+   COMPLEMENTARY SERVICES
+   ================================================== */
+
+.hsw-services-section {
+    background: var(--hsw-white);
+}
+
+.hsw-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.hsw-service-card {
+    min-height: 215px;
+    padding: 29px;
+
+    display: flex;
+    flex-direction: column;
+
+    color: var(--hsw-text);
+    background: var(--hsw-bg);
+    border: 1px solid var(--hsw-border);
+    border-radius: 16px;
+
+    transition:
+        transform 0.24s ease,
+        color 0.24s ease,
+        background-color 0.24s ease,
+        border-color 0.24s ease,
+        box-shadow 0.24s ease;
+}
+
+.hsw-service-card:hover {
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+    border-color: var(--hsw-primary);
+
+    transform: translateY(-4px);
+    box-shadow: 0 18px 42px rgba(23, 40, 50, 0.14);
+}
+
+.hsw-service-card h3 {
+    margin: 0 0 9px;
+
+    color: var(--hsw-heading);
+    font-size: 1.16rem;
+    font-weight: 900;
+    line-height: 1.6;
+}
+
+.hsw-service-card p {
+    margin: 0 0 22px;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.95;
+}
+
+.hsw-service-card>span {
+    margin-top: auto;
+
+    color: var(--hsw-primary);
+    font-size: 0.89rem;
+    font-weight: 900;
+}
+
+.hsw-service-card:hover h3,
+.hsw-service-card:hover p,
+.hsw-service-card:hover>span {
+    color: var(--hsw-white);
+}
+
+/* ==================================================
+   PRICING
+   ================================================== */
+
+.hsw-pricing-section {
+    padding-top: 35px;
+    background: var(--hsw-white);
+}
+
+.hsw-pricing-box {
+    padding: 52px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    align-items: center;
+    gap: 55px;
+
+    background: linear-gradient(120deg,
+            var(--hsw-white),
+            var(--hsw-bg));
+    border: 1px solid var(--hsw-border);
+    border-radius: 21px;
+    box-shadow: 0 20px 55px rgba(23, 40, 50, 0.08);
+}
+
+.hsw-pricing-content>p {
+    margin: 16px 0 0;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.98rem;
+    line-height: 2;
+}
+
+.hsw-pricing-actions {
+    margin-top: 26px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hsw-pricing-box>ul {
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    gap: 11px;
+
+    list-style: none;
+}
+
+.hsw-pricing-box li {
+    position: relative;
+    padding-right: 22px;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.94rem;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.hsw-pricing-box li::before {
+    content: "";
+
+    position: absolute;
+    top: 0.68em;
+    right: 0;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--hsw-primary-light);
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+/* ==================================================
+   RELATED PAGES
+   ================================================== */
+
+.hsw-related-section {
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+}
+
+.hsw-related-heading {
+    max-width: 760px;
+    margin-bottom: 39px;
+}
+
+.hsw-related-heading>span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.hsw-related-heading h2 {
+    color: var(--hsw-white);
+}
+
+.hsw-related-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.hsw-related-links a {
+    min-height: 155px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: var(--hsw-white);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+
+    transition:
+        background-color 0.23s ease,
+        border-color 0.23s ease,
+        transform 0.23s ease;
+}
+
+.hsw-related-links a:hover {
+    color: var(--hsw-white);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.hsw-related-links span {
+    margin-bottom: 8px;
+
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.hsw-related-links strong {
+    color: var(--hsw-white);
+    font-size: 1.07rem;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+/* ==================================================
+   COVERAGE
+   ================================================== */
+
+.hsw-coverage-section {
+    background: var(--hsw-bg-secondary);
+}
+
+.hsw-coverage-section .hsw-section-heading a {
+    color: var(--hsw-primary);
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.hsw-coverage-links {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.hsw-coverage-links a {
+    min-height: 78px;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--hsw-primary);
+    background: var(--hsw-white);
+    border: 1px solid var(--hsw-border);
+    border-radius: 12px;
+
+    font-size: 0.94rem;
+    font-weight: 900;
+    line-height: 1.7;
+    text-align: center;
+
+    transition:
+        color 0.22s ease,
+        background-color 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+}
+
+.hsw-coverage-links a:hover {
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+    border-color: var(--hsw-primary);
+    transform: translateY(-3px);
+}
+
+/* ==================================================
+   FAQ
+   ================================================== */
+
+.hsw-faq-section {
+    background: var(--hsw-white);
+}
+
+.hsw-faq-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+    align-items: start;
+    gap: 65px;
+}
+
+.hsw-faq-intro {
+    position: sticky;
+    top: 120px;
+}
+
+.hsw-faq-intro p {
+    margin: 17px 0 21px;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.97rem;
+    line-height: 2;
+}
+
+.hsw-faq-intro>a {
+    color: var(--hsw-primary);
+    font-size: 0.93rem;
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.hsw-faq-list {
+    display: grid;
+    gap: 12px;
+}
+
+.hsw-faq-list details {
+    overflow: hidden;
+
+    background: var(--hsw-bg);
+    border: 1px solid var(--hsw-border);
+    border-radius: 12px;
+
+    transition:
+        border-color 0.22s ease,
+        background-color 0.22s ease;
+}
+
+.hsw-faq-list details[open] {
+    background: var(--hsw-white);
+    border-color: var(--hsw-border-strong);
+}
+
+.hsw-faq-list summary {
+    position: relative;
+    min-height: 72px;
+    padding: 20px 24px 20px 59px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--hsw-heading);
+    cursor: pointer;
+    list-style: none;
+
+    font-size: 0.98rem;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.hsw-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.hsw-faq-list summary::after {
+    content: "+";
+
+    position: absolute;
+    top: 50%;
+    left: 20px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--hsw-white);
+    background: var(--hsw-primary);
+    border-radius: 8px;
+
+    font-size: 1.22rem;
+    font-weight: 500;
+
+    transform: translateY(-50%);
+}
+
+.hsw-faq-list details[open] summary::after {
+    content: "−";
+    background: var(--hsw-red);
+}
+
+.hsw-faq-list details p {
+    margin: 0;
+    padding: 0 24px 22px;
+
+    color: var(--hsw-text-secondary);
+    font-size: 0.94rem;
+    line-height: 2;
+}
+
+/* ==================================================
+   RESOURCE LINKS
+   ================================================== */
+
+.hsw-resource-section {
+    padding: 50px 0;
+
+    background: var(--hsw-bg);
+    border-top: 1px solid var(--hsw-border-soft);
+}
+
+.hsw-resource-section .hsw-container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 32px;
+}
+
+.hsw-resource-section p {
+    margin: 0;
+
+    color: var(--hsw-heading);
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.hsw-resource-section .hsw-container>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.hsw-resource-section a {
+    padding: 9px 13px;
+
+    color: var(--hsw-text-secondary);
+    background: var(--hsw-white);
+    border: 1px solid var(--hsw-border);
+    border-radius: 8px;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.hsw-resource-section a:hover {
+    color: var(--hsw-primary);
+    background: var(--hsw-bg-secondary);
+    border-color: var(--hsw-border-strong);
+}
+
+/* ==================================================
+   FINAL CTA
+   ================================================== */
+
+.hsw-final-cta {
+    position: relative;
+    padding: 78px 0;
+    overflow: hidden;
+
+    color: var(--hsw-white);
+    background: var(--hsw-primary-dark);
+}
+
+.hsw-final-cta::before {
+    content: "";
+
+    position: absolute;
+    top: -145px;
+    left: -75px;
+
+    width: 360px;
+    height: 360px;
+
+    border: 70px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.hsw-final-cta-content {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 42px;
+}
+
+.hsw-final-cta-content>div>span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hsw-final-cta h2 {
+    color: var(--hsw-white);
+}
+
+.hsw-final-cta p {
+    max-width: 700px;
+    margin: 14px 0 0;
+
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.98rem;
+    line-height: 1.95;
+}
+
+.hsw-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+/* ==================================================
+   ACCESSIBILITY
+   ================================================== */
+
+.hsw-page a:focus-visible,
+.hsw-page summary:focus-visible {
+    outline: 3px solid rgba(240, 0, 0, 0.35);
+    outline-offset: 4px;
+}
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
 @media (max-width: 1024px) {
-    .handmade-silk-page .process-steps-silk {
-        max-width: 750px;
-        padding: 0;
-
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 24px;
+    .hsw-section {
+        padding: 78px 0;
     }
 
-    .handmade-silk-page .silk-step {
-        flex: 1 1 calc(50% - 24px);
-        max-width: 330px;
+    .hsw-hero {
+        min-height: 660px;
+    }
+
+    .hsw-hero-content {
+        padding-right: 40%;
+    }
+
+    .hsw-identity-layout,
+    .hsw-washing-layout {
+        gap: 42px;
+    }
+
+    .hsw-risk-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hsw-coverage-links {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hsw-faq-layout {
+        gap: 42px;
     }
 }
 
-/* ==== موبایل ==== */
+/* ==================================================
+   MOBILE
+   ================================================== */
+
 @media (max-width: 768px) {
-    .handmade-silk-hero {
-        height: 70vh;
-        min-height: 480px;
-        padding: 0 15px !important;
+    .hsw-container {
+        width: min(100% - 28px, 1200px);
     }
 
-    .handmade-silk-hero .hero-overlay-silk {
-        max-width: 100%;
-        padding: 30px 20px;
+    .hsw-section {
+        padding: 64px 0;
     }
 
-    .handmade-silk-hero .hero-overlay-silk h1 {
-        font-size: 1.8rem;
+    .hsw-section-heading {
+        margin-bottom: 35px;
+        text-align: right;
     }
 
-    .handmade-silk-hero .hero-overlay-silk p {
-        font-size: 1rem;
+    .hsw-section-heading>p {
+        margin-right: 0;
+        margin-left: 0;
     }
 
-    .handmade-silk-page .why-wash-silk,
-    .handmade-silk-page .wash-process-silk {
-        padding: 45px 15px;
+    .hsw-hero {
+        min-height: 690px;
+        align-items: flex-end;
     }
 
-    .handmade-silk-page .why-wash-silk h2,
-    .handmade-silk-page .wash-process-silk h2 {
-        font-size: 1.7rem;
+    .hsw-hero-image {
+        object-position: center;
     }
 
-    .handmade-silk-page .why-wash-silk>p {
-        font-size: 1rem;
+    .hsw-hero-shade {
+        background:
+            linear-gradient(180deg,
+                rgba(16, 29, 37, 0.1) 0%,
+                rgba(16, 29, 37, 0.65) 42%,
+                rgba(16, 29, 37, 0.98) 100%);
     }
 
-    .handmade-silk-page .features-silk,
-    .handmade-silk-page .process-steps-silk {
-        flex-direction: column;
-        align-items: center;
+    .hsw-hero-content {
+        padding-top: 165px;
+        padding-right: 0;
+        padding-bottom: 50px;
     }
 
-    .handmade-silk-page .feature-silk,
-    .handmade-silk-page .silk-step {
-        width: 90%;
-        max-width: 350px;
-        flex: none;
+    .hsw-page .hsw-hero h1 {
+        font-size: clamp(2rem, 8.5vw, 3rem);
+        letter-spacing: -0.7px;
+    }
+
+    .hsw-page .hsw-hero-content>p {
+        font-size: 0.98rem;
+        line-height: 1.95;
+    }
+
+    .hsw-hero-actions {
+        align-items: stretch;
+    }
+
+    .hsw-hero-actions .hsw-button {
+        flex: 1 1 220px;
+    }
+
+    .hsw-hero-trust {
+        margin-top: 27px;
+        padding-top: 19px;
+        gap: 7px;
+    }
+
+    .hsw-hero-trust span {
+        width: 100%;
+    }
+
+    .hsw-quick-nav-inner {
+        justify-content: flex-start;
+    }
+
+    .hsw-identity-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .hsw-care-principles,
+    .hsw-inspection-grid,
+    .hsw-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hsw-care-principles {
+        margin-top: 38px;
+    }
+
+    .hsw-care-principles article,
+    .hsw-inspection-card {
+        min-height: auto;
+    }
+
+    .hsw-washing-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .hsw-washing-image::before {
+        top: -9px;
+        right: -7px;
+
+        width: 76px;
+        height: 76px;
+    }
+
+    .hsw-process-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hsw-process-item:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .hsw-gallery-heading {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .hsw-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hsw-risk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hsw-risk-grid article {
+        min-height: auto;
+    }
+
+    .hsw-pricing-section {
+        padding-top: 23px;
+    }
+
+    .hsw-pricing-box {
+        padding: 32px 24px;
+
+        grid-template-columns: 1fr;
+        gap: 31px;
+
+        border-radius: 17px;
+    }
+
+    .hsw-pricing-actions {
+        align-items: stretch;
+    }
+
+    .hsw-pricing-actions .hsw-button {
+        width: 100%;
+    }
+
+    .hsw-related-links {
+        grid-template-columns: 1fr;
+    }
+
+    .hsw-related-links a {
+        min-height: 130px;
+    }
+
+    .hsw-coverage-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hsw-faq-layout {
+        grid-template-columns: 1fr;
+        gap: 33px;
+    }
+
+    .hsw-faq-intro {
+        position: static;
+    }
+
+    .hsw-resource-section .hsw-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .hsw-resource-section .hsw-container>div {
+        justify-content: flex-start;
+    }
+
+    .hsw-final-cta-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .hsw-final-actions {
+        align-items: stretch;
+    }
+
+    .hsw-final-actions .hsw-button {
+        flex: 1 1 220px;
     }
 }
+
+/* ==================================================
+   SMALL MOBILE
+   ================================================== */
 
 @media (max-width: 480px) {
-    .handmade-silk-hero {
-        height: 65vh;
-        min-height: 430px;
+    .hsw-container {
+        width: min(100% - 24px, 1200px);
     }
 
-    .handmade-silk-hero .hero-overlay-silk {
-        padding: 25px 15px;
+    .hsw-section {
+        padding: 55px 0;
     }
 
-    .handmade-silk-hero .hero-overlay-silk h1 {
-        font-size: 1.55rem;
+    .hsw-hero {
+        min-height: 660px;
     }
 
-    .handmade-silk-hero .hero-overlay-silk a {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+    .hsw-hero-content {
+        padding-bottom: 40px;
     }
 
-    .handmade-silk-page .feature-silk,
-    .handmade-silk-page .silk-step {
+    .hsw-page .hsw-hero h1 {
+        font-size: 1.92rem;
+        line-height: 1.42;
+    }
+
+    .hsw-eyebrow {
+        font-size: 0.79rem;
+    }
+
+    .hsw-hero-actions {
         width: 100%;
+    }
+
+    .hsw-hero-actions .hsw-button,
+    .hsw-pricing-actions .hsw-button,
+    .hsw-final-actions .hsw-button {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .hsw-section-heading h2,
+    .hsw-identity-heading h2,
+    .hsw-washing-content h2,
+    .hsw-gallery-heading h2,
+    .hsw-pricing-content h2,
+    .hsw-related-heading h2,
+    .hsw-faq-intro h2,
+    .hsw-final-cta h2 {
+        font-size: 1.58rem;
+    }
+
+    .hsw-identity-heading {
+        padding-right: 19px;
+    }
+
+    .hsw-identity-heading::before {
+        width: 4px;
+        height: 75px;
+    }
+
+    .hsw-care-principles article,
+    .hsw-inspection-card,
+    .hsw-service-card {
+        padding: 23px 20px;
+    }
+
+    .hsw-process-item {
+        padding: 19px 17px;
+
+        grid-template-columns: 47px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .hsw-process-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.07rem;
+    }
+
+    .hsw-coverage-links {
+        grid-template-columns: 1fr;
+    }
+
+    .hsw-faq-list summary {
+        padding: 17px 18px 17px 52px;
+        font-size: 0.92rem;
+    }
+
+    .hsw-faq-list summary::after {
+        left: 14px;
+    }
+
+    .hsw-faq-list details p {
+        padding: 0 18px 19px;
+    }
+
+    .hsw-final-cta {
+        padding: 61px 0;
     }
 }
