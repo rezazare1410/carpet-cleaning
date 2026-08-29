@@ -176,7 +176,7 @@ export default function MachineCarpetWash() {
                         شستشوی مکانیزه در کارخانه واقعی
                     </span>
 
-                    <h1>شستشوی تخصصی فرش ماشینی در تهران</h1>
+                    <h1>شستشوی فرش ماشینی</h1>
 
                     <p>
                         فرش ماشینی فقط به کف و آب نیاز ندارد. نوع الیاف، تراکم،
@@ -189,6 +189,8 @@ export default function MachineCarpetWash() {
                             href="/order-carpet-cleaning"
                             className="mcw-button mcw-button-primary"
                         >
+                  
+                  
                             ثبت سفارش شستشوی فرش
                         </Link>
 
