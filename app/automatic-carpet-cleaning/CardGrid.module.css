@@ -1,28 +1,843 @@
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 900px;
-    margin: 40px auto;
+.page {
+    --automatic-primary: #172832;
+    --automatic-primary-dark: #101d25;
+    --automatic-primary-light: #1f3c4c;
+    --automatic-text-main: #1c2c38;
+    --automatic-heading: #223640;
+    --automatic-text-secondary: #334852;
+    --automatic-text-muted: #52616b;
+    --automatic-white: #ffffff;
+    --automatic-background: #f5f8fa;
+    --automatic-background-secondary: #eef3f6;
+    --automatic-background-card: #f2f6f8;
+    --automatic-badge: #e5edf2;
+    --automatic-border: #dfe7ec;
+    --automatic-teal: #007b83;
+    --automatic-red: #f00000;
+    --automatic-red-dark: #c90000;
+
+    width: 100%;
+    padding: 42px 20px 90px;
+    box-sizing: border-box;
     direction: rtl;
+    color: var(--automatic-text-main);
+    background:
+        radial-gradient(circle at top right, rgba(0, 123, 131, 0.08), transparent 31%),
+        var(--automatic-white);
+    font-family: "Shabnam", sans-serif;
+    text-align: right;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    height: 140px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.page *,
+.page *::before,
+.page *::after {
+    box-sizing: border-box;
+}
+
+.hero,
+.quickNav,
+.intro,
+.process,
+.waterExtraction,
+.services,
+.benefits,
+.specialServices,
+.faq,
+.finalCta {
+    width: min(1180px, 100%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* ===== هیرو ===== */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(310px, 0.75fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+.heroContent {
+    padding: 44px 38px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 25px;
+    background: var(--automatic-white);
+    box-shadow: 0 20px 55px rgba(23, 40, 50, 0.09);
+}
+
+.eyebrow,
+.heroSummary>span,
+.sectionHeading span,
+.waterExtraction>div>span,
+.finalCta>div:first-child>span {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 7px 13px;
+    border-radius: 999px;
+    color: var(--automatic-teal);
+    background: rgba(0, 123, 131, 0.09);
+    font-size: 0.86rem;
+    font-weight: 900;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin: 18px 0 16px;
+    color: var(--automatic-primary);
+    font-size: clamp(2rem, 4.6vw, 3.3rem);
+    line-height: 1.42;
+    font-weight: 900;
+}
+
+.heroContent>p {
+    max-width: 790px;
+    margin: 0;
+    color: var(--automatic-text-secondary);
+    font-size: 1.04rem;
+    line-height: 2.05;
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 21px;
+    border-radius: 11px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.primaryButton {
+    border: 1px solid var(--automatic-red);
+    color: var(--automatic-white);
+    background: var(--automatic-red);
+    box-shadow: 0 10px 24px rgba(240, 0, 0, 0.17);
+}
+
+.primaryButton:hover {
+    border-color: var(--automatic-red-dark);
+    background: var(--automatic-red-dark);
+    transform: translateY(-1px);
+}
+
+.secondaryButton {
+    border: 1px solid var(--automatic-primary);
+    color: var(--automatic-primary);
+    background: var(--automatic-white);
+}
+
+.secondaryButton:hover {
+    color: var(--automatic-white);
+    background: var(--automatic-primary);
+    transform: translateY(-1px);
+}
+
+.trustRow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 34px;
+    padding-top: 24px;
+    border-top: 1px solid var(--automatic-border);
+}
+
+.trustRow>div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.trustRow strong {
+    color: var(--automatic-teal);
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.trustRow span {
+    color: var(--automatic-text-muted);
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+.heroSummary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px 30px;
+    border-radius: 25px;
+    color: var(--automatic-white);
+    background: linear-gradient(145deg, var(--automatic-primary-light), var(--automatic-primary-dark));
+    box-shadow: 0 20px 50px rgba(23, 40, 50, 0.17);
+}
+
+.heroSummary>span {
+    color: var(--automatic-white);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.heroSummary h2 {
+    margin: 17px 0 22px;
+    color: var(--automatic-white);
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    line-height: 1.65;
+    font-weight: 900;
+}
+
+.heroSummary ul {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.heroSummary li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.heroSummary strong {
+    color: var(--automatic-white);
+    font-size: 0.92rem;
+    font-weight: 900;
+}
+
+.heroSummary small {
+    color: var(--automatic-background-secondary);
+    font-size: 0.79rem;
+    line-height: 1.7;
+}
+
+/* ===== دسترسی سریع ===== */
+.quickNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 34px;
+    padding: 12px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 15px;
+    background: var(--automatic-background);
+}
+
+.quickNav a {
+    padding: 9px 15px;
+    border-radius: 9px;
+    color: var(--automatic-primary);
+    font-size: 0.87rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.quickNav a:hover {
+    color: var(--automatic-white);
+    background: var(--automatic-primary);
+}
+
+/* ===== فاصله بخش‌ها ===== */
+.intro,
+.process,
+.waterExtraction,
+.services,
+.benefits,
+.specialServices,
+.faq,
+.finalCta {
+    margin-top: 76px;
+}
+
+#washing-process,
+#carpet-types,
+#automatic-benefits,
+#automatic-faq {
+    scroll-margin-top: 120px;
+}
+
+/* ===== عنوان بخش ===== */
+.sectionHeading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 27px;
+}
+
+.sectionHeading>div {
+    flex: 1 1 auto;
+}
+
+.sectionHeading h2,
+.waterExtraction h2,
+.finalCta h2 {
+    margin: 11px 0 0;
+    color: var(--automatic-heading);
+    font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+    line-height: 1.55;
+    font-weight: 900;
+}
+
+.sectionHeading>p {
+    max-width: 520px;
+    margin: 0;
+    color: var(--automatic-text-muted);
+    font-size: 0.93rem;
+    line-height: 1.95;
+}
+
+.sectionHeading.centered {
+    display: block;
+    max-width: 840px;
+    margin-right: auto;
+    margin-bottom: 28px;
+    margin-left: auto;
+    text-align: center;
+}
+
+.sectionHeading.centered span {
+    margin: 0 auto;
+}
+
+.sectionHeading.centered>p {
+    margin: 12px auto 0;
+}
+
+/* ===== معرفی ===== */
+.introGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.introGrid article {
+    padding: 25px 22px;
+    border: 1px solid var(--automatic-border);
+    border-right: 4px solid var(--automatic-teal);
+    border-radius: 16px;
+    background: var(--automatic-white);
+    box-shadow: 0 10px 32px rgba(23, 40, 50, 0.055);
+}
+
+.introGrid b {
+    color: var(--automatic-heading);
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.introGrid p {
+    margin: 9px 0 0;
+    color: var(--automatic-text-muted);
+    font-size: 0.87rem;
+    line-height: 1.95;
+}
+
+/* ===== مراحل ===== */
+.process {
+    padding: 40px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 22px;
+    background: var(--automatic-background);
+}
+
+.processGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.processGrid article {
+    padding: 24px 21px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 16px;
+    background: var(--automatic-white);
+    box-shadow: 0 9px 28px rgba(23, 40, 50, 0.05);
+}
+
+.processGrid b,
+.benefitGrid b {
+    display: grid;
+    width: 43px;
+    height: 43px;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--automatic-white);
+    background: var(--automatic-primary);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.processGrid h3,
+.benefitGrid h3 {
+    margin: 16px 0 8px;
+    color: var(--automatic-heading);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    font-weight: 900;
+}
+
+.processGrid p,
+.benefitGrid p {
+    margin: 0;
+    color: var(--automatic-text-muted);
+    font-size: 0.86rem;
+    line-height: 1.95;
+}
+
+/* ===== آبگیری لوله‌ای ===== */
+.waterExtraction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    padding: 38px;
+    border-radius: 22px;
+    color: var(--automatic-white);
+    background: var(--automatic-primary);
+}
+
+.waterExtraction>div {
+    max-width: 790px;
+}
+
+.waterExtraction>div>span {
+    color: var(--automatic-white);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.waterExtraction h2 {
+    color: var(--automatic-white);
+}
+
+.waterExtraction p {
+    margin: 13px 0 0;
+    color: var(--automatic-background-secondary);
+    font-size: 0.92rem;
+    line-height: 2;
+}
+
+.waterExtraction>a {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-height: 49px;
+    padding: 0 21px;
+    border: 1px solid var(--automatic-white);
+    border-radius: 10px;
+    color: var(--automatic-primary);
+    background: var(--automatic-white);
+    font-size: 0.89rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.waterExtraction>a:hover {
+    color: var(--automatic-white);
+    background: transparent;
+}
+
+/* ===== انواع فرش ===== */
+.serviceGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.serviceGrid>a {
+    display: flex;
+    flex-direction: column;
+    min-height: 245px;
+    padding: 27px 24px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 18px;
+    color: var(--automatic-text-main);
+    background: var(--automatic-background);
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.serviceGrid>a:hover {
+    border-color: var(--automatic-teal);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 38px rgba(23, 40, 50, 0.09);
+}
+
+.serviceGrid span {
+    width: fit-content;
+    padding: 6px 11px;
+    border-radius: 999px;
+    color: var(--automatic-teal);
+    background: rgba(0, 123, 131, 0.09);
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.serviceGrid h3 {
+    margin: 18px 0 8px;
+    color: var(--automatic-heading);
+    font-size: 1.08rem;
+    line-height: 1.75;
+    font-weight: 900;
+}
+
+.serviceGrid p {
+    margin: 0;
+    color: var(--automatic-text-muted);
+    font-size: 0.86rem;
+    line-height: 1.9;
+}
+
+.serviceGrid>a>b {
+    margin-top: auto;
+    padding-top: 17px;
+    color: var(--automatic-teal);
+    font-size: 0.83rem;
+    font-weight: 900;
+}
+
+/* ===== مزایا ===== */
+.benefitGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.benefitGrid article {
+    padding: 25px 22px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 17px;
+    background: var(--automatic-white);
+    box-shadow: 0 11px 34px rgba(23, 40, 50, 0.055);
+}
+
+/* ===== لینک‌های مرتبط ===== */
+.relatedGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.relatedGrid>a {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-height: 132px;
+    padding: 23px 21px;
+    border: 1px solid var(--automatic-border);
+    border-right: 4px solid var(--automatic-teal);
+    border-radius: 15px;
+    color: var(--automatic-text-main);
+    background: var(--automatic-white);
+    text-decoration: none;
+    box-shadow: 0 10px 32px rgba(23, 40, 50, 0.055);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.relatedGrid>a:hover {
+    border-color: var(--automatic-teal);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 38px rgba(23, 40, 50, 0.09);
+}
+
+.relatedGrid strong {
+    color: var(--automatic-heading);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 900;
+}
+
+.relatedGrid span {
+    color: var(--automatic-text-muted);
+    font-size: 0.84rem;
+    line-height: 1.85;
+}
+
+/* ===== سؤالات متداول ===== */
+.faqList {
+    display: grid;
+    gap: 12px;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.faqList details {
+    border: 1px solid var(--automatic-border);
+    border-radius: 14px;
+    background: var(--automatic-white);
+    box-shadow: 0 8px 26px rgba(23, 40, 50, 0.045);
+}
+
+.faqList summary {
+    position: relative;
+    padding: 20px 22px 20px 56px;
+    color: var(--automatic-heading);
+    font-size: 0.96rem;
+    font-weight: 900;
+    line-height: 1.8;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faqList summary::-webkit-details-marker {
+    display: none;
+}
+
+.faqList summary::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    display: grid;
+    width: 27px;
+    height: 27px;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--automatic-white);
+    background: var(--automatic-primary);
+    font-size: 1rem;
+    transform: translateY(-50%);
+}
+
+.faqList details[open] summary::after {
+    content: "−";
+    background: var(--automatic-teal);
+}
+
+.faqList p {
+    margin: 0;
+    padding: 0 22px 21px;
+    color: var(--automatic-text-muted);
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+/* ===== فراخوان نهایی ===== */
+.finalCta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 40px;
+    border: 1px solid var(--automatic-border);
+    border-radius: 22px;
+    background: var(--automatic-background);
+}
+
+.finalCta>div:first-child {
+    max-width: 720px;
+}
+
+.finalCta p {
+    margin: 12px 0 0;
+    color: var(--automatic-text-muted);
+    font-size: 0.93rem;
+    line-height: 1.9;
+}
+
+.finalActions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 230px;
+}
+
+.finalActions a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Shabnam", sans-serif;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s;
-    cursor: pointer;
+    min-height: 48px;
+    padding: 0 18px;
+    border: 1px solid var(--automatic-primary);
+    border-radius: 10px;
+    color: var(--automatic-primary);
+    background: var(--automatic-white);
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.card:hover {
-    background-color: #f7f7f7;
+.finalActions a:first-child {
+    border-color: var(--automatic-red);
+    color: var(--automatic-white);
+    background: var(--automatic-red);
+}
+
+.finalActions a:first-child:hover {
+    border-color: var(--automatic-red-dark);
+    background: var(--automatic-red-dark);
+}
+
+.finalActions a:last-child:hover {
+    color: var(--automatic-white);
+    background: var(--automatic-primary);
+}
+
+/* ===== تبلت ===== */
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .heroSummary {
+        display: grid;
+    }
+
+    .heroSummary ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .benefitGrid,
+    .relatedGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ===== موبایل ===== */
+@media (max-width: 768px) {
+    .page {
+        padding: 25px 14px 65px;
+    }
+
+    .heroContent,
+    .heroSummary {
+        padding: 29px 21px;
+        border-radius: 19px;
+    }
+
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .heroContent>p {
+        font-size: 0.96rem;
+        line-height: 1.95;
+    }
+
+    .heroActions {
+        flex-direction: column;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+    }
+
+    .trustRow,
+    .heroSummary ul {
+        grid-template-columns: 1fr;
+    }
+
+    .trustRow>div {
+        padding: 9px 0;
+        border-bottom: 1px solid var(--automatic-border);
+    }
+
+    .trustRow>div:last-child {
+        border-bottom: 0;
+    }
+
+    .quickNav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .quickNav a {
+        flex: 0 0 auto;
+    }
+
+    .intro,
+    .process,
+    .waterExtraction,
+    .services,
+    .benefits,
+    .specialServices,
+    .faq,
+    .finalCta {
+        margin-top: 55px;
+    }
+
+    .sectionHeading {
+        display: block;
+    }
+
+    .sectionHeading>p {
+        margin-top: 12px;
+    }
+
+    .introGrid,
+    .processGrid,
+    .serviceGrid,
+    .benefitGrid,
+    .relatedGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        padding: 29px 18px;
+    }
+
+    .waterExtraction,
+    .finalCta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 29px 22px;
+    }
+
+    .waterExtraction>a,
+    .finalActions,
+    .finalActions a {
+        width: 100%;
+    }
+
+    .finalActions {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .heroContent,
+    .heroSummary {
+        padding: 25px 17px;
+    }
+
+    .hero h1 {
+        font-size: 1.62rem;
+    }
+
+    .faqList summary {
+        padding: 17px 17px 17px 52px;
+        font-size: 0.91rem;
+    }
+
+    .faqList summary::after {
+        left: 16px;
+    }
+
+    .faqList p {
+        padding: 0 17px 19px;
+    }
 }
