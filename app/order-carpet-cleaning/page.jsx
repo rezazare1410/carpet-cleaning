@@ -1,12 +1,15 @@
 import OrderCarpetCleaningPage from './OrderCarpetCleaningPage';
 
+const PAGE_URL = 'https://zarecarpet.com/order-carpet-cleaning';
+
 export const metadata = {
-  title: 'ثبت سفارش آنلاین قالیشویی | قالیشویی زارع',
+  title:
+    'ثبت سفارش آنلاین قالیشویی با ۱۵٪ تخفیف | قالیشویی زارع',
   description:
-    'با تکمیل فرم سفارش آنلاین قالیشویی زارع، فرش خود را برای شستشو، موکت‌شویی یا رفوگری ثبت کنید. پاسخ‌گویی سریع و خدمات در محل.',
+    'سفارش آنلاین خدمات قالیشویی زارع را ثبت کنید و ۱۵٪ از کل مبلغ نهایی فاکتور تخفیف بگیرید. دریافت و تحویل فرش در سراسر تهران.',
 
   alternates: {
-    canonical: 'https://zarecarpet.com/order-carpet-cleaning',
+    canonical: PAGE_URL,
   },
 
   robots: {
@@ -15,43 +18,81 @@ export const metadata = {
   },
 
   openGraph: {
-    title: 'ثبت سفارش آنلاین قالیشویی | قالیشویی زارع',
+    title:
+      'ثبت سفارش آنلاین قالیشویی با ۱۵٪ تخفیف | قالیشویی زارع',
     description:
-      'ثبت سفارش آنلاین شستشوی فرش، موکت‌شویی، لکه‌برداری و رفوگری در قالیشویی زارع.',
-    url: 'https://zarecarpet.com/order-carpet-cleaning',
+      'با ثبت سفارش از طریق سایت قالیشویی زارع، ۱۵٪ از کل مبلغ نهایی فاکتور شما کسر می‌شود.',
+    url: PAGE_URL,
     siteName: 'قالیشویی زارع',
     locale: 'fa_IR',
     type: 'website',
+    images: [
+      {
+        url: 'https://zarecarpet.com/images/cover.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'ثبت سفارش آنلاین قالیشویی زارع',
+      },
+    ],
   },
 };
 
 const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "فرم سفارش قالیشویی",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "قالیشویی زارع",
-    "url": "https://zarecarpet.com/order-carpet-cleaning",
-    "image": "https://zarecarpet.com/icons/logo1.png",
-    "telephone": "+982177169450",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tehran",
-      "addressRegion": "Tehran",
-      "addressCountry": "IR"
-    }
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'ثبت سفارش آنلاین قالیشویی زارع',
+  serviceType: 'خدمات قالیشویی و ترمیم فرش',
+  url: PAGE_URL,
+  description:
+    'ثبت سفارش آنلاین شستشوی فرش ماشینی، فرش دستبافت، فرش ابریشم، موکت، لکه‌برداری و رفوگری با ۱۵٪ تخفیف از کل مبلغ نهایی فاکتور.',
+  areaServed: {
+    '@type': 'City',
+    name: 'تهران',
   },
-  "description": "فرم ثبت سفارش آنلاین قالیشویی زارع برای خدمات شستشوی فرش دستباف، فرش ماشینی، موکت، و ترمیم فرش. پاسخگویی سریع و خدمات حضوری در تهران."
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'قالیشویی زارع',
+    url: 'https://zarecarpet.com',
+    image: 'https://zarecarpet.com/icons/logo1.png',
+    telephone: '+982177169450',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Tehran',
+      addressRegion: 'Tehran',
+      addressCountry: 'IR',
+    },
+  },
+  offers: {
+    '@type': 'Offer',
+    name: '۱۵٪ تخفیف ثبت سفارش آنلاین',
+    description:
+      '۱۵٪ تخفیف از کل مبلغ نهایی فاکتور برای سفارش‌هایی که از طریق سایت ثبت می‌شوند.',
+    url: PAGE_URL,
+    availability: 'https://schema.org/InStock',
+  },
+  potentialAction: {
+    '@type': 'OrderAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: PAGE_URL,
+      actionPlatform: [
+        'https://schema.org/DesktopWebPlatform',
+        'https://schema.org/MobileWebPlatform',
+      ],
+    },
+  },
 };
 
 export default function OrderCarpetCleaning() {
   return (
     <>
       <OrderCarpetCleaningPage />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData).replace(/</g, '\\u003c'),
+        }}
       />
     </>
   );

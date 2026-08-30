@@ -65,6 +65,51 @@
     line-height: 2;
 }
 
+.order-discount-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 25px 0;
+    padding: 18px 20px;
+    border: 1px solid rgba(240, 0, 0, 0.22);
+    border-right: 5px solid var(--order-red);
+    border-radius: 15px;
+    background:
+        linear-gradient(135deg,
+            rgba(240, 0, 0, 0.08),
+            rgba(0, 123, 131, 0.06));
+    box-shadow: 0 10px 28px rgba(28, 44, 56, 0.07);
+}
+
+.order-discount-percent {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    flex: 0 0 76px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--order-red);
+    font-size: 1.55rem;
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(240, 0, 0, 0.22);
+}
+
+.order-discount-box strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--order-navy);
+    font-size: 1.08rem;
+    font-weight: 900;
+}
+
+.order-discount-box p {
+    margin: 0;
+    color: #52616b;
+    font-size: 0.94rem;
+    line-height: 1.9;
+}
+
 .order-trust-list {
     display: grid;
     gap: 12px;
@@ -152,6 +197,10 @@
 }
 
 .order-form-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
     margin-bottom: 24px;
     padding-bottom: 18px;
     border-bottom: 1px solid #e8ecef;
@@ -168,6 +217,17 @@
     margin: 0;
     color: var(--order-muted);
     font-size: 0.92rem;
+}
+
+.order-form-discount-badge {
+    display: inline-flex;
+    margin-top: 4px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: #b40000;
+    background: #fff0f0;
+    font-size: 0.79rem;
+    font-weight: 900;
 }
 
 .order-form {
@@ -407,6 +467,7 @@
 ================================= */
 
 .order-process-section,
+.order-service-links-section,
 .order-coverage-section,
 .order-faq-section {
     width: min(1180px, 100%);
@@ -470,6 +531,41 @@
     margin: 0;
     color: #5f6b74;
     line-height: 1.9;
+}
+
+.order-service-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.order-service-links-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 62px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border: 1px solid #e1e7ea;
+    border-right: 4px solid var(--order-blue);
+    border-radius: 13px;
+    color: var(--order-navy);
+    background: #ffffff;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1.7;
+    text-decoration: none;
+    box-shadow: 0 9px 24px rgba(28, 44, 56, 0.06);
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.order-service-links-grid a:hover {
+    border-color: var(--order-blue);
+    color: var(--order-blue);
+    transform: translateY(-2px);
 }
 
 .order-coverage-section {
@@ -620,14 +716,42 @@
     .order-fields-grid,
     .order-services-grid,
     .order-process-grid,
+    .order-service-links-grid,
     .order-coverage-links {
         grid-template-columns: 1fr;
     }
 
     .order-process-section,
+    .order-service-links-section,
     .order-coverage-section,
     .order-faq-section {
         margin-top: 52px;
+    }
+
+    .order-discount-box {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px 14px;
+    }
+
+    .order-discount-percent {
+        width: 62px;
+        height: 62px;
+        flex-basis: 62px;
+        font-size: 1.25rem;
+    }
+
+    .order-discount-box strong {
+        font-size: 1rem;
+    }
+
+    .order-discount-box p {
+        font-size: 0.88rem;
+    }
+
+    .order-form-heading {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .order-coverage-section {
@@ -642,6 +766,7 @@
         margin-right: 0;
     }
 }
+
 .order-persian-date-container {
     width: 100%;
 }

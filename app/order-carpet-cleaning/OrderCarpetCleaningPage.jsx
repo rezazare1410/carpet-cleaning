@@ -18,6 +18,8 @@ const SERVICES = [
   'رفوگری و ترمیم فرش',
 ];
 
+const ONLINE_DISCOUNT = '۱۵٪ تخفیف از کل مبلغ نهایی فاکتور';
+
 const whatsappPhotoUrl = `https://wa.me/989122356809?text=${encodeURIComponent(
   'سلام، برای بررسی لکه یا آسیب فرش می‌خواهم عکس ارسال کنم.'
 )}`;
@@ -133,12 +135,13 @@ export default function OrderCarpetCleaningPage() {
     
     formData.set(
       '_subject',
-      'سفارش جدید از وب‌سایت قالیشویی زارع'
+      'سفارش آنلاین جدید با ۱۵٪ تخفیف'
     );
     formData.set(
       'sourcePage',
       'صفحه ثبت سفارش آنلاین قالیشویی'
     );
+    formData.set('discount', ONLINE_DISCOUNT);
 
     try {
       setIsSubmitting(true);
@@ -200,6 +203,22 @@ export default function OrderCarpetCleaningPage() {
             دقیق با شما تماس خواهند گرفت.
           </p>
 
+          <div
+            className="order-discount-box"
+            role="note"
+            aria-label="تخفیف سفارش آنلاین"
+          >
+            <span className="order-discount-percent">۱۵٪</span>
+
+            <div>
+              <strong>تخفیف ویژه ثبت سفارش آنلاین</strong>
+              <p>
+                با ثبت سفارش از طریق سایت قالیشویی زارع،
+                ۱۵٪ از کل مبلغ نهایی فاکتور شما کسر می‌شود.
+              </p>
+            </div>
+          </div>
+
           <div className="order-trust-list">
             <div className="order-trust-item">
               <span>✓</span>
@@ -245,7 +264,12 @@ export default function OrderCarpetCleaningPage() {
 
         <div className="order-container">
           <div className="order-form-heading">
-            <h2>اطلاعات سفارش</h2>
+            <div>
+              <h2>اطلاعات سفارش</h2>
+              <span className="order-form-discount-badge">
+                ۱۵٪ تخفیف کل فاکتور
+              </span>
+            </div>
             <p>
               فیلدهای ستاره‌دار الزامی هستند.
             </p>
@@ -262,6 +286,12 @@ export default function OrderCarpetCleaningPage() {
               tabIndex="-1"
               autoComplete="off"
               aria-hidden="true"
+            />
+
+            <input
+              type="hidden"
+              name="discount"
+              value={ONLINE_DISCOUNT}
             />
 
             <div className="order-fields-grid">
@@ -520,12 +550,13 @@ export default function OrderCarpetCleaningPage() {
             >
               {isSubmitting
                 ? 'در حال ثبت سفارش...'
-                : 'ثبت سفارش و درخواست تماس'}
+                : 'ثبت سفارش با ۱۵٪ تخفیف'}
             </button>
 
             <p className="order-privacy-note">
               اطلاعات شما فقط برای هماهنگی سفارش استفاده
-              می‌شود.
+              می‌شود. تخفیف ۱۵٪ هنگام صدور فاکتور نهایی
+              اعمال خواهد شد.
             </p>
           </form>
         </div>
@@ -567,6 +598,39 @@ export default function OrderCarpetCleaningPage() {
         </div>
       </section>
 
+      <section className="order-service-links-section">
+        <div className="order-section-heading">
+          <span>خدمات تخصصی</span>
+          <h2>نوع خدمات موردنیاز خود را بررسی کنید</h2>
+        </div>
+
+        <div className="order-service-links-grid">
+          <Link href="/machine-carpet-wash">
+            شستشوی فرش ماشینی
+          </Link>
+
+          <Link href="/handmade-wool-carpet-wash">
+            شستشوی فرش دستبافت پشمی
+          </Link>
+
+          <Link href="/handmade-silk-carpet-wash">
+            شستشوی فرش دستبافت گل ابریشم
+          </Link>
+
+          <Link href="/handmade-full-silk-carpet-wash">
+            شستشوی فرش تمام ابریشم
+          </Link>
+
+          <Link href="/repair-services">
+            رفوگری و ترمیم فرش
+          </Link>
+
+          <Link href="/service-pricing">
+            مشاهده تعرفه خدمات
+          </Link>
+        </div>
+      </section>
+
       <section className="order-coverage-section">
         <div>
           <span>پوشش سراسر تهران</span>
@@ -603,6 +667,17 @@ export default function OrderCarpetCleaningPage() {
         </div>
 
         <div className="order-faq-list">
+          <details>
+            <summary>
+              تخفیف ۱۵ درصدی سفارش آنلاین چگونه اعمال می‌شود؟
+            </summary>
+            <p>
+              با تکمیل و ارسال این فرم، سفارش شما به‌عنوان
+              سفارش آنلاین ثبت می‌شود و ۱۵٪ از کل مبلغ
+              نهایی فاکتور کسر خواهد شد.
+            </p>
+          </details>
+
           <details>
             <summary>
               بعد از ثبت سفارش چه اتفاقی می‌افتد؟
