@@ -1,149 +1,88 @@
-import FAQPageContent from './FAQPageContent';
+import FAQPageContent, { faqItems } from './FAQPageContent';
 
 export const metadata = {
-  title: 'سؤالات متداول قالیشویی زارع',
+  title: 'سؤالات متداول قالیشویی | شستشو، قیمت و تحویل | زارع',
   description:
-    'پاسخ به رایج‌ترین سؤالات مشتریان درباره خدمات قالیشویی زارع؛ شامل زمان تحویل، روش‌های شستشو، ضمانت کیفیت، رفوگری و هزینه‌ها.',
+    'پاسخ سؤالات متداول درباره ثبت سفارش قالیشویی، شستشوی فرش ماشینی و دستبافت، لکه‌برداری، رفوگری، قیمت، ضمانت و زمان تحویل.',
+
   alternates: {
-    canonical: '/faq',
+    canonical: 'https://zarecarpet.com/faq',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: 'سؤالات متداول قالیشویی زارع',
+    description:
+      'پاسخ روشن به سؤالات شما درباره شستشوی فرش، ثبت سفارش، قیمت، تحویل و خدمات رفوگری.',
+    url: 'https://zarecarpet.com/faq',
+    siteName: 'قالیشویی زارع',
+    locale: 'fa_IR',
+    type: 'website',
+    images: [
+      {
+        url: 'https://zarecarpet.com/images/cover.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'سؤالات متداول خدمات قالیشویی زارع',
+      },
+    ],
   },
 };
 
 const schemaData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "Question",
-      "name": "مدت زمان شستشوی فرش چقدر است؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "حداکثر ۴ روز کاری طول می‌کشه تا فرشهاتون تمیز، خشک و مرتب تحویلتون داده بشه."
-      }
+      '@type': 'FAQPage',
+      '@id': 'https://zarecarpet.com/faq#faq',
+      url: 'https://zarecarpet.com/faq',
+      name: 'سؤالات متداول قالیشویی زارع',
+      inLanguage: 'fa-IR',
+      mainEntity: faqItems.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
     },
     {
-      "@type": "Question",
-      "name": "آیا رنگ فرش بعد از شستشو تغییر می‌کند؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "خیر، با استفاده از مواد شوینده استاندارد و دستگاه‌های حرفه‌ای، رنگ فرش کاملاً حفظ میشه."
-      }
+      '@type': 'BreadcrumbList',
+      '@id': 'https://zarecarpet.com/faq#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'خانه',
+          item: 'https://zarecarpet.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'سؤالات متداول',
+          item: 'https://zarecarpet.com/faq',
+        },
+      ],
     },
-    {
-      "@type": "Question",
-      "name": "چگونه می‌توانم سفارش ثبت کنم؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "از طریق فرم سفارش آنلاین سایت یا تماس تلفنی."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "با چه دستگاه‌هایی فرش شسته می‌شه؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "با دستگاه‌های تمام‌اتوماتیک که ضدعفونی هم انجام می‌دن و آسیبی به فرش نمی‌زنن."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا خدمات قالیشویی شامل ضمانت است؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، در صورتی که از نتیجه ناراضی باشید، تا رفع کامل مشکل هزینه‌ای دریافت نمی‌شه."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا امکان لکه‌گیری و ترمیم هم دارین؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، خدمات لکه‌گیری، رفو، ترمیم پارگی و بیدخوردگی هم داریم."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا قبل از شستشو فرش کارشناسی میشه؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، نوع شستشو و لکه‌گیری مورد نیاز بررسی می‌شه."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "هزینه شستشوی فرش چقدر است؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بسته به متراژ، نوع فرش و نوع خدمات، قیمت مشخص می‌شه."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "شستشوی فرش ماشینی و دستباف فرق داره؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، برای فرش‌های دستباف روش‌های ملایم‌تر استفاده می‌شه."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا امکان شستشو در محل وجود داره؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "خیر، تمامی فرش‌ها در کارخانه شسته می‌شن."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا فرش‌ها ضدعفونی هم می‌شن؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، فرایند شستشو شامل ضدعفونی هم هست."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا می‌تونم زمان تحویل رو انتخاب کنم؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، با هماهنگی قبلی می‌تونید زمان تحویل مشخص کنید."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "رفوگری مناسب چه نوع آسیب‌هایی هست؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "رفوگری برای پارگی، پوسیدگی، بیدخوردگی، ازبین‌رفتن نقش یا سوختگی جزئی مناسبه. در واقع راهکاریه برای برگردوندن فرش به ظاهر اولیه‌اش."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "آیا شستشوی فرش باعث کوتاه شدن عمر اون می‌شه؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "خیر، اگر به‌درستی انجام بشه، باعث افزایش عمر فرش هم میشه."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "سفارش شبانه‌روزی دارید؟",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "بله، ثبت سفارش به‌صورت ۲۴ ساعته از طریق سایت امکان‌پذیره."
-      }
-    }
-  ]
+  ],
 };
 
 export default function FAQPage() {
   return (
     <>
+      <FAQPageContent />
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData).replace(/</g, '\\u003c'),
+        }}
       />
-      <FAQPageContent />
     </>
   );
 }
