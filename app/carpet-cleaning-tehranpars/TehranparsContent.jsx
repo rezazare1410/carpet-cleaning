@@ -161,8 +161,7 @@ export default function TehranparsContent({
           </span>
 
           <h1>
-            قالیشویی در تهرانپارس قیمت استثنایی،
-            کیفیت بالا
+            قالیشویی در تهرانپارس
           </h1>
 
           <p className="tehranpars-hero-description">
@@ -183,7 +182,7 @@ export default function TehranparsContent({
               href="/order-carpet-cleaning"
               className="tehranpars-primary-button"
             >
-              ثبت سفارش آنلاین
+              ثبت سفارش آنلاین با ۱۵٪ تخفیف
             </Link>
 
             <a
@@ -248,7 +247,7 @@ export default function TehranparsContent({
           </p>
 
           <p>
-            به همین دلیل، فرش ماشینی، دستبافت، پشمی،
+            به همین دلیل، فرش ماشینی، دستبافت، پشمی و
             گل‌ ابریشم با یک روش ثابت شسته
             نمی‌شوند. مشخصات هر فرش پیش از شروع کار ثبت و
             روش مناسب برای آن انتخاب می‌شود.
@@ -585,9 +584,9 @@ export default function TehranparsContent({
           </h2>
 
           <p>
-            سفارش خود را آنلاین ثبت کنید یا برای دریافت
-            راهنمایی درباره نوع شستشو، هزینه و خدمات موردنیاز
-            با قالیشویی زارع تماس بگیرید.
+            سفارش خود را آنلاین و با ۱۵٪ تخفیف ثبت کنید یا
+            برای دریافت راهنمایی درباره نوع شستشو، هزینه و
+            خدمات موردنیاز با قالیشویی زارع تماس بگیرید.
           </p>
         </div>
 
@@ -596,7 +595,7 @@ export default function TehranparsContent({
             href="/order-carpet-cleaning"
             className="tehranpars-primary-button"
           >
-            ثبت سفارش آنلاین
+            ثبت سفارش آنلاین با ۱۵٪ تخفیف
           </Link>
 
           <a

@@ -1,18 +1,15 @@
 import TehranparsContent from "./TehranparsContent";
 
 const PAGE_SLUG = "قالیشویی-در-تهرانپارس";
-
-const pageUrl =
-  `https://zarecarpet.com/${encodeURIComponent(PAGE_SLUG)}`;
-
+const pageUrl = `https://zarecarpet.com/${encodeURIComponent(PAGE_SLUG)}`;
 const pageImage =
   "https://zarecarpet.com/images/blog/tehranpars-handmade-carpets-washing.webp";
 
 const pageTitle =
-  "قالیشویی زارع در تهرانپارس | قیمت استثنایی، کیفیت بالا";
+  "خدمات تخصصی قالیشویی در تهرانپارس - زارع (۷۷۱۶۹۴۵۰) ☎";
 
 const pageDescription =
-  "خدمات سریع و تضمینی قالیشویی در تهرانپارس را از قالیشویی زارع بخواهید؛ تلفن: ۰۲۱۷۷۱۶۹۴۵۰. ثبت سفارش آنلاین در تمام ساعات شبانه‌روز برای شستشوی فرش ماشینی، دستبافت و رفوگری.";
+  "قالیشویی در تهرانپارس برای شستشوی تخصصی فرش ماشینی، دستبافت و ابریشم، لکه‌بری و رفوگری. ثبت سفارش آنلاین با ۱۵٪ تخفیف یا تماس با ۰۲۱۷۷۱۶۹۴۵۰.";
 
 const faqItems = [
   {
@@ -35,6 +32,12 @@ const faqItems = [
   },
   {
     question:
+      "آیا ثبت سفارش آنلاین قالیشویی در تهرانپارس تخفیف دارد؟",
+    answer:
+      "بله. مشتریانی که سفارش قالیشویی خود را از طریق فرم آنلاین سایت ثبت کنند، از ۱۵ درصد تخفیف سفارش آنلاین بهره‌مند می‌شوند.",
+  },
+  {
+    question:
       "آیا شیرازه‌زنی و ترمیم لبه فرش انجام می‌شود؟",
     answer:
       "بله. لبه و شیرازه فرش ابتدا بررسی و آماده‌سازی می‌شود و سپس متناسب با نوع بافت و میزان آسیب، عملیات شیرازه‌زنی یا بازسازی کناره فرش انجام خواهد شد.",
@@ -43,7 +46,7 @@ const faqItems = [
     question:
       "آیا فرش ماشینی و فرش ابریشم هم شسته می‌شود؟",
     answer:
-      "بله. فرش‌های ماشینی، دستبافت، پشمی، گل‌ ابریشم با روش متناسب با جنس، رنگ و حساسیت بافت آن‌ها شسته می‌شوند.",
+      "بله. فرش‌های ماشینی، دستبافت، پشمی و گل‌ ابریشم با روش متناسب با جنس، رنگ و حساسیت بافت آن‌ها شسته می‌شوند.",
   },
   {
     question:
@@ -57,20 +60,6 @@ export const metadata = {
   title: pageTitle,
   description: pageDescription,
 
-  keywords: [
-    "قالیشویی در تهرانپارس",
-    "قالیشویی تهرانپارس",
-    "قالیشویی تهرانپارس شرقی",
-    "قالیشویی تهرانپارس غربی",
-    "قالیشویی فلکه اول تهرانپارس",
-    "قالیشویی فلکه دوم تهرانپارس",
-    "قالیشویی میدان پروین",
-    "شستشوی فرش دستبافت در تهرانپارس",
-    "رفوگری فرش در تهرانپارس",
-    "شیرازه‌زنی فرش دستبافت",
-    "قالیشویی زارع",
-  ],
-
   alternates: {
     canonical: pageUrl,
   },
@@ -78,7 +67,6 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-
     googleBot: {
       index: true,
       follow: true,
@@ -96,7 +84,6 @@ export const metadata = {
     siteName: "قالیشویی زارع",
     locale: "fa_IR",
     type: "website",
-
     images: [
       {
         url: pageImage,
@@ -117,7 +104,6 @@ export const metadata = {
 
 const schemaData = {
   "@context": "https://schema.org",
-
   "@graph": [
     {
       "@type": "WebPage",
@@ -126,24 +112,19 @@ const schemaData = {
       name: pageTitle,
       description: pageDescription,
       inLanguage: "fa-IR",
-
       isPartOf: {
         "@id": "https://zarecarpet.com/#website",
       },
-
       about: {
         "@id": `${pageUrl}#service`,
       },
-
       primaryImageOfPage: {
         "@id": `${pageUrl}#primaryimage`,
       },
-
       breadcrumb: {
         "@id": `${pageUrl}#breadcrumb`,
       },
     },
-
     {
       "@type": "ImageObject",
       "@id": `${pageUrl}#primaryimage`,
@@ -155,7 +136,6 @@ const schemaData = {
         "شستشوی تخصصی چند فرش دستبافت در کارخانه قالیشویی زارع",
       representativeOfPage: true,
     },
-
     {
       "@type": "Service",
       "@id": `${pageUrl}#service`,
@@ -165,7 +145,6 @@ const schemaData = {
       description: pageDescription,
       url: pageUrl,
       image: pageImage,
-
       provider: {
         "@type": "LocalBusiness",
         "@id": "https://zarecarpet.com/#business",
@@ -173,7 +152,6 @@ const schemaData = {
         url: "https://zarecarpet.com/",
         telephone: "+982177169450",
         image: "https://zarecarpet.com/icons/logo1.png",
-
         address: {
           "@type": "PostalAddress",
           streetAddress:
@@ -183,7 +161,6 @@ const schemaData = {
           addressCountry: "IR",
         },
       },
-
       areaServed: [
         "تهرانپارس شرقی",
         "تهرانپارس غربی",
@@ -207,11 +184,9 @@ const schemaData = {
         name: `${name}، تهران`,
       })),
     },
-
     {
       "@type": "BreadcrumbList",
       "@id": `${pageUrl}#breadcrumb`,
-
       itemListElement: [
         {
           "@type": "ListItem",
@@ -234,15 +209,12 @@ const schemaData = {
         },
       ],
     },
-
     {
       "@type": "FAQPage",
       "@id": `${pageUrl}#faq`,
-
       mainEntity: faqItems.map((item) => ({
         "@type": "Question",
         name: item.question,
-
         acceptedAnswer: {
           "@type": "Answer",
           text: item.answer,
@@ -258,10 +230,7 @@ export default function TehranparsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schemaData).replace(
-            /</g,
-            "\\u003c",
-          ),
+          __html: JSON.stringify(schemaData).replace(/</g, "\\u003c"),
         }}
       />
 
