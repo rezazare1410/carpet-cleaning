@@ -1,0 +1,1418 @@
+/* ========================================
+   صفحه قالیشویی در پاسداران — پالت رسمی زارع
+======================================== */
+
+.pasdaran-page {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 34px 24px 82px;
+    background:
+        radial-gradient(circle at 96% 4%,
+            rgba(203, 215, 222, 0.58) 0,
+            rgba(203, 215, 222, 0.16) 230px,
+            transparent 231px),
+        linear-gradient(180deg,
+            var(--zare-background-secondary, #eef3f6) 0,
+            var(--zare-background, #f5f8fa) 440px,
+            var(--zare-background, #f5f8fa) 100%);
+    color: var(--zare-text-main, #1c2c38);
+    direction: rtl;
+    font-family: inherit;
+}
+
+.pasdaran-page *,
+.pasdaran-page *::before,
+.pasdaran-page *::after {
+    box-sizing: border-box;
+}
+
+.pasdaran-page a {
+    text-decoration: none;
+}
+
+.pasdaran-page p {
+    margin-top: 0;
+    color: var(--zare-text-secondary, #334852);
+    font-size: 17px;
+    line-height: 2;
+}
+
+/* ========================================
+   مسیر صفحه
+======================================== */
+
+.pasdaran-breadcrumb {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    align-items: center;
+    gap: 11px;
+    margin: 0 auto 28px;
+    color: var(--zare-text-muted, #52616b);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pasdaran-breadcrumb a {
+    color: var(--zare-text-muted, #52616b);
+    transition: color 0.25s ease;
+}
+
+.pasdaran-breadcrumb a:hover {
+    color: var(--zare-red, #f00000);
+}
+
+.pasdaran-breadcrumb strong {
+    color: var(--zare-primary, #172832);
+    font-weight: 800;
+}
+
+/* ========================================
+   هیرو
+======================================== */
+
+.pasdaran-hero {
+    position: relative;
+    display: grid;
+    width: 100%;
+    max-width: 1440px;
+    grid-template-columns:
+        minmax(0, 1.05fr) minmax(430px, 0.95fr);
+    align-items: center;
+    gap: 54px;
+    margin: 0 auto 76px;
+    padding: 56px;
+    overflow: hidden;
+    background:
+        linear-gradient(140deg,
+            var(--zare-primary-light, #1f3c4c) 0%,
+            var(--zare-primary, #172832) 52%,
+            var(--zare-primary-dark, #101d25) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 28px 70px rgba(16, 29, 37, 0.2);
+}
+
+.pasdaran-hero::before {
+    content: "";
+    position: absolute;
+    top: -170px;
+    right: -120px;
+    width: 410px;
+    height: 410px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.pasdaran-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    right: 120px;
+    width: 330px;
+    height: 330px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.pasdaran-hero-content,
+.pasdaran-hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.pasdaran-eyebrow {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: 11px;
+    padding: 9px 17px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.pasdaran-eyebrow>span {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    background: var(--zare-red, #f00000);
+    border: 3px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(240, 0, 0, 0.18);
+}
+
+.pasdaran-hero h1 {
+    max-width: 760px;
+    margin: 28px 0 20px;
+    color: #ffffff;
+    font-size: clamp(38px, 4.6vw, 64px);
+    font-weight: 900;
+    line-height: 1.42;
+    letter-spacing: -1px;
+}
+
+.pasdaran-hero-description {
+    max-width: 770px;
+    margin-bottom: 9px;
+    color: #e5edf2 !important;
+    font-size: 17px !important;
+    line-height: 2.05 !important;
+}
+
+.pasdaran-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 28px;
+}
+
+.pasdaran-primary-button,
+.pasdaran-secondary-button,
+.pasdaran-light-button {
+    display: inline-flex;
+    min-height: 58px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.7;
+    text-align: center;
+    text-decoration: none !important;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.pasdaran-primary-button,
+.pasdaran-primary-button:visited {
+    background: var(--zare-red, #f00000);
+    border: 1px solid var(--zare-red, #f00000);
+    color: #ffffff !important;
+    box-shadow: 0 12px 28px rgba(240, 0, 0, 0.2);
+}
+
+.pasdaran-primary-button:hover {
+    background: var(--zare-red-hover, #c90000);
+    border-color: var(--zare-red-hover, #c90000);
+    color: #ffffff !important;
+    box-shadow: 0 15px 32px rgba(201, 0, 0, 0.28);
+    transform: translateY(-2px);
+}
+
+.pasdaran-secondary-button,
+.pasdaran-secondary-button:visited {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.68);
+    color: #ffffff !important;
+}
+
+.pasdaran-secondary-button:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--zare-primary, #172832) !important;
+    transform: translateY(-2px);
+}
+
+.pasdaran-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    margin-top: 27px;
+}
+
+.pasdaran-trust-row span {
+    position: relative;
+    padding-right: 25px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pasdaran-trust-row span::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    width: 19px;
+    height: 19px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 11px;
+    transform: translateY(-50%);
+}
+
+/* تصویر اصلی */
+
+.pasdaran-hero-image {
+    margin: 0;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.22);
+}
+
+.pasdaran-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+.pasdaran-hero-image figcaption {
+    padding: 13px 10px 5px;
+    color: var(--zare-text-muted, #52616b);
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.pasdaran-image-badge {
+    position: absolute;
+    bottom: 58px;
+    left: 24px;
+    display: flex;
+    min-width: 105px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 16px;
+    background: rgba(16, 29, 37, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 13px;
+    color: #ffffff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.pasdaran-image-badge strong {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.pasdaran-image-badge span {
+    margin-top: 3px;
+    color: #e5edf2;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* ========================================
+   معرفی ابتدایی
+======================================== */
+
+.pasdaran-introduction {
+    display: grid;
+    width: 100%;
+    max-width: 1180px;
+    grid-template-columns: 270px minmax(0, 1fr);
+    align-items: stretch;
+    gap: 38px;
+    margin: 0 auto;
+    padding: 0 0 76px;
+}
+
+.pasdaran-intro-number {
+    display: flex;
+    min-height: 230px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: var(--zare-primary, #172832);
+    border-radius: 22px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 18px 42px rgba(23, 40, 50, 0.15);
+}
+
+.pasdaran-intro-number span {
+    margin-bottom: 6px;
+    color: #cbd7de;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.pasdaran-intro-number strong {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.pasdaran-intro-content {
+    align-self: center;
+}
+
+.pasdaran-intro-content h2 {
+    margin: 0 0 17px;
+    color: var(--zare-primary, #172832);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.pasdaran-intro-content p {
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   تنظیم عمومی سکشن‌ها
+======================================== */
+
+.pasdaran-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.pasdaran-section+.pasdaran-section {
+    border-top: 1px solid var(--zare-border-soft, #e1e8ec);
+}
+
+.pasdaran-section-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--zare-red, #f00000);
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.pasdaran-section-heading {
+    max-width: 840px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.pasdaran-section-heading h2,
+.pasdaran-inspection-content h2,
+.pasdaran-price-content h2,
+.pasdaran-final-cta h2 {
+    margin: 0 0 17px;
+    color: var(--zare-primary, #172832);
+    font-size: clamp(28px, 3.2vw, 43px);
+    font-weight: 900;
+    line-height: 1.55;
+}
+
+.pasdaran-section-heading p {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   بررسی پیش از شستشو
+======================================== */
+
+.pasdaran-inspection-section {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 58px;
+}
+
+.pasdaran-inspection-content>p {
+    margin-bottom: 20px;
+}
+
+.pasdaran-check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+.pasdaran-check-list li {
+    position: relative;
+    min-height: 45px;
+    padding: 9px 42px 9px 14px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 10px;
+    color: var(--zare-heading, #223640);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+.pasdaran-check-list li::before {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    right: 13px;
+    display: flex;
+    width: 21px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+    background: var(--zare-primary-light, #1f3c4c);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 11px;
+    transform: translateY(-50%);
+}
+
+.pasdaran-text-link,
+.pasdaran-text-link:visited {
+    display: inline-flex;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--zare-red, #f00000);
+    color: var(--zare-primary, #172832);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.pasdaran-text-link:hover {
+    color: var(--zare-red, #f00000);
+}
+
+.pasdaran-inspection-image {
+    width: 100%;
+    margin: 0;
+    padding: 9px;
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 20px;
+    box-shadow: 0 20px 48px rgba(23, 40, 50, 0.11);
+}
+
+.pasdaran-inspection-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 13px;
+}
+
+.pasdaran-inspection-image figcaption {
+    padding: 14px 12px 7px;
+    color: var(--zare-text-muted, #52616b);
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* ========================================
+   خدمات
+======================================== */
+
+.pasdaran-services-section {
+    max-width: 1380px;
+}
+
+.pasdaran-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pasdaran-service-card {
+    position: relative;
+    display: flex;
+    min-height: 270px;
+    flex-direction: column;
+    padding: 29px 25px 25px;
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(23, 40, 50, 0.055);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.pasdaran-service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 76px;
+    height: 4px;
+    background: var(--zare-red, #f00000);
+    border-radius: 0 0 0 4px;
+}
+
+.pasdaran-service-card:hover {
+    border-color: var(--zare-border-strong, #cbd7de);
+    box-shadow: 0 19px 42px rgba(23, 40, 50, 0.1);
+    transform: translateY(-4px);
+}
+
+.pasdaran-service-number {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--zare-border-strong, #cbd7de);
+    font-size: 24px;
+    font-weight: 900;
+    direction: ltr;
+    text-align: right;
+}
+
+.pasdaran-service-card h3 {
+    margin: 0 0 12px;
+    color: var(--zare-primary, #172832);
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.pasdaran-service-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.pasdaran-service-card a,
+.pasdaran-service-card a:visited {
+    margin-top: auto;
+    color: var(--zare-red, #f00000);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.pasdaran-service-card a:hover {
+    color: var(--zare-red-hover, #c90000);
+}
+
+/* ========================================
+   داستان شیرازه‌زنی
+======================================== */
+
+.pasdaran-repair-story {
+    max-width: 1380px;
+}
+
+.pasdaran-repair-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.pasdaran-repair-panel {
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 22px;
+    box-shadow: 0 16px 40px rgba(23, 40, 50, 0.08);
+}
+
+.pasdaran-repair-panel figure {
+    width: 100%;
+    margin: 0;
+    padding: 9px 9px 0;
+}
+
+.pasdaran-repair-panel figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+.pasdaran-repair-panel figcaption {
+    padding: 12px 10px 6px;
+    color: var(--zare-text-muted, #52616b);
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.pasdaran-repair-panel>div {
+    padding: 22px 28px 28px;
+}
+
+.pasdaran-repair-panel>div>span {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--zare-red, #f00000);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.pasdaran-repair-panel h3 {
+    margin: 0 0 10px;
+    color: var(--zare-primary, #172832);
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.65;
+}
+
+.pasdaran-repair-panel p {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 1.95;
+}
+
+.pasdaran-repair-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+}
+
+.pasdaran-repair-link a,
+.pasdaran-repair-link a:visited {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 23px;
+    background: var(--zare-background-secondary, #eef3f6);
+    border: 1px solid var(--zare-border-strong, #cbd7de);
+    border-radius: 11px;
+    color: var(--zare-primary, #172832);
+    font-size: 14px;
+    font-weight: 900;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.pasdaran-repair-link a:hover {
+    background: var(--zare-primary, #172832);
+    border-color: var(--zare-primary, #172832);
+    color: #ffffff;
+}
+
+/* ========================================
+   مراحل سفارش
+======================================== */
+
+.pasdaran-process-section {
+    max-width: 1380px;
+}
+
+.pasdaran-process-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pasdaran-process-item {
+    display: flex;
+    min-height: 178px;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 26px 22px;
+    background: var(--zare-background-card, #f2f6f8);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 16px;
+}
+
+.pasdaran-process-item>span {
+    display: flex;
+    width: 43px;
+    height: 43px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--zare-primary, #172832);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.pasdaran-process-item h3 {
+    margin: 3px 0 8px;
+    color: var(--zare-primary, #172832);
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.7;
+}
+
+.pasdaran-process-item p {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   قیمت
+======================================== */
+
+.pasdaran-price-section {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    padding: 42px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 22px;
+    box-shadow: 0 16px 42px rgba(23, 40, 50, 0.07);
+}
+
+.pasdaran-price-content {
+    max-width: 760px;
+}
+
+.pasdaran-price-content p {
+    margin-bottom: 0;
+}
+
+.pasdaran-price-actions {
+    display: flex;
+    min-width: 250px;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.pasdaran-price-section .pasdaran-secondary-button,
+.pasdaran-price-section .pasdaran-secondary-button:visited {
+    border-color: var(--zare-primary, #172832);
+    color: var(--zare-primary, #172832) !important;
+}
+
+.pasdaran-price-section .pasdaran-secondary-button:hover {
+    background: var(--zare-primary, #172832);
+    color: #ffffff !important;
+}
+
+/* ========================================
+   مناطق تحت پوشش
+======================================== */
+
+.pasdaran-area-list {
+    display: flex;
+    max-width: 1080px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px;
+    margin: 0 auto;
+}
+
+.pasdaran-area-list>span {
+    display: inline-flex;
+    min-height: 47px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border-strong, #cbd7de);
+    border-radius: 999px;
+    color: var(--zare-primary, #172832);
+    font-size: 14px;
+    font-weight: 800;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.pasdaran-area-list>span:hover {
+    background: var(--zare-primary, #172832);
+    border-color: var(--zare-primary, #172832);
+    color: #ffffff;
+}
+
+.pasdaran-area-note {
+    max-width: 970px;
+    margin: 28px auto 0;
+    padding: 17px 22px;
+    background: var(--zare-background-secondary, #eef3f6);
+    border-right: 4px solid var(--zare-primary-light, #1f3c4c);
+    border-radius: 11px;
+    text-align: center;
+}
+
+.pasdaran-area-note a,
+.pasdaran-area-note a:visited {
+    color: var(--zare-red, #f00000);
+    font-weight: 900;
+}
+
+.pasdaran-area-note a:hover {
+    color: var(--zare-red-hover, #c90000);
+}
+
+/* ========================================
+   سوالات متداول
+======================================== */
+
+.pasdaran-faq-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pasdaran-faq-item {
+    margin-bottom: 13px;
+    overflow: hidden;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-radius: 14px;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pasdaran-faq-item[open] {
+    border-color: var(--zare-border-strong, #cbd7de);
+    box-shadow: 0 12px 30px rgba(23, 40, 50, 0.075);
+}
+
+.pasdaran-faq-item summary {
+    position: relative;
+    padding: 21px 58px 21px 22px;
+    color: var(--zare-primary, #172832);
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.85;
+    cursor: pointer;
+    list-style: none;
+}
+
+.pasdaran-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.pasdaran-faq-item summary::before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    display: flex;
+    width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    background: var(--zare-badge-background, #e5edf2);
+    border-radius: 50%;
+    color: var(--zare-primary, #172832);
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+
+.pasdaran-faq-item[open] summary::before {
+    content: "−";
+    background: var(--zare-primary, #172832);
+    color: #ffffff;
+}
+
+.pasdaran-faq-item p {
+    margin: 0;
+    padding: 0 58px 23px 22px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* ========================================
+   صفحات محله‌های نزدیک
+======================================== */
+
+.pasdaran-related-section {
+    max-width: 1240px;
+}
+
+.pasdaran-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pasdaran-related-card {
+    position: relative;
+    display: flex;
+    min-height: 255px;
+    flex-direction: column;
+    padding: 28px 25px;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg,
+            var(--zare-primary-light, #1f3c4c),
+            var(--zare-primary, #172832));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 19px;
+    box-shadow: 0 15px 38px rgba(23, 40, 50, 0.14);
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.pasdaran-related-card::after {
+    content: "";
+    position: absolute;
+    bottom: -65px;
+    left: -65px;
+    width: 145px;
+    height: 145px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.pasdaran-related-card:hover {
+    box-shadow: 0 21px 45px rgba(23, 40, 50, 0.2);
+    transform: translateY(-4px);
+}
+
+.pasdaran-related-card>span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #cbd7de;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.pasdaran-related-card h3 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.65;
+}
+
+.pasdaran-related-card p {
+    margin-bottom: 20px;
+    color: #e1e8ec;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.pasdaran-related-card a,
+.pasdaran-related-card a:visited {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--zare-red, #f00000);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.pasdaran-related-card a:hover {
+    color: #ffb4b4;
+}
+
+/* ========================================
+   دعوت به اقدام نهایی
+======================================== */
+
+.pasdaran-final-cta {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    margin: 70px auto 0;
+    padding: 48px;
+    background: var(--zare-white, #ffffff);
+    border: 1px solid var(--zare-border, #dfe7ec);
+    border-top: 5px solid var(--zare-red, #f00000);
+    border-radius: 24px;
+    box-shadow: 0 22px 55px rgba(23, 40, 50, 0.1);
+}
+
+.pasdaran-final-cta>div:first-child {
+    max-width: 730px;
+}
+
+.pasdaran-final-cta>div:first-child>span {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: var(--zare-red, #f00000);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.pasdaran-final-cta h2 {
+    margin-bottom: 12px;
+}
+
+.pasdaran-final-cta p {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.pasdaran-final-actions {
+    display: flex;
+    min-width: 265px;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.pasdaran-light-button,
+.pasdaran-light-button:visited {
+    background: var(--zare-primary, #172832);
+    border: 1px solid var(--zare-primary, #172832);
+    color: #ffffff !important;
+}
+
+.pasdaran-light-button:hover {
+    background: var(--zare-primary-dark, #101d25);
+    border-color: var(--zare-primary-dark, #101d25);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   فوکوس و دسترسی‌پذیری
+======================================== */
+
+.pasdaran-page a:focus-visible,
+.pasdaran-page summary:focus-visible {
+    outline: 3px solid rgba(240, 0, 0, 0.38);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   نمایشگرهای متوسط
+======================================== */
+
+@media (max-width: 1180px) {
+    .pasdaran-hero {
+        grid-template-columns:
+            minmax(0, 1fr) minmax(380px, 0.9fr);
+        gap: 35px;
+        padding: 42px;
+    }
+
+    .pasdaran-hero h1 {
+        font-size: 42px;
+    }
+
+    .pasdaran-services-grid,
+    .pasdaran-process-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   تبلت
+======================================== */
+
+@media (max-width: 900px) {
+    .pasdaran-page {
+        padding: 25px 17px 100px;
+    }
+
+    .pasdaran-breadcrumb {
+        margin-bottom: 20px;
+        overflow-x: auto;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .pasdaran-hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        margin-bottom: 55px;
+        padding: 38px 30px;
+        border-radius: 24px;
+    }
+
+    .pasdaran-hero-content {
+        order: 1;
+    }
+
+    .pasdaran-hero-image {
+        order: 2;
+        max-width: 720px;
+    }
+
+    .pasdaran-introduction {
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 27px;
+        padding-bottom: 55px;
+    }
+
+    .pasdaran-inspection-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .pasdaran-inspection-content {
+        order: 1;
+    }
+
+    .pasdaran-inspection-image {
+        order: 2;
+    }
+
+    .pasdaran-repair-gallery {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .pasdaran-price-section,
+    .pasdaran-final-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pasdaran-price-actions,
+    .pasdaran-final-actions {
+        min-width: 0;
+    }
+
+    .pasdaran-related-grid {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .pasdaran-related-card {
+        min-height: 220px;
+    }
+}
+
+/* ========================================
+   موبایل
+======================================== */
+
+@media (max-width: 640px) {
+    .pasdaran-page {
+        padding: 18px 11px 108px;
+    }
+
+    .pasdaran-hero {
+        gap: 28px;
+        margin-bottom: 42px;
+        padding: 27px 18px 20px;
+        border-radius: 19px;
+    }
+
+    .pasdaran-eyebrow {
+        min-height: 43px;
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .pasdaran-hero h1 {
+        margin-top: 22px;
+        font-size: 33px;
+        line-height: 1.5;
+        letter-spacing: -0.4px;
+    }
+
+    .pasdaran-hero-description {
+        font-size: 15px !important;
+        line-height: 2 !important;
+    }
+
+    .pasdaran-hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .pasdaran-primary-button,
+    .pasdaran-secondary-button,
+    .pasdaran-light-button {
+        width: 100%;
+        min-height: 54px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .pasdaran-trust-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .pasdaran-hero-image {
+        padding: 6px;
+        border-radius: 15px;
+    }
+
+    .pasdaran-hero-image img {
+        border-radius: 10px;
+    }
+
+    .pasdaran-hero-image figcaption {
+        padding-top: 10px;
+        font-size: 10px;
+    }
+
+    .pasdaran-image-badge {
+        bottom: 46px;
+        left: 12px;
+        min-width: 83px;
+        padding: 8px 11px;
+        border-radius: 10px;
+    }
+
+    .pasdaran-image-badge strong {
+        font-size: 19px;
+    }
+
+    .pasdaran-image-badge span {
+        font-size: 9px;
+    }
+
+    .pasdaran-introduction {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-bottom: 42px;
+    }
+
+    .pasdaran-intro-number {
+        min-height: 130px;
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .pasdaran-intro-number strong {
+        font-size: 24px;
+    }
+
+    .pasdaran-intro-content h2,
+    .pasdaran-section-heading h2,
+    .pasdaran-inspection-content h2,
+    .pasdaran-price-content h2,
+    .pasdaran-final-cta h2 {
+        font-size: 26px;
+        line-height: 1.65;
+    }
+
+    .pasdaran-page p {
+        font-size: 15px;
+        line-height: 1.95;
+    }
+
+    .pasdaran-section {
+        padding: 48px 0;
+    }
+
+    .pasdaran-section-heading {
+        margin-bottom: 28px;
+        text-align: right;
+    }
+
+    .pasdaran-check-list li {
+        padding-left: 10px;
+        font-size: 13px;
+    }
+
+    .pasdaran-services-grid,
+    .pasdaran-process-list {
+        grid-template-columns: 1fr;
+    }
+
+    .pasdaran-service-card {
+        min-height: auto;
+        padding: 25px 20px;
+    }
+
+    .pasdaran-repair-panel {
+        border-radius: 16px;
+    }
+
+    .pasdaran-repair-panel figure {
+        padding: 6px 6px 0;
+    }
+
+    .pasdaran-repair-panel>div {
+        padding: 19px 19px 23px;
+    }
+
+    .pasdaran-repair-panel h3 {
+        font-size: 20px;
+    }
+
+    .pasdaran-process-item {
+        min-height: auto;
+        padding: 22px 18px;
+    }
+
+    .pasdaran-price-section {
+        padding: 27px 19px;
+        border-radius: 17px;
+    }
+
+    .pasdaran-area-list {
+        justify-content: flex-start;
+    }
+
+    .pasdaran-area-list>span {
+        min-height: 43px;
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+
+    .pasdaran-area-note {
+        padding: 15px 17px;
+        text-align: right;
+    }
+
+    .pasdaran-faq-item summary {
+        padding: 18px 51px 18px 15px;
+        font-size: 14px;
+    }
+
+    .pasdaran-faq-item summary::before {
+        right: 15px;
+    }
+
+    .pasdaran-faq-item p {
+        padding: 0 18px 20px;
+    }
+
+    .pasdaran-related-card {
+        min-height: 225px;
+        padding: 25px 21px;
+    }
+
+    .pasdaran-related-card h3 {
+        font-size: 20px;
+    }
+
+    .pasdaran-final-cta {
+        gap: 28px;
+        margin-top: 48px;
+        padding: 30px 20px;
+        border-radius: 19px;
+    }
+}
+
+/* ========================================
+   کاهش حرکت
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pasdaran-page *,
+    .pasdaran-page *::before,
+    .pasdaran-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
