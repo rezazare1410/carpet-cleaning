@@ -173,13 +173,13 @@ const Header = () => {
                       <ul className="sub-dropdown-menu">
                         <li>
                           <Link href="/handmade-wool-carpet-wash">
-                            فرش دستبافت کرک و پشم
+                            فرش دستباف کرک و پشم
                           </Link>
                         </li>
 
                         <li>
                           <Link href="/handmade-silk-carpet-wash">
-                            فرش دستبافت گل ابریشم
+                            فرش دستباف گل ابریشم
                           </Link>
                         </li>
                         <li>
