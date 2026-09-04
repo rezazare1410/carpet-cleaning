@@ -106,7 +106,7 @@ const complementaryServices = [
     {
         href: "/Shirazeh-doozi",
         title: "شیرازه‌دوزی",
-        text: "ترمیم کناره‌های بازشده، ساییده یا فرسوده فرش دستبافت گل‌ابریشم.",
+        text: "ترمیم کناره‌های بازشده، ساییده یا فرسوده فرش دستباف گل‌ابریشم.",
     },
     {
         href: "/repair-services",
@@ -140,7 +140,7 @@ const coverageLinks = [
 
 const faqItems = [
     {
-        question: "فرش گل‌ابریشم چه تفاوتی با فرش دستبافت پشمی دارد؟",
+        question: "فرش گل‌ابریشم چه تفاوتی با فرش دستباف پشمی دارد؟",
         answer:
             "در فرش گل ابریشم، بخش‌هایی از نقوش، گل‌ها یا خطوط فرش با الیاف ابریشم بافته می‌شوند. این قسمت‌ها از نظر درخشندگی، ظرافت و رفتار در برابر شوینده و فشار با پرز پشمی تفاوت دارند و هنگام شستشو به کنترل بیشتری نیاز دارند.",
     },
@@ -177,7 +177,7 @@ export default function HandmadeSilkCarpetWash() {
             <section className="hsw-hero">
                 <Image
                     src="/images/handmade-silk-carpet-wash/handmade-silk-carpet-wash-hero.webp"
-                    alt="شستشوی فرش دستبافت گل‌ابریشم در کارخانه قالیشویی زارع"
+                    alt="شستشوی فرش دستباف گل‌ابریشم در کارخانه قالیشویی زارع"
                     fill
                     priority
                     sizes="100vw"
@@ -191,7 +191,7 @@ export default function HandmadeSilkCarpetWash() {
                         مراقبت از رنگ پیش از شروع شستشو
                     </span>
 
-                    <h1>شستشوی تخصصی فرش دستبافت گل‌ابریشم</h1>
+                    <h1>شستشوی تخصصی فرش دستباف گل‌ابریشم</h1>
 
                     <p>
                         قسمت‌های ابریشمی، رنگ‌های ظریف و خواب پرز این فرش‌ها
@@ -244,7 +244,7 @@ export default function HandmadeSilkCarpetWash() {
                             <span>شناخت ساختار فرش</span>
 
                             <h2>
-                                چرا فرش دستبافت گل‌ابریشم به مراقبت بیشتری
+                                چرا فرش دستباف گل‌ابریشم به مراقبت بیشتری
                                 نیاز دارد؟
                             </h2>
                         </div>
@@ -333,7 +333,7 @@ export default function HandmadeSilkCarpetWash() {
                     <div className="hsw-washing-image">
                         <Image
                             src="/images/handmade-silk-carpet-wash/machine-washing-handmade-silk-carpet.webp"
-                            alt="شستشوی فرش دستبافت گل‌ابریشم با تجهیزات کارخانه قالیشویی زارع"
+                            alt="شستشوی فرش دستباف گل‌ابریشم با تجهیزات کارخانه قالیشویی زارع"
                             width={1200}
                             height={675}
                             sizes="(max-width: 900px) 100vw, 52vw"
@@ -380,7 +380,7 @@ export default function HandmadeSilkCarpetWash() {
                         <span>مسیر فرش در کارخانه</span>
 
                         <h2>
-                            مراحل شستشوی فرش دستبافت گل‌ابریشم
+                            مراحل شستشوی فرش دستباف گل‌ابریشم
                         </h2>
 
                         <p>
@@ -428,7 +428,7 @@ export default function HandmadeSilkCarpetWash() {
                         <figure>
                             <Image
                                 src="/images/handmade-silk-carpet-wash/controlled-washing-handmade-silk-carpet.webp"
-                                alt="شستشوی کنترل‌شده فرش دستبافت گل‌ابریشم"
+                                alt="شستشوی کنترل‌شده فرش دستباف گل‌ابریشم"
                                 width={1200}
                                 height={675}
                                 sizes="(max-width: 800px) 100vw, 50vw"
@@ -566,7 +566,7 @@ export default function HandmadeSilkCarpetWash() {
 
                     <div className="hsw-related-links">
                         <Link href="/handmade-wool-carpet-wash">
-                            <span>فرش دستبافت</span>
+                            <span>فرش دستباف</span>
                             <strong>شستشوی فرش کرک و پشم</strong>
                         </Link>
 

@@ -1,8 +1,11 @@
 import PasdaranContent from "./PasdaranContent";
 
-const PAGE_SLUG = "carpet-cleaning-pasdaran";
+const PAGE_SLUG = "قالیشویی-در-پاسداران";
 
-const pageUrl = `https://zarecarpet.com/${PAGE_SLUG}`;
+const pageUrl =
+  `https://zarecarpet.com/${encodeURIComponent(PAGE_SLUG)}`;
+
+
 const pageImage = "https://zarecarpet.com/images/blog/pasdaran1.webp";
 
 const pageTitle =

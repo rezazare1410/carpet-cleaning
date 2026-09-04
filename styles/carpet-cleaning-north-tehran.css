@@ -862,3 +862,17 @@
         width: 100%;
     }
 }
+.north-area-link {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.north-area-link:hover {
+    color: inherit;
+    text-decoration: none;
+}

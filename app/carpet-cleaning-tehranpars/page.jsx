@@ -6,7 +6,7 @@ const pageImage =
   "https://zarecarpet.com/images/blog/tehranpars-handmade-carpets-washing.webp";
 
 const pageTitle =
-  "خدمات تخصصی قالیشویی در تهرانپارس - زارع (۷۷۱۶۹۴۵۰) ☎";
+  "خدمات تخصصی قالیشویی در تهرانپارس - زارع | ۰۲۱۷۷۱۶۹۴۵۰ ☎️";
 
 const pageDescription =
   "قالیشویی در تهرانپارس برای شستشوی تخصصی فرش ماشینی، دستبافت و ابریشم، لکه‌بری و رفوگری. ثبت سفارش آنلاین با ۱۵٪ تخفیف یا تماس با ۰۲۱۷۷۱۶۹۴۵۰.";

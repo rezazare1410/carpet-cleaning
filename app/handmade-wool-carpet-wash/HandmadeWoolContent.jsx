@@ -44,7 +44,7 @@ const assessmentItems = [
 
 const fiberTypes = [
   {
-    label: "فرش دستبافت پشمی",
+    label: "فرش دستباف پشمی",
     title: "الیاف مقاوم‌تر با رفتار متفاوت در برابر آب",
     description:
       "فرش پشمی معمولاً پرز متراکم و توان جذب رطوبت بالایی دارد. شستشوی آن باید به‌گونه‌ای انجام شود که آلودگی از عمق پرز خارج شود، بدون آنکه بافت، رنگ یا حالت طبیعی پشم آسیب ببیند.",
@@ -56,7 +56,7 @@ const fiberTypes = [
     ],
   },
   {
-    label: "فرش دستبافت کرک",
+    label: "فرش دستباف کرک",
     title: "پرز ظریف‌تر با نیاز به کنترل بیشتر",
     description:
       "کرک از پشم ظریف‌تر و لطیف‌تر است و سطح فرش ممکن است نسبت به برس‌زنی شدید یا شوینده نامناسب حساس‌تر باشد. به همین دلیل مراحل شستشو با دقت بیشتری تنظیم می‌شوند.",
@@ -153,7 +153,7 @@ const relatedServices = [
   {
     title: "شیرازه‌دوزی فرش",
     description:
-      "تقویت و ترمیم کناره‌های بازشده یا فرسوده فرش دستبافت",
+      "تقویت و ترمیم کناره‌های بازشده یا فرسوده فرش دستباف",
     href: "/Shirazeh-doozi",
   },
   {
@@ -171,7 +171,7 @@ const relatedServices = [
   {
     title: "دارکشی فرش",
     description:
-      "اصلاح کجی، جمع‌شدگی یا تغییر فرم فرش دستبافت",
+      "اصلاح کجی، جمع‌شدگی یا تغییر فرم فرش دستباف",
     href: "/darkeshi",
   },
 ];
@@ -202,7 +202,7 @@ export default function HandmadeWoolContent({
   خدمات شستشوی فرش
 </Link>
         <span aria-hidden="true">/</span>
-        <strong>شستشوی فرش دستبافت کرک و پشم</strong>
+        <strong>شستشوی فرش دستباف کرک و پشم</strong>
       </nav>
 
       <section className="wool-wash-hero">
@@ -213,11 +213,11 @@ export default function HandmadeWoolContent({
           </span>
 
           <h1>
-            شستشوی تخصصی فرش دستبافت کرک و پشم
+            شستشوی تخصصی فرش دستباف کرک و پشم
           </h1>
 
           <p className="wool-wash-hero-lead">
-            فرش دستبافت فقط یک پوشش کف نیست؛ نتیجه ماه‌ها
+            فرش دستباف فقط یک پوشش کف نیست؛ نتیجه ماه‌ها
             یا سال‌ها بافت، رنگرزی و هنر دست است. به همین
             دلیل نمی‌توان تمام فرش‌های کرک و پشم را با یک
             برنامه ثابت شست.
@@ -256,7 +256,7 @@ export default function HandmadeWoolContent({
         <figure className="wool-wash-hero-media">
           <Image
             src="/images/handmade-wool-carpet-wash/handmade-wool-carpet-specialized-washing.webp"
-            alt="شستشوی تخصصی فرش دستبافت کرک و پشم در کارخانه قالیشویی زارع"
+            alt="شستشوی تخصصی فرش دستباف کرک و پشم در کارخانه قالیشویی زارع"
             width={1520}
             height={851}
             sizes="(max-width: 950px) 100vw, 52vw"
@@ -264,7 +264,7 @@ export default function HandmadeWoolContent({
           />
 
           <figcaption>
-            شستشوی تخصصی فرش‌های دستبافت در کارخانه
+            شستشوی تخصصی فرش‌های دستباف در کارخانه
             قالیشویی زارع
           </figcaption>
         </figure>
@@ -275,7 +275,7 @@ export default function HandmadeWoolContent({
           <span>پرونده کارشناسی فرش</span>
 
           <h2>
-            پیش از شستشوی فرش دستبافت چه چیزهایی بررسی
+            پیش از شستشوی فرش دستباف چه چیزهایی بررسی
             می‌شوند؟
           </h2>
 
@@ -306,7 +306,7 @@ export default function HandmadeWoolContent({
           <span>شناخت الیاف طبیعی</span>
 
           <h2>
-            تفاوت فرش دستبافت کرک و پشم در شستشو
+            تفاوت فرش دستباف کرک و پشم در شستشو
           </h2>
 
           <p>
@@ -342,7 +342,7 @@ export default function HandmadeWoolContent({
         <figure className="wool-wash-media">
           <Image
             src="/images/handmade-wool-carpet-wash/handmade-wool-carpet-manual-washing.webp"
-            alt="شستشوی دستی فرش دستبافت کرک و پشم در کارخانه قالیشویی زارع"
+            alt="شستشوی دستی فرش دستباف کرک و پشم در کارخانه قالیشویی زارع"
             width={1200}
             height={675}
             sizes="(max-width: 900px) 100vw, 50vw"
@@ -388,7 +388,7 @@ export default function HandmadeWoolContent({
         <figure className="wool-wash-media">
           <Image
             src="/images/handmade-wool-carpet-wash/handmade-wool-carpets-machine-washing.webp"
-            alt="شستشوی فرش‌های دستبافت کرک و پشم با تجهیزات کارخانه قالیشویی زارع"
+            alt="شستشوی فرش‌های دستباف کرک و پشم با تجهیزات کارخانه قالیشویی زارع"
             width={1200}
             height={675}
             sizes="(max-width: 900px) 100vw, 50vw"
@@ -396,14 +396,14 @@ export default function HandmadeWoolContent({
 
           <figcaption>
             استفاده از تجهیزات متناسب پس از کارشناسی
-            فرش‌های دستبافت
+            فرش‌های دستباف
           </figcaption>
         </figure>
 
         <div className="wool-wash-media-content">
           <span>انتخاب تجهیزات براساس وضعیت فرش</span>
 
-          <h2>آیا تمام فرش‌های دستبافت با دستگاه شسته می‌شوند؟</h2>
+          <h2>آیا تمام فرش‌های دستباف با دستگاه شسته می‌شوند؟</h2>
 
           <p>
             خیر. استفاده از تجهیزات به معنی اجرای یک روش
@@ -425,7 +425,7 @@ export default function HandmadeWoolContent({
         <div className="wool-wash-section-heading">
           <span>مسیر فرش در کارخانه</span>
 
-          <h2>مراحل شستشوی فرش دستبافت کرک و پشم</h2>
+          <h2>مراحل شستشوی فرش دستباف کرک و پشم</h2>
 
           <p>
             از لحظه دریافت تا کنترل نهایی، مشخصات و وضعیت
@@ -467,7 +467,7 @@ export default function HandmadeWoolContent({
           </p>
 
           <p>
-            فرش دستبافت کرک، پشم، رنگ روشن، رنگ تیره یا
+            فرش دستباف کرک، پشم، رنگ روشن، رنگ تیره یا
             دارای آسیب، نیازهای یکسانی ندارد و نباید بدون
             بررسی در یک فرایند ثابت قرار بگیرد.
           </p>
@@ -476,14 +476,14 @@ export default function HandmadeWoolContent({
         <figure className="wool-wash-wide-media">
           <Image
             src="/images/handmade-wool-carpet-wash/handmade-wool-carpets-factory-washing.webp"
-            alt="شستشوی فرش‌های دستبافت کرک و پشم در کارخانه قالیشویی زارع"
+            alt="شستشوی فرش‌های دستباف کرک و پشم در کارخانه قالیشویی زارع"
             width={1200}
             height={675}
             sizes="(max-width: 900px) 100vw, 60vw"
           />
 
           <figcaption>
-            شستشوی فرش‌های دستبافت پس از بررسی جنس، رنگ و
+            شستشوی فرش‌های دستباف پس از بررسی جنس، رنگ و
             وضعیت بافت
           </figcaption>
         </figure>
@@ -493,7 +493,7 @@ export default function HandmadeWoolContent({
         <figure className="wool-wash-extraction-media">
           <Image
             src="/images/handmade-wool-carpet-wash/handmade-wool-carpet-tube-water-extraction.webp"
-            alt="آبگیری لوله‌ای فرش دستبافت کرک و پشم در کارخانه قالیشویی زارع"
+            alt="آبگیری لوله‌ای فرش دستباف کرک و پشم در کارخانه قالیشویی زارع"
             width={1200}
             height={675}
             sizes="(max-width: 900px) 100vw, 48vw"
@@ -503,10 +503,10 @@ export default function HandmadeWoolContent({
         <div className="wool-wash-extraction-content">
           <span>کاهش یکنواخت رطوبت</span>
 
-          <h2>آبگیری کنترل‌شده فرش دستبافت</h2>
+          <h2>آبگیری کنترل‌شده فرش دستباف</h2>
 
           <p>
-            باقی‌ماندن رطوبت در بافت فرش دستبافت می‌تواند
+            باقی‌ماندن رطوبت در بافت فرش دستباف می‌تواند
             زمان خشک‌شدن را افزایش دهد و احتمال ایجاد بو یا
             تغییر حالت را بیشتر کند. آبگیری باید با توجه به
             وضعیت و استحکام فرش انجام شود.
@@ -532,7 +532,7 @@ export default function HandmadeWoolContent({
         <div className="wool-wash-section-heading">
           <span>مراقبت از فرش ارزشمند</span>
 
-          <h2>چه عواملی به فرش دستبافت آسیب می‌زنند؟</h2>
+          <h2>چه عواملی به فرش دستباف آسیب می‌زنند؟</h2>
 
           <p>
             بسیاری از آسیب‌های شستشو زمانی ایجاد می‌شوند که
@@ -559,7 +559,7 @@ export default function HandmadeWoolContent({
         <div className="wool-wash-section-heading">
           <span>شستشو همراه با مراقبت و ترمیم</span>
 
-          <h2>خدمات تکمیلی فرش‌های دستبافت</h2>
+          <h2>خدمات تکمیلی فرش‌های دستباف</h2>
 
           <p>
             بعضی فرش‌ها پیش یا پس از شستشو به خدمات تکمیلی
@@ -591,7 +591,7 @@ export default function HandmadeWoolContent({
           <span>هزینه متناسب با وضعیت واقعی فرش</span>
 
           <h2>
-            قیمت شستشوی فرش دستبافت کرک و پشم چگونه محاسبه
+            قیمت شستشوی فرش دستباف کرک و پشم چگونه محاسبه
             می‌شود؟
           </h2>
 
@@ -630,7 +630,7 @@ export default function HandmadeWoolContent({
           <span>پرسش‌های پیش از ثبت سفارش</span>
 
           <h2>
-            سؤالات متداول شستشوی فرش دستبافت کرک و پشم
+            سؤالات متداول شستشوی فرش دستباف کرک و پشم
           </h2>
         </div>
 
@@ -651,7 +651,7 @@ export default function HandmadeWoolContent({
         <div>
           <span>فرش‌های ظریف‌تر و حساس‌تر</span>
 
-          <h2>فرش دستبافت شما دارای ابریشم است؟</h2>
+          <h2>فرش دستباف شما دارای ابریشم است؟</h2>
 
           <p>
             فرش گل‌ ابریشم به‌دلیل تفاوت در
@@ -661,7 +661,7 @@ export default function HandmadeWoolContent({
         </div>
 
         <Link href="/handmade-silk-carpet-wash">
-          مشاهده شستشوی فرش دستبافت گل‌ابریشم
+          مشاهده شستشوی فرش دستباف گل‌ابریشم
         </Link>
       </section>
 
@@ -670,7 +670,7 @@ export default function HandmadeWoolContent({
           <span>پیش از شستشو، وضعیت فرش را بررسی کنید</span>
 
           <h2>
-            برای شستشوی فرش دستبافت خود مشاوره بگیرید
+            برای شستشوی فرش دستباف خود مشاوره بگیرید
           </h2>
 
           <p>

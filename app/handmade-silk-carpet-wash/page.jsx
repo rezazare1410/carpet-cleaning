@@ -1,18 +1,18 @@
 import HandmadeSilkCarpetWash from "./HandmadeSilkCarpetWash";
 
 export const metadata = {
-    title: "شستشوی فرش دستبافت گل‌ابریشم | قالیشویی زارع",
+    title: "شستشوی فرش دستباف گل‌ابریشم | قالیشویی زارع",
     description:
-        "شستشوی تخصصی فرش دستبافت گل‌ابریشم در کارخانه قالیشویی زارع با بررسی ثبات رنگ، شستشوی کنترل‌شده، آبگیری متناسب و کنترل نهایی. سرویس‌دهی سراسر تهران.",
+        "شستشوی تخصصی فرش دستباف گل‌ابریشم در کارخانه قالیشویی زارع با بررسی ثبات رنگ، شستشوی کنترل‌شده، آبگیری متناسب و کنترل نهایی. سرویس‌دهی سراسر تهران.",
 
     alternates: {
         canonical: "https://zarecarpet.com/handmade-silk-carpet-wash",
     },
 
     openGraph: {
-        title: "شستشوی تخصصی فرش دستبافت گل‌ابریشم | زارع",
+        title: "شستشوی تخصصی فرش دستباف گل‌ابریشم | زارع",
         description:
-            "بررسی رنگ و بافت، شستشوی کنترل‌شده و مراقبت از لطافت و درخشندگی فرش دستبافت گل‌ابریشم در کارخانه قالیشویی زارع.",
+            "بررسی رنگ و بافت، شستشوی کنترل‌شده و مراقبت از لطافت و درخشندگی فرش دستباف گل‌ابریشم در کارخانه قالیشویی زارع.",
         url: "https://zarecarpet.com/handmade-silk-carpet-wash",
         siteName: "قالیشویی زارع",
         locale: "fa_IR",
@@ -22,14 +22,14 @@ export const metadata = {
                 url: "https://zarecarpet.com/images/handmade-silk-carpet-wash/handmade-silk-carpet-wash-hero.webp",
                 width: 1600,
                 height: 900,
-                alt: "شستشوی فرش دستبافت گل‌ابریشم در کارخانه قالیشویی زارع",
+                alt: "شستشوی فرش دستباف گل‌ابریشم در کارخانه قالیشویی زارع",
             },
         ],
     },
 
     twitter: {
         card: "summary_large_image",
-        title: "شستشوی تخصصی فرش دستبافت گل‌ابریشم | زارع",
+        title: "شستشوی تخصصی فرش دستباف گل‌ابریشم | زارع",
         description:
             "شستشوی کنترل‌شده فرش گل‌ابریشم با بررسی ثبات رنگ، بافت و قسمت‌های حساس فرش.",
         images: [
@@ -47,13 +47,13 @@ const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": "https://zarecarpet.com/handmade-silk-carpet-wash#service",
-    name: "شستشوی تخصصی فرش دستبافت گل‌ابریشم",
-    serviceType: "شستشوی فرش دستبافت گل‌ابریشم",
+    name: "شستشوی تخصصی فرش دستباف گل‌ابریشم",
+    serviceType: "شستشوی فرش دستباف گل‌ابریشم",
     url: "https://zarecarpet.com/handmade-silk-carpet-wash",
     image:
         "https://zarecarpet.com/images/handmade-silk-carpet-wash/handmade-silk-carpet-wash-hero.webp",
     description:
-        "شستشوی تخصصی فرش دستبافت گل‌ابریشم با بررسی جنس الیاف، ثبات رنگ، ریشه، شیرازه، لکه‌ها و وضعیت بافت پیش از شستشو و انتخاب روش متناسب با همان فرش.",
+        "شستشوی تخصصی فرش دستباف گل‌ابریشم با بررسی جنس الیاف، ثبات رنگ، ریشه، شیرازه، لکه‌ها و وضعیت بافت پیش از شستشو و انتخاب روش متناسب با همان فرش.",
     provider: {
         "@type": "LocalBusiness",
         "@id": "https://zarecarpet.com/#localbusiness",
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
         {
             "@type": "ListItem",
             position: 2,
-            name: "شستشوی فرش دستبافت گل‌ابریشم",
+            name: "شستشوی فرش دستباف گل‌ابریشم",
             item: "https://zarecarpet.com/handmade-silk-carpet-wash",
         },
     ],
@@ -100,7 +100,7 @@ const faqSchema = {
     mainEntity: [
         {
             "@type": "Question",
-            name: "فرش گل‌ابریشم چه تفاوتی با فرش دستبافت پشمی دارد؟",
+            name: "فرش گل‌ابریشم چه تفاوتی با فرش دستباف پشمی دارد؟",
             acceptedAnswer: {
                 "@type": "Answer",
                 text: "در فرش گل‌ابریشم، بخش‌هایی از نقوش، گل‌ها یا خطوط فرش با الیاف ابریشم بافته می‌شوند. این قسمت‌ها از نظر درخشندگی، ظرافت و رفتار در برابر شوینده و فشار با پرز پشمی تفاوت دارند و هنگام شستشو به کنترل بیشتری نیاز دارند.",

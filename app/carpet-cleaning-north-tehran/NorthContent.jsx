@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import "../../styles/carpet-cleaning-north-tehran.css";
+import Link from "next/link";
 
 const services = [
   {
@@ -315,10 +316,21 @@ export default function NorthContent() {
         </div>
 
         <div className="north-area-list">
-          {serviceAreas.map((area) => (
-            <span key={area}>{area}</span>
-          ))}
-        </div>
+  {serviceAreas.map((area) => (
+    <span key={area}>
+      {area === "پاسداران" ? (
+        <Link
+          href="/قالیشویی-در-پاسداران"
+          className="north-area-link"
+        >
+          {area}
+        </Link>
+      ) : (
+        area
+      )}
+    </span>
+  ))}
+</div>
       </section>
 
       <section className="north-section north-price-section">
