@@ -5,9 +5,17 @@ export async function GET() {
   const domain = "https://zarecarpet.com";
   const today = new Date().toISOString().split("T")[0];
 
-  const tehranparsPage = "قالیشویی-در-تهرانپارس";
+  /*
+   * تصاویر اصلی صفحات مهم
+   * برای کمک به کشف تصاویر توسط گوگل
+   */
+  const pageImages = {
+    "قالیشویی-در-تهرانپارس": `${domain}/images/blog/tehranpars-handmade-carpets-washing.webp`,
 
-  const tehranparsImage = `${domain}/images/blog/tehranpars-handmade-carpets-washing.webp`;
+    "قالیشویی-در-پاسداران": `${domain}/images/blog/pasdaran1.webp`,
+
+    "قالیشویی-در-هفت-حوض": `${domain}/images/blog/hafthoz1hero.webp`,
+  };
 
   // مقاله‌هایی که به صفحه جدید منتقل شده‌اند
   const redirectedBlogSlugs = new Set(["قالیشویی_در_نیروهوایی"]);
@@ -23,10 +31,14 @@ export async function GET() {
     "order-carpet-cleaning",
     "service-pricing",
     "carpet-cleaning-price-calculator",
+
+    // صفحات اصلی خدمات
+    "automatic-carpet-cleaning",
     "handmade-wool-carpet-wash",
     "handmade-silk-carpet-wash",
     "machine-carpet-wash",
     "root-carpet-repair",
+    "repair-services",
     "double-knot",
     "Shirazeh-doozi",
     "charm-doozi",
@@ -39,20 +51,22 @@ export async function GET() {
     "stain-removal",
     "darkeshi",
     "final-inspection",
+
+    // صفحات مناطق اصلی تهران
     "carpet-cleaning-east-tehran",
     "carpet-cleaning-west-tehran",
     "carpet-cleaning-north-tehran",
     "carpet-cleaning-south-tehran",
     "carpet-cleaning-center-tehran",
 
-    // صفحات محله‌ای
+    // صفحات محله‌ای با URL فارسی
     "قالیشویی-در-نیروی-هوایی",
     "قالیشویی-در-تهران-نو",
     "قالیشویی-در-پیروزی",
     "قالیشویی-در-نارمک",
     "قالیشویی-در-تهرانپارس",
-
-    "repair-services",
+    "قالیشویی-در-پاسداران",
+    "قالیشویی-در-هفت-حوض",
   ];
 
   const staticUrls = staticPages.map((page) => {
@@ -67,17 +81,14 @@ export async function GET() {
 
     const priority = page === "" ? "1.0" : "0.8";
 
-    /*
-     * معرفی تصویر اصلی صفحه تهرانپارس به گوگل
-     * برای افزایش امکان کشف و ایندکس تصویر
-     */
-    const imageEntry =
-      page === tehranparsPage
-        ? `
+    const pageImage = pageImages[page];
+
+    const imageEntry = pageImage
+      ? `
         <image:image>
-          <image:loc>${tehranparsImage}</image:loc>
+          <image:loc>${pageImage}</image:loc>
         </image:image>`
-        : "";
+      : "";
 
     return `
       <url>

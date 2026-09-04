@@ -23,6 +23,9 @@ import TehranparsPage, {
 import PasdaranPage, {
   metadata as pasdaranMetadata,
 } from "../carpet-cleaning-pasdaran/page";
+import HafthozPage, {
+  metadata as hafthozMetadata,
+} from "../carpet-cleaning-haft-hoz/page";
 
 const NIROO_HAVAYI_SLUG =
   "قالیشویی-در-نیروی-هوایی";
@@ -41,6 +44,9 @@ const TEHRANPARS_SLUG =
 
 const PASDARAN_SLUG =
   "قالیشویی-در-پاسداران";
+
+  const HAFTHOZ_SLUG =
+  "قالیشویی-در-هفت-حوض";
 
 function normalizeSlug(value = "") {
   try {
@@ -72,6 +78,9 @@ export function generateStaticParams() {
     {
       slug: PASDARAN_SLUG,
     },
+    {
+  slug: HAFTHOZ_SLUG,
+},
   ];
 }
 
@@ -102,6 +111,9 @@ export async function generateMetadata({ params }) {
   if (normalizedSlug === PASDARAN_SLUG) {
     return pasdaranMetadata;
   }
+  if (normalizedSlug === HAFTHOZ_SLUG) {
+  return hafthozMetadata;
+}
 
   return {};
 }
@@ -135,6 +147,9 @@ export default async function PersianLocationPage({
   if (normalizedSlug === PASDARAN_SLUG) {
     return <PasdaranPage />;
   }
+  if (normalizedSlug === HAFTHOZ_SLUG) {
+  return <HafthozPage />;
+}
 
   notFound();
 }
