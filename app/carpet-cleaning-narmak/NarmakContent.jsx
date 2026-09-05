@@ -90,7 +90,7 @@ const processSteps = [
 const areaNames = [
   "نارمک شمالی",
   "نارمک جنوبی",
-  "هفت‌حوض",
+  "هفت حوض",
   "میدان نبوت",
   "دردشت",
   "مدائن",
@@ -132,7 +132,7 @@ const faqItems = [
     question:
       "قالیشویی زارع کدام قسمت‌های نارمک را پوشش می‌دهد؟",
     answer:
-      "سرویس دریافت و تحویل فرش در نارمک شمالی، نارمک جنوبی، هفت‌حوض، میدان نبوت، دردشت، مدائن، فدک، سرسبز، سمنگان، گلبرگ، فرجام، هنگام، علم‌وصنعت و محدوده رسالت ارائه می‌شود.",
+      "سرویس دریافت و تحویل فرش در نارمک شمالی، نارمک جنوبی، هفت حوض، میدان نبوت، دردشت، مدائن، فدک، سرسبز، سمنگان، گلبرگ، فرجام، هنگام، علم‌وصنعت و محدوده رسالت ارائه می‌شود.",
   },
   {
     question:
@@ -199,7 +199,7 @@ export default function NarmakContent() {
           </p>
 
           <p className="narmak-hero-description">
-            قالیشویی زارع سفارش‌های ساکنان نارمک، هفت‌حوض،
+            قالیشویی زارع سفارش‌های ساکنان نارمک، هفت حوض،
             میدان نبوت و محله‌های اطراف را از محل دریافت
             می‌کند. هر فرش پیش از شستشو بررسی می‌شود تا
             روش مناسب براساس جنس، رنگ، بافت، لکه‌ها و
@@ -260,7 +260,7 @@ export default function NarmakContent() {
       <section className="narmak-intro">
         <div className="narmak-intro-label">
           <span>خدمات تخصصی شرق تهران</span>
-          <strong>نارمک، هفت‌حوض و میدان نبوت</strong>
+          <strong>نارمک، هفت حوض و میدان نبوت</strong>
         </div>
 
         <div className="narmak-intro-content">
@@ -522,16 +522,29 @@ export default function NarmakContent() {
         </header>
 
         <div className="narmak-area-grid">
-          {areaNames.map((area, index) => (
-            <article key={area}>
-              <span>
-                {String(index + 1).padStart(2, "0")}
-              </span>
+  {areaNames.map((area, index) => {
+    const hasHafthozLink = index === 2 || index === 3;
 
-              <strong>{area}</strong>
-            </article>
-          ))}
-        </div>
+    return (
+      <article key={area}>
+        <span className="narmak-area-number">
+          {index + 1}
+        </span>
+
+        {hasHafthozLink ? (
+          <Link
+            href="/قالیشویی-در-هفت-حوض"
+            className="narmak-area-link"
+          >
+            <strong>{area}</strong>
+          </Link>
+        ) : (
+          <strong>{area}</strong>
+        )}
+      </article>
+    );
+  })}
+</div>
 
         <p className="narmak-area-note">
           نارمک بخشی از محدوده خدمات شرق تهران است. برای

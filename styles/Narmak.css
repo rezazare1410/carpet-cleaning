@@ -798,6 +798,17 @@
     counter-reset: narmak-area;
 }
 
+.narmak-area-number {
+    display: inline-block;
+    margin-inline-end: 8px;
+}
+
+.narmak-area-link,
+.narmak-area-link:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
 .narmak-area-grid>span {
     position: relative;
     display: flex;
